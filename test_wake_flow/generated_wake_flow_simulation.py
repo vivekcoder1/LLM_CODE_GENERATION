@@ -1,4 +1,4 @@
-```python
+
 """
 Wake-Flow (Karman-Vortex-Street) Simulation in PhiFlow
 =======================================================
@@ -126,4 +126,3 @@ velocity_np = velocity_trj.at_centers().numpy(['time', 'x', 'y', 'z', 'vector'])
 np.save('wake_flow_velocity_trj.npy', velocity_np)
 
 print("Saved velocity trajectory with shape:", velocity_np.shape)
-```

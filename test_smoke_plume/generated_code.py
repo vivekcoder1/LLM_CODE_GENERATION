@@ -1,4 +1,4 @@
-```python
+
 """
 Smoke Plume Simulation using PhiFlow
 -------------------------------------
@@ -117,21 +117,3 @@ np.save('smoke_plume_pressure_trj.npy', pressure_trj)
 print("Simulation complete.")
 print(f"smoke_trj shape: {smoke_trj.shape}")
 print(f"pressure_trj shape: {pressure_trj.shape}")
-```
-
-**Notes on the implementation:**
-
-1. **Grid Setup**: The velocity field uses a `StaggeredGrid` (standard for incompressible flow in PhiFlow) at 64×64 resolution with `extrapolation.ZERO` to enforce `u=0` on the domain boundary. The smoke field uses a `CenteredGrid` at 200×200 resolution with `extrapolation.BOUNDARY` (zero-gradient/Neumann condition).
-
-2. **Inflow**: The circular inflow region is defined using a `Sphere` geometry centered at `(50, 9.5)` with radius `5`, matching the equation for region *i*. This creates the indicator field `S_{i_x}`.
-
-3. **Step Function**: Implements the three governing equations:
-   - Smoke advection via `advect.mac_cormack` plus the source term `alpha * S`.
-   - Velocity advection via `advect.semi_lagrangian` plus the buoyancy force `beta * S * e_y`.
-   - Pressure projection via `fluid.make_incompressible`, enforcing `div(u)=0` and implicitly handling the Neumann pressure boundary condition.
-
-4. **Trajectories**: 
-   - `smoke_trj` contains 101 snapshots (initial state + 100 steps), each of shape `(200, 200)`.
-   - `pressure_trj` contains 100 snapshots (one per step, since pressure starts as `None`), each of shape `(64, 64)`.
-
-5. **Saved Outputs**: Results are saved as `.npy` files with shapes `[101, 200, 200]` for smoke and `[100, 64, 64]` for pressure.

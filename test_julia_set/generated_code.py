@@ -1,8 +1,6 @@
 # Julia Set Simulation using PhiFlow
 
-Below is a complete, working PhiFlow script that simulates the time-dependent Julia set as described, and saves the accumulated escape-counter field `J` (the "domain trajectory") for all 100 time steps.
 
-```python
 """
 Julia Set Simulation using PhiFlow
 ====================================
@@ -97,24 +95,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-```
-
-### Notes on the implementation
-
-1. **Grid & domain** — The domain Ω = [-2,2] × [-2,2] is discretized on a 256×256 `CenteredGrid` using `phi.flow`'s `Box` and named spatial dimensions (`x`, `y`).
-
-2. **Complex field** — `z(x,y,0) = x + iy` is built by broadcasting a real `x`-vector and an imaginary `y`-vector across the two named dimensions, producing a complex-valued PhiFlow tensor stored inside a `CenteredGrid`.
-
-3. **Step function** — At each time step `t`, the parameter `c(t) = 0.7885 e^{i2\pi t/100}` is computed, `z` is updated as `z² + c(t)`, and the escape-time indicator `1_{|z|<2}` is accumulated into `J`.
-
-4. **`N_escape`** — Included as a defined constant per the problem statement; the accumulation rule given does not explicitly reference it (it typically represents the maximum iteration bound, which here is exactly the 100 simulation steps run).
-
-5. **Output** — After 100 steps, `domain_trj` has shape `(100, 256, 256)` and is saved as `julia_set_domain_trj.npy`, containing the evolving Julia-set escape-count field at every timestep.
-
-Run the script directly:
-
-```bash
-python julia_set_simulation.py
-```
-
-This will print progress and produce `julia_set_domain_trj.npy` in the working directory.

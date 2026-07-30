@@ -1,4 +1,4 @@
-```python
+
 """
 Wake-flow simulation (flow past a circular cylinder) using PhiFlow.
 
@@ -120,4 +120,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-```

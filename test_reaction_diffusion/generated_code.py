@@ -1,4 +1,4 @@
-```python
+
 """
 Reaction-Diffusion (Gray-Scott) simulation using PhiFlow
 =========================================================
@@ -90,11 +90,3 @@ np.save('reaction_diffusion_v_trj.npy', v_trj)
 print("Simulation complete.")
 print("u_trj shape:", u_trj.shape)
 print("v_trj shape:", v_trj.shape)
-```
-
-**Notes on the implementation:**
-
-- The simulation uses **periodic boundary conditions** (`extrapolation.PERIODIC`), which is the standard choice for Gray–Scott reaction–diffusion simulations on a finite domain, since none were explicitly specified.
-- `field.laplace(u)` computes the discrete Laplacian on the `CenteredGrid` using PhiFlow's built-in finite-difference stencil, automatically respecting the grid spacing (`dx = Lx/Nx`, `dy = Ly/Ny`) and the periodic boundary condition.
-- The explicit (forward Euler) integration scheme is used with `dt = 0.5`, iterated for 100 steps, producing 101 total snapshots (`t=0` through `t=100`), matching the required output shape `[101, 100, 100]`.
-- `u.values.numpy('x,y')` converts each PhiFlow `CenteredGrid` field back into a plain NumPy array in the requested `(Nx, Ny)` order for storage.

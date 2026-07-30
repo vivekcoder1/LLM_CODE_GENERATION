@@ -1,12 +1,5 @@
-Looking at this problem, I need to:
 
-1. Set up a 2D grid (100×50) over domain [0,10]×[0,5]
-2. Apply mixed boundary conditions: Dirichlet (u=1) at x=0, Neumann (∂u/∂x=0) at x=10, and periodic in y
-3. Build a spatially-varying conductivity field based on the two inclusion boxes
-4. Implement an explicit Euler step for `∂u/∂t = κ ∂²u/∂x²` (Laplacian restricted to x-axis only)
-5. Run for 100 steps and save all 101 snapshots
 
-```python
 """
 Heat Flow Simulation with Variable Conductivity using PhiFlow
 ================================================================
@@ -130,12 +123,3 @@ print("Final trajectory shape:", temperature_trj.shape)  # (101, 100, 50)
 
 np.save('heat_flow_temperature_trj.npy', temperature_trj)
 print("Saved trajectory to 'heat_flow_temperature_trj.npy'")
-```
-
-### Notes on the implementation
-
-- **Boundary conditions** are encoded directly in the `CenteredGrid`'s `extrapolation`: a `ConstantExtrapolation(1.0)` on the lower x-side enforces the Dirichlet condition, `extrapolation.BOUNDARY` on the upper x-side gives a zero-gradient (Neumann) condition, and `extrapolation.PERIODIC` on the y-sides enforces `u(x,0,t)=u(x,5,t)`.
-- **Conductivity field** `kappa` is built by evaluating the union of the two inclusion boxes on the grid's cell-center coordinates using `math.where`.
-- **`field.laplace(u, axes='x')`** restricts the second-derivative computation to the x-direction only, matching the governing PDE `∂u/∂t = κ ∂²u/∂x²`.
-- The **explicit Euler step** directly implements `u_new = u + dt * kappa * d²u/dx²`.
-- The trajectory (including the initial condition) is collected into a list of 101 `CenteredGrid` snapshots, converted to NumPy arrays with axis order `(x, y)`, stacked, and saved as `heat_flow_temperature_trj.npy` with shape `(101, 100, 50)`.

@@ -1,4 +1,4 @@
-```python
+
 """
 2D Burgers' Equation Simulation using PhiFlow
 ==============================================
@@ -83,11 +83,11 @@ print("Final trajectory shape:", velocity_trj.shape)  # Expect (101, 64, 64, 2)
 
 np.save('burgers2d_velocity_trj.npy', velocity_trj)
 print("Saved velocity trajectory to 'burgers2d_velocity_trj.npy'")
-```
 
+'''
 **Notes on the implementation:**
 
 - **Grid & BCs:** A `CenteredGrid` is used with `extrapolation.PERIODIC`, which enforces the periodic boundary conditions `u(0,y,t)=u(Lx,y,t)` and `u(x,0,t)=u(x,Ly,t)` automatically at the domain boundaries.
 - **Initial condition:** Both velocity components (`u` and `v`) are initialized with the given Gaussian bump, stacked along the `vector` channel dimension.
 - **Step function:** Implements Burgers' equation via operator splitting — self-advection (`advect.semi_lagrangian`) followed by diffusion (`diffuse.explicit`), which is the standard PhiFlow approach for this PDE.
-- **Trajectory storage:** The velocity field values are converted to NumPy arrays each step (ordered as `x, y, vector`) and stacked to produce a final array of shape `(101, 64, 64, 2)`, saved via `np.save`.
+- **Trajectory storage:** The velocity field values are converted to NumPy arrays each step (ordered as `x, y, vector`) and stacked to produce a final array of shape `(101, 64, 64, 2)`, saved via `np.save`.'''

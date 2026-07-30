@@ -37,7 +37,7 @@ class SearchBlueprint(BaseModel):
 # ==========================================
 class E2ERagPipeline:
     def __init__(self):
-        # vector transformer matching TreeGen.py
+        # vector transformer matching 
         self.embed_model = SentenceTransformer('all-MiniLM-L6-v2') 
         self.client = anthropic.Anthropic()
         

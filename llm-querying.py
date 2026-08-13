@@ -12,8 +12,7 @@ import numpy as np
 # Load credentials securely
 load_dotenv(dotenv_path=Path(__file__).resolve().parent / ".env")
 
-
-DRY_RUN =False
+DRY_RUN = False
 
 
 class SearchBlueprint(BaseModel):
@@ -39,8 +38,11 @@ class E2ERagPipeline:
     def __init__(self):
         # vector transformer matching 
         self.embed_model = SentenceTransformer('all-MiniLM-L6-v2') 
-        self.client = anthropic.Anthropic()
-        
+        api_key = os.getenv("ANTHROPIC_API_KEY")
+        if not api_key:
+            raise ValueError("ANTHROPIC_API_KEY was not found in environment variables!")
+
+        self.client = anthropic.Anthropic(api_key=api_key)
         
         uri = os.getenv("NEO4J_URI")
         user = os.getenv("NEO4J_USER")
@@ -99,7 +101,6 @@ class E2ERagPipeline:
             print(f"Failed to generate search blueprint: {e}")
             return {"semantic_queries": [], "target_classes": [], "target_functions": []}
 
-
     def find_seed_nodes(self, blueprint: dict) -> List[str]:
         """Step 2: Hybrid Search with wildcards and higher initial seed capacity."""
         seed_ids = set()
@@ -153,13 +154,13 @@ class E2ERagPipeline:
                 for r in res: seed_ids.add(r["id"])
 
         return list(seed_ids)
+
     def get_embedding(self, text: str) -> List[float]:
         """Converts search strings into 384-dimensional vectors."""
         return self.embed_model.encode(text).tolist()
 
-    
     def traverse_subgraph(self, seed_ids: List[str]) -> List[dict]:
-        """Step 3: Directed 2-Hop neighborhood expansion fetching linked GeneratedDescriptions."""
+        """Step 3: Directed 2-Hop neighborhood expansion fetching public API metadata."""
         if not seed_ids:
             return []
             
@@ -171,32 +172,42 @@ class E2ERagPipeline:
                 UNWIND relationships(path) AS r
                 WITH DISTINCT startNode(r) AS src, r, endNode(r) AS tgt
                 
-                // Fetch linked GeneratedDescription text for source node
                 OPTIONAL MATCH (src)-[:has_description]->(src_desc:GeneratedDescription)
-                // Fetch linked GeneratedDescription text for target node
                 OPTIONAL MATCH (tgt)-[:has_description]->(tgt_desc:GeneratedDescription)
                 
                 RETURN src.id AS src_id,
                        labels(src)[0] AS src_type,
                        src.name AS src_name,
+                       coalesce(src.is_public_api, false) AS src_is_public,
+                       coalesce(src.import_path, "") AS src_import_path,
                        coalesce(src.docstring, "") AS src_doc,
                        coalesce(src_desc.text, src.text, "") AS src_gen_desc,
                        type(r) AS relationship,
                        tgt.id AS tgt_id,
                        labels(tgt)[0] AS tgt_type,
                        tgt.name AS tgt_name,
+                       coalesce(tgt.is_public_api, false) AS tgt_is_public,
+                       coalesce(tgt.import_path, "") AS tgt_import_path,
                        coalesce(tgt.docstring, "") AS tgt_doc,
                        coalesce(tgt_desc.text, tgt.text, "") AS tgt_gen_desc
             """
             result = session.run(query, seed_ids=seed_ids)
             return [row.data() for row in result]
 
-    def filter_subgraph(self, task_description: str, raw_relations: List[dict], top_k: int = 35, min_score: float = 0.20) -> List[dict]:
-        """Filters and reranks sub-graph triples using LLM-generated descriptions for semantic scoring."""
+    def filter_subgraph(
+        self, 
+        task_description: str, 
+        raw_relations: List[dict], 
+        top_k: int = 35, 
+        min_score: float = 0.15,
+        public_boost: float = 0.20,
+        private_penalty: float = 0.15
+    ) -> List[dict]:
+        """Filters and reranks triples, strongly prioritizing public API endpoints."""
         if not raw_relations:
             return []
             
-        print(f"\nReranking {len(raw_relations)} raw graph triples using Generated Descriptions...")
+        print(f"\nReranking {len(raw_relations)} raw graph triples with Public API prioritization...")
         query_vector = np.array(self.get_embedding(task_description), dtype=float).flatten()
         norm_q = np.linalg.norm(query_vector)
 
@@ -210,91 +221,91 @@ class E2ERagPipeline:
             target_name = row.get("tgt_name") or ""
             target_type = row.get("tgt_type") or ""
             
-            # Skip raw GeneratedDescription nodes from candidate list (they are metadata attached to code nodes)
             if target_type == "GeneratedDescription":
                 continue
                 
-            # Skip dunder / private methods
             if target_name.startswith("__") and target_name.endswith("__"):
                 continue
 
-            # PRIORITIZE: Generated Description -> Docstring -> Empty
             gen_desc = row.get("tgt_gen_desc") or ""
             docstring = row.get("tgt_doc") or ""
-            
             functional_summary = gen_desc if gen_desc else docstring
 
-            # Construct contextual embedding string: "[Function] semi_lagrangian: Performs backward trajectory tracing..."
             text_representation = f"[{target_type}] {target_name}: {functional_summary}".strip()
-            
             candidate_texts.append(text_representation)
             clean_rows.append(row)
 
         if not candidate_texts:
             return []
 
-        # Batch encode candidates for performance
         candidate_vectors = self.embed_model.encode(candidate_texts)
-
         scored_rows = []
+
         for idx, row in enumerate(clean_rows):
             node_vector = np.array(candidate_vectors[idx], dtype=float).flatten()
             norm_n = np.linalg.norm(node_vector)
 
-            score = float(np.dot(query_vector, node_vector) / (norm_q * norm_n)) if norm_n > 0 else 0.0
-            scored_rows.append((score, row))
+            base_score = float(np.dot(query_vector, node_vector) / (norm_q * norm_n)) if norm_n > 0 else 0.0
+            
+            # Apply public API boost vs private/internal penalty
+            is_public = row.get("tgt_is_public", False)
+            if is_public:
+                final_score = base_score + public_boost
+            else:
+                final_score = base_score - private_penalty
 
-        # Sort descending by similarity score
+            scored_rows.append((final_score, base_score, row))
+
+        # Sort descending by adjusted score
         scored_rows.sort(key=lambda x: x[0], reverse=True)
 
-        print("--- Top 10 Reranked Similarity Scores (Based on Generated Descriptions) ---")
-        for score, row in scored_rows[:10]:
+        print("--- Top 10 Reranked Similarity Scores (Adjusted for Public API Priority) ---")
+        for final_s, base_s, row in scored_rows[:10]:
             target = row.get('tgt_name') or row.get('src_name')
-            print(f"  Score: {score:.4f} | Target: [{row.get('tgt_type')}] {target}")
+            pub_flag = "PUBLIC" if row.get('tgt_is_public') else "INTERNAL"
+            print(f"  Score: {final_s:.4f} (Base: {base_s:.4f}) | [{pub_flag}] [{row.get('tgt_type')}] {target}")
 
-        filtered_results = [item[1] for item in scored_rows if item[0] >= min_score][:top_k]
+        filtered_results = [item[2] for item in scored_rows if item[0] >= min_score][:top_k]
         print(f"✓ Retained {len(filtered_results)} high-confidence triples (score >= {min_score})")
 
         return filtered_results
 
     def serialize_subgraph(self, raw_relations: List[dict]) -> str:
-        """Step 4: Formats retrieved graph relationships into readable, rich markdown context,
-        attaching LLM-generated descriptions directly to their parent components."""
+        """Formats graph context, separating Public APIs from Internal Fallback components."""
         if not raw_relations:
             return "No matching codebase components found."
 
         nodes_dict = {}
         relationships = set()
 
-        # Step 1: Collect node metadata and bind GeneratedDescriptions to parent nodes
         for row in raw_relations:
             src_id = row["src_id"]
             tgt_id = row["tgt_id"]
             rel = row["relationship"]
 
-            # Initialize source component
             if src_id not in nodes_dict:
                 nodes_dict[src_id] = {
                     "name": row["src_name"] or "Unknown",
                     "type": row["src_type"] or "Unknown",
+                    "is_public": row.get("src_is_public", False),
+                    "import_path": row.get("src_import_path", ""),
                     "docstring": row["src_doc"] if row["src_type"] != "GeneratedDescription" else "",
                     "description": ""
                 }
 
-            # Initialize target component
             if tgt_id not in nodes_dict:
                 nodes_dict[tgt_id] = {
                     "name": row["tgt_name"] or "Unknown",
                     "type": row["tgt_type"] or "Unknown",
+                    "is_public": row.get("tgt_is_public", False),
+                    "import_path": row.get("tgt_import_path", ""),
                     "docstring": row["tgt_doc"] if row["tgt_type"] != "GeneratedDescription" else "",
                     "description": ""
                 }
 
-            # If edge is 'has_description', attach description text directly to the source component
             if rel == "has_description" and row["tgt_type"] == "GeneratedDescription":
                 nodes_dict[src_id]["description"] = row["tgt_doc"] or ""
 
-        # Step 2: Build structural dependency relationships (ignoring raw description nodes)
         for row in raw_relations:
             src_id = row["src_id"]
             tgt_id = row["tgt_id"]
@@ -306,35 +317,45 @@ class E2ERagPipeline:
                 tgt_str = f"[{nodes_dict[tgt_id]['type']}] {nodes_dict[tgt_id]['name']}"
                 relationships.add(f"- {src_str} --({rel_label})--> {tgt_str}")
 
-        # Step 3: Serialize into rich Markdown context
+        # Split into Public vs Internal lists
+        public_nodes = [info for nid, info in nodes_dict.items() if info["type"] != "GeneratedDescription" and info["is_public"]]
+        internal_nodes = [info for nid, info in nodes_dict.items() if info["type"] != "GeneratedDescription" and not info["is_public"]]
+
         md_context = "# CODEBASE COMPONENT SPECIFICATIONS & API REFERENCE\n\n"
-        md_context += "## 1. COMPONENT SIGNATURES & FUNCTIONAL DESCRIPTIONS\n\n"
-
-        for nid, info in nodes_dict.items():
-            # Skip rendering standalone GeneratedDescription nodes as headers
-            if info["type"] == "GeneratedDescription":
-                continue
-
+        
+        # 1. Public Endpoints First
+        md_context += "## 1. PRIMARY PUBLIC API ENDPOINTS (PREFER USING THESE)\n\n"
+        if not public_nodes:
+            md_context += "_No explicit public APIs retrieved. Rely on standard framework imports._\n\n"
+        for info in public_nodes:
             md_context += f"### [{info['type']}] {info['name']}\n"
-            
-            # Display LLM-generated functional purpose if available
+            if info["import_path"]:
+                md_context += f"**Import:** `{info['import_path']}`\n\n"
             if info["description"]:
-                md_context += f"**Functional Purpose (LLM-Generated Summary):**\n{info['description']}\n\n"
-            
-            # Display source docstring/signature
+                md_context += f"**Functional Purpose:**\n{info['description']}\n\n"
             if info["docstring"] and info["docstring"] != "No docstring available.":
                 md_context += f"**Signature/Docstring:**\n```python\n{info['docstring']}\n```\n\n"
-            elif not info["description"]:
-                md_context += "**Signature/Docstring:**\n```python\nNo docstring available.\n```\n\n"
+
+        # 2. Internal/Private Nodes as Fallbacks
+        if internal_nodes:
+            md_context += "---\n\n## 2. INTERNAL UTILITIES & ADVANCED HELPERS (USE ONLY IF UNPREVENTABLE)\n\n"
+            for info in internal_nodes:
+                md_context += f"### [INTERNAL {info['type']}] {info['name']}\n"
+                if info["import_path"]:
+                    md_context += f"**Location:** `{info['import_path']}`\n\n"
+                if info["description"]:
+                    md_context += f"**Functional Purpose:**\n{info['description']}\n\n"
+                if info["docstring"] and info["docstring"] != "No docstring available.":
+                    md_context += f"**Signature/Docstring:**\n```python\n{info['docstring']}\n```\n\n"
 
         if relationships:
-            md_context += "---\n\n## 2. GRAPH INTERCONNECTIONS & DEPENDENCIES\n\n"
+            md_context += "---\n\n## 3. GRAPH INTERCONNECTIONS & DEPENDENCIES\n\n"
             md_context += "\n".join(sorted(relationships)) + "\n"
 
         return md_context
 
     def generate_grounded_code(self, task_description: str, codebase_context: str) -> str:
-        """Step 5: Code Generation guided strictly by the retrieved repository structures."""
+        """Step 5: Code Generation strictly preferring primary public APIs."""
         print("Generating complete codebase-aligned script with Claude...")
 
         response = self.client.messages.create(
@@ -342,9 +363,11 @@ class E2ERagPipeline:
             max_tokens=20000,
             system=(
                 "You are an expert computational software architect specializing in the PhiFlow differentiable physics framework. "
-                "Your objective is to generate an executable Python simulation script based on the user's task requirements. "
-                "You must align your solution exactly with the API, classes, methods, parameters, and naming patterns "
-                "found in the existing codebase context provided below. Generate clean, documented, and fully complete code."
+                "Your objective is to generate an executable Python simulation script based on the user's task requirements.\n\n"
+                "CRITICAL IMPORT RULES:\n"
+                "1. Always prefer functions and classes listed under 'PRIMARY PUBLIC API ENDPOINTS'.\n"
+                "2. Do NOT import from internal module locations unless no public API equivalence is provided.\n"
+                "3. Respect the import signatures and paths specified in the context."
             ),
             messages=[
                 {
@@ -386,13 +409,11 @@ if __name__ == "__main__":
             print(f" PROCESSING DOMAIN: {folder_name.upper()}")
             print(f"==========================================")
             
-            # Output folder for generated context and python script
             output_dir = BASE_DIR / f"test_{folder_name}"
             os.makedirs(output_dir, exist_ok=True)
             
             task_file = BASE_DIR / "test" / f"{folder_name}.md"
 
-            # Fallback check if the file is in test_<folder_name>/<folder_name>.md
             if not task_file.exists():
                 alt_task_file = output_dir / f"{folder_name}.md"
                 if alt_task_file.exists():
@@ -408,36 +429,32 @@ if __name__ == "__main__":
             first_line = task_sheet_content.strip().split('\n')[0] if task_sheet_content else "EMPTY"
             print(f"   --> Task Title Preview: {first_line[:80]}")
 
-
             blueprint = pipeline.generate_search_blueprint(task_sheet_content)
             print(f"\n--- [1] Blueprint Generated ---")
             print(json.dumps(blueprint, indent=2))
             
-            # Find Seed Nodes
             seed_nodes = pipeline.find_seed_nodes(blueprint)
             print(f"\n--- [2] Seed Nodes Found ({len(seed_nodes)}) ---")
             print(seed_nodes)
             
-            # Graph Traversal & Subgraph Filtering
             raw_graph_data = pipeline.traverse_subgraph(seed_nodes)
             filtered_graph_data = pipeline.filter_subgraph(
                 task_sheet_content, 
                 raw_graph_data, 
                 top_k=35, 
-                min_score=0.2
+                min_score=0.15,
+                public_boost=0.20,
+                private_penalty=0.15
             )
             print(f"--- Retained Top {len(filtered_graph_data)} Relevant Triples ---")
 
-            # Context Serialization
             formatted_context = pipeline.serialize_subgraph(filtered_graph_data)
             
-            # Save retrieved context for inspection
             context_file = output_dir / "retrieved_context.md"
             with open(context_file, "w", encoding="utf-8") as cf:
                 cf.write(formatted_context)
             print(f"✓ Saved retrieved codebase context to: {context_file}")
 
-            # Code Generation
             if DRY_RUN:
                 print(f"Check context file here: {context_file}")
             else:

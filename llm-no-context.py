@@ -23,7 +23,8 @@ class BaselineCodeGeneration:
             system=(
                 "You are an expert programmer specializing in physics simulations "
                 "and differentiable programming frameworks, specifically PhiFlow.\n"
-                "Generate a complete working Python script."
+                "Generate a complete working Python script. Include no markdown formatting, "
+                "and ensure the code is ready to run as a standalone Python script."
             ),
             messages=[
                 {

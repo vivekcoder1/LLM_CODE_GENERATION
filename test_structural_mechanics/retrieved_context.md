@@ -1,109 +1,162 @@
 # CODEBASE COMPONENT SPECIFICATIONS & API REFERENCE
 
-## 1. COMPONENT SIGNATURES & FUNCTIONAL DESCRIPTIONS
+## 1. PRIMARY PUBLIC API ENDPOINTS (PREFER USING THESE)
 
-### [Class] AngularVelocity
+### [File] fluid.py
+**Import Path:** `phi.flow.fluid.py`
+
+### [Class] Box
+**Import Path:** `phi.flow.Box`
+
+**Usage:** `from phi.flow.Box import Box; Box(...)` or direct instantiation from phi.flow
+
 **Signature/Docstring:**
 ```python
-Model of a single vortex or set of vortices.
-The falloff of the velocity magnitude can be controlled.
+Simple cuboid defined by location of lower and upper corner in physical space.
 
-Without a specified falloff, the velocity increases linearly with the distance from the vortex center.
-This is the case with rotating rigid bodies, for example.
-```
+Boxes can be constructed either from two positional vector arguments `(lower, upper)` or by specifying the limits by dimension name as `kwargs`.
 
-### [Method] _sample
-**Signature/Docstring:**
-```python
-No docstring available.
-```
+Examples:
+    >>> Box(x=1, y=1)  # creates a two-dimensional unit box with `lower=(0, 0)` and `upper=(1, 1)`.
+    >>> Box(x=(None, 1), y=(0, None)  # creates a Box with `lower=(-inf, 0)` and `upper=(1, inf)`.
 
-### [File] integrate.py
-**Signature/Docstring:**
-```python
-No docstring available.
-```
+    The slicing constructor was updated in version 2.2 and now requires the dimension order as the first argument.
 
-### [Function] euler
-**Signature/Docstring:**
-```python
-No docstring available.
-```
-
-### [Function] get_coefficients
-**Signature/Docstring:**
-```python
-No docstring available.
-```
-
-### [Function] _create_boundary_conditions
-**Signature/Docstring:**
-```python
-Construct mixed boundary conditions from from a sequence of boundary conditions.
-
-Args:
-  obj: single boundary condition or sequence of boundary conditions
-
-Returns:
-  Mixed boundary conditions as `dict`.
-```
-
-### [Function] build_faces
-**Signature/Docstring:**
-```python
-Given a list of vertices, elements and boundary edges, computes the element connectivity matrix  and corresponding edge properties.
-
-Args:
-    vertices: `Tensor` representing list (instance) of vectors (channel)
-    elements: Sparse matrix listing all elements (instance). Each entry represents a vertex (dual) belonging to an element.
-    boundaries: Named sequences of edges (vertex pairs).
-    element_rank: Spatial rank of the elements (currently only 2 is supported)
-    periodic: Which dims are periodic.
-    vertex_mean: Mean vertex position for each element.
-    face_format: Sparse matrix format to use for the element-element matrices.
-```
-
-### [Class] SplineSolid
-**Signature/Docstring:**
-```python
-Internal coordinates (u,v) are in the range [0, N] where N is the number of points along that axis.
-```
-
-### [Method] _central_point_tangents
-**Signature/Docstring:**
-```python
-No docstring available.
-```
-
-### [Class] Cylinder
-**Signature/Docstring:**
-```python
-N-dimensional cylinder.
-Defined by center position, radius, depth, alignment axis, rotation.
-
-For cylinders whose bottom and top lie outside the domain or are otherwise not needed, you may use `infinite_cylinder` instead, which simplifies computations.
+    >>> Box['x,y', 0:1, 0:1]  # creates a two-dimensional unit box with `lower=(0, 0)` and `upper=(1, 1)`.
+    >>> Box['x,y', :1, 0:]  # creates a Box with `lower=(-inf, 0)` and `upper=(1, inf)`.
 ```
 
 ### [Method] boundary_elements
+**Import Path:** `phi.flow.Box.boundary_elements`
+
+### [Method] push
+**Import Path:** `phi.flow.Box.push`
+
+### [Class] Field
+**Import Path:** `phi.flow.Field`
+
+**Usage:** `from phi.flow.Field import Field; Field(...)` or direct instantiation from phi.flow
+
 **Signature/Docstring:**
 ```python
-No docstring available.
+A `Field` represents a discretized physical quantity (like temperature field or velocity field).
+The sample points and their relation are encoded in the `geometry` property and the corresponding values are stored as one `Tensor` in `values`.
+The boundary conditions and values outside the geometry are determined by `boundary`.
+
+Examples:
+    Create a periodic 2D grid, initialized via noise fluctuations.
+    >>> Field(UniformGrid(x=32, y=32), values=Noise(), boundary=PERIODIC)
+
+    Create a field on an unstructured mesh loaded from a .gmsh file
+    >>> mesh = phi.geom.load_gmsh('cylinder.msh', ('y-', 'x+', 'y+', 'x-', 'cyl+', 'cyl-'))
+    >>> Field(mesh, values=vec(x=1, y=0), boundary={'x': ZERO_GRADIENT, 'y': 0, 'cyl': 0})
+
+    Create two cubes and compute a scalar values for each.
+    >>> Field(Cuboid(vec(x=[0, 2], y=0), x=1, y=1), values=lambda x,y: x)
+
+See the `phi.field` module documentation at https://tum-pbs.github.io/PhiFlow/Fields.html
 ```
 
-### [Method] volume
+### [Method] boundary_names
+**Import Path:** `phi.flow.Field.boundary_names`
+
+### [Method] laplace
+**Import Path:** `phi.flow.Field.laplace`
+
 **Signature/Docstring:**
 ```python
-No docstring available.
+Alias for `phi.field.laplace`
 ```
 
-### [Class] Obstacle
+### [Class] Geometry
+**Import Path:** `phi.flow.Geometry`
+
+**Usage:** `from phi.flow.Geometry import Geometry; Geometry(...)` or direct instantiation from phi.flow
+
 **Signature/Docstring:**
 ```python
-An obstacle defines boundary conditions inside a geometry.
-It can also have a linear and angular velocity.
+Abstract base class for N-dimensional shapes.
+
+Main implementing classes:
+
+* `Sphere`
+* `Box`
+* `Cylinder`
+* `Graph`
+* `Mesh`
+* `Heightmap`
+* `SDFGrid`
+* `SDF`
+* `SplineSheet`
+
+All geometry objects support batching.
+Thereby any parameter defining the geometry can be varied along arbitrary batch dims.
+All batch dimensions are listed in Geometry.shape.
+
+Property getters (`@property`, such as `shape`), save for getters, must not depend on any variables marked as *variable* via `__variable_attrs__()` as these may be `None` during tracing.
+Equality checks must also take this into account.
 ```
+
+### [Method] boundary_elements
+**Import Path:** `phi.flow.Geometry.boundary_elements`
+
+**Signature/Docstring:**
+```python
+Slices on the primal dimensions to mark boundary elements.
+Grids and meshes have no boundary elements and return `{}`.
+Dynamic graphs can define boundary elements for obstacles and walls.
+
+Returns:
+    Map from `name` to slicing `dict`.
+```
+
+### [Method] boundary_faces
+**Import Path:** `phi.flow.Geometry.boundary_faces`
+
+**Signature/Docstring:**
+```python
+Slices on the dual dimensions to mark boundary faces.
+
+Regular grids use the keys (dim, is_upper) to identify boundaries.
+Unstructured meshes use string identifiers for the boundaries.
+Dynamic graphs return slices along the dual dimensions.
+
+Returns:
+    Map from `name` to slicing `dict`.
+```
+
+### [Method] shape
+**Import Path:** `phi.flow.Geometry.shape`
+
+**Signature/Docstring:**
+```python
+The `shape` of a `Geometry` consists of the following dimensions:
+
+* A single *channel* dimension called `'vector'` specifying the physical space
+* Instance dimensions denote that this geometry consists of multiple copies in the same space
+* Spatial dimensions denote a crystal (repeating structure) of this geometric primitive in space
+* Batch dimensions indicate non-interacting versions of this geometry for parallelization only.
+```
+
+### [Class] Point
+**Import Path:** `phi.flow.Point`
+
+**Usage:** `from phi.flow.Point import Point; Point(...)` or direct instantiation from phi.flow
+
+**Signature/Docstring:**
+```python
+Points have zero volume and are determined by a single location.
+An instance of `Point` represents a single n-dimensional point or a batch of points.
+```
+
+### [Method] boundary_elements
+**Import Path:** `phi.flow.Point.boundary_elements`
 
 ### [Function] StaggeredGrid
+**Import Path:** `phi.flow.StaggeredGrid`
+
+**Usage:** `flow.StaggeredGrid(...)` or `from phi.flow import StaggeredGrid; StaggeredGrid(...)`
+
 **Signature/Docstring:**
 ```python
 N-dimensional grid whose vector components are sampled at the respective face centers.
@@ -142,140 +195,30 @@ Args:
     **resolution_: Spatial dimensions as keyword arguments. Typically either `resolution` or `spatial_dims` are specified.
 ```
 
-### [Function] solve_resolution_with_margin_cells
+### [Class] UniformGrid
+**Import Path:** `phi.flow.UniformGrid`
+
+**Usage:** `from phi.flow.UniformGrid import UniformGrid; UniformGrid(...)` or direct instantiation from phi.flow
+
 **Signature/Docstring:**
 ```python
-No docstring available.
+An instance of UniformGrid represents all cells of a regular grid as a batch of boxes.
 ```
 
-### [Class] Geometry
-**Signature/Docstring:**
-```python
-Abstract base class for N-dimensional shapes.
+### [Method] boundary_faces
+**Import Path:** `phi.flow.UniformGrid.boundary_faces`
 
-Main implementing classes:
+### [Method] stagger
+**Import Path:** `phi.flow.UniformGrid.stagger`
 
-* `Sphere`
-* `Box`
-* `Cylinder`
-* `Graph`
-* `Mesh`
-* `Heightmap`
-* `SDFGrid`
-* `SDF`
-* `SplineSheet`
-
-All geometry objects support batching.
-Thereby any parameter defining the geometry can be varied along arbitrary batch dims.
-All batch dimensions are listed in Geometry.shape.
-
-Property getters (`@property`, such as `shape`), save for getters, must not depend on any variables marked as *variable* via `__variable_attrs__()` as these may be `None` during tracing.
-Equality checks must also take this into account.
-```
-
-### [Method] boundary_elements
-**Signature/Docstring:**
-```python
-Slices on the primal dimensions to mark boundary elements.
-Grids and meshes have no boundary elements and return `{}`.
-Dynamic graphs can define boundary elements for obstacles and walls.
-
-Returns:
-    Map from `name` to slicing `dict`.
-```
-
-### [Class] Box
-**Signature/Docstring:**
-```python
-Simple cuboid defined by location of lower and upper corner in physical space.
-
-Boxes can be constructed either from two positional vector arguments `(lower, upper)` or by specifying the limits by dimension name as `kwargs`.
-
-Examples:
-    >>> Box(x=1, y=1)  # creates a two-dimensional unit box with `lower=(0, 0)` and `upper=(1, 1)`.
-    >>> Box(x=(None, 1), y=(0, None)  # creates a Box with `lower=(-inf, 0)` and `upper=(1, inf)`.
-
-    The slicing constructor was updated in version 2.2 and now requires the dimension order as the first argument.
-
-    >>> Box['x,y', 0:1, 0:1]  # creates a two-dimensional unit box with `lower=(0, 0)` and `upper=(1, 1)`.
-    >>> Box['x,y', :1, 0:]  # creates a Box with `lower=(-inf, 0)` and `upper=(1, inf)`.
-```
-
-### [Method] push
-**Signature/Docstring:**
-```python
-No docstring available.
-```
-
-### [Function] euler
-**Signature/Docstring:**
-```python
-Euler integrator. 
-```
-
-### [Function] rk4
-**Signature/Docstring:**
-```python
-No docstring available.
-```
-
-### [Function] eval_nurbs_bases
-**Signature/Docstring:**
-```python
-Compute all NURBS basis functions.
-This simplifies to B-spline basis functions if `weights=None` and knots are uniform.
-
-Args:
-    t: Parameter value where to evaluate the basis functions.
-    knots: Knot matrix of shape (~bases:d, support:s=degree+2).
-    weights: NURBS weight per control point. Shape (~bases:d,)
-    eps: Value smaller than 1/n, ensuring that the upper end t=1.0 is handled correctly.
-
-Returns:
-    Basis function values at `t` of all basis function listed along `bases_dim`.
-```
-
-### [Function] euler_step
-**Signature/Docstring:**
-```python
-Advance the wave equation by one time step using symplectic Euler integration.
-
-Solves the first-order system:
-    ∂u/∂t = v
-    ∂v/∂t = c² ∇²u + f
-
-This is useful when the initial velocity v = ∂u/∂t is known directly.
-
-Args:
-    u: Current wave amplitude as a `Field`.
-    v: Current velocity (time derivative of u) as a `Field`.
-    c: Wave speed. Can be a constant, `Tensor`, or spatially varying `Field`.
-    dt: Time step size.
-    source: Optional source term f(x, t) as a `Field`.
-
-Returns:
-    Tuple of `(u_next, v_next)` for the next time step.
-
-Examples:
-    >>> from phi.flow import *
-    >>> u = CenteredGrid(0, x=64, y=64, bounds=Box(x=1, y=1))
-    >>> v = CenteredGrid(Noise(), x=64, y=64, bounds=Box(x=1, y=1))
-    >>> u_next, v_next = wave.euler_step(u, v, c=1.0, dt=0.01)
-```
-
-### [Method] _central_tangents
-**Signature/Docstring:**
-```python
-No docstring available.
-```
-
-### [Function] perform_finite_difference_operation
-**Signature/Docstring:**
-```python
-No docstring available.
-```
+### [Method] staggered_cells
+**Import Path:** `phi.flow.UniformGrid.staggered_cells`
 
 ### [Class] Mesh
+**Import Path:** `phi.flow.Mesh`
+
+**Usage:** `from phi.flow.Mesh import Mesh; Mesh(...)` or direct instantiation from phi.flow
+
 **Signature/Docstring:**
 ```python
 Unstructured mesh, consisting of vertices and elements.
@@ -284,181 +227,225 @@ Use `phi.geom.mesh()` or `phi.geom.mesh_from_numpy()` to construct a mesh manual
 ```
 
 ### [Method] boundary_connectivity
-**Signature/Docstring:**
-```python
-No docstring available.
-```
-
-### [Class] HardGeometryMask
-**Signature/Docstring:**
-```python
-Deprecated since version 2.3. Use `phi.field.mask()` or `phi.field.resample()` instead.
-```
-
-### [Method] _sample
-**Signature/Docstring:**
-```python
-No docstring available.
-```
-
-### [Class] Domain
-**Signature/Docstring:**
-```python
-No docstring available.
-```
-
-### [Method] vector_grid
-**Signature/Docstring:**
-```python
-Creates a vector grid matching the resolution and bounds of the domain.
-The grid is created from the given `value` which must be one of the following:
-
-* Number (int, float, complex or zero-dimensional tensor): all grid values will be equal to `value`. This has a near-zero memory footprint.
-* Field: the given value is resampled to the grid cells of this Domain.
-* Tensor with spatial dimensions matcing the domain resolution: grid values will equal `value`.
-* Geometry: grid values are determined from the volume overlap between grid cells and geometry. Non-overlapping = 0, fully enclosed grid cell = 1.
-* function(location: Tensor) returning one of the above.
-
-The returned grid will have a vector dimension with size equal to the rank of the domain.
-
-Args:
-  value: constant, Field, Tensor or function specifying the grid values
-  type: class of Grid to create, must be either CenteredGrid or StaggeredGrid
-  extrapolation: (optional) grid extrapolation, defaults to Domain.boundaries['vector']
-
-Returns:
-  Grid of specified type
-```
-
-### [Function] build_mesh
-**Signature/Docstring:**
-```python
-Build a mesh for a given domain, respecting obstacles.
-
-Args:
-    bounds: Bounds for uniform cells.
-    resolution: Base resolution
-    obstacles: Single `Geometry` or `dict` mapping boundary name to corresponding `Geometry`.
-    method: Meshing algorithm. Only `quad` is currently supported.
-    cell_dim: Dimension along which to list the cells. This should be an instance dimension.
-    face_format: Sparse storage format for cell connectivity.
-    max_squish: Smallest allowed cell size compared to the smallest regular cell.
-    **resolution_: For uniform grid, pass resolution as `int` and specify `bounds`.
-        Or pass a sequence of floats for each dimension, specifying the vertex positions along each axis.
-        This allows for variable cell stretching.
-
-Returns:
-    `Mesh`
-```
-
-### [Class] Sphere
-**Signature/Docstring:**
-```python
-N-dimensional sphere.
-Defined through center position and radius.
-```
+**Import Path:** `phi.flow.Mesh.boundary_connectivity`
 
 ### [Method] boundary_elements
+**Import Path:** `phi.flow.Mesh.boundary_elements`
+
+### [Method] bounding_box
+**Import Path:** `phi.flow.Mesh.bounding_box`
+
+### [Method] bounds
+**Import Path:** `phi.flow.Mesh.bounds`
+
+### [Method] cell_walk_towards
+**Import Path:** `phi.flow.Mesh.cell_walk_towards`
+
 **Signature/Docstring:**
 ```python
-No docstring available.
-```
-
-### [Method] staggered_grid
-**Signature/Docstring:**
-```python
-Creates a staggered grid matching the resolution and bounds of the domain.
-This is equal to calling `vector_grid()` with `type=StaggeredGrid`.
-
-The grid is created from the given `value` which must be one of the following:
-
-* Number (int, float, complex or zero-dimensional tensor): all grid values will be equal to `value`. This has a near-zero memory footprint.
-* Field: the given value is resampled to the grid cells of this Domain.
-* Tensor with spatial dimensions matcing the domain resolution: grid values will equal `value`.
-* Geometry: grid values are determined from the volume overlap between grid cells and geometry. Non-overlapping = 0, fully enclosed grid cell = 1.
-* function(location: Tensor) returning one of the above.
-
-The returned grid will have a vector dimension with size equal to the rank of the domain.
+If `location` is not within the cell at index `from_cell_idx`, moves to a closer neighbor cell.
 
 Args:
-  value: constant, Field, Tensor or function specifying the grid values
-  extrapolation: (optional) grid extrapolation, defaults to Domain.boundaries['vector']
+    location: Target location as `Tensor`.
+    start_cell_idx: Index of starting cell. Must be a valid cell index.
+    allow_exit: If `True`, returns an invalid index for points outside the mesh, otherwise keeps the current index.
 
 Returns:
-  Grid of specified type
+    index: Index of the neighbor cell or starting cell.
+    leaves_mesh: Whether the walk crossed the mesh boundary. Then `index` is invalid. This is only possible if `allow_exit` is true.
+    is_outside: Whether `location` was outside the cell at index `start_cell_idx`.
 ```
 
 ### [Method] distance_matrix
+**Import Path:** `phi.flow.Mesh.distance_matrix`
+
+### [Method] faces
+**Import Path:** `phi.flow.Mesh.faces`
+
 **Signature/Docstring:**
 ```python
-No docstring available.
-```
-
-### [Method] _surface_point_tangents
-**Signature/Docstring:**
-```python
-No docstring available.
-```
-
-### [Class] UniformGrid
-**Signature/Docstring:**
-```python
-An instance of UniformGrid represents all cells of a regular grid as a batch of boxes.
-```
-
-### [Method] staggered_cells
-**Signature/Docstring:**
-```python
-No docstring available.
-```
-
-### [Function] mesh
-**Signature/Docstring:**
-```python
-Create a mesh from vertex positions and vertex lists.
-
-Args:
-    vertices: `Tensor` with one instance and one channel dimension `vector`.
-    elements: Lists of vertex indices as 2D tensor.
-        The elements must be listed along an instance dimension, and the vertex indices belonging to the same polygon must be listed along a spatial dimension.
-    boundaries: Pass a `str` to assign one name to all boundary faces.
-        For multiple boundaries, pass a `dict` mapping group names `str` to lists of faces, defined by their vertices.
-        The last entry can be `None` to group all boundary faces not explicitly listed before.
-        The `boundaries` `dict` maps boundary names to a list of edges (point pairs) in 2D and faces (3 or more points) in 3D (not yet supported).
-    face_format: Storage format for cell connectivity, must be one of `csc`, `coo`, `csr`, `dense`.
+Assembles information about the boundaries of the elements that make up the surface.
+For 2D elements, the faces are edges, for 3D elements, the faces are planar elements.
 
 Returns:
-    `Mesh`
+    center: Center of face connecting a pair of elements. Shape (~elements, elements, vector).
+        Returns 0-vectors for unconnected elements.
+    area: Area of face connecting a pair of elements. Shape (~elements, elements).
+        Returns 0 for unconnected elements.
+    normal: Normal vector of face connecting a pair of elements. Shape (~elements, elements, vector).
+        Unconnected elements are assigned the vector 0.
+        The vector points out of polygon and into ~polygon.
 ```
 
-### [Method] grid
+### [Method] neighbor_offsets
+**Import Path:** `phi.flow.Mesh.neighbor_offsets`
+
 **Signature/Docstring:**
 ```python
-Creates a grid matching the resolution and bounds of the domain.
-The grid is created from the given `value` which must be one of the following:
+Returns shift vector to neighbor centroids and boundary faces.
+```
 
-* Number (int, float, complex or zero-dimensional tensor): all grid values will be equal to `value`. This has a near-zero memory footprint.
-* Field: the given value is resampled to the grid cells of this Domain.
-* Tensor with spatial dimensions matching the domain resolution: grid values will equal `value`.
-* Geometry: grid values are determined from the volume overlap between grid cells and geometry. Non-overlapping = 0, fully enclosed grid cell = 1.
-* function(location: Tensor) returning one of the above.
+### [Method] normals
+**Import Path:** `phi.flow.Mesh.normals`
+
+**Signature/Docstring:**
+```python
+Extrinsic element normal space. This is a 0D vector for solid elements and 1D for surface elements.
+```
+
+### [Method] shape
+**Import Path:** `phi.flow.Mesh.shape`
+
+### [Method] volume
+**Import Path:** `phi.flow.Mesh.volume`
+
+### [Function] differential
+**Import Path:** `phi.flow.advect.differential`
+
+**Usage:** `advect.differential(...)` or `from phi.flow.advect import differential; differential(...)`
+
+**Signature/Docstring:**
+```python
+Computes the differential advection term using the differentiation Scheme indicated by `order`, ´implicit´ and `upwind`.
+
+For a velocity field u, the advection term as it appears on the right-hand-side of a PDE is -u·∇u, including the negative sign.
+
+For unstructured meshes, computes -1/V ∑_f (n·u_prev) u ρ A
 
 Args:
-  value: constant, Field, Tensor or function specifying the grid values
-  type: type of Grid to create, must be either CenteredGrid or StaggeredGrid
-  extrapolation: (optional) grid extrapolation, defaults to Domain.boundaries['scalar']
+    u: Scalar or vector-valued `Field` sampled on a `CenteredGrid`, `StaggeredGrid` or `Mesh`.
+    velocity: `Field` that can be sampled at the elements of `u`.
+        For FVM, the advection term is typically linearized by setting `velocity = previous_velocity`.
+        Passing `velocity=u` yields non-linear terms which cannot be traced inside linear functions.
+    order: Spatial order of accuracy.
+        Higher orders entail larger stencils and more computation time but result in more accurate results assuming a large enough resolution.
+        Supported for grids: 2 explicit, 4 explicit, 6 implicit (inherited from `phi.field.spatial_gradient()` and resampling).
+        Passing order=4 currently uses 2nd-order resampling. This is work-in-progress.
+        For FVM, the order is used when interpolating centroid values to faces if needed.
+    implicit: When a `Solve` object is passed, performs an implicit operation with the specified solver and tolerances.
+        Otherwise, an explicit stencil is used.
+    upwind: Whether to use upwind interpolation. Only supported for FVM at the moment.
 
 Returns:
-    Grid of specified type
+    Differential convection term as `Field` on the same geometry.
 ```
 
-### [Function] build_quadrilaterals
+### [Function] euler
+**Import Path:** `phi.flow.advect.euler`
+
+**Usage:** `advect.euler(...)` or `from phi.flow.advect import euler; euler(...)`
+
 **Signature/Docstring:**
 ```python
-No docstring available.
+Euler integrator. 
 ```
+
+### [Function] finite_rk4
+**Import Path:** `phi.flow.advect.finite_rk4`
+
+**Usage:** `advect.finite_rk4(...)` or `from phi.flow.advect import finite_rk4; finite_rk4(...)`
+
+**Signature/Docstring:**
+```python
+Runge-Kutta-4 integrator with Euler fallback where velocity values are NaN. 
+```
+
+### [Function] rk4
+**Import Path:** `phi.flow.advect.rk4`
+
+**Usage:** `advect.rk4(...)` or `from phi.flow.advect import rk4; rk4(...)`
+
+**Signature/Docstring:**
+```python
+Runge-Kutta-4 integrator. 
+```
+
+### [Function] differential
+**Import Path:** `phi.flow.diffuse.differential`
+
+**Usage:** `diffuse.differential(...)` or `from phi.flow.diffuse import differential; differential(...)`
+
+**Signature/Docstring:**
+```python
+Compute the differential diffusion term, d·∇²u.
+For grids, uses a finite difference scheme specified by `order` and `implicit`.
+For FVM, the scheme is specified via `order` and `upwind`.
+
+In contrast to `explicit` and `implicit`, accuracy can be increased by using stencils of higher-order rather than calculating sub-steps.
+
+Args:
+    u: Scalar or vector-valued `Field` sampled on a `CenteredGrid`, `StaggeredGrid` or centered `Mesh`.
+    diffusivity: Dynamic viscosity, i.e. diffusion per time. Constant or varying by cell.
+    gradient: Only used by FVM at the moment. Approximate gradient of `u`, e.g. ∇u of the previous time step.
+        If `None`, approximates the gradient as `(u_neighbor - u_self) / distance`.
+    order: Spatial order of accuracy.
+        Higher orders entail larger stencils and more computation time but result in more accurate results assuming a large enough resolution.
+        Supported: 2 explicit, 4 explicit, 6 implicit (inherited from `phi.field.laplace()`).
+        For FVM, the order is used when interpolating `v` and `prev_v` to cell faces if needed.
+    implicit: When a `Solve` object is passed, performs an implicit operation with the specified solver and tolerances.
+        Otherwise, an explicit stencil is used.
+    upwind: For unstructured meshes only. Whether to use upwind interpolation.
+    correct_skew: If `True`, adds a correction term for cell skewness. This requires `gradient` to be passed.
+
+Returns:
+    Differential diffusion as a `Field` on the same geometry.
+```
+
+### [Function] explicit
+**Import Path:** `phi.flow.diffuse.explicit`
+
+**Usage:** `diffuse.explicit(...)` or `from phi.flow.diffuse import explicit; explicit(...)`
+
+**Signature/Docstring:**
+```python
+Explicit Euler diffusion with substeps.
+
+Simulate a finite-time diffusion process of the form dF/dt = α · ΔF on a given `Field` Field with diffusion coefficient α.
+
+Args:
+    u: CenteredGrid, StaggeredGrid or ConstantField
+    diffusivity: Diffusion per time. `diffusion_amount = diffusivity * dt`
+        Can be a number, `phi.Tensor` or `phi.field.Field`.
+        If a channel dimension is present, it will be interpreted as non-isotropic diffusion.
+    dt: Time interval. `diffusion_amount = diffusivity * dt`
+    substeps: number of iterations to use (Default value = 1)
+    order: Spatial order of accuracy.
+        Higher orders entail larger stencils and more computation time but result in more accurate results assuming a large enough resolution.
+        Supported: 2 explicit, 4 explicit, 6 implicit (inherited from `phi.field.laplace()`).
+        For FVM, the order is used when interpolating `v` and `prev_v` to cell faces if needed.
+    implicit: When a `Solve` object is passed, performs a spatially implicit operation with the specified solver and tolerances.
+        Otherwise, an explicit stencil is used.
+    gradient: Only used by FVM at the moment. Approximate gradient of `u`, e.g. ∇u of the previous time step.
+        If `None`, approximates the gradient as `(u_neighbor - u_self) / distance`.
+    upwind: For unstructured meshes only. Whether to use upwind interpolation.
+    correct_skew: If `True`, adds a correction term for cell skewness. This requires `gradient` to be passed.
+
+Returns:
+    Diffused field of same type as `field`.
+```
+
+### [Class] Obstacle
+**Import Path:** `phi.flow.Obstacle`
+
+**Usage:** `from phi.flow.Obstacle import Obstacle; Obstacle(...)` or direct instantiation from phi.flow
+
+**Signature/Docstring:**
+```python
+An obstacle defines boundary conditions inside a geometry.
+It can also have a linear and angular velocity.
+```
+
+### [Method] at
+**Import Path:** `phi.flow.Obstacle.at`
+
+### [Method] rotated
+**Import Path:** `phi.flow.Obstacle.rotated`
 
 ### [Function] apply_boundary_conditions
+**Import Path:** `phi.flow.fluid.apply_boundary_conditions`
+
+**Usage:** `fluid.apply_boundary_conditions(...)` or `from phi.flow.fluid import apply_boundary_conditions; apply_boundary_conditions(...)`
+
 **Signature/Docstring:**
 ```python
 Enforces velocities boundary conditions on a velocity grid.
@@ -473,66 +460,58 @@ Returns:
     Velocity of same type as `velocity`
 ```
 
-### [Method] _central_point_normals
+### [Function] incompressible_rk4
+**Import Path:** `phi.flow.fluid.incompressible_rk4`
+
+**Usage:** `fluid.incompressible_rk4(...)` or `from phi.flow.fluid import incompressible_rk4; incompressible_rk4(...)`
+
 **Signature/Docstring:**
 ```python
-No docstring available.
-```
+Implements the 4th-order Runge-Kutta time advancement scheme for incompressible vector fields.
+This approach is inspired by [Kampanis et. al., 2006](https://www.sciencedirect.com/science/article/pii/S0021999105005061) and incorporates the pressure treatment into the time step.
 
-### [Method] boundary_faces
-**Signature/Docstring:**
-```python
-Slices on the dual dimensions to mark boundary faces.
-
-Regular grids use the keys (dim, is_upper) to identify boundaries.
-Unstructured meshes use string identifiers for the boundaries.
-Dynamic graphs return slices along the dual dimensions.
+Args:
+    pde: Momentum equation. Function that computes all PDE terms not related to pressure, e.g. diffusion, advection, external forces.
+    velocity: Velocity grid at time `t`.
+    pressure: Pressure at time `t`.
+    dt: Time increment to integrate.
+    pressure_order: spatial order for derivative computations.
+        For Higher-order schemes, the laplace operation is not conducted with a stencil exactly corresponding to the one used in divergence calculations but a smaller one instead.
+        While this disrupts the formal correctness of the method it only induces insignificant errors and yields considerable performance gains.
+        supported: explicit 2/4th order - implicit 6th order (obstacles are only supported with explicit 2nd order)
+    pressure_solve: `Solve` object specifying method and tolerances for the implicit pressure solve.
+    **pde_aux_kwargs: Auxiliary arguments for `pde`. These are considered constant over time.
 
 Returns:
-    Map from `name` to slicing `dict`.
-```
-
-### [Method] approximate_signed_distance
-**Signature/Docstring:**
-```python
-No docstring available.
+    velocity: Velocity at time `t+dt`, same type as `velocity`.
+    pressure: Pressure grid at time `t+dt`, `CenteredGrid`.
 ```
 
 ---
 
 ## 2. GRAPH INTERCONNECTIONS & DEPENDENCIES
 
-- [Class] AngularVelocity --(Has Method)--> [Method] _sample
+- [Class] Box --(Has Method)--> [Method] boundary_elements
 - [Class] Box --(Has Method)--> [Method] push
-- [Class] Cylinder --(Has Method)--> [Method] boundary_elements
-- [Class] Domain --(Has Method)--> [Method] grid
-- [Class] Domain --(Has Method)--> [Method] staggered_grid
-- [Class] Domain --(Has Method)--> [Method] vector_grid
+- [Class] Field --(Has Method)--> [Method] boundary_names
+- [Class] Field --(Has Method)--> [Method] laplace
 - [Class] Geometry --(Has Method)--> [Method] boundary_elements
 - [Class] Geometry --(Has Method)--> [Method] boundary_faces
-- [Class] HardGeometryMask --(Has Method)--> [Method] _sample
+- [Class] Geometry --(Has Method)--> [Method] shape
 - [Class] Mesh --(Has Method)--> [Method] boundary_connectivity
+- [Class] Mesh --(Has Method)--> [Method] boundary_elements
+- [Class] Mesh --(Has Method)--> [Method] bounding_box
+- [Class] Mesh --(Has Method)--> [Method] bounds
+- [Class] Mesh --(Has Method)--> [Method] cell_walk_towards
 - [Class] Mesh --(Has Method)--> [Method] distance_matrix
-- [Class] Sphere --(Has Method)--> [Method] boundary_elements
-- [Class] SplineSolid --(Has Method)--> [Method] _central_point_normals
-- [Class] SplineSolid --(Has Method)--> [Method] _central_point_tangents
-- [Class] SplineSolid --(Has Method)--> [Method] _central_tangents
-- [Class] SplineSolid --(Has Method)--> [Method] _surface_point_tangents
-- [Class] SplineSolid --(Has Method)--> [Method] approximate_signed_distance
-- [Class] SplineSolid --(Has Method)--> [Method] volume
+- [Class] Mesh --(Has Method)--> [Method] faces
+- [Class] Mesh --(Has Method)--> [Method] neighbor_offsets
+- [Class] Mesh --(Has Method)--> [Method] normals
+- [Class] Mesh --(Has Method)--> [Method] shape
+- [Class] Mesh --(Has Method)--> [Method] volume
+- [Class] Obstacle --(Has Method)--> [Method] at
+- [Class] Obstacle --(Has Method)--> [Method] rotated
+- [Class] Point --(Has Method)--> [Method] boundary_elements
+- [Class] UniformGrid --(Has Method)--> [Method] boundary_faces
+- [Class] UniformGrid --(Has Method)--> [Method] stagger
 - [Class] UniformGrid --(Has Method)--> [Method] staggered_cells
-- [File] integrate.py --(Defines Class)--> [Class] Obstacle
-- [File] integrate.py --(Defines Function)--> [Function] StaggeredGrid
-- [File] integrate.py --(Defines Function)--> [Function] _create_boundary_conditions
-- [File] integrate.py --(Defines Function)--> [Function] apply_boundary_conditions
-- [File] integrate.py --(Defines Function)--> [Function] build_faces
-- [File] integrate.py --(Defines Function)--> [Function] build_mesh
-- [File] integrate.py --(Defines Function)--> [Function] build_quadrilaterals
-- [File] integrate.py --(Defines Function)--> [Function] euler
-- [File] integrate.py --(Defines Function)--> [Function] euler_step
-- [File] integrate.py --(Defines Function)--> [Function] eval_nurbs_bases
-- [File] integrate.py --(Defines Function)--> [Function] get_coefficients
-- [File] integrate.py --(Defines Function)--> [Function] mesh
-- [File] integrate.py --(Defines Function)--> [Function] perform_finite_difference_operation
-- [File] integrate.py --(Defines Function)--> [Function] rk4
-- [File] integrate.py --(Defines Function)--> [Function] solve_resolution_with_margin_cells

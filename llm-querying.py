@@ -168,7 +168,7 @@ class E2ERagPipeline:
         with self.driver.session() as session:
             query = """
                 MATCH (seed) WHERE seed.id IN $seed_ids
-                OPTIONAL MATCH path = (seed)-[rel:has_parameter|defines_function|defines_class|has_method|returns_type|has_description*1..2]-(neighbor)
+                OPTIONAL MATCH path = (seed)-[rel:has_parameter|defines_function|defines_class|has_method|returns_type|has_return_type|has_type|has_description*1..2]-(neighbor)
                 UNWIND relationships(path) AS r
                 WITH DISTINCT startNode(r) AS src, r, endNode(r) AS tgt
                 
@@ -265,91 +265,167 @@ class E2ERagPipeline:
             pub_flag = "PUBLIC" if row.get('tgt_is_public') else "INTERNAL"
             print(f"  Score: {final_s:.4f} (Base: {base_s:.4f}) | [{pub_flag}] [{row.get('tgt_type')}] {target}")
 
-        filtered_results = [item[2] for item in scored_rows if item[0] >= min_score][:top_k]
-        print(f"✓ Retained {len(filtered_results)} high-confidence triples (score >= {min_score})")
+        filtered_results = [
+            item[2]
+            for item in scored_rows
+            if item[0] >= min_score
+            and (item[2].get("src_is_public", False) or item[2].get("tgt_is_public", False))
+        ][:top_k]
+        print(f"✓ Retained {len(filtered_results)} high-confidence public-api triples (score >= {min_score})")
 
         return filtered_results
 
     def serialize_subgraph(self, raw_relations: List[dict]) -> str:
-        """Formats graph context, separating Public APIs from Internal Fallback components."""
+        """Formats the retrievable public API context and omits private/internal symbols by default."""
         if not raw_relations:
             return "No matching codebase components found."
 
         nodes_dict = {}
         relationships = set()
+        parameter_types = {}  # Map from parameter ID to type name
+        return_types = {}  # Map from function/method ID to return type name
 
+        # First pass: collect all nodes and build parameter-to-type and return-type mappings
         for row in raw_relations:
-            src_id = row["src_id"]
-            tgt_id = row["tgt_id"]
-            rel = row["relationship"]
+            src_id = row.get("src_id")
+            tgt_id = row.get("tgt_id")
+            rel = row.get("relationship")
 
-            if src_id not in nodes_dict:
-                nodes_dict[src_id] = {
-                    "name": row["src_name"] or "Unknown",
-                    "type": row["src_type"] or "Unknown",
+            if src_id is None:
+                src_id = "__missing_src__"
+            if tgt_id is None:
+                tgt_id = "__missing_tgt__"
+
+            src_key = str(src_id)
+            tgt_key = str(tgt_id)
+
+            if src_key not in nodes_dict:
+                nodes_dict[src_key] = {
+                    "name": row.get("src_name") or "Unknown",
+                    "type": row.get("src_type") or "Unknown",
                     "is_public": row.get("src_is_public", False),
                     "import_path": row.get("src_import_path", ""),
-                    "docstring": row["src_doc"] if row["src_type"] != "GeneratedDescription" else "",
-                    "description": ""
+                    "docstring": row.get("src_doc") if row.get("src_type") != "GeneratedDescription" else "",
+                    "description": "",
+                    "parameters": [],
+                    "return_type": ""
                 }
 
-            if tgt_id not in nodes_dict:
-                nodes_dict[tgt_id] = {
-                    "name": row["tgt_name"] or "Unknown",
-                    "type": row["tgt_type"] or "Unknown",
+            if tgt_key not in nodes_dict:
+                nodes_dict[tgt_key] = {
+                    "name": row.get("tgt_name") or "Unknown",
+                    "type": row.get("tgt_type") or "Unknown",
                     "is_public": row.get("tgt_is_public", False),
                     "import_path": row.get("tgt_import_path", ""),
-                    "docstring": row["tgt_doc"] if row["tgt_type"] != "GeneratedDescription" else "",
-                    "description": ""
+                    "docstring": row.get("tgt_doc") if row.get("tgt_type") != "GeneratedDescription" else "",
+                    "description": "",
+                    "parameters": [],
+                    "return_type": ""
                 }
 
-            if rel == "has_description" and row["tgt_type"] == "GeneratedDescription":
-                nodes_dict[src_id]["description"] = row["tgt_doc"] or ""
+            # Build parameter-to-type mapping: Parameter -[has_type]-> Type
+            if rel == "has_type" and row.get("src_type") == "Parameter":
+                parameter_types[src_key] = row.get("tgt_name", "Unknown")
+            
+            # Build return-type mapping: Function/Method -[has_return_type|returns_type]-> Type
+            if rel in ("has_return_type", "returns_type") and row.get("src_type") in ("Function", "Method"):
+                return_types[src_key] = row.get("tgt_name", "Unknown")
+
+            if rel == "has_description" and row.get("tgt_type") == "GeneratedDescription":
+                nodes_dict[src_key]["description"] = row.get("tgt_doc") or ""
+            elif rel == "has_parameter":
+                param_id = tgt_key
+                param_name = row.get('tgt_name', 'param')
+                param_type = parameter_types.get(param_id, "")
+                param_info = f"{param_name}"
+                if param_type:
+                    param_info += f" ({param_type})"
+                if row.get("tgt_doc"):
+                    param_info += f": {row.get('tgt_doc', '')}"
+                if param_info not in nodes_dict[src_key]["parameters"]:
+                    nodes_dict[src_key]["parameters"].append(param_info)
+
+        # Apply return types and fill in any missing parameter type info
+        for node_id, node_info in nodes_dict.items():
+            if node_id in return_types:
+                node_info["return_type"] = return_types[node_id]
+
+        public_node_ids = {
+            nid
+            for nid, info in nodes_dict.items()
+            if info["type"] != "GeneratedDescription" and info["is_public"]
+        }
 
         for row in raw_relations:
-            src_id = row["src_id"]
-            tgt_id = row["tgt_id"]
-            rel = row["relationship"]
+            src_id = row.get("src_id")
+            tgt_id = row.get("tgt_id")
+            rel = row.get("relationship")
 
-            if rel and rel != "has_description" and row["tgt_type"] != "GeneratedDescription":
+            if src_id is None or tgt_id is None:
+                continue
+
+            src_key = str(src_id)
+            tgt_key = str(tgt_id)
+
+            if src_key not in public_node_ids or tgt_key not in public_node_ids:
+                continue
+
+            if rel and rel != "has_description" and row.get("tgt_type") != "GeneratedDescription":
                 rel_label = rel.replace('_', ' ').title()
-                src_str = f"[{nodes_dict[src_id]['type']}] {nodes_dict[src_id]['name']}"
-                tgt_str = f"[{nodes_dict[tgt_id]['type']}] {nodes_dict[tgt_id]['name']}"
+                src_str = f"[{nodes_dict[src_key]['type']}] {nodes_dict[src_key]['name']}"
+                tgt_str = f"[{nodes_dict[tgt_key]['type']}] {nodes_dict[tgt_key]['name']}"
                 relationships.add(f"- {src_str} --({rel_label})--> {tgt_str}")
 
-        # Split into Public vs Internal lists
-        public_nodes = [info for nid, info in nodes_dict.items() if info["type"] != "GeneratedDescription" and info["is_public"]]
-        internal_nodes = [info for nid, info in nodes_dict.items() if info["type"] != "GeneratedDescription" and not info["is_public"]]
+        public_nodes = [
+            nodes_dict[nid]
+            for nid in sorted(public_node_ids)
+            if nodes_dict[nid]["type"] != "GeneratedDescription"
+        ]
 
         md_context = "# CODEBASE COMPONENT SPECIFICATIONS & API REFERENCE\n\n"
-        
-        # 1. Public Endpoints First
         md_context += "## 1. PRIMARY PUBLIC API ENDPOINTS (PREFER USING THESE)\n\n"
+
         if not public_nodes:
             md_context += "_No explicit public APIs retrieved. Rely on standard framework imports._\n\n"
+            return md_context
+
         for info in public_nodes:
             md_context += f"### [{info['type']}] {info['name']}\n"
             if info["import_path"]:
-                md_context += f"**Import:** `{info['import_path']}`\n\n"
+                import_path = info["import_path"]
+                md_context += f"**Import Path:** `{import_path}`\n\n"
+                
+                # Extract module context for Functions to show calling convention
+                if info["type"] == "Function" and "." in import_path:
+                    parts = import_path.rsplit(".", 1)
+                    if len(parts) == 2:
+                        module_path, func_name = parts
+                        # Extract the module name (last component)
+                        module_name = module_path.split(".")[-1]
+                        md_context += f"**Usage:** `{module_name}.{func_name}(...)` or `from {module_path} import {func_name}; {func_name}(...)`\n\n"
+                elif info["type"] == "Class" and "." in import_path:
+                    parts = import_path.rsplit(".", 1)
+                    if len(parts) == 2:
+                        module_path, class_name = parts
+                        md_context += f"**Usage:** `from {import_path} import {class_name}; {class_name}(...)` or direct instantiation from phi.flow\n\n"
+            
             if info["description"]:
-                md_context += f"**Functional Purpose:**\n{info['description']}\n\n"
+                md_context += f"**Description:**\n{info['description']}\n\n"
+            
+            if info["parameters"]:
+                md_context += f"**Parameters:**\n"
+                for param in info["parameters"]:
+                    md_context += f"- {param}\n"
+                md_context += "\n"
+            
+            if info["return_type"]:
+                md_context += f"**Returns:** `{info['return_type']}`\n\n"
+            
             if info["docstring"] and info["docstring"] != "No docstring available.":
                 md_context += f"**Signature/Docstring:**\n```python\n{info['docstring']}\n```\n\n"
 
-        # 2. Internal/Private Nodes as Fallbacks
-        if internal_nodes:
-            md_context += "---\n\n## 2. INTERNAL UTILITIES & ADVANCED HELPERS (USE ONLY IF UNPREVENTABLE)\n\n"
-            for info in internal_nodes:
-                md_context += f"### [INTERNAL {info['type']}] {info['name']}\n"
-                if info["import_path"]:
-                    md_context += f"**Location:** `{info['import_path']}`\n\n"
-                if info["description"]:
-                    md_context += f"**Functional Purpose:**\n{info['description']}\n\n"
-                if info["docstring"] and info["docstring"] != "No docstring available.":
-                    md_context += f"**Signature/Docstring:**\n```python\n{info['docstring']}\n```\n\n"
-
         if relationships:
-            md_context += "---\n\n## 3. GRAPH INTERCONNECTIONS & DEPENDENCIES\n\n"
+            md_context += "---\n\n## 2. GRAPH INTERCONNECTIONS & DEPENDENCIES\n\n"
             md_context += "\n".join(sorted(relationships)) + "\n"
 
         return md_context
@@ -363,11 +439,18 @@ class E2ERagPipeline:
             max_tokens=20000,
             system=(
                 "You are an expert computational software architect specializing in the PhiFlow differentiable physics framework. "
-                "Your objective is to generate an executable Python simulation script based on the user's task requirements.\n\n"
-                "CRITICAL IMPORT RULES:\n"
-                "1. Always prefer functions and classes listed under 'PRIMARY PUBLIC API ENDPOINTS'.\n"
-                "2. Do NOT import from internal module locations unless no public API equivalence is provided.\n"
-                "3. Respect the import signatures and paths specified in the context."
+                "Your objective is to generate an executable Python simulation script based ONLY on the user's task requirements and the retrieved public API context.\n\n"
+                "ABSOLUTE HARD REQUIREMENTS:\n"
+                "Return ONLY raw Python code, with NO markdown fences (```python, ``` etc.), NO prose, NO explanation, and NO comments.\n"
+                "The output must be a complete, runnable script that can be saved directly to a .py file and executed immediately.\n"
+                "CRITICAL: Never invent, define, or use functions or classes that are NOT explicitly documented in the provided context.\n"
+                "Always use ONLY functions and classes from the retrieved public API endpoints.\n"
+                "Do NOT import from internal/private module locations or assume undocumented APIs exist.\n"
+                "Use the exact import paths and signatures shown in the context. Do not guess or modify them.\n"
+                "If a required function or class is not in the context, find an alternative approach using only what IS provided.\n"
+                "Ensure all variables, classes, functions, and imports are valid and defined in the context.\n"
+                "The script should produce the requested simulation or visualization behavior.\n"
+                "Do not include comments, docstrings, markdown blocks, or any textual wrappers of any kind."
             ),
             messages=[
                 {
@@ -377,14 +460,27 @@ class E2ERagPipeline:
                         f"{codebase_context}\n\n"
                         f"[USER SIMULATION TASK REQUIREMENTS]\n"
                         f"{task_description}\n\n"
-                        f"Output only the complete Python simulation script inside standard ```python ... ``` formatting."
+                        f"Generate the final Python script now. Output ONLY valid Python code with NO markdown fences, NO comments, and NO extra text. Every function and class must be from the context above."
                     )
                 }
             ]
         )
         for block in response.content:
             if block.type == "text":
-                return block.text
+                raw_code = block.text.strip()
+                
+                # Strip markdown fences if present
+                if raw_code.startswith("```"):
+                    lines = raw_code.split("\n")
+                    # Remove opening fence (and optional language specifier)
+                    if lines[0].startswith("```"):
+                        lines = lines[1:]
+                    # Remove closing fence
+                    if lines and lines[-1].strip() == "```":
+                        lines = lines[:-1]
+                    raw_code = "\n".join(lines).strip()
+                
+                return raw_code
 
         raise ValueError("No text block found in Claude's response.")
 
@@ -395,7 +491,7 @@ class E2ERagPipeline:
 
 if __name__ == "__main__":
     all_dirs = [
-        "heat_flow", "julia_set", "lid_driven_cavity", 
+        "heat_flow","burgers2d","julia_set", "lid_driven_cavity", 
         "reaction_diffusion", "smoke_plume", "structural_mechanics", "wake_flow"
     ]
     

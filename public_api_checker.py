@@ -89,8 +89,9 @@ if __name__ == "__main__":
                 MATCH (f:File {is_public_api: true})-[:defines_function|defines_class]->(n)
                 WHERE (n:Function OR n:Class)
                   AND NOT n.name STARTS WITH '_'
+                WITH f, n, replace(f.name, '.py', '') AS mod_name
                 SET n.is_public_api = true,
-                    n.import_path = coalesce(n.import_path, 'phi.flow.' + n.name)
+                    n.import_path = coalesce(n.import_path, 'phi.flow.' + mod_name + '.' + n.name)
                 RETURN count(DISTINCT n) AS count
             """)
             print(f"  --> Tagged {res2.single()['count']} public functions/classes inside exported modules.")

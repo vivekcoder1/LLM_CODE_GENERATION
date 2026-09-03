@@ -1,5 +1,3 @@
-
-
 """
 Heat Flow Simulation with Variable Conductivity using PhiFlow
 ================================================================

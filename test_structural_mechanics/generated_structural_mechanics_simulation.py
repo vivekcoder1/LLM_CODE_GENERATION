@@ -1,42 +1,37 @@
-from phi.flow import Box, Field, Obstacle, StaggeredGrid, UniformGrid, fluid, advect, diffuse, vec, Solve
+from phi.flow import *
 
-domain = Box(x=100, y=100)
-resolution = dict(x=64, y=64)
-grid = UniformGrid(bounds=domain, **resolution)
+beam_length = 10.0
+grid_resolution = 100
+dx = beam_length / grid_resolution
+flexural_rigidity = 1.0
+mass_per_length = 1.0
+time_step = 0.0005
+num_time_steps = 200
 
-viscosity = 0.01
-dt = 0.1
-num_steps = 20
+domain_bounds = Box(x=beam_length)
+grid_shape = dict(x=grid_resolution)
 
-pillar = Obstacle(Box(x=(45, 55), y=(45, 55)))
-obstacles = [pillar]
+initial_deflection = CenteredGrid(
+    lambda x: math.exp(-((x.vector['x'] - beam_length / 2) ** 2) / (2 * (beam_length / 20) ** 2)),
+    extrapolation.ZERO,
+    bounds=domain_bounds,
+    **grid_shape
+)
 
-velocity = StaggeredGrid(vec(x=1.0, y=0.0), boundary=0, bounds=domain, resolution=resolution)
-pressure = Field(grid, values=0.0, boundary=0)
+displacement = initial_deflection
+velocity = CenteredGrid(0.0, extrapolation.ZERO, bounds=domain_bounds, **grid_shape)
 
-velocity = fluid.apply_boundary_conditions(velocity, obstacles)
-
-def structural_flow_pde(v, p, nu):
-    advection_term = advect.differential(v, v, order=2)
-    diffusion_term = diffuse.differential(v, diffusivity=nu, order=2)
-    return advection_term + diffusion_term
-
+displacement_history = [displacement]
 velocity_history = [velocity]
-pressure_history = [pressure]
 
-for step in range(num_steps):
-    velocity, pressure = fluid.incompressible_rk4(
-        structural_flow_pde,
-        velocity,
-        pressure,
-        dt,
-        pressure_order=2,
-        pressure_solve=Solve('CG', 1e-5, 1e-5),
-        nu=viscosity
-    )
-    velocity = fluid.apply_boundary_conditions(velocity, obstacles)
+for step in range(num_time_steps):
+    fourth_derivative = field.laplace(field.laplace(displacement))
+    acceleration = -(flexural_rigidity / mass_per_length) * fourth_derivative
+    velocity = velocity + time_step * acceleration
+    displacement = displacement + time_step * velocity
+    displacement_history.append(displacement)
     velocity_history.append(velocity)
-    pressure_history.append(pressure)
 
-for i, (v, p) in enumerate(zip(velocity_history, pressure_history)):
-    print(f"Time step {i}: max_pressure={float(p.values.max):.6f}, max_velocity_x={float(v.values.vector['x'].max):.6f}")
+for step_index, disp_field in enumerate(displacement_history):
+    midpoint_value = disp_field.values.numpy('x')[grid_resolution // 2]
+    print(f"Time step {step_index}: midpoint displacement = {midpoint_value:.6f}")

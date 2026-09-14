@@ -2,7 +2,7 @@ from phi.flow import *
 import numpy as np
 
 domain = Box(x=10, y=5)
-grid = UniformGrid(x=100, y=50, bounds=domain)
+res = spatial(x=100, y=50)
 
 def kappa_func(x, y):
     in_box1 = (y >= 2) & (y <= 3)
@@ -10,20 +10,25 @@ def kappa_func(x, y):
     inside = in_box1 | in_box2
     return math.where(inside, 1.01, 0.01)
 
-kappa_scalar = Field(grid, values=kappa_func, boundary=0.01)
-diffusivity = kappa_scalar * vec(x=1, y=0)
+kappa = CenteredGrid(kappa_func, extrapolation.ZERO_GRADIENT, x=100, y=50, bounds=domain)
 
-boundary = {'x-': 1, 'x+': ZERO_GRADIENT, 'y': PERIODIC}
-temperature = Field(grid, values=0.0, boundary=boundary)
+diffusivity = kappa * vec(x=1, y=0)
+
+boundary = {'x': (1.0, extrapolation.ZERO_GRADIENT), 'y': extrapolation.PERIODIC}
+
+temperature = CenteredGrid(0.0, boundary, x=100, y=50, bounds=domain)
 
 dt = 1.0
-steps = 100
+num_steps = 100
 
-trajectory = [temperature.values.numpy(('x', 'y'))]
+def step(u):
+    return diffuse.explicit(u, diffusivity, dt)
 
-for _ in range(steps):
-    temperature = diffuse.explicit(temperature, diffusivity, dt)
-    trajectory.append(temperature.values.numpy(('x', 'y')))
+trj = [temperature.values.numpy(('x', 'y'))]
 
-trajectory = np.stack(trajectory, axis=0)
-np.save('heat_flow_temperature_trj.npy', trajectory)
+for _ in range(num_steps):
+    temperature = step(temperature)
+    trj.append(temperature.values.numpy(('x', 'y')))
+
+temperature_trj = np.stack(trj, axis=0)
+np.save('heat_flow_trj.npy', temperature_trj)

@@ -1,4 +1,3 @@
-```python
 """
 Lid-Driven Cavity Flow Simulation using PhiFlow
 =================================================

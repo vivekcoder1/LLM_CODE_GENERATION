@@ -1,0 +1,4 @@
+label,generated,ground_truth,mean_l2,max_l2,rmse
+julia_set,test_julia_set/julia_set_trj.npy,test_julia_set\julia_set_ground_truth_trj.npy,1551.2946792478624,4389.999430523881,1974.010298858646
+reaction_diffusion_u,test_reaction_diffusion/reaction_diffusion_u_trj.npy,test_reaction_diffusion\reaction_diffusion_ground_truth_u_trj.npy,3.4535277661947686e-06,5.751848220825195e-06,3.7595176801983268e-06
+reaction_diffusion_v,test_reaction_diffusion/reaction_diffusion_v_trj.npy,test_reaction_diffusion\reaction_diffusion_ground_truth_v_trj.npy,4.572451737224804e-06,8.242237986666813e-06,4.771784218008951e-06

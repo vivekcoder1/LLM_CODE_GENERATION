@@ -200,10 +200,12 @@ class E2ERagPipeline:
         raw_relations: List[dict], 
         top_k: int = 35, 
         min_score: float = 0.15,
+        method_min_score: float = 0.30,
+        max_methods_per_class: int = 8,
         public_boost: float = 0.20,
         private_penalty: float = 0.15
     ) -> List[dict]:
-        """Filters and reranks triples, strongly prioritizing public API endpoints."""
+        """Filters and reranks triples while limiting noisy public class methods."""
         if not raw_relations:
             return []
             
@@ -265,17 +267,30 @@ class E2ERagPipeline:
             pub_flag = "PUBLIC" if row.get('tgt_is_public') else "INTERNAL"
             print(f"  Score: {final_s:.4f} (Base: {base_s:.4f}) | [{pub_flag}] [{row.get('tgt_type')}] {target}")
 
-        filtered_results = [
-            item[2]
-            for item in scored_rows
-            if item[0] >= min_score
-            and (item[2].get("src_is_public", False) or item[2].get("tgt_is_public", False))
-        ][:top_k]
+        filtered_results = []
+        method_counts = {}
+        for final_score, base_score, row in scored_rows:
+            if final_score < min_score:
+                continue
+            if not (row.get("src_is_public", False) or row.get("tgt_is_public", False)):
+                continue
+
+            if row.get("tgt_type") == "Method":
+                if base_score < method_min_score:
+                    continue
+                owner = row.get("src_id")
+                method_counts[owner] = method_counts.get(owner, 0) + 1
+                if method_counts[owner] > max_methods_per_class:
+                    continue
+
+            filtered_results.append(row)
+            if len(filtered_results) == top_k:
+                break
         print(f"✓ Retained {len(filtered_results)} high-confidence public-api triples (score >= {min_score})")
 
         return filtered_results
 
-    def serialize_subgraph(self, raw_relations: List[dict]) -> str:
+    def serialize_subgraph(self, raw_relations: List[dict], max_nodes: int = 18) -> str:
         """Formats the retrievable public API context and omits private/internal symbols by default."""
         if not raw_relations:
             return "No matching codebase components found."
@@ -350,11 +365,26 @@ class E2ERagPipeline:
             if node_id in return_types:
                 node_info["return_type"] = return_types[node_id]
 
-        public_node_ids = {
-            nid
-            for nid, info in nodes_dict.items()
-            if info["type"] != "GeneratedDescription" and info["is_public"]
-        }
+        ordered_public_node_ids = []
+        for row in raw_relations:
+            for node_id, node_type, is_public in (
+                (row.get("src_id"), row.get("src_type"), row.get("src_is_public", False)),
+                (row.get("tgt_id"), row.get("tgt_type"), row.get("tgt_is_public", False)),
+            ):
+                node_key = str(node_id) if node_id is not None else ""
+                if (
+                    node_key in nodes_dict
+                    and node_key not in ordered_public_node_ids
+                    and node_type not in ("GeneratedDescription", "Method")
+                    and is_public
+                ):
+                    ordered_public_node_ids.append(node_key)
+                if len(ordered_public_node_ids) >= max_nodes:
+                    break
+            if len(ordered_public_node_ids) >= max_nodes:
+                break
+
+        public_node_ids = set(ordered_public_node_ids)
 
         for row in raw_relations:
             src_id = row.get("src_id")
@@ -378,7 +408,7 @@ class E2ERagPipeline:
 
         public_nodes = [
             nodes_dict[nid]
-            for nid in sorted(public_node_ids)
+            for nid in ordered_public_node_ids
             if nodes_dict[nid]["type"] != "GeneratedDescription"
         ]
 
@@ -447,6 +477,9 @@ class E2ERagPipeline:
                 "Always use ONLY functions and classes from the retrieved public API endpoints.\n"
                 "Do NOT import from internal/private module locations or assume undocumented APIs exist.\n"
                 "Use the exact import paths and signatures shown in the context. Do not guess or modify them.\n"
+                "PhiFlow compatibility rules: pass grid resolutions as spatial(x=..., y=...) or spatial(x=..., y=..., z=...), never as Python tuples; construct vectors with vec(x=..., y=..., z=...) or tensor(..., channel(vector='...')).\n"
+                "For cylinder(), include named center dimensions. In 2D, pass axis=vec(x=0, y=1) when depth is omitted; in 3D include z in the center and use axis='z' only with a z-dimensional center.\n"
+                "For make_incompressible(), pass obstacles with the named obstacles= argument. For pressure solves, use the documented solve parameter and avoid unconstrained singular systems.\n"
                 "If a required function or class is not in the context, find an alternative approach using only what IS provided.\n"
                 "Ensure all variables, classes, functions, and imports are valid and defined in the context.\n"
                 "The script should produce the requested simulation or visualization behavior.\n"
@@ -537,14 +570,16 @@ if __name__ == "__main__":
             filtered_graph_data = pipeline.filter_subgraph(
                 task_sheet_content, 
                 raw_graph_data, 
-                top_k=35, 
+                top_k=24, 
                 min_score=0.15,
+                method_min_score=0.30,
+                max_methods_per_class=3,
                 public_boost=0.20,
                 private_penalty=0.15
             )
             print(f"--- Retained Top {len(filtered_graph_data)} Relevant Triples ---")
 
-            formatted_context = pipeline.serialize_subgraph(filtered_graph_data)
+            formatted_context = pipeline.serialize_subgraph(filtered_graph_data, max_nodes=18)
             
             context_file = output_dir / "retrieved_context.md"
             with open(context_file, "w", encoding="utf-8") as cf:

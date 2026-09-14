@@ -1,30 +1,34 @@
 from phi.flow import *
+from phi.flow import advect, diffuse, fluid
 import numpy as np
 
-Nx = Ny = 64
-Lx, Ly = 40.0, 20.0
+Lx = 40.0
+Ly = 20.0
+Nx = 64
+Ny = 64
 nu = 0.1
 dt = 0.5
-n_steps = 100
+num_steps = 100
 
 domain = Box(x=Lx, y=Ly)
+grid = UniformGrid(x=Nx, y=Ny, bounds=domain)
 
-def initial_velocity(x, y):
-    val = math.exp(-(x - Lx / 2) ** 2 - (y - Ly / 2) ** 2)
-    return vec(x=val, y=val)
+def init_velocity(x, y):
+    u0 = math.exp(-(x - Lx / 2) ** 2 - (y - Ly / 2) ** 2)
+    return vec(x=u0, y=u0)
 
-velocity = CenteredGrid(initial_velocity, extrapolation.PERIODIC, x=Nx, y=Ny, bounds=domain)
+velocity = Field(grid, values=init_velocity, boundary=extrapolation.PERIODIC)
 
 def step(velocity, dt):
-    advection = advect.differential(velocity, velocity, order=2)
-    diffusion = diffuse.differential(velocity, nu, order=2)
-    return velocity + dt * (advection + diffusion)
+    diffusion_term = diffuse.differential(velocity, nu)
+    advection_term = advect.differential(velocity, velocity)
+    return velocity + dt * (diffusion_term + advection_term)
 
 trajectory = [velocity.values.numpy(('x', 'y', 'vector'))]
 
-for _ in range(n_steps):
+for _ in range(num_steps):
     velocity = step(velocity, dt)
     trajectory.append(velocity.values.numpy(('x', 'y', 'vector')))
 
 velocity_trj = np.stack(trajectory, axis=0)
-np.save('burgers2d_velocity_trj.npy', velocity_trj)
+np.save('burgers2d_trj.npy', velocity_trj)

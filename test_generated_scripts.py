@@ -2,6 +2,8 @@ import subprocess
 import sys
 from pathlib import Path
 from typing import List, Tuple
+from compare_physics import run_ground_truth
+
 
 BASE_DIR = Path("D:/Vivek/research")
 TEST_DIRS = [
@@ -59,7 +61,7 @@ def main():
 
     passed = sum(1 for _, success, _ in results if success)
     total = len(results)
-
+    working_dirs = [folder_name for folder_name, success, _ in results if success]
     for folder_name, success, message in results:
         status = "✓ PASS" if success else "✗ FAIL"
         print(f"  {status:8} | {folder_name:25}")
@@ -72,6 +74,9 @@ def main():
     else:
         print(f"\n{total - passed} script(s) failed or are missing.\n")
         return 1
+    run_ground_truth(working_dirs)
+    
+    
 
 
 if __name__ == "__main__":

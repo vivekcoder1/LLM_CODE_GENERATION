@@ -1,27 +1,27 @@
-from phi.flow import *
 import numpy as np
+from phi.flow import *
 
 DOMAIN = Box(x=100, y=100)
-INFLOW_SPHERE = Sphere(x=50, y=9.5, radius=5)
 
-smoke = CenteredGrid(0, extrapolation.BOUNDARY, x=200, y=200, bounds=DOMAIN)
-velocity = StaggeredGrid(0, 0, x=64, y=64, bounds=DOMAIN)
+velocity = StaggeredGrid(0, extrapolation.ZERO, x=64, y=64, bounds=DOMAIN)
+smoke = CenteredGrid(0, extrapolation.ZERO_GRADIENT, x=200, y=200, bounds=DOMAIN)
 pressure = None
 
-inflow = CenteredGrid(INFLOW_SPHERE, extrapolation.BOUNDARY, x=200, y=200, bounds=DOMAIN)
+inflow_geometry = Sphere(center=vec(x=50, y=9.5), radius=5)
+inflow = CenteredGrid(inflow_geometry, extrapolation.ZERO, x=200, y=200, bounds=DOMAIN)
 
-alpha = 0.2
-beta = 0.1
 dt = 0.5
+buoyancy_coefficient = 0.1
+inflow_rate = 0.2
 
 smoke_trj = [smoke.values.numpy('x,y')]
 pressure_trj = []
 
-for i in range(100):
-    smoke = advect.euler(smoke, velocity, dt) + alpha * dt * inflow
-    buoyancy_force = (smoke * (0, beta)).at(velocity)
-    velocity = advect.euler(velocity, velocity, dt) + dt * buoyancy_force
-    velocity, pressure = fluid.make_incompressible(velocity)
+for _ in range(100):
+    smoke = advect.mac_cormack(smoke, velocity, dt) + inflow_rate * dt * inflow
+    buoyancy_force = StaggeredGrid(smoke * vec(x=0, y=buoyancy_coefficient), velocity.extrapolation, bounds=velocity.bounds, resolution=velocity.resolution)
+    velocity = advect.semi_lagrangian(velocity, velocity, dt) + dt * buoyancy_force
+    velocity, pressure = fluid.make_incompressible(velocity, obstacles=(), solve=Solve('CG', 1e-5, 1e-5, x0=pressure))
     smoke_trj.append(smoke.values.numpy('x,y'))
     pressure_trj.append(pressure.values.numpy('x,y'))
 

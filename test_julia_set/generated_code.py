@@ -88,7 +88,7 @@ def main():
     # ------------------------------------------------------------------
     # Save result
     # ------------------------------------------------------------------
-    out_file = "julia_set_domain_trj.npy"
+    out_file = "julia_set_domain_trj_nocon.npy"
     np.save(out_file, domain_trj)
     print(f"Saved Julia set trajectory to '{out_file}'")
 

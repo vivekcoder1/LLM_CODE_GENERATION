@@ -2,32 +2,67 @@
 
 ## 1. PRIMARY PUBLIC API ENDPOINTS (PREFER USING THESE)
 
-### [File] fluid.py
-**Import Path:** `phi.flow.fluid.py`
+### [Class] UniformGrid
+**Import Path:** `phi.flow.UniformGrid`
 
-### [Class] Box
-**Import Path:** `phi.flow.Box`
-
-**Usage:** `from phi.flow.Box import Box; Box(...)` or direct instantiation from phi.flow
+**Usage:** `from phi.flow.UniformGrid import UniformGrid; UniformGrid(...)` or direct instantiation from phi.flow
 
 **Signature/Docstring:**
 ```python
-Simple cuboid defined by location of lower and upper corner in physical space.
-
-Boxes can be constructed either from two positional vector arguments `(lower, upper)` or by specifying the limits by dimension name as `kwargs`.
-
-Examples:
-    >>> Box(x=1, y=1)  # creates a two-dimensional unit box with `lower=(0, 0)` and `upper=(1, 1)`.
-    >>> Box(x=(None, 1), y=(0, None)  # creates a Box with `lower=(-inf, 0)` and `upper=(1, inf)`.
-
-    The slicing constructor was updated in version 2.2 and now requires the dimension order as the first argument.
-
-    >>> Box['x,y', 0:1, 0:1]  # creates a two-dimensional unit box with `lower=(0, 0)` and `upper=(1, 1)`.
-    >>> Box['x,y', :1, 0:]  # creates a Box with `lower=(-inf, 0)` and `upper=(1, inf)`.
+An instance of UniformGrid represents all cells of a regular grid as a batch of boxes.
 ```
 
-### [Method] boundary_elements
-**Import Path:** `phi.flow.Box.boundary_elements`
+### [Function] apply_boundary_conditions
+**Import Path:** `phi.flow.fluid.apply_boundary_conditions`
+
+**Usage:** `fluid.apply_boundary_conditions(...)` or `from phi.flow.fluid import apply_boundary_conditions; apply_boundary_conditions(...)`
+
+**Signature/Docstring:**
+```python
+Enforces velocities boundary conditions on a velocity grid.
+Cells inside obstacles will get their velocity from the obstacle movement.
+Cells outside far away will be unaffected.
+
+Args:
+  velocity: Velocity `Grid`.
+    obstacles: `Obstacle` or `phi.geom.Geometry` or tuple/list thereof to specify boundary conditions inside the domain.
+
+Returns:
+    Velocity of same type as `velocity`
+```
+
+### [Function] explicit
+**Import Path:** `phi.flow.diffuse.explicit`
+
+**Usage:** `diffuse.explicit(...)` or `from phi.flow.diffuse import explicit; explicit(...)`
+
+**Signature/Docstring:**
+```python
+Explicit Euler diffusion with substeps.
+
+Simulate a finite-time diffusion process of the form dF/dt = α · ΔF on a given `Field` Field with diffusion coefficient α.
+
+Args:
+    u: CenteredGrid, StaggeredGrid or ConstantField
+    diffusivity: Diffusion per time. `diffusion_amount = diffusivity * dt`
+        Can be a number, `phi.Tensor` or `phi.field.Field`.
+        If a channel dimension is present, it will be interpreted as non-isotropic diffusion.
+    dt: Time interval. `diffusion_amount = diffusivity * dt`
+    substeps: number of iterations to use (Default value = 1)
+    order: Spatial order of accuracy.
+        Higher orders entail larger stencils and more computation time but result in more accurate results assuming a large enough resolution.
+        Supported: 2 explicit, 4 explicit, 6 implicit (inherited from `phi.field.laplace()`).
+        For FVM, the order is used when interpolating `v` and `prev_v` to cell faces if needed.
+    implicit: When a `Solve` object is passed, performs a spatially implicit operation with the specified solver and tolerances.
+        Otherwise, an explicit stencil is used.
+    gradient: Only used by FVM at the moment. Approximate gradient of `u`, e.g. ∇u of the previous time step.
+        If `None`, approximates the gradient as `(u_neighbor - u_self) / distance`.
+    upwind: For unstructured meshes only. Whether to use upwind interpolation.
+    correct_skew: If `True`, adds a correction term for cell skewness. This requires `gradient` to be passed.
+
+Returns:
+    Diffused field of same type as `field`.
+```
 
 ### [Class] Field
 **Import Path:** `phi.flow.Field`
@@ -52,38 +87,6 @@ Examples:
     >>> Field(Cuboid(vec(x=[0, 2], y=0), x=1, y=1), values=lambda x,y: x)
 
 See the `phi.field` module documentation at https://tum-pbs.github.io/PhiFlow/Fields.html
-```
-
-### [Method] as_boundary
-**Import Path:** `phi.flow.Field.as_boundary`
-
-**Signature/Docstring:**
-```python
-Returns an `Extrapolation` representing this 'Field''s values as a Dirichlet (constant) boundary.
-If this `Field` encloses the required boundaries, its values will be interpolated to the required boundaries.
-If boundaries outside of this `Field`'s sampled domain are required, this `Field`'s boundary conditions will be applied to determine the boundary values.
-
-Returns:
-    `Extrapolation`
-```
-
-### [Method] boundary_names
-**Import Path:** `phi.flow.Field.boundary_names`
-
-### [Method] grid
-**Import Path:** `phi.flow.Field.grid`
-
-**Signature/Docstring:**
-```python
-Cast `self.geometry` to a `phi.geom.UniformGrid`.
-```
-
-### [Method] is_grid
-**Import Path:** `phi.flow.Field.is_grid`
-
-**Signature/Docstring:**
-```python
-A Field represents grid data if its `geometry` is a `phi.geom.UniformGrid` instance.
 ```
 
 ### [Class] Geometry
@@ -113,34 +116,6 @@ All batch dimensions are listed in Geometry.shape.
 
 Property getters (`@property`, such as `shape`), save for getters, must not depend on any variables marked as *variable* via `__variable_attrs__()` as these may be `None` during tracing.
 Equality checks must also take this into account.
-```
-
-### [Method] boundary_elements
-**Import Path:** `phi.flow.Geometry.boundary_elements`
-
-**Signature/Docstring:**
-```python
-Slices on the primal dimensions to mark boundary elements.
-Grids and meshes have no boundary elements and return `{}`.
-Dynamic graphs can define boundary elements for obstacles and walls.
-
-Returns:
-    Map from `name` to slicing `dict`.
-```
-
-### [Method] boundary_faces
-**Import Path:** `phi.flow.Geometry.boundary_faces`
-
-**Signature/Docstring:**
-```python
-Slices on the dual dimensions to mark boundary faces.
-
-Regular grids use the keys (dim, is_upper) to identify boundaries.
-Unstructured meshes use string identifiers for the boundaries.
-Dynamic graphs return slices along the dual dimensions.
-
-Returns:
-    Map from `name` to slicing `dict`.
 ```
 
 ### [Function] StaggeredGrid
@@ -186,73 +161,6 @@ Args:
     **resolution_: Spatial dimensions as keyword arguments. Typically either `resolution` or `spatial_dims` are specified.
 ```
 
-### [Class] UniformGrid
-**Import Path:** `phi.flow.UniformGrid`
-
-**Usage:** `from phi.flow.UniformGrid import UniformGrid; UniformGrid(...)` or direct instantiation from phi.flow
-
-**Signature/Docstring:**
-```python
-An instance of UniformGrid represents all cells of a regular grid as a batch of boxes.
-```
-
-### [Method] boundary_elements
-**Import Path:** `phi.flow.UniformGrid.boundary_elements`
-
-### [Method] boundary_faces
-**Import Path:** `phi.flow.UniformGrid.boundary_faces`
-
-### [Method] bounding_half_extent
-**Import Path:** `phi.flow.UniformGrid.bounding_half_extent`
-
-### [Method] corner_representation
-**Import Path:** `phi.flow.UniformGrid.corner_representation`
-
-### [Method] dx
-**Import Path:** `phi.flow.UniformGrid.dx`
-
-### [Method] face_areas
-**Import Path:** `phi.flow.UniformGrid.face_areas`
-
-### [Method] face_normals
-**Import Path:** `phi.flow.UniformGrid.face_normals`
-
-### [Method] face_shape
-**Import Path:** `phi.flow.UniformGrid.face_shape`
-
-### [Method] faces
-**Import Path:** `phi.flow.UniformGrid.faces`
-
-### [Method] half_size
-**Import Path:** `phi.flow.UniformGrid.half_size`
-
-### [Method] interior
-**Import Path:** `phi.flow.UniformGrid.interior`
-
-### [Method] lower
-**Import Path:** `phi.flow.UniformGrid.lower`
-
-### [Method] padded
-**Import Path:** `phi.flow.UniformGrid.padded`
-
-### [Method] shape
-**Import Path:** `phi.flow.UniformGrid.shape`
-
-### [Method] shifted
-**Import Path:** `phi.flow.UniformGrid.shifted`
-
-### [Method] spatial_rank
-**Import Path:** `phi.flow.UniformGrid.spatial_rank`
-
-### [Method] staggered_cells
-**Import Path:** `phi.flow.UniformGrid.staggered_cells`
-
-### [Method] upper
-**Import Path:** `phi.flow.UniformGrid.upper`
-
-### [Method] volume
-**Import Path:** `phi.flow.UniformGrid.volume`
-
 ### [Class] Mesh
 **Import Path:** `phi.flow.Mesh`
 
@@ -265,51 +173,6 @@ Unstructured mesh, consisting of vertices and elements.
 Use `phi.geom.mesh()` or `phi.geom.mesh_from_numpy()` to construct a mesh manually or `phi.geom.load_su2()` to load one from a file.
 ```
 
-### [Method] boundary_connectivity
-**Import Path:** `phi.flow.Mesh.boundary_connectivity`
-
-### [Method] boundary_elements
-**Import Path:** `phi.flow.Mesh.boundary_elements`
-
-### [Method] boundary_faces
-**Import Path:** `phi.flow.Mesh.boundary_faces`
-
-### [Method] get_boundary
-**Import Path:** `phi.flow.Mesh.get_boundary`
-
-### [Function] explicit
-**Import Path:** `phi.flow.diffuse.explicit`
-
-**Usage:** `diffuse.explicit(...)` or `from phi.flow.diffuse import explicit; explicit(...)`
-
-**Signature/Docstring:**
-```python
-Explicit Euler diffusion with substeps.
-
-Simulate a finite-time diffusion process of the form dF/dt = α · ΔF on a given `Field` Field with diffusion coefficient α.
-
-Args:
-    u: CenteredGrid, StaggeredGrid or ConstantField
-    diffusivity: Diffusion per time. `diffusion_amount = diffusivity * dt`
-        Can be a number, `phi.Tensor` or `phi.field.Field`.
-        If a channel dimension is present, it will be interpreted as non-isotropic diffusion.
-    dt: Time interval. `diffusion_amount = diffusivity * dt`
-    substeps: number of iterations to use (Default value = 1)
-    order: Spatial order of accuracy.
-        Higher orders entail larger stencils and more computation time but result in more accurate results assuming a large enough resolution.
-        Supported: 2 explicit, 4 explicit, 6 implicit (inherited from `phi.field.laplace()`).
-        For FVM, the order is used when interpolating `v` and `prev_v` to cell faces if needed.
-    implicit: When a `Solve` object is passed, performs a spatially implicit operation with the specified solver and tolerances.
-        Otherwise, an explicit stencil is used.
-    gradient: Only used by FVM at the moment. Approximate gradient of `u`, e.g. ∇u of the previous time step.
-        If `None`, approximates the gradient as `(u_neighbor - u_self) / distance`.
-    upwind: For unstructured meshes only. Whether to use upwind interpolation.
-    correct_skew: If `True`, adds a correction term for cell skewness. This requires `gradient` to be passed.
-
-Returns:
-    Diffused field of same type as `field`.
-```
-
 ### [Class] Obstacle
 **Import Path:** `phi.flow.Obstacle`
 
@@ -319,25 +182,6 @@ Returns:
 ```python
 An obstacle defines boundary conditions inside a geometry.
 It can also have a linear and angular velocity.
-```
-
-### [Function] apply_boundary_conditions
-**Import Path:** `phi.flow.fluid.apply_boundary_conditions`
-
-**Usage:** `fluid.apply_boundary_conditions(...)` or `from phi.flow.fluid import apply_boundary_conditions; apply_boundary_conditions(...)`
-
-**Signature/Docstring:**
-```python
-Enforces velocities boundary conditions on a velocity grid.
-Cells inside obstacles will get their velocity from the obstacle movement.
-Cells outside far away will be unaffected.
-
-Args:
-  velocity: Velocity `Grid`.
-    obstacles: `Obstacle` or `phi.geom.Geometry` or tuple/list thereof to specify boundary conditions inside the domain.
-
-Returns:
-    Velocity of same type as `velocity`
 ```
 
 ### [Function] masked_laplace
@@ -365,37 +209,229 @@ Returns:
     `CenteredGrid`
 ```
 
----
+### [Function] CenteredGrid
+**Import Path:** `phi.flow.CenteredGrid`
 
-## 2. GRAPH INTERCONNECTIONS & DEPENDENCIES
+**Usage:** `flow.CenteredGrid(...)` or `from phi.flow import CenteredGrid; CenteredGrid(...)`
 
-- [Class] Box --(Has Method)--> [Method] boundary_elements
-- [Class] Field --(Has Method)--> [Method] as_boundary
-- [Class] Field --(Has Method)--> [Method] boundary_names
-- [Class] Field --(Has Method)--> [Method] grid
-- [Class] Field --(Has Method)--> [Method] is_grid
-- [Class] Geometry --(Has Method)--> [Method] boundary_elements
-- [Class] Geometry --(Has Method)--> [Method] boundary_faces
-- [Class] Mesh --(Has Method)--> [Method] boundary_connectivity
-- [Class] Mesh --(Has Method)--> [Method] boundary_elements
-- [Class] Mesh --(Has Method)--> [Method] boundary_faces
-- [Class] Mesh --(Has Method)--> [Method] get_boundary
-- [Class] UniformGrid --(Has Method)--> [Method] boundary_elements
-- [Class] UniformGrid --(Has Method)--> [Method] boundary_faces
-- [Class] UniformGrid --(Has Method)--> [Method] bounding_half_extent
-- [Class] UniformGrid --(Has Method)--> [Method] corner_representation
-- [Class] UniformGrid --(Has Method)--> [Method] dx
-- [Class] UniformGrid --(Has Method)--> [Method] face_areas
-- [Class] UniformGrid --(Has Method)--> [Method] face_normals
-- [Class] UniformGrid --(Has Method)--> [Method] face_shape
-- [Class] UniformGrid --(Has Method)--> [Method] faces
-- [Class] UniformGrid --(Has Method)--> [Method] half_size
-- [Class] UniformGrid --(Has Method)--> [Method] interior
-- [Class] UniformGrid --(Has Method)--> [Method] lower
-- [Class] UniformGrid --(Has Method)--> [Method] padded
-- [Class] UniformGrid --(Has Method)--> [Method] shape
-- [Class] UniformGrid --(Has Method)--> [Method] shifted
-- [Class] UniformGrid --(Has Method)--> [Method] spatial_rank
-- [Class] UniformGrid --(Has Method)--> [Method] staggered_cells
-- [Class] UniformGrid --(Has Method)--> [Method] upper
-- [Class] UniformGrid --(Has Method)--> [Method] volume
+**Signature/Docstring:**
+```python
+Create an n-dimensional grid with values sampled at the cell centers.
+A centered grid is defined through its `CenteredGrid.values` `phi.math.Tensor`, its `CenteredGrid.bounds` `phi.geom.Box` describing the physical size, and its `CenteredGrid.extrapolation` (`phi.math.extrapolation.Extrapolation`).
+
+Centered grids support batch, spatial and channel dimensions.
+
+See Also:
+    `StaggeredGrid`,
+    `Grid`,
+    `Field`,
+    `Field`,
+    module documentation at https://tum-pbs.github.io/PhiFlow/Fields.html
+
+Args:
+    values: Values to use for the grid.
+        Has to be one of the following:
+
+        * `phi.geom.Geometry`: sets inside values to 1, outside to 0
+        * `Field`: resamples the Field to the staggered sample points
+        * `Number`: uses the value for all sample points
+        * `tuple` or `list`: interprets the sequence as vector, used for all sample points
+        * `phi.math.Tensor` compatible with grid dims: uses tensor values as grid values
+        * Function `values(x)` where `x` is a `phi.math.Tensor` representing the physical location.
+            The spatial dimensions of the grid will be passed as batch dimensions to the function.
+
+    extrapolation: The grid extrapolation determines the value outside the `values` tensor.
+        Allowed types: `float`, `phi.math.Tensor`, `phi.math.extrapolation.Extrapolation`.
+    bounds: Physical size and location of the grid as `phi.geom.Box`.
+        If the resolution is determined through `resolution` of `values`, a `float` can be passed for `bounds` to create a unit box.
+    resolution: Grid resolution as purely spatial `phi.math.Shape`.
+        If `bounds` is given as a `Box`, the resolution may be specified as an `int` to be equal along all axes.
+    **resolution_: Spatial dimensions as keyword arguments. Typically either `resolution` or `spatial_dims` are specified.
+    convert: Whether to convert `values` to the default backend.
+```
+
+### [Function] differential
+**Import Path:** `phi.flow.diffuse.differential`
+
+**Usage:** `diffuse.differential(...)` or `from phi.flow.diffuse import differential; differential(...)`
+
+**Signature/Docstring:**
+```python
+Compute the differential diffusion term, d·∇²u.
+For grids, uses a finite difference scheme specified by `order` and `implicit`.
+For FVM, the scheme is specified via `order` and `upwind`.
+
+In contrast to `explicit` and `implicit`, accuracy can be increased by using stencils of higher-order rather than calculating sub-steps.
+
+Args:
+    u: Scalar or vector-valued `Field` sampled on a `CenteredGrid`, `StaggeredGrid` or centered `Mesh`.
+    diffusivity: Dynamic viscosity, i.e. diffusion per time. Constant or varying by cell.
+    gradient: Only used by FVM at the moment. Approximate gradient of `u`, e.g. ∇u of the previous time step.
+        If `None`, approximates the gradient as `(u_neighbor - u_self) / distance`.
+    order: Spatial order of accuracy.
+        Higher orders entail larger stencils and more computation time but result in more accurate results assuming a large enough resolution.
+        Supported: 2 explicit, 4 explicit, 6 implicit (inherited from `phi.field.laplace()`).
+        For FVM, the order is used when interpolating `v` and `prev_v` to cell faces if needed.
+    implicit: When a `Solve` object is passed, performs an implicit operation with the specified solver and tolerances.
+        Otherwise, an explicit stencil is used.
+    upwind: For unstructured meshes only. Whether to use upwind interpolation.
+    correct_skew: If `True`, adds a correction term for cell skewness. This requires `gradient` to be passed.
+
+Returns:
+    Differential diffusion as a `Field` on the same geometry.
+```
+
+### [Function] implicit
+**Import Path:** `phi.flow.diffuse.implicit`
+
+**Usage:** `diffuse.implicit(...)` or `from phi.flow.diffuse import implicit; implicit(...)`
+
+**Signature/Docstring:**
+```python
+Implicit Euler diffusion.
+
+Diffusion by solving a linear system of equations.
+
+Args:
+    field: `phi.field.Field` to diffuse.
+    diffusivity: Diffusion per time. `diffusion_amount = diffusivity * dt`
+    dt: Time interval. `diffusion_amount = diffusivity * dt`
+    solve: Implicit solve parameters.
+    gradient: Only used by FVM at the moment. Approximate gradient of `u`, e.g. ∇u of the previous time step.
+        If `None`, approximates the gradient as `(u_neighbor - u_self) / distance`.
+    upwind: For unstructured meshes only. Whether to use upwind interpolation.
+    correct_skew: If `True`, adds a correction term for cell skewness. This requires `gradient` to be passed.
+    gradient_for_diffusivity: Whether to compute the gradient w.r.t. the diffusivity parameters.
+
+Returns:
+    Diffused field of same type as `field`.
+```
+
+### [Function] boundary_push
+**Import Path:** `phi.flow.fluid.boundary_push`
+
+**Usage:** `fluid.boundary_push(...)` or `from phi.flow.fluid import boundary_push; boundary_push(...)`
+
+**Signature/Docstring:**
+```python
+Enforces boundary conditions by correcting possible errors of the advection step and shifting particles out of
+obstacles or back into the domain.
+
+Args:
+    particles: PointCloud holding particle positions as elements
+    obstacles: List of `Obstacle` or `Geometry` objects where any particles inside should get shifted outwards
+    separation: Minimum distance between particles and domain boundary / obstacle surface after particles have been shifted.
+
+Returns:
+    PointCloud where all particles are inside the domain / outside of obstacles.
+```
+
+### [Function] differential
+**Import Path:** `phi.flow.advect.differential`
+
+**Usage:** `advect.differential(...)` or `from phi.flow.advect import differential; differential(...)`
+
+**Signature/Docstring:**
+```python
+Computes the differential advection term using the differentiation Scheme indicated by `order`, ´implicit´ and `upwind`.
+
+For a velocity field u, the advection term as it appears on the right-hand-side of a PDE is -u·∇u, including the negative sign.
+
+For unstructured meshes, computes -1/V ∑_f (n·u_prev) u ρ A
+
+Args:
+    u: Scalar or vector-valued `Field` sampled on a `CenteredGrid`, `StaggeredGrid` or `Mesh`.
+    velocity: `Field` that can be sampled at the elements of `u`.
+        For FVM, the advection term is typically linearized by setting `velocity = previous_velocity`.
+        Passing `velocity=u` yields non-linear terms which cannot be traced inside linear functions.
+    order: Spatial order of accuracy.
+        Higher orders entail larger stencils and more computation time but result in more accurate results assuming a large enough resolution.
+        Supported for grids: 2 explicit, 4 explicit, 6 implicit (inherited from `phi.field.spatial_gradient()` and resampling).
+        Passing order=4 currently uses 2nd-order resampling. This is work-in-progress.
+        For FVM, the order is used when interpolating centroid values to faces if needed.
+    implicit: When a `Solve` object is passed, performs an implicit operation with the specified solver and tolerances.
+        Otherwise, an explicit stencil is used.
+    upwind: Whether to use upwind interpolation. Only supported for FVM at the moment.
+
+Returns:
+    Differential convection term as `Field` on the same geometry.
+```
+
+### [Function] make_incompressible
+**Import Path:** `phi.flow.fluid.make_incompressible`
+
+**Usage:** `fluid.make_incompressible(...)` or `from phi.flow.fluid import make_incompressible; make_incompressible(...)`
+
+**Signature/Docstring:**
+```python
+Projects the given velocity field by solving for the pressure and subtracting its spatial_gradient.
+
+This method is similar to :func:`field.divergence_free()` but differs in how the boundary conditions are specified.
+
+Args:
+    velocity: Vector field sampled on a grid.
+    obstacles: `Obstacle` or `phi.geom.Geometry` or tuple/list thereof to specify boundary conditions inside the domain.
+    solve: `Solve` object specifying method and tolerances for the implicit pressure solve.
+    active: (Optional) Mask for which cells the pressure should be solved.
+        If given, the velocity may take `NaN` values where it does not contribute to the pressure.
+        Also, the total divergence will never be subtracted if active is given, even if all values are 1.
+    order: spatial order for derivative computations.
+        For Higher-order schemes, the laplace operation is not conducted with a stencil exactly corresponding to the one used in divergence calculations but a smaller one instead.
+        While this disrupts the formal correctness of the method it only induces insignificant errors and yields considerable performance gains.
+        supported: explicit 2/4th order - implicit 6th order (obstacles are only supported with explicit 2nd order)
+
+Returns:
+    velocity: divergence-free velocity of type `type(velocity)`
+    pressure: solved pressure field, `CenteredGrid`
+```
+
+### [Function] incompressible_rk4
+**Import Path:** `phi.flow.fluid.incompressible_rk4`
+
+**Usage:** `fluid.incompressible_rk4(...)` or `from phi.flow.fluid import incompressible_rk4; incompressible_rk4(...)`
+
+**Signature/Docstring:**
+```python
+Implements the 4th-order Runge-Kutta time advancement scheme for incompressible vector fields.
+This approach is inspired by [Kampanis et. al., 2006](https://www.sciencedirect.com/science/article/pii/S0021999105005061) and incorporates the pressure treatment into the time step.
+
+Args:
+    pde: Momentum equation. Function that computes all PDE terms not related to pressure, e.g. diffusion, advection, external forces.
+    velocity: Velocity grid at time `t`.
+    pressure: Pressure at time `t`.
+    dt: Time increment to integrate.
+    pressure_order: spatial order for derivative computations.
+        For Higher-order schemes, the laplace operation is not conducted with a stencil exactly corresponding to the one used in divergence calculations but a smaller one instead.
+        While this disrupts the formal correctness of the method it only induces insignificant errors and yields considerable performance gains.
+        supported: explicit 2/4th order - implicit 6th order (obstacles are only supported with explicit 2nd order)
+    pressure_solve: `Solve` object specifying method and tolerances for the implicit pressure solve.
+    **pde_aux_kwargs: Auxiliary arguments for `pde`. These are considered constant over time.
+
+Returns:
+    velocity: Velocity at time `t+dt`, same type as `velocity`.
+    pressure: Pressure grid at time `t+dt`, `CenteredGrid`.
+```
+
+### [Function] mac_cormack
+**Import Path:** `phi.flow.advect.mac_cormack`
+
+**Usage:** `advect.mac_cormack(...)` or `from phi.flow.advect import mac_cormack; mac_cormack(...)`
+
+**Signature/Docstring:**
+```python
+MacCormack advection uses a forward and backward lookup to determine the first-order error of semi-Lagrangian advection.
+It then uses that error estimate to correct the field values.
+To avoid overshoots, the resulting value is bounded by the neighbouring grid cells of the backward lookup.
+
+Args:
+    field: Field to be advected, one of `(CenteredGrid, StaggeredGrid)`
+    velocity: Vector field, need not be sampled at same locations as `field`.
+    dt: Time increment
+    correction_strength: The estimated error is multiplied by this factor before being applied.
+        The case correction_strength=0 equals semi-lagrangian advection. Set lower than 1.0 to avoid oscillations.
+    integrator: ODE integrator for solving the movement.
+
+Returns:
+    Advected field of type `type(field)`
+```
+

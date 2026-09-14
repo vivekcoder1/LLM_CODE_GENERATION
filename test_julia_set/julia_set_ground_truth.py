@@ -1,12 +1,27 @@
-from phi.jax.flow import *
-def julia_map(z, counter, c):
-    next_z = z ** 2 + c
-    counter += abs(z) < 2
-    return next_z, counter
+from phi.flow import *
+import cmath
+import numpy as np
 
-def belongs_to_julia_set(z, c, iter_count: int):
-    final_z, final_counter = iterate(julia_map, iter_count, z, 0, c=c)
-    return final_counter
 
-c = 0.7885 * math.exp(1j*math.linspace(0, 2*PI, batch(time=100)))
-v_trj = CenteredGrid(lambda re, im: belongs_to_julia_set(re + im*1j, c, 50), re=256, im=256, bounds=Box(re=(-2, 2), im=(-2, 2)))
+Nx = Ny = 256
+steps = 100
+bounds = Box(x=(-2, 2), y=(-2, 2))
+resolution = spatial(x=Nx, y=Ny)
+
+z_field = CenteredGrid(
+    lambda position: position.vector['x'] + 1j * position.vector['y'],
+    extrapolation=0,
+    bounds=bounds,
+    resolution=resolution,
+)
+z = z_field.values
+escape_count = math.zeros(resolution)
+trajectory = []
+
+for step in range(steps):
+    c = 0.7885 * cmath.exp(1j * 2 * cmath.pi * step / steps)
+    z = z ** 2 + c
+    escape_count = escape_count + (abs(z) < 2)
+    trajectory.append(escape_count.numpy(('x', 'y')))
+
+v_trj = np.stack(trajectory, axis=0)

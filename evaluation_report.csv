@@ -1,0 +1,9 @@
+domain,objective_score,objective_score_coverage,syntax_ok,execution_ok,duration_s,context_chars,context_tokens_approx,import_coverage,relative_rmse,physics_score,reference_status
+burgers2d,45.909,1.0,True,True,21.813,18575,4644,0.75,,,comparison_error
+heat_flow,45.2,1.0,True,True,23.533,20533,5133,0.0,,,comparison_error
+julia_set,95.238,1.0,True,True,6.175,18368,4592,0.0,0.0,1.0,measured
+lid_driven_cavity,39.09,0.5,True,False,51.249,19836,4959,0.0,,,not_applicable
+reaction_diffusion,94.8,1.0,True,True,11.438,19018,4754,0.0,9e-06,0.999991,measured;measured
+smoke_plume,37.5,0.5,True,False,17.071,16778,4194,0.0,,,not_applicable
+structural_mechanics,60.218,0.5,True,True,4.899,38,10,,,,not_applicable
+wake_flow,39.584,0.5,True,False,6.061,19749,4937,0.75,,,not_applicable

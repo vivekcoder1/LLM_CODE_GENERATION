@@ -1,0 +1,40 @@
+{
+  "trials_per_task": 200,
+  "top_per_task": 10,
+  "generate_top": 3,
+  "generation_max_tokens": 6000,
+  "results": [
+    {
+      "domain": "heat_flow",
+      "status": "empty_blueprint"
+    },
+    {
+      "domain": "burgers2d",
+      "status": "empty_blueprint"
+    },
+    {
+      "domain": "julia_set",
+      "status": "empty_blueprint"
+    },
+    {
+      "domain": "lid_driven_cavity",
+      "status": "empty_blueprint"
+    },
+    {
+      "domain": "reaction_diffusion",
+      "status": "empty_blueprint"
+    },
+    {
+      "domain": "smoke_plume",
+      "status": "empty_blueprint"
+    },
+    {
+      "domain": "structural_mechanics",
+      "status": "empty_blueprint"
+    },
+    {
+      "domain": "wake_flow",
+      "status": "empty_blueprint"
+    }
+  ]
+}

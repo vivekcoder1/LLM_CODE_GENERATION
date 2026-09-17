@@ -1,0 +1,9 @@
+domain,status,rank,config_id,retrieval_score,task_term_coverage,context_chars,context_tokens_approx,seed_count,raw_count,filtered_count,generation_requested
+heat_flow,empty_blueprint,,,,,,,,,,
+burgers2d,empty_blueprint,,,,,,,,,,
+julia_set,empty_blueprint,,,,,,,,,,
+lid_driven_cavity,empty_blueprint,,,,,,,,,,
+reaction_diffusion,empty_blueprint,,,,,,,,,,
+smoke_plume,empty_blueprint,,,,,,,,,,
+structural_mechanics,empty_blueprint,,,,,,,,,,
+wake_flow,empty_blueprint,,,,,,,,,,

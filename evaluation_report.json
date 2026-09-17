@@ -1,0 +1,317 @@
+{
+  "criteria": {
+    "syntax": "generated script parses as Python",
+    "execution": "generated script exits successfully within timeout",
+    "context": "context size, sections, import-path count, and explicit-import evidence coverage",
+    "position": "fraction of cited import evidence occurring in the middle third of context",
+    "physics": "reference-relative RMSE and bounded score 1 / (1 + relative RMSE), when ground truth exists",
+    "objective_score": "weighted observable score; physics component is omitted when no reference exists"
+  },
+  "research_basis": [
+    "Liu et al., Lost in the Middle, arXiv:2307.03172",
+    "Es et al., Ragas, arXiv:2309.15217",
+    "Saad-Falcon et al., ARES, arXiv:2311.09476"
+  ],
+  "results": [
+    {
+      "domain": "burgers2d",
+      "script": "D:\\Vivek\\research\\test_burgers2d\\generated_burgers2d_simulation.py",
+      "context": {
+        "context_exists": true,
+        "context_chars": 18575,
+        "context_tokens_approx": 4644,
+        "context_sections": 19,
+        "context_import_paths": 18,
+        "task_term_count": 44,
+        "task_term_coverage": 0.5909,
+        "explicit_import_count": 4,
+        "explicit_import_coverage": 0.75,
+        "evidence_positions": {
+          "advect": 0.1563,
+          "diffuse": 0.0446,
+          "fluid": 0.0096
+        },
+        "evidence_in_middle_fraction": 0.0
+      },
+      "run": {
+        "syntax_ok": true,
+        "syntax_error": "",
+        "execution_ok": true,
+        "exit_code": 0,
+        "duration_s": 21.813,
+        "stderr_tail": "himl\\backend\\_backend.py:1712: RuntimeWarning: invalid value encountered in subtract\n  return a - b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1720: RuntimeWarning: overflow encountered in divide\n  return numerator / denominator\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy\\_core\\fromnumeric.py:86: RuntimeWarning: invalid value encountered in reduce\n  return ufunc.reduce(obj, axis, dtype, out, **passkwargs)\n"
+      },
+      "numerical": [
+        {
+          "label": "main",
+          "generated_exists": true,
+          "ground_truth_exists": true,
+          "status": "comparison_error",
+          "error": "generated trajectory contains 501554 NaN/infinite values; first index=(13, 30, 36, 0), timestep=13",
+          "physics_score": 0.0
+        }
+      ],
+      "objective_score_coverage": 1.0,
+      "objective_score": 45.909
+    },
+    {
+      "domain": "heat_flow",
+      "script": "D:\\Vivek\\research\\test_heat_flow\\generated_heat_flow_simulation.py",
+      "context": {
+        "context_exists": true,
+        "context_chars": 20533,
+        "context_tokens_approx": 5133,
+        "context_sections": 18,
+        "context_import_paths": 17,
+        "task_term_count": 50,
+        "task_term_coverage": 0.52,
+        "explicit_import_count": 1,
+        "explicit_import_coverage": 0.0,
+        "evidence_positions": {},
+        "evidence_in_middle_fraction": null
+      },
+      "run": {
+        "syntax_ok": true,
+        "syntax_error": "",
+        "execution_ok": true,
+        "exit_code": 0,
+        "duration_s": 23.533,
+        "stderr_tail": "pData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1712: RuntimeWarning: overflow encountered in subtract\n  return a - b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1712: RuntimeWarning: invalid value encountered in subtract\n  return a - b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1716: RuntimeWarning: invalid value encountered in multiply\n  return a * b\n"
+      },
+      "numerical": [
+        {
+          "label": "main",
+          "generated_exists": true,
+          "ground_truth_exists": true,
+          "status": "comparison_error",
+          "error": "generated trajectory contains 209082 NaN/infinite values; first index=(16, 0, 20), timestep=16",
+          "physics_score": 0.0
+        }
+      ],
+      "objective_score_coverage": 1.0,
+      "objective_score": 45.2
+    },
+    {
+      "domain": "julia_set",
+      "script": "D:\\Vivek\\research\\test_julia_set\\generated_julia_set_simulation.py",
+      "context": {
+        "context_exists": true,
+        "context_chars": 18368,
+        "context_tokens_approx": 4592,
+        "context_sections": 18,
+        "context_import_paths": 17,
+        "task_term_count": 42,
+        "task_term_coverage": 0.5238,
+        "explicit_import_count": 2,
+        "explicit_import_coverage": 0.0,
+        "evidence_positions": {},
+        "evidence_in_middle_fraction": null
+      },
+      "run": {
+        "syntax_ok": true,
+        "syntax_error": "",
+        "execution_ok": true,
+        "exit_code": 0,
+        "duration_s": 6.175,
+        "stderr_tail": "C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_tensors.py:1229: RuntimeWarning: overflow encountered in square\n  result = op(n1, n2)\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_tensors.py:1229: RuntimeWarning: invalid value encountered in square\n  result = op(n1, n2)\n"
+      },
+      "numerical": [
+        {
+          "label": "main",
+          "generated_exists": true,
+          "ground_truth_exists": true,
+          "status": "measured",
+          "shape": [
+            100,
+            256,
+            256
+          ],
+          "mean_l2": 0.0,
+          "max_l2": 0.0,
+          "rmse": 0.0,
+          "relative_rmse": 0.0,
+          "physics_score": 1.0
+        }
+      ],
+      "objective_score_coverage": 1.0,
+      "objective_score": 95.238
+    },
+    {
+      "domain": "lid_driven_cavity",
+      "script": "D:\\Vivek\\research\\test_lid_driven_cavity\\generated_lid_driven_cavity_simulation.py",
+      "context": {
+        "context_exists": true,
+        "context_chars": 19836,
+        "context_tokens_approx": 4959,
+        "context_sections": 19,
+        "context_import_paths": 18,
+        "task_term_count": 55,
+        "task_term_coverage": 0.4545,
+        "explicit_import_count": 1,
+        "explicit_import_coverage": 0.0,
+        "evidence_positions": {},
+        "evidence_in_middle_fraction": null
+      },
+      "run": {
+        "syntax_ok": true,
+        "syntax_error": "",
+        "execution_ok": false,
+        "exit_code": 1,
+        "duration_s": 51.249,
+        "stderr_tail": "backprop and 'TensorFlow' in backend.name)  # raises ConvergenceException\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_optimize.py\", line 209, in convergence_check\n    raise NotConverged(self)\nphiml.math._optimize.NotConverged: \\u03a6-ML CG (numpy) with preconditioner 'none' did not converge to rel_tol=1e-05, abs_tol=1e-05 within 1000 iterations. Max residual: 0.00016495059\n"
+      },
+      "numerical": [],
+      "objective_score_coverage": 0.5,
+      "objective_score": 39.09
+    },
+    {
+      "domain": "reaction_diffusion",
+      "script": "D:\\Vivek\\research\\test_reaction_diffusion\\generated_reaction_diffusion_simulation.py",
+      "context": {
+        "context_exists": true,
+        "context_chars": 19018,
+        "context_tokens_approx": 4754,
+        "context_sections": 19,
+        "context_import_paths": 18,
+        "task_term_count": 50,
+        "task_term_coverage": 0.48,
+        "explicit_import_count": 1,
+        "explicit_import_coverage": 0.0,
+        "evidence_positions": {},
+        "evidence_in_middle_fraction": null
+      },
+      "run": {
+        "syntax_ok": true,
+        "syntax_error": "",
+        "execution_ok": true,
+        "exit_code": 0,
+        "duration_s": 11.438,
+        "stderr_tail": "D:\\Vivek\\research\\test_reaction_diffusion\\generated_reaction_diffusion_simulation.py:20: DeprecationWarning: phiml.math.length is deprecated in favor of phiml.math.norm\n  r = math.vec_length(x - center)\n"
+      },
+      "numerical": [
+        {
+          "label": "u",
+          "generated_exists": true,
+          "ground_truth_exists": true,
+          "status": "measured",
+          "shape": [
+            101,
+            100,
+            100
+          ],
+          "mean_l2": 3.4535277661947686e-06,
+          "max_l2": 5.751848220825195e-06,
+          "rmse": 3.7595176801983268e-06,
+          "relative_rmse": 7.122431777856751e-06,
+          "physics_score": 0.9999928776189507
+        },
+        {
+          "label": "v",
+          "generated_exists": true,
+          "ground_truth_exists": true,
+          "status": "measured",
+          "shape": [
+            101,
+            100,
+            100
+          ],
+          "mean_l2": 4.572451737224804e-06,
+          "max_l2": 8.242237986666813e-06,
+          "rmse": 4.771784218008951e-06,
+          "relative_rmse": 1.1154914559902875e-05,
+          "physics_score": 0.9999888452098709
+        }
+      ],
+      "objective_score_coverage": 1.0,
+      "objective_score": 94.8
+    },
+    {
+      "domain": "smoke_plume",
+      "script": "D:\\Vivek\\research\\test_smoke_plume\\generated_smoke_plume_simulation.py",
+      "context": {
+        "context_exists": true,
+        "context_chars": 16778,
+        "context_tokens_approx": 4194,
+        "context_sections": 19,
+        "context_import_paths": 18,
+        "task_term_count": 64,
+        "task_term_coverage": 0.375,
+        "explicit_import_count": 1,
+        "explicit_import_coverage": 0.0,
+        "evidence_positions": {},
+        "evidence_in_middle_fraction": null
+      },
+      "run": {
+        "syntax_ok": true,
+        "syntax_error": "",
+        "execution_ok": false,
+        "exit_code": 1,
+        "duration_s": 17.071,
+        "stderr_tail": "ackprop and 'TensorFlow' in backend.name)  # raises ConvergenceException\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_optimize.py\", line 209, in convergence_check\n    raise NotConverged(self)\nphiml.math._optimize.NotConverged: \\u03a6-ML CG (numpy) with preconditioner 'none' did not converge to rel_tol=1e-05, abs_tol=1e-05 within 1000 iterations. Max residual: -1.9401796e-09\n"
+      },
+      "numerical": [],
+      "objective_score_coverage": 0.5,
+      "objective_score": 37.5
+    },
+    {
+      "domain": "structural_mechanics",
+      "script": "D:\\Vivek\\research\\test_structural_mechanics\\generated_structural_mechanics_simulation.py",
+      "context": {
+        "context_exists": true,
+        "context_chars": 38,
+        "context_tokens_approx": 10,
+        "context_sections": 0,
+        "context_import_paths": 0,
+        "task_term_count": 92,
+        "task_term_coverage": 0.0109,
+        "explicit_import_count": 0,
+        "explicit_import_coverage": null,
+        "evidence_positions": {},
+        "evidence_in_middle_fraction": null
+      },
+      "run": {
+        "syntax_ok": true,
+        "syntax_error": "",
+        "execution_ok": true,
+        "exit_code": 0,
+        "duration_s": 4.899,
+        "stderr_tail": ""
+      },
+      "numerical": [],
+      "objective_score_coverage": 0.5,
+      "objective_score": 60.218
+    },
+    {
+      "domain": "wake_flow",
+      "script": "D:\\Vivek\\research\\test_wake_flow\\generated_wake_flow_simulation.py",
+      "context": {
+        "context_exists": true,
+        "context_chars": 19749,
+        "context_tokens_approx": 4937,
+        "context_sections": 19,
+        "context_import_paths": 18,
+        "task_term_count": 48,
+        "task_term_coverage": 0.4792,
+        "explicit_import_count": 4,
+        "explicit_import_coverage": 0.75,
+        "evidence_positions": {
+          "advect": 0.3376,
+          "extrapolation": 0.075,
+          "fluid": 0.0246
+        },
+        "evidence_in_middle_fraction": 0.3333
+      },
+      "run": {
+        "syntax_ok": true,
+        "syntax_error": "",
+        "execution_ok": false,
+        "exit_code": 1,
+        "duration_s": 6.061,
+        "stderr_tail": "Traceback (most recent call last):\n  File \"D:\\Vivek\\research\\test_wake_flow\\generated_wake_flow_simulation.py\", line 17, in <module>\n    obstacle_geometry = Cylinder(center=vec(x=20, y=50, z=2.5), radius=10, depth=5, axis='z')\n                        ^^^^^^^^\nNameError: name 'Cylinder' is not defined. Did you mean: 'cylinder'?\n"
+      },
+      "numerical": [],
+      "objective_score_coverage": 0.5,
+      "objective_score": 39.584
+    }
+  ]
+}

@@ -1,12 +1,4 @@
-#!/usr/bin/env python3
-"""
-Compute per-timestep L2 errors and overall RMSE between generated and ground-truth .npy trajectories.
-Usage examples:
-  python compute_l2_errors.py --pairs-file pairs.csv
-  python compute_l2_errors.py --pair burgers2d:./test_burgers2d/generated_burgers2d_simulation.npy:./test_burgers2d/burgers2d_velocity_trj.npy
 
-Pairs CSV format (header): label,generated,ground_truth
-"""
 import argparse
 import csv
 import math

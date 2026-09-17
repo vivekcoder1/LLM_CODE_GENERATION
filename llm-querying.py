@@ -101,7 +101,14 @@ class E2ERagPipeline:
             print(f"Failed to generate search blueprint: {e}")
             return {"semantic_queries": [], "target_classes": [], "target_functions": []}
 
-    def find_seed_nodes(self, blueprint: dict) -> List[str]:
+    def find_seed_nodes(
+        self,
+        blueprint: dict,
+        fulltext_limit: int = 5,
+        description_limit: int = 5,
+        function_limit: int = 4,
+        class_limit: int = 4,
+    ) -> List[str]:
         """Step 2: Hybrid Search with wildcards and higher initial seed capacity."""
         seed_ids = set()
         
@@ -112,8 +119,8 @@ class E2ERagPipeline:
                 if not term or len(term) < 2: continue
                 res = session.run("""
                     CALL db.index.fulltext.queryNodes("classNames", $term) YIELD node, score
-                    RETURN node.id AS id LIMIT 5
-                """, term=f"{term}* OR {term}")
+                    RETURN node.id AS id LIMIT $limit
+                """, term=f"{term}* OR {term}", limit=fulltext_limit)
                 for r in res: seed_ids.add(r["id"])
 
             # B. Full-Text Search on Expected Function Names
@@ -122,8 +129,8 @@ class E2ERagPipeline:
                 if not term or len(term) < 2: continue
                 res = session.run("""
                     CALL db.index.fulltext.queryNodes("functionNames", $term) YIELD node, score
-                    RETURN node.id AS id LIMIT 5
-                """, term=f"{term}* OR {term}")
+                    RETURN node.id AS id LIMIT $limit
+                """, term=f"{term}* OR {term}", limit=fulltext_limit)
                 for r in res: seed_ids.add(r["id"])
 
             # C. Vector Similarity Search across all vector indexes
@@ -133,24 +140,24 @@ class E2ERagPipeline:
                 
                 # Check Generated Descriptions Index
                 res = session.run("""
-                    CALL db.index.vector.queryNodes("descEmbed", 5, $vector) YIELD node, score
+                    CALL db.index.vector.queryNodes("descEmbed", $limit, $vector) YIELD node, score
                     MATCH (parent)-[:has_description]->(node)
                     RETURN parent.id AS id
-                """, vector=vector)
+                """, vector=vector, limit=description_limit)
                 for r in res: seed_ids.add(r["id"])
 
                 # Check Function Docstring Index
                 res = session.run("""
-                    CALL db.index.vector.queryNodes("funcDocEmbed", 4, $vector) YIELD node, score
+                    CALL db.index.vector.queryNodes("funcDocEmbed", $limit, $vector) YIELD node, score
                     RETURN node.id AS id
-                """, vector=vector)
+                """, vector=vector, limit=function_limit)
                 for r in res: seed_ids.add(r["id"])
 
                 # Check Class Docstring Index
                 res = session.run("""
-                    CALL db.index.vector.queryNodes("classDocEmbed", 4, $vector) YIELD node, score
+                    CALL db.index.vector.queryNodes("classDocEmbed", $limit, $vector) YIELD node, score
                     RETURN node.id AS id
-                """, vector=vector)
+                """, vector=vector, limit=class_limit)
                 for r in res: seed_ids.add(r["id"])
 
         return list(seed_ids)
@@ -460,13 +467,13 @@ class E2ERagPipeline:
 
         return md_context
 
-    def generate_grounded_code(self, task_description: str, codebase_context: str) -> str:
+    def generate_grounded_code(self, task_description: str, codebase_context: str, max_tokens: int = 6000) -> str:
         """Step 5: Code Generation strictly preferring primary public APIs."""
         print("Generating complete codebase-aligned script with Claude...")
 
         response = self.client.messages.create(
             model="claude-sonnet-5",
-            max_tokens=20000,
+                max_tokens=max_tokens,
             system=(
                 "You are an expert computational software architect specializing in the PhiFlow differentiable physics framework. "
                 "Your objective is to generate an executable Python simulation script based ONLY on the user's task requirements and the retrieved public API context.\n\n"

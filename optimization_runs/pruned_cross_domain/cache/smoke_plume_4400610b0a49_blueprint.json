@@ -1,0 +1,39 @@
+{
+  "semantic_queries": [
+    "creating 2D centered grid for smoke density with closed/Neumann boundary conditions",
+    "creating 2D staggered grid for velocity field with zero boundary conditions at domain edges",
+    "defining a circular inflow region for smoke source using a sphere geometry",
+    "initializing pressure, velocity and smoke fields to zero at time t=0",
+    "applying smoke inflow with constant inflow rate inside circular source region",
+    "computing buoyancy force proportional to smoke density acting in vertical direction",
+    "advecting smoke density field using velocity field via semi-Lagrangian advection",
+    "advecting velocity field using self-advection (u dot grad u)",
+    "solving pressure projection step to enforce divergence-free velocity field",
+    "making velocity field incompressible using pressure solve",
+    "stepping simulation forward in time with explicit time integration using given time step size",
+    "running simulation loop for multiple time steps and storing smoke and pressure trajectories",
+    "saving smoke trajectory and pressure trajectory arrays to numpy files"
+  ],
+  "target_classes": [
+    "CenteredGrid",
+    "StaggeredGrid",
+    "Grid",
+    "Box",
+    "Domain",
+    "Sphere",
+    "Extrapolation",
+    "extrapolation"
+  ],
+  "target_functions": [
+    "advect",
+    "semi_lagrangian",
+    "make_incompressible",
+    "solve_linear",
+    "resample",
+    "step",
+    "diffuse",
+    "explicit",
+    "fluid_pressure",
+    "field"
+  ]
+}

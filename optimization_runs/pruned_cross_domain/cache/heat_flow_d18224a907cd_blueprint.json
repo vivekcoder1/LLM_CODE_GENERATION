@@ -1,0 +1,32 @@
+{
+  "semantic_queries": [
+    "creating a 2D centered grid with resolution 100x50 over domain [0,10]x[0,5]",
+    "setting boundary conditions with fixed value 1 at x=0, zero-gradient (Neumann) at x=10, and periodic boundary along y-direction",
+    "defining spatially varying conductivity field with high value 1.01 inside rectangular inclusion regions and low value 0.01 elsewhere",
+    "constructing inclusion regions using union of two boxes for material property masking",
+    "implementing explicit time-stepping diffusion step function for heat equation using conductivity-weighted Laplacian",
+    "solving 1D diffusion term in heat equation with spatially varying diffusivity coefficient",
+    "running time-stepping loop for 100 iterations and storing temperature field snapshots",
+    "saving temperature trajectory array of shape [time_step+1, Nx, Ny] to a numpy file"
+  ],
+  "target_classes": [
+    "CenteredGrid",
+    "Grid",
+    "Box",
+    "Domain",
+    "extrapolation",
+    "Extrapolation",
+    "PERIODIC",
+    "ConstantExtrapolation"
+  ],
+  "target_functions": [
+    "diffuse",
+    "laplace",
+    "explicit",
+    "step",
+    "where",
+    "field.where",
+    "iterate",
+    "gradient"
+  ]
+}

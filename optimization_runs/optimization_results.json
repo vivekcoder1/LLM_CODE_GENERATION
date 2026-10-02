@@ -1,40 +1,37 @@
 {
-  "trials_per_task": 200,
-  "top_per_task": 10,
-  "generate_top": 3,
-  "generation_max_tokens": 6000,
+  "trials_per_task": 1,
+  "top_per_task": 5,
+  "generate_top": 1,
+  "generation_max_tokens": 20000,
   "results": [
     {
       "domain": "heat_flow",
-      "status": "empty_blueprint"
-    },
-    {
-      "domain": "burgers2d",
-      "status": "empty_blueprint"
-    },
-    {
-      "domain": "julia_set",
-      "status": "empty_blueprint"
-    },
-    {
-      "domain": "lid_driven_cavity",
-      "status": "empty_blueprint"
-    },
-    {
-      "domain": "reaction_diffusion",
-      "status": "empty_blueprint"
-    },
-    {
-      "domain": "smoke_plume",
-      "status": "empty_blueprint"
-    },
-    {
-      "domain": "structural_mechanics",
-      "status": "empty_blueprint"
-    },
-    {
-      "domain": "wake_flow",
-      "status": "empty_blueprint"
+      "config_id": "e436dba962ae",
+      "config": {
+        "top_k": 12,
+        "min_score": 0.2,
+        "method_min_score": 0.5,
+        "max_methods_per_class": 2,
+        "max_nodes": 8,
+        "fulltext_limit": 3,
+        "description_limit": 8,
+        "function_limit": 4,
+        "class_limit": 4
+      },
+      "seed_count": 80,
+      "raw_count": 2499,
+      "filtered_count": 12,
+      "metrics": {
+        "retrieval_score": 0.608667,
+        "task_term_coverage": 0.44,
+        "context_chars": 11163,
+        "context_tokens_approx": 2791,
+        "public_api_count": 8,
+        "size_score": 0.93025,
+        "compactness": 1.0
+      },
+      "rank": 1,
+      "generation_requested": true
     }
   ]
 }

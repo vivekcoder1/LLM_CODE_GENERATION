@@ -1,0 +1,40 @@
+{
+  "semantic_queries": [
+    "creating 3D staggered grid for velocity with mixed boundary conditions",
+    "defining cylindrical obstacle geometry for wake flow simulation",
+    "setting inflow boundary condition at x=0 with constant velocity",
+    "zero gradient outflow boundary condition at x=200",
+    "periodic boundary conditions in y and z directions",
+    "initializing velocity field with uniform freestream flow",
+    "advection step for velocity field using semi-Lagrangian scheme",
+    "pressure projection to enforce incompressibility divergence-free velocity",
+    "obstacle boundary condition enforcement for immersed cylinder",
+    "time stepping loop for wake flow simulation storing velocity trajectory",
+    "saving velocity trajectory array to npy file"
+  ],
+  "target_classes": [
+    "StaggeredGrid",
+    "CenteredGrid",
+    "Domain",
+    "Box",
+    "Obstacle",
+    "Sphere",
+    "Geometry",
+    "PERIODIC",
+    "ZERO_GRADIENT",
+    "extrapolation",
+    "Extrapolation",
+    "Solve"
+  ],
+  "target_functions": [
+    "advect",
+    "semi_lagrangian",
+    "fluid.make_incompressible",
+    "make_incompressible",
+    "divergence",
+    "diffuse",
+    "field.laplace",
+    "step",
+    "resample"
+  ]
+}

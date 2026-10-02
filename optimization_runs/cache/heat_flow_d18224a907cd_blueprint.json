@@ -1,5 +1,30 @@
 {
-  "semantic_queries": [],
-  "target_classes": [],
-  "target_functions": []
+  "semantic_queries": [
+    "creating 2D centered grid for temperature field with mixed boundary conditions",
+    "defining domain with Dirichlet boundary at x=0, Neumann boundary at x=10, and periodic boundary in y-direction",
+    "defining spatially varying conductivity field with rectangular inclusions of higher conductivity",
+    "building conductivity mask using HardGeometryMask for box-shaped inclusion regions",
+    "diffusive step for temperature field using variable conductivity coefficient",
+    "explicit time stepping of heat equation using diffusion operator",
+    "running simulation loop for 100 steps and storing temperature trajectory snapshots",
+    "saving temperature trajectory array to numpy file with shape time_step+1 by Nx by Ny"
+  ],
+  "target_classes": [
+    "CenteredGrid",
+    "Grid",
+    "Box",
+    "Domain",
+    "extrapolation",
+    "Extrapolation",
+    "HardGeometryMask"
+  ],
+  "target_functions": [
+    "diffuse",
+    "explicit",
+    "laplace",
+    "step",
+    "field.where",
+    "CenteredGrid",
+    "iterate"
+  ]
 }

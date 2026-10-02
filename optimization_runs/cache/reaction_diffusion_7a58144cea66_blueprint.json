@@ -1,5 +1,28 @@
 {
-  "semantic_queries": [],
-  "target_classes": [],
-  "target_functions": []
+  "semantic_queries": [
+    "creating 2D centered grid with periodic boundary conditions",
+    "initializing u and v concentration fields with cosine of radial distance from domain center",
+    "computing radial distance from grid center for initial condition",
+    "diffusion term using laplace operator for reaction diffusion system",
+    "reaction diffusion step function updating u and v fields using Gray-Scott model",
+    "explicit time stepping integration for reaction diffusion PDE",
+    "iterating simulation for fixed number of time steps and collecting trajectory",
+    "saving simulated u and v trajectories as numpy arrays"
+  ],
+  "target_classes": [
+    "CenteredGrid",
+    "Grid",
+    "Box",
+    "Domain",
+    "PERIODIC",
+    "extrapolation",
+    "Extrapolation"
+  ],
+  "target_functions": [
+    "laplace",
+    "diffuse",
+    "explicit",
+    "step",
+    "iterate"
+  ]
 }

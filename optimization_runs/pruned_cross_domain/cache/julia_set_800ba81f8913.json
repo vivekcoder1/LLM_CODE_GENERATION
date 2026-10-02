@@ -1,0 +1,27 @@
+{
+  "domain": "julia_set",
+  "config_id": "800ba81f8913",
+  "config": {
+    "top_k": 32,
+    "min_score": 0.2,
+    "method_min_score": 0.5,
+    "max_methods_per_class": 2,
+    "max_nodes": 12,
+    "fulltext_limit": 5,
+    "description_limit": 3,
+    "function_limit": 4,
+    "class_limit": 4
+  },
+  "seed_count": 64,
+  "raw_count": 2361,
+  "filtered_count": 32,
+  "metrics": {
+    "retrieval_score": 0.685714,
+    "task_term_coverage": 0.428571,
+    "context_chars": 14284,
+    "context_tokens_approx": 3571,
+    "public_api_count": 12,
+    "size_score": 1.0,
+    "compactness": 1.0
+  }
+}

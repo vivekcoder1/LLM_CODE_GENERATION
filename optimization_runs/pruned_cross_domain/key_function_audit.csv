@@ -1,0 +1,121 @@
+source,config_id,domain,requirement,count,required,matched_slots,pass
+one_shot,one_shot,burgers2d,diffuse.implicit,0,1,0,False
+one_shot,one_shot,burgers2d,advect.semi_lagrangian,1,1,1,True
+one_shot,one_shot,burgers2d,CenteredGrid,1,1,1,True
+one_shot,one_shot,heat_flow,diffuse.implicit,0,1,0,False
+one_shot,one_shot,heat_flow,CenteredGrid,2,1,1,True
+one_shot,one_shot,julia_set,CenteredGrid,3,1,1,True
+one_shot,one_shot,julia_set,correct equation,1,1,1,True
+one_shot,one_shot,julia_set,correct escape criterion,3,1,1,True
+one_shot,one_shot,lid_driven_cavity,advect.semi_lagrangian,1,1,1,True
+one_shot,one_shot,lid_driven_cavity,diffuse.explicit,1,1,1,True
+one_shot,one_shot,lid_driven_cavity,fluid.make_incompressible,1,1,1,True
+one_shot,one_shot,lid_driven_cavity,StaggeredGrid,1,1,1,True
+one_shot,one_shot,reaction_diffusion,field.laplace x2,2,2,2,True
+one_shot,one_shot,reaction_diffusion,CenteredGrid x3,2,3,2,False
+one_shot,one_shot,smoke_plume,advect.mac_cormack,1,1,1,True
+one_shot,one_shot,smoke_plume,resample,0,1,0,False
+one_shot,one_shot,smoke_plume,semi_lagrangian,1,1,1,True
+one_shot,one_shot,smoke_plume,fluid.make_incompressible,1,1,1,True
+one_shot,one_shot,smoke_plume,StaggeredGrid,1,1,1,True
+one_shot,one_shot,smoke_plume,CenteredGrid,2,1,1,True
+kg,2b266fbc949d,burgers2d,diffuse.implicit,0,1,0,False
+kg,2b266fbc949d,burgers2d,advect.semi_lagrangian,0,1,0,False
+kg,2b266fbc949d,burgers2d,CenteredGrid,0,1,0,False
+kg,2b266fbc949d,heat_flow,diffuse.implicit,0,1,0,False
+kg,2b266fbc949d,heat_flow,CenteredGrid,0,1,0,False
+kg,2b266fbc949d,julia_set,CenteredGrid,2,1,1,True
+kg,2b266fbc949d,julia_set,correct equation,1,1,1,True
+kg,2b266fbc949d,julia_set,correct escape criterion,1,1,1,True
+kg,2b266fbc949d,lid_driven_cavity,advect.semi_lagrangian,0,1,0,False
+kg,2b266fbc949d,lid_driven_cavity,diffuse.explicit,1,1,1,True
+kg,2b266fbc949d,lid_driven_cavity,fluid.make_incompressible,1,1,1,True
+kg,2b266fbc949d,lid_driven_cavity,StaggeredGrid,2,1,1,True
+kg,2b266fbc949d,reaction_diffusion,field.laplace x2,0,2,0,False
+kg,2b266fbc949d,reaction_diffusion,CenteredGrid x3,2,3,2,False
+kg,2b266fbc949d,smoke_plume,advect.mac_cormack,2,1,1,True
+kg,2b266fbc949d,smoke_plume,resample,0,1,0,False
+kg,2b266fbc949d,smoke_plume,semi_lagrangian,0,1,0,False
+kg,2b266fbc949d,smoke_plume,fluid.make_incompressible,1,1,1,True
+kg,2b266fbc949d,smoke_plume,StaggeredGrid,2,1,1,True
+kg,2b266fbc949d,smoke_plume,CenteredGrid,2,1,1,True
+kg,3a899d129273,burgers2d,diffuse.implicit,0,1,0,False
+kg,3a899d129273,burgers2d,advect.semi_lagrangian,0,1,0,False
+kg,3a899d129273,burgers2d,CenteredGrid,1,1,1,True
+kg,3a899d129273,heat_flow,diffuse.implicit,0,1,0,False
+kg,3a899d129273,heat_flow,CenteredGrid,3,1,1,True
+kg,3a899d129273,julia_set,CenteredGrid,3,1,1,True
+kg,3a899d129273,julia_set,correct equation,0,1,0,False
+kg,3a899d129273,julia_set,correct escape criterion,1,1,1,True
+kg,3a899d129273,lid_driven_cavity,advect.semi_lagrangian,0,1,0,False
+kg,3a899d129273,lid_driven_cavity,diffuse.explicit,1,1,1,True
+kg,3a899d129273,lid_driven_cavity,fluid.make_incompressible,1,1,1,True
+kg,3a899d129273,lid_driven_cavity,StaggeredGrid,1,1,1,True
+kg,3a899d129273,reaction_diffusion,field.laplace x2,0,2,0,False
+kg,3a899d129273,reaction_diffusion,CenteredGrid x3,2,3,2,False
+kg,3a899d129273,smoke_plume,advect.mac_cormack,2,1,1,True
+kg,3a899d129273,smoke_plume,resample,0,1,0,False
+kg,3a899d129273,smoke_plume,semi_lagrangian,0,1,0,False
+kg,3a899d129273,smoke_plume,fluid.make_incompressible,1,1,1,True
+kg,3a899d129273,smoke_plume,StaggeredGrid,1,1,1,True
+kg,3a899d129273,smoke_plume,CenteredGrid,2,1,1,True
+kg,800ba81f8913,burgers2d,diffuse.implicit,0,1,0,False
+kg,800ba81f8913,burgers2d,advect.semi_lagrangian,0,1,0,False
+kg,800ba81f8913,burgers2d,CenteredGrid,1,1,1,True
+kg,800ba81f8913,heat_flow,diffuse.implicit,0,1,0,False
+kg,800ba81f8913,heat_flow,CenteredGrid,2,1,1,True
+kg,800ba81f8913,julia_set,CenteredGrid,3,1,1,True
+kg,800ba81f8913,julia_set,correct equation,0,1,0,False
+kg,800ba81f8913,julia_set,correct escape criterion,0,1,0,False
+kg,800ba81f8913,lid_driven_cavity,advect.semi_lagrangian,0,1,0,False
+kg,800ba81f8913,lid_driven_cavity,diffuse.explicit,1,1,1,True
+kg,800ba81f8913,lid_driven_cavity,fluid.make_incompressible,1,1,1,True
+kg,800ba81f8913,lid_driven_cavity,StaggeredGrid,1,1,1,True
+kg,800ba81f8913,reaction_diffusion,field.laplace x2,0,2,0,False
+kg,800ba81f8913,reaction_diffusion,CenteredGrid x3,4,3,3,True
+kg,800ba81f8913,smoke_plume,advect.mac_cormack,2,1,1,True
+kg,800ba81f8913,smoke_plume,resample,0,1,0,False
+kg,800ba81f8913,smoke_plume,semi_lagrangian,0,1,0,False
+kg,800ba81f8913,smoke_plume,fluid.make_incompressible,1,1,1,True
+kg,800ba81f8913,smoke_plume,StaggeredGrid,1,1,1,True
+kg,800ba81f8913,smoke_plume,CenteredGrid,2,1,1,True
+kg,c5573860ecec,burgers2d,diffuse.implicit,0,1,0,False
+kg,c5573860ecec,burgers2d,advect.semi_lagrangian,0,1,0,False
+kg,c5573860ecec,burgers2d,CenteredGrid,0,1,0,False
+kg,c5573860ecec,heat_flow,diffuse.implicit,0,1,0,False
+kg,c5573860ecec,heat_flow,CenteredGrid,2,1,1,True
+kg,c5573860ecec,julia_set,CenteredGrid,0,1,0,False
+kg,c5573860ecec,julia_set,correct equation,1,1,1,True
+kg,c5573860ecec,julia_set,correct escape criterion,1,1,1,True
+kg,c5573860ecec,lid_driven_cavity,advect.semi_lagrangian,0,1,0,False
+kg,c5573860ecec,lid_driven_cavity,diffuse.explicit,1,1,1,True
+kg,c5573860ecec,lid_driven_cavity,fluid.make_incompressible,1,1,1,True
+kg,c5573860ecec,lid_driven_cavity,StaggeredGrid,1,1,1,True
+kg,c5573860ecec,reaction_diffusion,field.laplace x2,0,2,0,False
+kg,c5573860ecec,reaction_diffusion,CenteredGrid x3,2,3,2,False
+kg,c5573860ecec,smoke_plume,advect.mac_cormack,2,1,1,True
+kg,c5573860ecec,smoke_plume,resample,0,1,0,False
+kg,c5573860ecec,smoke_plume,semi_lagrangian,0,1,0,False
+kg,c5573860ecec,smoke_plume,fluid.make_incompressible,1,1,1,True
+kg,c5573860ecec,smoke_plume,StaggeredGrid,1,1,1,True
+kg,c5573860ecec,smoke_plume,CenteredGrid,2,1,1,True
+kg,e905e7297b5f,burgers2d,diffuse.implicit,0,1,0,False
+kg,e905e7297b5f,burgers2d,advect.semi_lagrangian,0,1,0,False
+kg,e905e7297b5f,burgers2d,CenteredGrid,1,1,1,True
+kg,e905e7297b5f,heat_flow,diffuse.implicit,0,1,0,False
+kg,e905e7297b5f,heat_flow,CenteredGrid,2,1,1,True
+kg,e905e7297b5f,julia_set,CenteredGrid,2,1,1,True
+kg,e905e7297b5f,julia_set,correct equation,0,1,0,False
+kg,e905e7297b5f,julia_set,correct escape criterion,0,1,0,False
+kg,e905e7297b5f,lid_driven_cavity,advect.semi_lagrangian,0,1,0,False
+kg,e905e7297b5f,lid_driven_cavity,diffuse.explicit,1,1,1,True
+kg,e905e7297b5f,lid_driven_cavity,fluid.make_incompressible,1,1,1,True
+kg,e905e7297b5f,lid_driven_cavity,StaggeredGrid,1,1,1,True
+kg,e905e7297b5f,reaction_diffusion,field.laplace x2,0,2,0,False
+kg,e905e7297b5f,reaction_diffusion,CenteredGrid x3,2,3,2,False
+kg,e905e7297b5f,smoke_plume,advect.mac_cormack,2,1,1,True
+kg,e905e7297b5f,smoke_plume,resample,0,1,0,False
+kg,e905e7297b5f,smoke_plume,semi_lagrangian,0,1,0,False
+kg,e905e7297b5f,smoke_plume,fluid.make_incompressible,1,1,1,True
+kg,e905e7297b5f,smoke_plume,StaggeredGrid,1,1,1,True
+kg,e905e7297b5f,smoke_plume,CenteredGrid,2,1,1,True

@@ -1,0 +1,6 @@
+rank,config_id,top_k,min_score,method_min_score,max_methods_per_class,max_nodes,fulltext_limit,description_limit,function_limit,class_limit,successful_domains,tested_domains,avg_physics_score,mean_relative_rmse,worst_relative_rmse,measured_domains,unmeasured_domains,quality_domains,julia_set_physics,reaction_diffusion_physics,julia_set_rmse,reaction_diffusion_rmse
+1,c5573860ecec,32,0.2,0.3,5,12,5,8,6,6,4,7,0.999999,1e-06,3e-06,julia_set;reaction_diffusion,burgers2d;heat_flow,julia_set;reaction_diffusion,1.0,0.999997,0.0,3e-06
+2,3a899d129273,32,0.2,0.5,5,12,5,3,6,6,4,7,0.999998,2e-06,5e-06,julia_set;reaction_diffusion,burgers2d;heat_flow,julia_set;reaction_diffusion,1.0,0.999996,0.0,4e-06
+3,e905e7297b5f,12,0.2,0.5,5,12,5,5,2,2,4,7,0.999998,2e-06,6e-06,julia_set;reaction_diffusion,burgers2d;heat_flow,julia_set;reaction_diffusion,1.0,0.999995,0.0,5e-06
+4,2b266fbc949d,12,0.15,0.3,5,12,5,8,4,4,4,7,0.999995,5e-06,1.1e-05,julia_set;reaction_diffusion,burgers2d;heat_flow,julia_set;reaction_diffusion,1.0,0.999991,0.0,9e-06
+5,800ba81f8913,32,0.2,0.5,2,12,5,3,4,4,4,7,0.999995,5e-06,1.1e-05,julia_set;reaction_diffusion,burgers2d;heat_flow,julia_set;reaction_diffusion,1.0,0.999991,0.0,9e-06

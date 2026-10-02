@@ -1,0 +1,27 @@
+{
+  "domain": "smoke_plume",
+  "config_id": "e6ae57c23bed",
+  "config": {
+    "top_k": 48,
+    "min_score": 0.15,
+    "method_min_score": 0.2,
+    "max_methods_per_class": 1,
+    "max_nodes": 8,
+    "fulltext_limit": 8,
+    "description_limit": 8,
+    "function_limit": 2,
+    "class_limit": 4
+  },
+  "seed_count": 88,
+  "raw_count": 2677,
+  "filtered_count": 48,
+  "metrics": {
+    "retrieval_score": 0.529948,
+    "task_term_coverage": 0.296875,
+    "context_chars": 6467,
+    "context_tokens_approx": 1617,
+    "public_api_count": 8,
+    "size_score": 0.538917,
+    "compactness": 1.0
+  }
+}

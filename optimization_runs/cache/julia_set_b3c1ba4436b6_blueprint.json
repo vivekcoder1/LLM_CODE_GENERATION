@@ -1,5 +1,25 @@
 {
-  "semantic_queries": [],
-  "target_classes": [],
-  "target_functions": []
+  "semantic_queries": [
+    "creating 2D centered grid over complex domain with 256x256 resolution",
+    "defining domain bounds from -2 to 2 in both real and imaginary axes",
+    "initializing complex-valued field z(x,y,0) = x + iy on grid",
+    "computing time-dependent complex parameter c(t) with periodic phase",
+    "iterating quadratic map z = z^2 + c(t) over the grid",
+    "accumulating escape count mask where absolute value of z is less than 2",
+    "updating Julia set indicator field at each time step",
+    "running iterative simulation for 100 time steps and storing domain trajectory",
+    "saving simulation trajectory of domain field to numpy file"
+  ],
+  "target_classes": [
+    "CenteredGrid",
+    "Grid",
+    "Box",
+    "Domain"
+  ],
+  "target_functions": [
+    "step",
+    "iterate",
+    "abs",
+    "where"
+  ]
 }

@@ -1,0 +1,29 @@
+{
+  "semantic_queries": [
+    "creating 2D centered grid domain with periodic boundary conditions",
+    "initializing velocity field with Gaussian exponential profile centered in domain",
+    "setting up 2D box domain with given Lx and Ly extents and grid resolution",
+    "defining periodic extrapolation for boundary conditions",
+    "advection step for velocity field using semi-Lagrangian scheme",
+    "diffusion step for velocity field using explicit or implicit diffusion",
+    "stepping burgers equation forward in time combining advection and diffusion",
+    "iterating simulation for multiple time steps and storing velocity trajectory",
+    "saving velocity field trajectory to numpy file"
+  ],
+  "target_classes": [
+    "CenteredGrid",
+    "Grid",
+    "Box",
+    "Domain",
+    "PERIODIC",
+    "Extrapolation"
+  ],
+  "target_functions": [
+    "advect",
+    "diffuse",
+    "semi_lagrangian",
+    "explicit",
+    "step",
+    "laplace"
+  ]
+}

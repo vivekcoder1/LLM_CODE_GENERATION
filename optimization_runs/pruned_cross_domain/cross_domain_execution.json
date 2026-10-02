@@ -1,0 +1,908 @@
+{
+  "domains": [
+    "heat_flow",
+    "burgers2d",
+    "julia_set",
+    "lid_driven_cavity",
+    "reaction_diffusion",
+    "smoke_plume",
+    "wake_flow"
+  ],
+  "trials": 5,
+  "results": [
+    {
+      "config_id": "2b266fbc949d",
+      "config": {
+        "top_k": 12,
+        "min_score": 0.15,
+        "method_min_score": 0.3,
+        "max_methods_per_class": 5,
+        "max_nodes": 12,
+        "fulltext_limit": 5,
+        "description_limit": 8,
+        "function_limit": 4,
+        "class_limit": 4
+      },
+      "successful_domains": 4,
+      "tested_domains": 7,
+      "domains": [
+        {
+          "domain": "heat_flow",
+          "config_id": "2b266fbc949d",
+          "config": {
+            "top_k": 12,
+            "min_score": 0.15,
+            "method_min_score": 0.3,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 8,
+            "function_limit": 4,
+            "class_limit": 4
+          },
+          "retrieval_score": 0.619667,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": true,
+            "exit_code": 0,
+            "duration_s": 20.69,
+            "stderr_tail": "ning: CFL condition violated (CFL = 101.0 > 0.5) in diffuse.explicit() with diffusivity=Field[(x\\u02e2=100, y\\u02e2=50, vector\\u1d9c=x,y)], dt=1.0, dx=(x=0.100, y=0.100) float64. Increase substeps or use diffuse.implicit() instead.\n  temperature = diffuse.explicit(temperature, diffusivity, dt=dt)\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1720: RuntimeWarning: overflow encountered in divide\n  return numerator / denominator\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1712: RuntimeWarning: overflow encountered in subtract\n  return a - b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1712: RuntimeWarning: invalid value encountered in subtract\n  return a - b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1716: RuntimeWarning: invalid value encountered in multiply\n  return a * b\n"
+          }
+        },
+        {
+          "domain": "burgers2d",
+          "config_id": "2b266fbc949d",
+          "config": {
+            "top_k": 12,
+            "min_score": 0.15,
+            "method_min_score": 0.3,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 8,
+            "function_limit": 4,
+            "class_limit": 4
+          },
+          "retrieval_score": 0.704167,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": true,
+            "exit_code": 0,
+            "duration_s": 13.915,
+            "stderr_tail": "C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1716: RuntimeWarning: overflow encountered in multiply\n  return a * b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1708: RuntimeWarning: invalid value encountered in add\n  return a + b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1712: RuntimeWarning: invalid value encountered in subtract\n  return a - b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1720: RuntimeWarning: overflow encountered in divide\n  return numerator / denominator\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy\\_core\\fromnumeric.py:86: RuntimeWarning: invalid value encountered in reduce\n  return ufunc.reduce(obj, axis, dtype, out, **passkwargs)\n"
+          }
+        },
+        {
+          "domain": "julia_set",
+          "config_id": "2b266fbc949d",
+          "config": {
+            "top_k": 12,
+            "min_score": 0.15,
+            "method_min_score": 0.3,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 8,
+            "function_limit": 4,
+            "class_limit": 4
+          },
+          "retrieval_score": 0.607738,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": true,
+            "exit_code": 0,
+            "duration_s": 2.64,
+            "stderr_tail": "D:\\Vivek\\research\\optimization_runs\\pruned_cross_domain\\cross_domain\\2b266fbc949d\\julia_set\\generated_julia_set_simulation.py:20: RuntimeWarning: overflow encountered in square\n  z = z ** 2 + c\nD:\\Vivek\\research\\optimization_runs\\pruned_cross_domain\\cross_domain\\2b266fbc949d\\julia_set\\generated_julia_set_simulation.py:20: RuntimeWarning: invalid value encountered in square\n  z = z ** 2 + c\n"
+          }
+        },
+        {
+          "domain": "lid_driven_cavity",
+          "config_id": "2b266fbc949d",
+          "config": {
+            "top_k": 12,
+            "min_score": 0.15,
+            "method_min_score": 0.3,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 8,
+            "function_limit": 4,
+            "class_limit": 4
+          },
+          "retrieval_score": 0.684887,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": false,
+            "exit_code": 1,
+            "duration_s": 25.671,
+            "stderr_tail": "line 690, in _matrix_solve_forward\n    result = _linear_solve_forward(y, solve, nat_matrix, pattern_dims_in, pattern_dims_out, preconditioner, backend, is_backprop, rx, ry, ex, ey)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_optimize.py\", line 818, in _linear_solve_forward\n    result.convergence_check(is_backprop and 'TensorFlow' in backend.name)  # raises ConvergenceException\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_optimize.py\", line 209, in convergence_check\n    raise NotConverged(self)\nphiml.math._optimize.NotConverged: \\u03a6-ML CG (numpy) with preconditioner 'none' did not converge to rel_tol=1e-05, abs_tol=1e-05 within 1000 iterations. Max residual: 5.316756e-07\n"
+          }
+        },
+        {
+          "domain": "reaction_diffusion",
+          "config_id": "2b266fbc949d",
+          "config": {
+            "top_k": 12,
+            "min_score": 0.15,
+            "method_min_score": 0.3,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 8,
+            "function_limit": 4,
+            "class_limit": 4
+          },
+          "retrieval_score": 0.639333,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": true,
+            "exit_code": 0,
+            "duration_s": 10.469,
+            "stderr_tail": ""
+          }
+        },
+        {
+          "domain": "smoke_plume",
+          "config_id": "2b266fbc949d",
+          "config": {
+            "top_k": 12,
+            "min_score": 0.15,
+            "method_min_score": 0.3,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 8,
+            "function_limit": 4,
+            "class_limit": 4
+          },
+          "retrieval_score": 0.673438,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": false,
+            "exit_code": 1,
+            "duration_s": 9.045,
+            "stderr_tail": "\\_optimize.py\", line 690, in _matrix_solve_forward\n    result = _linear_solve_forward(y, solve, nat_matrix, pattern_dims_in, pattern_dims_out, preconditioner, backend, is_backprop, rx, ry, ex, ey)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_optimize.py\", line 818, in _linear_solve_forward\n    result.convergence_check(is_backprop and 'TensorFlow' in backend.name)  # raises ConvergenceException\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_optimize.py\", line 209, in convergence_check\n    raise NotConverged(self)\nphiml.math._optimize.NotConverged: \\u03a6-ML CG-adaptive (numpy)  did not converge to rel_tol=1e-05, abs_tol=1e-05 within 1000 iterations. Max residual: 1.0792651e-06\n"
+          }
+        },
+        {
+          "domain": "wake_flow",
+          "config_id": "2b266fbc949d",
+          "config": {
+            "top_k": 12,
+            "min_score": 0.15,
+            "method_min_score": 0.3,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 8,
+            "function_limit": 4,
+            "class_limit": 4
+          },
+          "retrieval_score": 0.563542,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": false,
+            "exit_code": 1,
+            "duration_s": 6.209,
+            "stderr_tail": "Traceback (most recent call last):\n  File \"D:\\Vivek\\research\\optimization_runs\\pruned_cross_domain\\cross_domain\\2b266fbc949d\\wake_flow\\generated_wake_flow_simulation.py\", line 17, in <module>\n    cyl = Cylinder(center=vec(x=20, y=50, z=2.5), radius=10, depth=5, axis='z')\n          ^^^^^^^^\nNameError: name 'Cylinder' is not defined. Did you mean: 'cylinder'?\n"
+          }
+        }
+      ]
+    },
+    {
+      "config_id": "800ba81f8913",
+      "config": {
+        "top_k": 32,
+        "min_score": 0.2,
+        "method_min_score": 0.5,
+        "max_methods_per_class": 2,
+        "max_nodes": 12,
+        "fulltext_limit": 5,
+        "description_limit": 3,
+        "function_limit": 4,
+        "class_limit": 4
+      },
+      "successful_domains": 4,
+      "tested_domains": 7,
+      "domains": [
+        {
+          "domain": "heat_flow",
+          "config_id": "800ba81f8913",
+          "config": {
+            "top_k": 32,
+            "min_score": 0.2,
+            "method_min_score": 0.5,
+            "max_methods_per_class": 2,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 3,
+            "function_limit": 4,
+            "class_limit": 4
+          },
+          "retrieval_score": 0.692,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": true,
+            "exit_code": 0,
+            "duration_s": 22.914,
+            "stderr_tail": "on.py:28: RuntimeWarning: CFL condition violated (CFL = 101.0 > 0.5) in diffuse.explicit() with diffusivity=Field[(x\\u02e2=100, y\\u02e2=50, vector\\u1d9c=x,y)], dt=1.0, dx=(x=0.100, y=0.100) float64. Increase substeps or use diffuse.implicit() instead.\n  return diffuse.explicit(u, diffusivity, dt)\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1720: RuntimeWarning: overflow encountered in divide\n  return numerator / denominator\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1712: RuntimeWarning: overflow encountered in subtract\n  return a - b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1712: RuntimeWarning: invalid value encountered in subtract\n  return a - b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1716: RuntimeWarning: invalid value encountered in multiply\n  return a * b\n"
+          }
+        },
+        {
+          "domain": "burgers2d",
+          "config_id": "800ba81f8913",
+          "config": {
+            "top_k": 32,
+            "min_score": 0.2,
+            "method_min_score": 0.5,
+            "max_methods_per_class": 2,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 3,
+            "function_limit": 4,
+            "class_limit": 4
+          },
+          "retrieval_score": 0.75,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": true,
+            "exit_code": 0,
+            "duration_s": 12.578,
+            "stderr_tail": "C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1716: RuntimeWarning: overflow encountered in multiply\n  return a * b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1708: RuntimeWarning: invalid value encountered in add\n  return a + b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1712: RuntimeWarning: invalid value encountered in subtract\n  return a - b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1720: RuntimeWarning: overflow encountered in divide\n  return numerator / denominator\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy\\_core\\fromnumeric.py:86: RuntimeWarning: invalid value encountered in reduce\n  return ufunc.reduce(obj, axis, dtype, out, **passkwargs)\n"
+          }
+        },
+        {
+          "domain": "julia_set",
+          "config_id": "800ba81f8913",
+          "config": {
+            "top_k": 32,
+            "min_score": 0.2,
+            "method_min_score": 0.5,
+            "max_methods_per_class": 2,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 3,
+            "function_limit": 4,
+            "class_limit": 4
+          },
+          "retrieval_score": 0.685714,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": true,
+            "exit_code": 0,
+            "duration_s": 2.433,
+            "stderr_tail": "C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1716: RuntimeWarning: overflow encountered in multiply\n  return a * b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1708: RuntimeWarning: overflow encountered in add\n  return a + b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1712: RuntimeWarning: invalid value encountered in subtract\n  return a - b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_tensors.py:1229: RuntimeWarning: overflow encountered in multiply\n  result = op(n1, n2)\n"
+          }
+        },
+        {
+          "domain": "lid_driven_cavity",
+          "config_id": "800ba81f8913",
+          "config": {
+            "top_k": 32,
+            "min_score": 0.2,
+            "method_min_score": 0.5,
+            "max_methods_per_class": 2,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 3,
+            "function_limit": 4,
+            "class_limit": 4
+          },
+          "retrieval_score": 0.684525,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": false,
+            "exit_code": 1,
+            "duration_s": 4.547,
+            "stderr_tail": "sors)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_ops.py\", line 1130, in _closest_grid_values\n    grid = extrap.pad(grid, non_copy_pad, **pad_kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\extrapolation.py\", line 1139, in pad\n    value = ext.pad(value, ext_widths, already_padded=already_padded, **kwargs)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\extrapolation.py\", line 296, in pad\n    assert dim in value.shape, f\"Cannot pad tensor {value.shape} with extrapolation {pad_value.shape} because non-batch dimension '{dim}' is missing.\"\nAssertionError: Cannot pad tensor (x\\u02e2=49, y\\u02e2=32) with extrapolation (vector\\u1d9c=x,y) because non-batch dimension 'vector' is missing.\n"
+          }
+        },
+        {
+          "domain": "reaction_diffusion",
+          "config_id": "800ba81f8913",
+          "config": {
+            "top_k": 32,
+            "min_score": 0.2,
+            "method_min_score": 0.5,
+            "max_methods_per_class": 2,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 3,
+            "function_limit": 4,
+            "class_limit": 4
+          },
+          "retrieval_score": 0.692,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": true,
+            "exit_code": 0,
+            "duration_s": 9.091,
+            "stderr_tail": ""
+          }
+        },
+        {
+          "domain": "smoke_plume",
+          "config_id": "800ba81f8913",
+          "config": {
+            "top_k": 32,
+            "min_score": 0.2,
+            "method_min_score": 0.5,
+            "max_methods_per_class": 2,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 3,
+            "function_limit": 4,
+            "class_limit": 4
+          },
+          "retrieval_score": 0.673438,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": false,
+            "exit_code": 1,
+            "duration_s": 41.141,
+            "stderr_tail": "rams\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_optimize.py\", line 690, in _matrix_solve_forward\n    result = _linear_solve_forward(y, solve, nat_matrix, pattern_dims_in, pattern_dims_out, preconditioner, backend, is_backprop, rx, ry, ex, ey)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_optimize.py\", line 818, in _linear_solve_forward\n    result.convergence_check(is_backprop and 'TensorFlow' in backend.name)  # raises ConvergenceException\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_optimize.py\", line 203, in convergence_check\n    raise Diverged(self)\nphiml.math._optimize.Diverged: Solve diverged within 37 iterations using \\u03a6-ML CG (numpy) with preconditioner 'none'\n"
+          }
+        },
+        {
+          "domain": "wake_flow",
+          "config_id": "800ba81f8913",
+          "config": {
+            "top_k": 32,
+            "min_score": 0.2,
+            "method_min_score": 0.5,
+            "max_methods_per_class": 2,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 3,
+            "function_limit": 4,
+            "class_limit": 4
+          },
+          "retrieval_score": 0.702083,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": false,
+            "exit_code": 1,
+            "duration_s": 5.035,
+            "stderr_tail": "Traceback (most recent call last):\n  File \"D:\\Vivek\\research\\optimization_runs\\pruned_cross_domain\\cross_domain\\800ba81f8913\\wake_flow\\generated_wake_flow_simulation.py\", line 17, in <module>\n    obstacle_geom = Cylinder(center=vec(x=20, y=50, z=2.5), radius=10, depth=5, axis='z')\n                    ^^^^^^^^\nNameError: name 'Cylinder' is not defined. Did you mean: 'cylinder'?\n"
+          }
+        }
+      ]
+    },
+    {
+      "config_id": "e905e7297b5f",
+      "config": {
+        "top_k": 12,
+        "min_score": 0.2,
+        "method_min_score": 0.5,
+        "max_methods_per_class": 5,
+        "max_nodes": 12,
+        "fulltext_limit": 5,
+        "description_limit": 5,
+        "function_limit": 2,
+        "class_limit": 2
+      },
+      "successful_domains": 4,
+      "tested_domains": 7,
+      "domains": [
+        {
+          "domain": "heat_flow",
+          "config_id": "e905e7297b5f",
+          "config": {
+            "top_k": 12,
+            "min_score": 0.2,
+            "method_min_score": 0.5,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 5,
+            "function_limit": 2,
+            "class_limit": 2
+          },
+          "retrieval_score": 0.692,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": true,
+            "exit_code": 0,
+            "duration_s": 21.12,
+            "stderr_tail": "olated (CFL = 101.0 > 0.5) in diffuse.explicit() with diffusivity=Field[(x\\u02e2=100, y\\u02e2=50, vector\\u1d9c=x,y)], dt=1.0, dx=(x=0.100, y=0.100) float64. Increase substeps or use diffuse.implicit() instead.\n  temperature = diffuse.explicit(temperature, diffusivity=kappa_vec, dt=dt, substeps=1)\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1720: RuntimeWarning: overflow encountered in divide\n  return numerator / denominator\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1712: RuntimeWarning: overflow encountered in subtract\n  return a - b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1712: RuntimeWarning: invalid value encountered in subtract\n  return a - b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1716: RuntimeWarning: invalid value encountered in multiply\n  return a * b\n"
+          }
+        },
+        {
+          "domain": "burgers2d",
+          "config_id": "e905e7297b5f",
+          "config": {
+            "top_k": 12,
+            "min_score": 0.2,
+            "method_min_score": 0.5,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 5,
+            "function_limit": 2,
+            "class_limit": 2
+          },
+          "retrieval_score": 0.75,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": true,
+            "exit_code": 0,
+            "duration_s": 15.661,
+            "stderr_tail": "C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1716: RuntimeWarning: overflow encountered in multiply\n  return a * b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1708: RuntimeWarning: invalid value encountered in add\n  return a + b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1712: RuntimeWarning: invalid value encountered in subtract\n  return a - b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1720: RuntimeWarning: overflow encountered in divide\n  return numerator / denominator\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy\\_core\\fromnumeric.py:86: RuntimeWarning: invalid value encountered in reduce\n  return ufunc.reduce(obj, axis, dtype, out, **passkwargs)\n"
+          }
+        },
+        {
+          "domain": "julia_set",
+          "config_id": "e905e7297b5f",
+          "config": {
+            "top_k": 12,
+            "min_score": 0.2,
+            "method_min_score": 0.5,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 5,
+            "function_limit": 2,
+            "class_limit": 2
+          },
+          "retrieval_score": 0.685714,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": true,
+            "exit_code": 0,
+            "duration_s": 3.339,
+            "stderr_tail": "ulia_set_simulation.py:25: RuntimeWarning: overflow encountered in multiply\n  mag = np.sqrt(z_re * z_re + z_im * z_im)\nD:\\Vivek\\research\\optimization_runs\\pruned_cross_domain\\cross_domain\\e905e7297b5f\\julia_set\\generated_julia_set_simulation.py:25: RuntimeWarning: overflow encountered in add\n  mag = np.sqrt(z_re * z_re + z_im * z_im)\nD:\\Vivek\\research\\optimization_runs\\pruned_cross_domain\\cross_domain\\e905e7297b5f\\julia_set\\generated_julia_set_simulation.py:22: RuntimeWarning: overflow encountered in multiply\n  new_re = z_re * z_re - z_im * z_im + c_re\nD:\\Vivek\\research\\optimization_runs\\pruned_cross_domain\\cross_domain\\e905e7297b5f\\julia_set\\generated_julia_set_simulation.py:22: RuntimeWarning: invalid value encountered in subtract\n  new_re = z_re * z_re - z_im * z_im + c_re\nD:\\Vivek\\research\\optimization_runs\\pruned_cross_domain\\cross_domain\\e905e7297b5f\\julia_set\\generated_julia_set_simulation.py:23: RuntimeWarning: overflow encountered in multiply\n  new_im = 2 * z_re * z_im + c_im\n"
+          }
+        },
+        {
+          "domain": "lid_driven_cavity",
+          "config_id": "e905e7297b5f",
+          "config": {
+            "top_k": 12,
+            "min_score": 0.2,
+            "method_min_score": 0.5,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 5,
+            "function_limit": 2,
+            "class_limit": 2
+          },
+          "retrieval_score": 0.684887,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": false,
+            "exit_code": 1,
+            "duration_s": 6.139,
+            "stderr_tail": "sors)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_ops.py\", line 1130, in _closest_grid_values\n    grid = extrap.pad(grid, non_copy_pad, **pad_kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\extrapolation.py\", line 1139, in pad\n    value = ext.pad(value, ext_widths, already_padded=already_padded, **kwargs)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\extrapolation.py\", line 296, in pad\n    assert dim in value.shape, f\"Cannot pad tensor {value.shape} with extrapolation {pad_value.shape} because non-batch dimension '{dim}' is missing.\"\nAssertionError: Cannot pad tensor (x\\u02e2=51, y\\u02e2=33) with extrapolation (vector\\u1d9c=x,y) because non-batch dimension 'vector' is missing.\n"
+          }
+        },
+        {
+          "domain": "reaction_diffusion",
+          "config_id": "e905e7297b5f",
+          "config": {
+            "top_k": 12,
+            "min_score": 0.2,
+            "method_min_score": 0.5,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 5,
+            "function_limit": 2,
+            "class_limit": 2
+          },
+          "retrieval_score": 0.648,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": true,
+            "exit_code": 0,
+            "duration_s": 8.226,
+            "stderr_tail": ""
+          }
+        },
+        {
+          "domain": "smoke_plume",
+          "config_id": "e905e7297b5f",
+          "config": {
+            "top_k": 12,
+            "min_score": 0.2,
+            "method_min_score": 0.5,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 5,
+            "function_limit": 2,
+            "class_limit": 2
+          },
+          "retrieval_score": 0.673438,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": false,
+            "exit_code": 1,
+            "duration_s": 68.665,
+            "stderr_tail": "ocal\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_optimize.py\", line 690, in _matrix_solve_forward\n    result = _linear_solve_forward(y, solve, nat_matrix, pattern_dims_in, pattern_dims_out, preconditioner, backend, is_backprop, rx, ry, ex, ey)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_optimize.py\", line 818, in _linear_solve_forward\n    result.convergence_check(is_backprop and 'TensorFlow' in backend.name)  # raises ConvergenceException\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_optimize.py\", line 203, in convergence_check\n    raise Diverged(self)\nphiml.math._optimize.Diverged: Direct solution does not satisfy tolerance: norm(residual)=2.330719871679321e-05\n"
+          }
+        },
+        {
+          "domain": "wake_flow",
+          "config_id": "e905e7297b5f",
+          "config": {
+            "top_k": 12,
+            "min_score": 0.2,
+            "method_min_score": 0.5,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 5,
+            "function_limit": 2,
+            "class_limit": 2
+          },
+          "retrieval_score": 0.68125,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": false,
+            "exit_code": 1,
+            "duration_s": 5.122,
+            "stderr_tail": "Traceback (most recent call last):\n  File \"D:\\Vivek\\research\\optimization_runs\\pruned_cross_domain\\cross_domain\\e905e7297b5f\\wake_flow\\generated_wake_flow_simulation.py\", line 16, in <module>\n    obstacle_geometry = cylinder(x=20, y=50, z=2.5, radius=10, axis='z')\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Vivek\\research\\temp\\PhiFlow\\phi\\geom\\_cylinder.py\", line 239, in cylinder\n    assert isinstance(axis, Tensor)\nAssertionError\n"
+          }
+        }
+      ]
+    },
+    {
+      "config_id": "3a899d129273",
+      "config": {
+        "top_k": 32,
+        "min_score": 0.2,
+        "method_min_score": 0.5,
+        "max_methods_per_class": 5,
+        "max_nodes": 12,
+        "fulltext_limit": 5,
+        "description_limit": 3,
+        "function_limit": 6,
+        "class_limit": 6
+      },
+      "successful_domains": 4,
+      "tested_domains": 7,
+      "domains": [
+        {
+          "domain": "heat_flow",
+          "config_id": "3a899d129273",
+          "config": {
+            "top_k": 32,
+            "min_score": 0.2,
+            "method_min_score": 0.5,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 3,
+            "function_limit": 6,
+            "class_limit": 6
+          },
+          "retrieval_score": 0.692,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": true,
+            "exit_code": 0,
+            "duration_s": 14.396,
+            "stderr_tail": "> 0.5) in diffuse.explicit() with diffusivity=(x\\u02e2=100, y\\u02e2=50, vector\\u1d9c=x,y) 0.125 \u00b1 0.327 (0e+00...1e+00), dt=1.0, dx=(x=0.100, y=0.100) float64. Increase substeps or use diffuse.implicit() instead.\n  temperature = diffuse.explicit(temperature, diffusivity_tensor, dt=dt, substeps=1)\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1720: RuntimeWarning: overflow encountered in divide\n  return numerator / denominator\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1712: RuntimeWarning: overflow encountered in subtract\n  return a - b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1712: RuntimeWarning: invalid value encountered in subtract\n  return a - b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1716: RuntimeWarning: invalid value encountered in multiply\n  return a * b\n"
+          }
+        },
+        {
+          "domain": "burgers2d",
+          "config_id": "3a899d129273",
+          "config": {
+            "top_k": 32,
+            "min_score": 0.2,
+            "method_min_score": 0.5,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 3,
+            "function_limit": 6,
+            "class_limit": 6
+          },
+          "retrieval_score": 0.75,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": true,
+            "exit_code": 0,
+            "duration_s": 8.122,
+            "stderr_tail": "C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1716: RuntimeWarning: overflow encountered in multiply\n  return a * b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1708: RuntimeWarning: invalid value encountered in add\n  return a + b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1712: RuntimeWarning: invalid value encountered in subtract\n  return a - b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1720: RuntimeWarning: overflow encountered in divide\n  return numerator / denominator\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy\\_core\\fromnumeric.py:86: RuntimeWarning: invalid value encountered in reduce\n  return ufunc.reduce(obj, axis, dtype, out, **passkwargs)\n"
+          }
+        },
+        {
+          "domain": "julia_set",
+          "config_id": "3a899d129273",
+          "config": {
+            "top_k": 32,
+            "min_score": 0.2,
+            "method_min_score": 0.5,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 3,
+            "function_limit": 6,
+            "class_limit": 6
+          },
+          "retrieval_score": 0.685714,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": true,
+            "exit_code": 0,
+            "duration_s": 7.405,
+            "stderr_tail": "C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1716: RuntimeWarning: overflow encountered in multiply\n  return a * b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1708: RuntimeWarning: overflow encountered in add\n  return a + b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1712: RuntimeWarning: invalid value encountered in subtract\n  return a - b\n"
+          }
+        },
+        {
+          "domain": "lid_driven_cavity",
+          "config_id": "3a899d129273",
+          "config": {
+            "top_k": 32,
+            "min_score": 0.2,
+            "method_min_score": 0.5,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 3,
+            "function_limit": 6,
+            "class_limit": 6
+          },
+          "retrieval_score": 0.684525,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": false,
+            "exit_code": 1,
+            "duration_s": 5.601,
+            "stderr_tail": "^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_ops.py\", line 1028, in pad\n    result_padded = mode.pad(value, widths, **kwargs) if has_positive_widths else value\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\extrapolation.py\", line 1139, in pad\n    value = ext.pad(value, ext_widths, already_padded=already_padded, **kwargs)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\extrapolation.py\", line 296, in pad\n    assert dim in value.shape, f\"Cannot pad tensor {value.shape} with extrapolation {pad_value.shape} because non-batch dimension '{dim}' is missing.\"\nAssertionError: Cannot pad tensor (x\\u02e2=51, y\\u02e2=32) with extrapolation (vector\\u1d9c=x,y) because non-batch dimension 'vector' is missing.\n"
+          }
+        },
+        {
+          "domain": "reaction_diffusion",
+          "config_id": "3a899d129273",
+          "config": {
+            "top_k": 32,
+            "min_score": 0.2,
+            "method_min_score": 0.5,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 3,
+            "function_limit": 6,
+            "class_limit": 6
+          },
+          "retrieval_score": 0.692,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": true,
+            "exit_code": 0,
+            "duration_s": 7.094,
+            "stderr_tail": ""
+          }
+        },
+        {
+          "domain": "smoke_plume",
+          "config_id": "3a899d129273",
+          "config": {
+            "top_k": 32,
+            "min_score": 0.2,
+            "method_min_score": 0.5,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 3,
+            "function_limit": 6,
+            "class_limit": 6
+          },
+          "retrieval_score": 0.673438,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": false,
+            "exit_code": 1,
+            "duration_s": 7.667,
+            "stderr_tail": "ts).non_channel)  # shape check\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_shape.py\", line 2582, in merge_shapes\n    s = pure_merge(*[s.spatial for s in shapes], allow_varying_sizes=allow_varying_sizes, allow_varying_labels=allow_varying_labels)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_shape.py\", line 2617, in pure_merge\n    raise IncompatibleShapes(f\"Cannot merge shapes {shapes} because dimension '{dim.name}' exists with different sizes.\", *shapes)\nphiml.math._shape.IncompatibleShapes: Cannot merge shapes ((x\\u02e2=~(x=63, y=64) int64, y\\u02e2=~(x=64, y=63) int64), (x\\u02e2=~(x=65, y=64) int64, y\\u02e2=~(x=64, y=65) int64)) because dimension 'x' exists with different sizes.\n"
+          }
+        },
+        {
+          "domain": "wake_flow",
+          "config_id": "3a899d129273",
+          "config": {
+            "top_k": 32,
+            "min_score": 0.2,
+            "method_min_score": 0.5,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 3,
+            "function_limit": 6,
+            "class_limit": 6
+          },
+          "retrieval_score": 0.702083,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": false,
+            "exit_code": 1,
+            "duration_s": 4.756,
+            "stderr_tail": "Traceback (most recent call last):\n  File \"D:\\Vivek\\research\\optimization_runs\\pruned_cross_domain\\cross_domain\\3a899d129273\\wake_flow\\generated_wake_flow_simulation.py\", line 17, in <module>\n    cyl = Cylinder(center=vec(x=20, y=50, z=2.5), radius=10, depth=5, axis='z')\n          ^^^^^^^^\nNameError: name 'Cylinder' is not defined. Did you mean: 'cylinder'?\n"
+          }
+        }
+      ]
+    },
+    {
+      "config_id": "c5573860ecec",
+      "config": {
+        "top_k": 32,
+        "min_score": 0.2,
+        "method_min_score": 0.3,
+        "max_methods_per_class": 5,
+        "max_nodes": 12,
+        "fulltext_limit": 5,
+        "description_limit": 8,
+        "function_limit": 6,
+        "class_limit": 6
+      },
+      "successful_domains": 4,
+      "tested_domains": 7,
+      "domains": [
+        {
+          "domain": "heat_flow",
+          "config_id": "c5573860ecec",
+          "config": {
+            "top_k": 32,
+            "min_score": 0.2,
+            "method_min_score": 0.3,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 8,
+            "function_limit": 6,
+            "class_limit": 6
+          },
+          "retrieval_score": 0.736,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": true,
+            "exit_code": 0,
+            "duration_s": 22.166,
+            "stderr_tail": "ase substeps or use diffuse.implicit() instead.\n  return diffuse.explicit(u, kappa, dt)\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1720: RuntimeWarning: overflow encountered in divide\n  return numerator / denominator\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1712: RuntimeWarning: overflow encountered in subtract\n  return a - b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy\\_core\\fromnumeric.py:86: RuntimeWarning: invalid value encountered in reduce\n  return ufunc.reduce(obj, axis, dtype, out, **passkwargs)\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1712: RuntimeWarning: invalid value encountered in subtract\n  return a - b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1708: RuntimeWarning: invalid value encountered in add\n  return a + b\n"
+          }
+        },
+        {
+          "domain": "burgers2d",
+          "config_id": "c5573860ecec",
+          "config": {
+            "top_k": 32,
+            "min_score": 0.2,
+            "method_min_score": 0.3,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 8,
+            "function_limit": 6,
+            "class_limit": 6
+          },
+          "retrieval_score": 0.725,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": true,
+            "exit_code": 0,
+            "duration_s": 7.071,
+            "stderr_tail": "C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1716: RuntimeWarning: overflow encountered in multiply\n  return a * b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1708: RuntimeWarning: invalid value encountered in add\n  return a + b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1712: RuntimeWarning: invalid value encountered in subtract\n  return a - b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1720: RuntimeWarning: overflow encountered in divide\n  return numerator / denominator\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy\\_core\\fromnumeric.py:86: RuntimeWarning: invalid value encountered in reduce\n  return ufunc.reduce(obj, axis, dtype, out, **passkwargs)\n"
+          }
+        },
+        {
+          "domain": "julia_set",
+          "config_id": "c5573860ecec",
+          "config": {
+            "top_k": 32,
+            "min_score": 0.2,
+            "method_min_score": 0.3,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 8,
+            "function_limit": 6,
+            "class_limit": 6
+          },
+          "retrieval_score": 0.711905,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": true,
+            "exit_code": 0,
+            "duration_s": 5.46,
+            "stderr_tail": "C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_tensors.py:1229: RuntimeWarning: overflow encountered in square\n  result = op(n1, n2)\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_tensors.py:1229: RuntimeWarning: invalid value encountered in square\n  result = op(n1, n2)\n"
+          }
+        },
+        {
+          "domain": "lid_driven_cavity",
+          "config_id": "c5573860ecec",
+          "config": {
+            "top_k": 32,
+            "min_score": 0.2,
+            "method_min_score": 0.3,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 8,
+            "function_limit": 6,
+            "class_limit": 6
+          },
+          "retrieval_score": 0.684525,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": false,
+            "exit_code": 1,
+            "duration_s": 6.624,
+            "stderr_tail": "sors)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_ops.py\", line 1130, in _closest_grid_values\n    grid = extrap.pad(grid, non_copy_pad, **pad_kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\extrapolation.py\", line 1139, in pad\n    value = ext.pad(value, ext_widths, already_padded=already_padded, **kwargs)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\extrapolation.py\", line 296, in pad\n    assert dim in value.shape, f\"Cannot pad tensor {value.shape} with extrapolation {pad_value.shape} because non-batch dimension '{dim}' is missing.\"\nAssertionError: Cannot pad tensor (x\\u02e2=49, y\\u02e2=32) with extrapolation (vector\\u1d9c=x,y) because non-batch dimension 'vector' is missing.\n"
+          }
+        },
+        {
+          "domain": "reaction_diffusion",
+          "config_id": "c5573860ecec",
+          "config": {
+            "top_k": 32,
+            "min_score": 0.2,
+            "method_min_score": 0.3,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 8,
+            "function_limit": 6,
+            "class_limit": 6
+          },
+          "retrieval_score": 0.692,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": true,
+            "exit_code": 0,
+            "duration_s": 7.443,
+            "stderr_tail": "D:\\Vivek\\research\\optimization_runs\\pruned_cross_domain\\cross_domain\\c5573860ecec\\reaction_diffusion\\generated_reaction_diffusion_simulation.py:19: DeprecationWarning: phiml.math.length is deprecated in favor of phiml.math.norm\n  r = math.vec_length(x - center)\n"
+          }
+        },
+        {
+          "domain": "smoke_plume",
+          "config_id": "c5573860ecec",
+          "config": {
+            "top_k": 32,
+            "min_score": 0.2,
+            "method_min_score": 0.3,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 8,
+            "function_limit": 6,
+            "class_limit": 6
+          },
+          "retrieval_score": 0.673438,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": false,
+            "timeout": true,
+            "duration_s": 120.1
+          }
+        },
+        {
+          "domain": "wake_flow",
+          "config_id": "c5573860ecec",
+          "config": {
+            "top_k": 32,
+            "min_score": 0.2,
+            "method_min_score": 0.3,
+            "max_methods_per_class": 5,
+            "max_nodes": 12,
+            "fulltext_limit": 5,
+            "description_limit": 8,
+            "function_limit": 6,
+            "class_limit": 6
+          },
+          "retrieval_score": 0.702083,
+          "execution": {
+            "syntax_ok": true,
+            "execution_ok": false,
+            "exit_code": 1,
+            "duration_s": 9.53,
+            "stderr_tail": "^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_ops.py\", line 1130, in _closest_grid_values\n    grid = extrap.pad(grid, non_copy_pad, **pad_kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\extrapolation.py\", line 1139, in pad\n    value = ext.pad(value, ext_widths, already_padded=already_padded, **kwargs)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\extrapolation.py\", line 296, in pad\n    assert dim in value.shape, f\"Cannot pad tensor {value.shape} with extrapolation {pad_value.shape} because non-batch dimension '{dim}' is missing.\"\nAssertionError: Cannot pad tensor (~vector\\u1d48=x,y,z, x\\u02e2=128, y\\u02e2=64, z\\u02e2=8) with extrapolation (vector\\u1d9c=x,y,z) because non-batch dimension 'vector' is missing.\n"
+          }
+        }
+      ]
+    }
+  ]
+}

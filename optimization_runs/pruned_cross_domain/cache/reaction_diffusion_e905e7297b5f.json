@@ -1,0 +1,27 @@
+{
+  "domain": "reaction_diffusion",
+  "config_id": "e905e7297b5f",
+  "config": {
+    "top_k": 12,
+    "min_score": 0.2,
+    "method_min_score": 0.5,
+    "max_methods_per_class": 5,
+    "max_nodes": 12,
+    "fulltext_limit": 5,
+    "description_limit": 5,
+    "function_limit": 2,
+    "class_limit": 2
+  },
+  "seed_count": 71,
+  "raw_count": 2369,
+  "filtered_count": 12,
+  "metrics": {
+    "retrieval_score": 0.648,
+    "task_term_coverage": 0.36,
+    "context_chars": 12497,
+    "context_tokens_approx": 3124,
+    "public_api_count": 12,
+    "size_score": 1.0,
+    "compactness": 1.0
+  }
+}

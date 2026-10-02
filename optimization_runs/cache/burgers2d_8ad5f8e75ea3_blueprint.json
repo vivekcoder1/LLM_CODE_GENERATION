@@ -1,5 +1,31 @@
 {
-  "semantic_queries": [],
-  "target_classes": [],
-  "target_functions": []
+  "semantic_queries": [
+    "creating 2D centered grid with periodic boundary conditions",
+    "defining domain box with size Lx by Ly",
+    "initializing velocity field with Gaussian bump centered in domain",
+    "setting periodic extrapolation for boundary conditions",
+    "advective step for velocity field using semi-Lagrangian advection",
+    "diffusive step for velocity field using explicit diffusion",
+    "stepping burgers equation combining advection and diffusion",
+    "running simulation loop for 100 time steps and storing velocity trajectory",
+    "saving velocity trajectory as numpy array with shape time_step+1 by Nx by Ny by 2"
+  ],
+  "target_classes": [
+    "CenteredGrid",
+    "Grid",
+    "Box",
+    "Domain",
+    "PERIODIC",
+    "extrapolation",
+    "Extrapolation"
+  ],
+  "target_functions": [
+    "advect",
+    "diffuse",
+    "semi_lagrangian",
+    "explicit",
+    "laplace",
+    "step",
+    "field.Field"
+  ]
 }

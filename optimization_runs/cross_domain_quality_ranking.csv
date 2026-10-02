@@ -1,0 +1,11 @@
+rank,config_id,top_k,min_score,method_min_score,max_methods_per_class,max_nodes,fulltext_limit,description_limit,function_limit,class_limit,successful_domains,tested_domains,avg_physics_score,mean_relative_rmse,worst_relative_rmse,quality_domains,burgers2d_physics,julia_set_physics,reaction_diffusion_physics,burgers2d_rmse,julia_set_rmse,reaction_diffusion_rmse
+1,ceb1eae7dde0,32,0.15,0.5,5,12,8,5,2,2,4,7,0.999998,2e-06,5e-06,julia_set;reaction_diffusion,,1.0,0.999996,,0.0,4e-06
+2,6d9ec269182d,12,0.2,0.3,5,12,3,3,4,4,4,7,0.999998,2e-06,5e-06,julia_set;reaction_diffusion,,1.0,0.999996,,0.0,4e-06
+3,2612d2a52a29,32,0.2,0.3,2,12,5,5,6,6,4,7,0.999989,1.1e-05,3.2e-05,julia_set;reaction_diffusion,,1.0,0.999977,,0.0,2.3e-05
+4,63da9568d5eb,32,0.2,0.4,5,12,3,3,2,4,4,7,0.748956,0.506199,1.102196,julia_set;reaction_diffusion,,1.0,0.497911,,0.0,1.012397
+5,e6ae57c23bed,48,0.15,0.2,1,8,8,8,2,4,4,7,0.748956,0.506199,1.102196,julia_set;reaction_diffusion,,1.0,0.497911,,0.0,1.012397
+6,864fae1078aa,48,0.15,0.3,1,32,3,3,4,2,4,7,0.670288,30.322801,90.968394,burgers2d;julia_set;reaction_diffusion,0.010873,1.0,0.999991,90.968394,0.0,9e-06
+7,05d2e42e99d1,32,0.15,0.5,2,18,3,8,2,6,4,7,0.670288,30.322801,90.968394,burgers2d;julia_set;reaction_diffusion,0.010873,1.0,0.999991,90.968394,0.0,9e-06
+8,104dd1395c62,32,0.15,0.5,5,12,5,5,2,6,4,7,0.520577,11.64663,23.293251,julia_set;reaction_diffusion,,0.041164,0.999991,,23.293251,9e-06
+9,8c98a7342e5f,12,0.15,0.5,3,24,8,3,4,6,4,7,0.50188,132.143956,264.287902,julia_set;reaction_diffusion,,0.003769,0.999991,,264.287902,9e-06
+10,9f7e642f4397,12,0.2,0.5,2,8,5,8,2,6,4,7,0.269537,12.152825,23.293251,julia_set;reaction_diffusion,,0.041164,0.497911,,23.293251,1.012398

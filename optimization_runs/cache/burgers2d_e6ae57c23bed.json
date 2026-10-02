@@ -1,0 +1,27 @@
+{
+  "domain": "burgers2d",
+  "config_id": "e6ae57c23bed",
+  "config": {
+    "top_k": 48,
+    "min_score": 0.15,
+    "method_min_score": 0.2,
+    "max_methods_per_class": 1,
+    "max_nodes": 8,
+    "fulltext_limit": 8,
+    "description_limit": 8,
+    "function_limit": 2,
+    "class_limit": 4
+  },
+  "seed_count": 74,
+  "raw_count": 2262,
+  "filtered_count": 48,
+  "metrics": {
+    "retrieval_score": 0.604167,
+    "task_term_coverage": 0.431818,
+    "context_chars": 10113,
+    "context_tokens_approx": 2528,
+    "public_api_count": 8,
+    "size_score": 0.84275,
+    "compactness": 1.0
+  }
+}

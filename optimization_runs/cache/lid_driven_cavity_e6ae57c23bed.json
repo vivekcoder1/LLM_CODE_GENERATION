@@ -1,0 +1,27 @@
+{
+  "domain": "lid_driven_cavity",
+  "config_id": "e6ae57c23bed",
+  "config": {
+    "top_k": 48,
+    "min_score": 0.15,
+    "method_min_score": 0.2,
+    "max_methods_per_class": 1,
+    "max_nodes": 8,
+    "fulltext_limit": 8,
+    "description_limit": 8,
+    "function_limit": 2,
+    "class_limit": 4
+  },
+  "seed_count": 60,
+  "raw_count": 2175,
+  "filtered_count": 46,
+  "metrics": {
+    "retrieval_score": 0.606667,
+    "task_term_coverage": 0.436364,
+    "context_chars": 10119,
+    "context_tokens_approx": 2530,
+    "public_api_count": 8,
+    "size_score": 0.84325,
+    "compactness": 1.0
+  }
+}

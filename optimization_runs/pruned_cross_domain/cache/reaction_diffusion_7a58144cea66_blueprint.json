@@ -1,0 +1,34 @@
+{
+  "semantic_queries": [
+    "creating 2D centered grid over domain 0 to Lx and 0 to Ly with Nx by Ny resolution",
+    "setting periodic or boundary extrapolation for concentration fields u and v",
+    "initializing u and v fields with cosine function of radial distance from domain center",
+    "computing radial distance r from grid points to domain center for initial condition",
+    "defining diffusion coefficients Du and Dv for reaction diffusion system",
+    "defining feed rate f and kill rate k reaction parameters",
+    "defining step function combining diffusion term and reaction term for u and v",
+    "computing laplacian diffusion term for u and v fields",
+    "computing nonlinear reaction term uv^2 and feed/kill terms",
+    "time stepping using explicit Euler integration with dt=0.5",
+    "running simulation loop for 100 steps and storing trajectory snapshots",
+    "saving u_trj and v_trj arrays as numpy files with shape time_step+1 by Nx by Ny"
+  ],
+  "target_classes": [
+    "CenteredGrid",
+    "Grid",
+    "Box",
+    "Domain",
+    "extrapolation",
+    "Extrapolation",
+    "PERIODIC"
+  ],
+  "target_functions": [
+    "laplace",
+    "diffuse",
+    "explicit",
+    "step",
+    "field.laplace",
+    "math.cos",
+    "math.sqrt"
+  ]
+}

@@ -42,7 +42,9 @@ class E2ERagPipeline:
         if not api_key:
             raise ValueError("ANTHROPIC_API_KEY was not found in environment variables!")
 
-        self.client = anthropic.Anthropic(api_key=api_key)
+        workspace_id = os.getenv("ANTHROPIC_WORKSPACE_ID")
+        default_headers = {"anthropic-workspace-id": workspace_id} if workspace_id else None
+        self.client = anthropic.Anthropic(api_key=api_key, default_headers=default_headers)
         
         uri = os.getenv("NEO4J_URI")
         user = os.getenv("NEO4J_USER")
@@ -467,7 +469,7 @@ class E2ERagPipeline:
 
         return md_context
 
-    def generate_grounded_code(self, task_description: str, codebase_context: str, max_tokens: int = 6000) -> str:
+    def generate_grounded_code(self, task_description: str, codebase_context: str, max_tokens: int = 20000) -> str:
         """Step 5: Code Generation strictly preferring primary public APIs."""
         print("Generating complete codebase-aligned script with Claude...")
 

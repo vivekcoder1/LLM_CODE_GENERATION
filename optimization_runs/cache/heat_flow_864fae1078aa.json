@@ -1,0 +1,27 @@
+{
+  "domain": "heat_flow",
+  "config_id": "864fae1078aa",
+  "config": {
+    "top_k": 48,
+    "min_score": 0.15,
+    "method_min_score": 0.3,
+    "max_methods_per_class": 1,
+    "max_nodes": 32,
+    "fulltext_limit": 3,
+    "description_limit": 3,
+    "function_limit": 4,
+    "class_limit": 2
+  },
+  "seed_count": 51,
+  "raw_count": 1742,
+  "filtered_count": 48,
+  "metrics": {
+    "retrieval_score": 0.632463,
+    "task_term_coverage": 0.52,
+    "context_chars": 24283,
+    "context_tokens_approx": 6071,
+    "public_api_count": 25,
+    "size_score": 1.0,
+    "compactness": 0.482313
+  }
+}

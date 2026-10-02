@@ -1,5 +1,42 @@
 {
-  "semantic_queries": [],
-  "target_classes": [],
-  "target_functions": []
+  "semantic_queries": [
+    "creating 3D centered grid with domain size 200x100x5 and resolution 128x64x8",
+    "defining a cylindrical obstacle geometry in the flow domain",
+    "setting inlet boundary condition with constant velocity (2,0,0) at x=0",
+    "setting zero-gradient (Neumann) outflow boundary condition at x=200",
+    "applying periodic boundary conditions along y and z axes",
+    "initializing velocity field uniformly as (8,0,0) throughout domain",
+    "advecting velocity field using semi-Lagrangian scheme for incompressible flow",
+    "enforcing incompressible divergence-free velocity field using pressure projection",
+    "time stepping the incompressible Navier-Stokes equations without viscosity term",
+    "obstacle masking to enforce no-flow inside cylindrical object",
+    "saving velocity trajectory over 400 timesteps to a numpy file",
+    "iterative simulation loop collecting velocity snapshots at each step"
+  ],
+  "target_classes": [
+    "CenteredGrid",
+    "StaggeredGrid",
+    "Grid",
+    "Box",
+    "Domain",
+    "Obstacle",
+    "Sphere",
+    "PERIODIC",
+    "ZERO_GRADIENT",
+    "extrapolation",
+    "Extrapolation",
+    "Solve"
+  ],
+  "target_functions": [
+    "advect",
+    "semi_lagrangian",
+    "divergence_free",
+    "make_incompressible",
+    "fluid.make_incompressible",
+    "diffuse",
+    "laplace",
+    "step",
+    "field.jit_compile",
+    "iterate"
+  ]
 }

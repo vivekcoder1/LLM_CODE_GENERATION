@@ -1,0 +1,27 @@
+{
+  "domain": "wake_flow",
+  "config_id": "6d9ec269182d",
+  "config": {
+    "top_k": 12,
+    "min_score": 0.2,
+    "method_min_score": 0.3,
+    "max_methods_per_class": 5,
+    "max_nodes": 12,
+    "fulltext_limit": 3,
+    "description_limit": 3,
+    "function_limit": 4,
+    "class_limit": 4
+  },
+  "seed_count": 55,
+  "raw_count": 2283,
+  "filtered_count": 12,
+  "metrics": {
+    "retrieval_score": 0.563542,
+    "task_term_coverage": 0.395833,
+    "context_chars": 9338,
+    "context_tokens_approx": 2334,
+    "public_api_count": 7,
+    "size_score": 0.778167,
+    "compactness": 1.0
+  }
+}

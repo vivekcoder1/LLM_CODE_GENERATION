@@ -1,5 +1,46 @@
 {
-  "semantic_queries": [],
-  "target_classes": [],
-  "target_functions": []
+  "semantic_queries": [
+    "creating 2D centered grid for smoke, velocity and pressure fields over domain [0,100]x[0,100]",
+    "setting zero-gradient (Neumann) boundary conditions for smoke and pressure fields",
+    "setting no-slip (zero) boundary conditions for velocity field at domain walls",
+    "defining circular inflow source region for smoke plume",
+    "initializing velocity field to zero and smoke field to zero at t=0",
+    "advecting smoke field using semi-Lagrangian scheme with velocity field",
+    "adding smoke inflow source term scaled by inflow rate to smoke field",
+    "advecting velocity field using semi-Lagrangian or MacCormack scheme",
+    "applying buoyancy force proportional to smoke density along vertical direction",
+    "solving pressure projection to enforce incompressibility (divergence-free velocity)",
+    "time stepping simulation loop for 100 steps with fixed timestep dt=0.5",
+    "saving smoke trajectory and pressure trajectory arrays to .npy files",
+    "creating staggered or centered grid for velocity field with periodic or zero boundary extrapolation",
+    "computing divergence-free velocity field using Chorin projection method"
+  ],
+  "target_classes": [
+    "CenteredGrid",
+    "StaggeredGrid",
+    "Grid",
+    "Box",
+    "Domain",
+    "Extrapolation",
+    "extrapolation",
+    "ZERO",
+    "ZERO_GRADIENT",
+    "Sphere",
+    "Field"
+  ],
+  "target_functions": [
+    "advect",
+    "semi_lagrangian",
+    "mac_cormack",
+    "diffuse",
+    "laplace",
+    "solve_linear",
+    "fluid.make_incompressible",
+    "field.resample",
+    "step",
+    "buoyancy",
+    "CenteredGrid",
+    "StaggeredGrid",
+    "numpy.save"
+  ]
 }

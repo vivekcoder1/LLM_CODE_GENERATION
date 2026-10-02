@@ -1,0 +1,35 @@
+{
+  "semantic_queries": [
+    "creating 2D staggered grid for velocity field with given domain size",
+    "setting no-slip boundary conditions on left, right, and bottom walls",
+    "setting moving lid boundary condition with constant velocity on top wall",
+    "initializing velocity field to zero everywhere",
+    "advection and diffusion step for incompressible velocity field",
+    "enforcing incompressibility using pressure projection (make_incompressible)",
+    "time stepping loop for lid driven cavity simulation",
+    "saving velocity trajectory to numpy file",
+    "diffusive step for velocity field using kinematic viscosity",
+    "semi-Lagrangian advection of velocity field"
+  ],
+  "target_classes": [
+    "StaggeredGrid",
+    "CenteredGrid",
+    "Domain",
+    "Box",
+    "extrapolation",
+    "Extrapolation",
+    "PERIODIC",
+    "ZERO",
+    "BOUNDARY"
+  ],
+  "target_functions": [
+    "advect.semi_lagrangian",
+    "advect.mac_cormack",
+    "diffuse.explicit",
+    "diffuse.implicit",
+    "fluid.make_incompressible",
+    "field.laplace",
+    "step",
+    "iterate"
+  ]
+}

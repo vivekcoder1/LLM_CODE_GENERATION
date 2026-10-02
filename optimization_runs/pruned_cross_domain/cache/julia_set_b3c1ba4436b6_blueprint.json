@@ -1,0 +1,28 @@
+{
+  "semantic_queries": [
+    "creating 2D centered grid over complex domain x in [-2,2], y in [-2,2] with resolution 256x256",
+    "initializing complex field z(x,y,0) = x + i y on the grid",
+    "defining time-dependent complex parameter c(t) = 0.7885 * exp(i*2*pi*t/100) for t in 0..99",
+    "iteratively updating complex field z using z = z^2 + c(t) for Julia set computation",
+    "accumulating escape-time mask J where |z| < 2 to build Julia set domain trajectory",
+    "running simulation loop for 100 time steps and storing domain trajectory snapshots",
+    "saving resulting domain trajectory array of shape [time_step, Nx, Ny] to npy file",
+    "defining boundary conditions for centered grid representing complex plane domain",
+    "elementwise complex arithmetic operations on grid fields for iterative map application",
+    "computing absolute value mask condition on complex grid field for escape radius check"
+  ],
+  "target_classes": [
+    "CenteredGrid",
+    "Grid",
+    "Box",
+    "Domain",
+    "Extrapolation"
+  ],
+  "target_functions": [
+    "step",
+    "where",
+    "abs",
+    "field",
+    "iterate"
+  ]
+}

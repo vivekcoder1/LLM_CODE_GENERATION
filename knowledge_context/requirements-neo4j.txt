@@ -1,0 +1,3 @@
+# Neo4j is the default target. --export-only uses the Python standard library.
+neo4j>=5,<7
+python-dotenv>=1,<2

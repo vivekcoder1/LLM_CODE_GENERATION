@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "dataset": "ground_truth_domains",
+  "api_aliases": {
+    "CenteredGrid": "phi.field.CenteredGrid",
+    "Noise": "phi.field.Noise",
+    "Box": "phi.geom.Box",
+    "union": "phi.geom.union",
+    "diffuse.implicit": "phi.physics.diffuse.implicit",
+    "advect.semi_lagrangian": "phi.physics.advect.semi_lagrangian",
+    "field.laplace": "phi.field.laplace",
+    "iterate": "phiml.math.iterate",
+    "batch": "phiml.math.batch",
+    "spatial": "phiml.math.spatial",
+    "vec": "phiml.math.vec",
+    "math.zeros": "phiml.math.zeros",
+    "math.cos": "phiml.math.cos",
+    "math.vec_length": "phiml.math.vec_length",
+    "np.stack": "numpy.stack",
+    "np.save": "numpy.save",
+    "cmath.exp": "cmath.exp",
+    "abs": "builtins.abs"
+  },
+  "references": [
+    {
+      "domain": "burgers2d",
+      "source": "test_burgers2d/burgers2d_ground_truth.py",
+      "note": "knowledge_context/domains/burgers2d.md",
+      "bindings": [], "helpers": [],
+      "fields": [
+        {"id": "velocity", "variable": "v0", "aliases": ["v0", "v"], "role": "velocity", "representation": "centered_vector_grid"}
+      ],
+      "update_scope": "function:step",
+      "steps": [
+        {"id": "diffusion", "name": "Implicit diffusion", "code": "v = diffuse.implicit(v, 0.1, dt=dt)"},
+        {"id": "self_advection", "name": "Self-advection of diffused velocity", "code": "v = advect.semi_lagrangian(v, v, dt=dt)"}
+      ],
+      "outputs": [
+        {"id": "velocity_trajectory", "variable": "v_trj", "code": "v_trj = iterate(step, batch(time=100), v0)", "axis_order": ["time", "x", "y", "vector"], "initial_frame": "library_default", "artifacts": ["test_burgers2d/burgers2d_ground_truth.npy", "test_burgers2d/burgers2d_ground_truth_trj.npy"]}
+      ]
+    },
+    {
+      "domain": "heat_flow",
+      "source": "test_heat_flow/heat_flow_ground_truth.py",
+      "note": "knowledge_context/domains/heat_flow.md",
+      "bindings": ["domain", "boundary", "bars"], "helpers": [],
+      "fields": [
+        {"id": "temperature", "variable": "t0", "aliases": ["t0", "t"], "role": "temperature", "representation": "centered_scalar_grid"},
+        {"id": "conductivity", "variable": "conductivity", "aliases": ["conductivity"], "role": "coefficient", "representation": "centered_scalar_grid"}
+      ],
+      "update_scope": "function:step",
+      "steps": [
+        {"id": "diffusion", "name": "Implicit diffusion with spatial conductivity", "code": "return diffuse.implicit(t, conductivity, dt)", "return_field": "temperature"}
+      ],
+      "outputs": [
+        {"id": "temperature_trajectory", "variable": "v_trj", "code": "v_trj = iterate(step, batch(time=100), t0, dt=1, range=trange)", "axis_order": ["time", "x", "y"], "initial_frame": "library_default", "artifacts": ["test_heat_flow/heat_flow_ground_truth.npy", "test_heat_flow/heat_flow_ground_truth_trj.npy"]}
+      ]
+    },
+    {
+      "domain": "julia_set",
+      "source": "test_julia_set/julia_set_ground_truth.py",
+      "note": "knowledge_context/domains/julia_set.md",
+      "bindings": ["Nx", "Ny", "steps", "bounds", "resolution", "z"], "helpers": [],
+      "fields": [
+        {"id": "complex_state", "variable": "z_field", "aliases": ["z_field", "z"], "role": "persistent_complex_state", "representation": "complex_centered_grid_values"},
+        {"id": "threshold_count", "variable": "escape_count", "aliases": ["escape_count"], "role": "cumulative_threshold_count", "representation": "scalar_tensor"}
+      ],
+      "update_scope": "loop",
+      "steps": [
+        {"id": "rotating_parameter", "name": "Compute rotating complex parameter", "code": "c = 0.7885 * cmath.exp(1j * 2 * cmath.pi * step / steps)"},
+        {"id": "quadratic_update", "name": "Update persistent complex state", "code": "z = z ** 2 + c"},
+        {"id": "threshold_count", "name": "Accumulate strict magnitude threshold", "code": "escape_count = escape_count + (abs(z) < 2)"}
+      ],
+      "outputs": [
+        {"id": "count_trajectory", "variable": "v_trj", "code": "v_trj = np.stack(trajectory, axis=0)", "axis_order": ["time", "x", "y"], "initial_frame": "excluded_by_profile", "artifacts": ["test_julia_set/julia_set_ground_truth_trj.npy"]}
+      ]
+    },
+    {
+      "domain": "reaction_diffusion",
+      "source": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+      "note": "knowledge_context/domains/reaction_diffusion.md",
+      "bindings": ["Lx", "Ly", "Nx", "Ny", "dt", "Du", "Dv", "feed_rate", "kill_rate", "s", "bounds", "resolution"],
+      "helpers": ["initial_condition"],
+      "fields": [
+        {"id": "u", "variable": "u", "aliases": ["u"], "role": "first_species", "representation": "centered_scalar_grid"},
+        {"id": "v", "variable": "v", "aliases": ["v"], "role": "second_species", "representation": "centered_scalar_grid"}
+      ],
+      "update_scope": "loop",
+      "steps": [
+        {"id": "cache_reaction", "name": "Cache reaction from old u and v", "code": "reaction = u * v ** 2"},
+        {"id": "update_u", "name": "Explicit update of u", "code": "u = u + dt * (Du * field.laplace(u) - reaction + feed_rate * (1 - u))"},
+        {"id": "update_v", "name": "Explicit update of v using cached reaction", "code": "v = v + dt * (Dv * field.laplace(v) + reaction - (feed_rate + kill_rate) * v)"}
+      ],
+      "outputs": [
+        {"id": "u_trajectory", "variable": "u_trj", "code": "u_trj = np.stack(u_trj, axis=0)", "axis_order": ["time", "x", "y"], "initial_frame": "included_by_profile", "artifacts": ["test_reaction_diffusion/reaction_diffusion_ground_truth_u_trj.npy"]},
+        {"id": "v_trajectory", "variable": "v_trj", "code": "v_trj = np.stack(v_trj, axis=0)", "axis_order": ["time", "x", "y"], "initial_frame": "included_by_profile", "artifacts": ["test_reaction_diffusion/reaction_diffusion_ground_truth_v_trj.npy"]}
+      ]
+    }
+  ]
+}

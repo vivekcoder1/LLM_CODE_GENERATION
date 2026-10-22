@@ -3,3 +3,7 @@
 .env
 .env
 .env
+
+# Local Python caches and bulky isolated simulation outputs.
+__pycache__/
+integration_runs/**/runs/**/*.npy

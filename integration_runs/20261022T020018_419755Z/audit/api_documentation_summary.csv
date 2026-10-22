@@ -1,0 +1,5 @@
+domain,replicate,combined_run_id,code_only_run_id,total_bindings,matchable_resolved_bindings,excluded_unresolved_bindings,combined_documented_count,code_only_documented_count,combined_document_status,code_only_document_status
+burgers2d,0,burgers2d_combined_0,burgers2d_code_only_0,5,5,0,5,1,available,available
+heat_flow,0,heat_flow_combined_0,heat_flow_code_only_0,4,4,0,4,0,available,available
+julia_set,0,julia_set_combined_0,julia_set_code_only_0,2,2,0,2,0,available,available
+reaction_diffusion,0,reaction_diffusion_combined_0,reaction_diffusion_code_only_0,3,2,1,2,1,available,available

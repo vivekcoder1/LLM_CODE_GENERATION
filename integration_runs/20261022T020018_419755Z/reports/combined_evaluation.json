@@ -1,0 +1,4167 @@
+{
+  "criteria": {
+    "caveats": "measured_caveated quantifies discrepancy but is excluded from paired numerical deltas.",
+    "freshness": "Current-run artifacts inside an isolated run_dir with explicit fresh provenance and successful execution.",
+    "historical": "Existing files copied as labeled historical rows, without regeneration, normalization or new-run attribution.",
+    "l2": "Euclidean L2 per time frame; mean_l2 and max_l2 summarize frame norms.",
+    "relative_rmse": "RMSE / RMS(reference); null if reference RMS is zero and error is nonzero.",
+    "rmse": "sqrt(mean(abs(generated - reference)**2)), over all aligned elements; lower is less discrepancy.",
+    "unmeasured": "Null/blank; never substituted with zero and never ranked."
+  },
+  "graph_summary": {
+    "fresh_generations": 0,
+    "graph_integrity": {
+      "after": {
+        "code": {
+          "indexes": [
+            {
+              "name": "classDocEmbed",
+              "state": "ONLINE",
+              "type": "VECTOR"
+            },
+            {
+              "name": "classNames",
+              "state": "ONLINE",
+              "type": "FULLTEXT"
+            },
+            {
+              "name": "descEmbed",
+              "state": "ONLINE",
+              "type": "VECTOR"
+            },
+            {
+              "name": "funcDocEmbed",
+              "state": "ONLINE",
+              "type": "VECTOR"
+            },
+            {
+              "name": "functionNames",
+              "state": "ONLINE",
+              "type": "FULLTEXT"
+            },
+            {
+              "name": "index_1b9dcc97",
+              "state": "ONLINE",
+              "type": "LOOKUP"
+            },
+            {
+              "name": "index_460996c0",
+              "state": "ONLINE",
+              "type": "LOOKUP"
+            },
+            {
+              "name": "methodDocEmbed",
+              "state": "ONLINE",
+              "type": "VECTOR"
+            },
+            {
+              "name": "methodNames",
+              "state": "ONLINE",
+              "type": "FULLTEXT"
+            },
+            {
+              "name": "typeNames",
+              "state": "ONLINE",
+              "type": "RANGE"
+            }
+          ],
+          "nodes_count": 6391,
+          "nodes_id_sha256": "61ad8abbdde054272a769502fbd30a4b6cb1326aea588c17afc30a44dec27ee8",
+          "relationships_count": 8483,
+          "relationships_id_sha256": "49d2b92228a85e9153c0040e2b049e42abff272be65f3a4c13afc22d7fa8c489",
+          "scope": "counts_and_element_ids_only; properties_not_hashed",
+          "status": "available"
+        },
+        "domain": {
+          "indexes": [
+            {
+              "name": "domainKGIdentity",
+              "state": "ONLINE",
+              "type": "RANGE"
+            },
+            {
+              "name": "index_1b9dcc97",
+              "state": "ONLINE",
+              "type": "LOOKUP"
+            },
+            {
+              "name": "index_460996c0",
+              "state": "ONLINE",
+              "type": "LOOKUP"
+            }
+          ],
+          "nodes_count": 108,
+          "nodes_id_sha256": "755bae099e781a1f297387aefc72c1d18c83efb9eaee60fd52969db22b95609e",
+          "relationships_count": 178,
+          "relationships_id_sha256": "d444e98319ad3e008b4a9e504ce2e068790047fe4e91f8dc055d512163bb924f",
+          "scope": "counts_and_element_ids_only; properties_not_hashed",
+          "status": "available"
+        }
+      },
+      "before": {
+        "code": {
+          "indexes": [
+            {
+              "name": "classDocEmbed",
+              "state": "ONLINE",
+              "type": "VECTOR"
+            },
+            {
+              "name": "classNames",
+              "state": "ONLINE",
+              "type": "FULLTEXT"
+            },
+            {
+              "name": "descEmbed",
+              "state": "ONLINE",
+              "type": "VECTOR"
+            },
+            {
+              "name": "funcDocEmbed",
+              "state": "ONLINE",
+              "type": "VECTOR"
+            },
+            {
+              "name": "functionNames",
+              "state": "ONLINE",
+              "type": "FULLTEXT"
+            },
+            {
+              "name": "index_1b9dcc97",
+              "state": "ONLINE",
+              "type": "LOOKUP"
+            },
+            {
+              "name": "index_460996c0",
+              "state": "ONLINE",
+              "type": "LOOKUP"
+            },
+            {
+              "name": "methodDocEmbed",
+              "state": "ONLINE",
+              "type": "VECTOR"
+            },
+            {
+              "name": "methodNames",
+              "state": "ONLINE",
+              "type": "FULLTEXT"
+            },
+            {
+              "name": "typeNames",
+              "state": "ONLINE",
+              "type": "RANGE"
+            }
+          ],
+          "nodes_count": 6391,
+          "nodes_id_sha256": "61ad8abbdde054272a769502fbd30a4b6cb1326aea588c17afc30a44dec27ee8",
+          "relationships_count": 8483,
+          "relationships_id_sha256": "49d2b92228a85e9153c0040e2b049e42abff272be65f3a4c13afc22d7fa8c489",
+          "scope": "counts_and_element_ids_only; properties_not_hashed",
+          "status": "available"
+        },
+        "domain": {
+          "indexes": [
+            {
+              "name": "domainKGIdentity",
+              "state": "ONLINE",
+              "type": "RANGE"
+            },
+            {
+              "name": "index_1b9dcc97",
+              "state": "ONLINE",
+              "type": "LOOKUP"
+            },
+            {
+              "name": "index_460996c0",
+              "state": "ONLINE",
+              "type": "LOOKUP"
+            }
+          ],
+          "nodes_count": 108,
+          "nodes_id_sha256": "755bae099e781a1f297387aefc72c1d18c83efb9eaee60fd52969db22b95609e",
+          "relationships_count": 178,
+          "relationships_id_sha256": "d444e98319ad3e008b4a9e504ce2e068790047fe4e91f8dc055d512163bb924f",
+          "scope": "counts_and_element_ids_only; properties_not_hashed",
+          "status": "available"
+        }
+      },
+      "comparison": {
+        "code": "unchanged_topology_ids",
+        "domain": "unchanged_topology_ids"
+      },
+      "scope": "Counts and element-ID sets only; property values and concurrent changes are not attributed."
+    },
+    "historical_reruns": 4,
+    "preflight": {
+      "graphs": {
+        "code": {
+          "indexes": [
+            {
+              "name": "classDocEmbed",
+              "state": "ONLINE",
+              "type": "VECTOR"
+            },
+            {
+              "name": "classNames",
+              "state": "ONLINE",
+              "type": "FULLTEXT"
+            },
+            {
+              "name": "descEmbed",
+              "state": "ONLINE",
+              "type": "VECTOR"
+            },
+            {
+              "name": "funcDocEmbed",
+              "state": "ONLINE",
+              "type": "VECTOR"
+            },
+            {
+              "name": "functionNames",
+              "state": "ONLINE",
+              "type": "FULLTEXT"
+            },
+            {
+              "name": "index_1b9dcc97",
+              "state": "ONLINE",
+              "type": "LOOKUP"
+            },
+            {
+              "name": "index_460996c0",
+              "state": "ONLINE",
+              "type": "LOOKUP"
+            },
+            {
+              "name": "methodDocEmbed",
+              "state": "ONLINE",
+              "type": "VECTOR"
+            },
+            {
+              "name": "methodNames",
+              "state": "ONLINE",
+              "type": "FULLTEXT"
+            },
+            {
+              "name": "typeNames",
+              "state": "ONLINE",
+              "type": "RANGE"
+            }
+          ],
+          "nodes_count": 6391,
+          "nodes_id_sha256": "61ad8abbdde054272a769502fbd30a4b6cb1326aea588c17afc30a44dec27ee8",
+          "relationships_count": 8483,
+          "relationships_id_sha256": "49d2b92228a85e9153c0040e2b049e42abff272be65f3a4c13afc22d7fa8c489",
+          "scope": "counts_and_element_ids_only; properties_not_hashed",
+          "status": "available"
+        },
+        "domain": {
+          "indexes": [
+            {
+              "name": "domainKGIdentity",
+              "state": "ONLINE",
+              "type": "RANGE"
+            },
+            {
+              "name": "index_1b9dcc97",
+              "state": "ONLINE",
+              "type": "LOOKUP"
+            },
+            {
+              "name": "index_460996c0",
+              "state": "ONLINE",
+              "type": "LOOKUP"
+            }
+          ],
+          "nodes_count": 108,
+          "nodes_id_sha256": "755bae099e781a1f297387aefc72c1d18c83efb9eaee60fd52969db22b95609e",
+          "relationships_count": 178,
+          "relationships_id_sha256": "d444e98319ad3e008b4a9e504ce2e068790047fe4e91f8dc055d512163bb924f",
+          "scope": "counts_and_element_ids_only; properties_not_hashed",
+          "status": "available"
+        }
+      },
+      "llm": {
+        "reason": "Retrieval mode makes no LLM/API calls.",
+        "status": "not_requested"
+      },
+      "required_indexes": {
+        "missing_or_offline": [],
+        "status": "passed"
+      }
+    },
+    "retrieval_arms": 8
+  },
+  "historical_inventory": [
+    {
+      "bytes": 605,
+      "path": "D:\\Vivek\\research\\evaluation_report.csv",
+      "provenance": "historical_read_only",
+      "rows": 8,
+      "sha256": "944652f4f9b8ef61f464152c82ee4da85c81329c2c99c3bd66989988e2a3c705",
+      "status": "available"
+    },
+    {
+      "bytes": 8931,
+      "path": "D:\\Vivek\\research\\evaluation_report.json",
+      "provenance": "historical_read_only",
+      "rows": 8,
+      "sha256": "ca6d8ab636abb9c5b9e90d5fd852152f10fc43384146c9838a5d1ee0c54d2580",
+      "status": "available"
+    },
+    {
+      "bytes": 611,
+      "path": "D:\\Vivek\\research\\l2summary.csv",
+      "provenance": "historical_read_only",
+      "rows": 3,
+      "sha256": "ed09577aed8ab3a477743650428565b1447601ef82d6928aa173b81354fbaae7",
+      "status": "available"
+    },
+    {
+      "bytes": 710,
+      "path": "D:\\Vivek\\research\\optimization_runs\\pruned_cross_domain\\cross_domain_execution_summary.csv",
+      "provenance": "historical_read_only",
+      "rows": 5,
+      "sha256": "b840c902cf21c0a38400ff82f13ac6f487abca2c1aff246c5d2aab73e6fee765",
+      "status": "available"
+    },
+    {
+      "bytes": 1203,
+      "path": "D:\\Vivek\\research\\optimization_runs\\pruned_cross_domain\\cross_domain_quality_ranking.csv",
+      "provenance": "historical_read_only",
+      "rows": 5,
+      "sha256": "897539afe49cdc19b842f8b77456dc2cbfc02049fcc9a1eea08d9acccf9b9a50",
+      "status": "available"
+    }
+  ],
+  "historical_rows": [
+    {
+      "data": {
+        "domain": "burgers2d",
+        "duration_s": "4.624",
+        "execution_ok": "True",
+        "objective_score": "60.0",
+        "objective_score_coverage": "1.0",
+        "physics_score": "",
+        "reference_status": "comparison_error",
+        "relative_rmse": "",
+        "syntax_ok": "True"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 1,
+      "source": "D:\\Vivek\\research\\evaluation_report.csv"
+    },
+    {
+      "data": {
+        "domain": "heat_flow",
+        "duration_s": "5.593",
+        "execution_ok": "True",
+        "objective_score": "60.0",
+        "objective_score_coverage": "1.0",
+        "physics_score": "",
+        "reference_status": "comparison_error",
+        "relative_rmse": "",
+        "syntax_ok": "True"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 2,
+      "source": "D:\\Vivek\\research\\evaluation_report.csv"
+    },
+    {
+      "data": {
+        "domain": "julia_set",
+        "duration_s": "1.462",
+        "execution_ok": "True",
+        "objective_score": "100.0",
+        "objective_score_coverage": "1.0",
+        "physics_score": "1.0",
+        "reference_status": "measured",
+        "relative_rmse": "0.0",
+        "syntax_ok": "True"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 3,
+      "source": "D:\\Vivek\\research\\evaluation_report.csv"
+    },
+    {
+      "data": {
+        "domain": "lid_driven_cavity",
+        "duration_s": "21.68",
+        "execution_ok": "False",
+        "objective_score": "0.0",
+        "objective_score_coverage": "0.5",
+        "physics_score": "",
+        "reference_status": "not_applicable",
+        "relative_rmse": "",
+        "syntax_ok": "True"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 4,
+      "source": "D:\\Vivek\\research\\evaluation_report.csv"
+    },
+    {
+      "data": {
+        "domain": "reaction_diffusion",
+        "duration_s": "5.486",
+        "execution_ok": "True",
+        "objective_score": "100.0",
+        "objective_score_coverage": "1.0",
+        "physics_score": "0.999991",
+        "reference_status": "measured;measured",
+        "relative_rmse": "9e-06",
+        "syntax_ok": "True"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 5,
+      "source": "D:\\Vivek\\research\\evaluation_report.csv"
+    },
+    {
+      "data": {
+        "domain": "smoke_plume",
+        "duration_s": "11.367",
+        "execution_ok": "False",
+        "objective_score": "0.0",
+        "objective_score_coverage": "0.5",
+        "physics_score": "",
+        "reference_status": "not_applicable",
+        "relative_rmse": "",
+        "syntax_ok": "True"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 6,
+      "source": "D:\\Vivek\\research\\evaluation_report.csv"
+    },
+    {
+      "data": {
+        "domain": "structural_mechanics",
+        "duration_s": "3.278",
+        "execution_ok": "True",
+        "objective_score": "60.0",
+        "objective_score_coverage": "0.5",
+        "physics_score": "",
+        "reference_status": "not_applicable",
+        "relative_rmse": "",
+        "syntax_ok": "True"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 7,
+      "source": "D:\\Vivek\\research\\evaluation_report.csv"
+    },
+    {
+      "data": {
+        "domain": "wake_flow",
+        "duration_s": "1.919",
+        "execution_ok": "False",
+        "objective_score": "0.0",
+        "objective_score_coverage": "0.5",
+        "physics_score": "",
+        "reference_status": "not_applicable",
+        "relative_rmse": "",
+        "syntax_ok": "True"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 8,
+      "source": "D:\\Vivek\\research\\evaluation_report.csv"
+    },
+    {
+      "data": {
+        "domain": "burgers2d",
+        "numerical": [
+          {
+            "error": "generated trajectory contains 501554 NaN/infinite values; first index=(13, 30, 36, 0), timestep=13",
+            "generated_exists": true,
+            "ground_truth_exists": true,
+            "label": "main",
+            "physics_score": 0.0,
+            "status": "comparison_error"
+          }
+        ],
+        "objective_score": 60.0,
+        "objective_score_coverage": 1.0,
+        "run": {
+          "duration_s": 4.624,
+          "execution_ok": true,
+          "exit_code": 0,
+          "stderr_tail": "himl\\backend\\_backend.py:1712: RuntimeWarning: invalid value encountered in subtract\n  return a - b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1720: RuntimeWarning: overflow encountered in divide\n  return numerator / denominator\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy\\_core\\fromnumeric.py:86: RuntimeWarning: invalid value encountered in reduce\n  return ufunc.reduce(obj, axis, dtype, out, **passkwargs)\n",
+          "syntax_error": "",
+          "syntax_ok": true
+        },
+        "script": "D:\\Vivek\\research\\test_burgers2d\\generated_burgers2d_simulation.py"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 1,
+      "source": "D:\\Vivek\\research\\evaluation_report.json"
+    },
+    {
+      "data": {
+        "domain": "heat_flow",
+        "numerical": [
+          {
+            "error": "generated trajectory contains 209082 NaN/infinite values; first index=(16, 0, 20), timestep=16",
+            "generated_exists": true,
+            "ground_truth_exists": true,
+            "label": "main",
+            "physics_score": 0.0,
+            "status": "comparison_error"
+          }
+        ],
+        "objective_score": 60.0,
+        "objective_score_coverage": 1.0,
+        "run": {
+          "duration_s": 5.593,
+          "execution_ok": true,
+          "exit_code": 0,
+          "stderr_tail": "pData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1712: RuntimeWarning: overflow encountered in subtract\n  return a - b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1712: RuntimeWarning: invalid value encountered in subtract\n  return a - b\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\backend\\_backend.py:1716: RuntimeWarning: invalid value encountered in multiply\n  return a * b\n",
+          "syntax_error": "",
+          "syntax_ok": true
+        },
+        "script": "D:\\Vivek\\research\\test_heat_flow\\generated_heat_flow_simulation.py"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 2,
+      "source": "D:\\Vivek\\research\\evaluation_report.json"
+    },
+    {
+      "data": {
+        "domain": "julia_set",
+        "numerical": [
+          {
+            "generated_exists": true,
+            "ground_truth_exists": true,
+            "label": "main",
+            "max_l2": 0.0,
+            "mean_l2": 0.0,
+            "physics_score": 1.0,
+            "relative_rmse": 0.0,
+            "rmse": 0.0,
+            "shape": [
+              100,
+              256,
+              256
+            ],
+            "status": "measured"
+          }
+        ],
+        "objective_score": 100.0,
+        "objective_score_coverage": 1.0,
+        "run": {
+          "duration_s": 1.462,
+          "execution_ok": true,
+          "exit_code": 0,
+          "stderr_tail": "C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_tensors.py:1229: RuntimeWarning: overflow encountered in square\n  result = op(n1, n2)\nC:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_tensors.py:1229: RuntimeWarning: invalid value encountered in square\n  result = op(n1, n2)\n",
+          "syntax_error": "",
+          "syntax_ok": true
+        },
+        "script": "D:\\Vivek\\research\\test_julia_set\\generated_julia_set_simulation.py"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 3,
+      "source": "D:\\Vivek\\research\\evaluation_report.json"
+    },
+    {
+      "data": {
+        "domain": "lid_driven_cavity",
+        "numerical": [],
+        "objective_score": 0.0,
+        "objective_score_coverage": 0.5,
+        "run": {
+          "duration_s": 21.68,
+          "execution_ok": false,
+          "exit_code": 1,
+          "stderr_tail": "backprop and 'TensorFlow' in backend.name)  # raises ConvergenceException\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_optimize.py\", line 209, in convergence_check\n    raise NotConverged(self)\nphiml.math._optimize.NotConverged: \\u03a6-ML CG (numpy) with preconditioner 'none' did not converge to rel_tol=1e-05, abs_tol=1e-05 within 1000 iterations. Max residual: 0.00016495059\n",
+          "syntax_error": "",
+          "syntax_ok": true
+        },
+        "script": "D:\\Vivek\\research\\test_lid_driven_cavity\\generated_lid_driven_cavity_simulation.py"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 4,
+      "source": "D:\\Vivek\\research\\evaluation_report.json"
+    },
+    {
+      "data": {
+        "domain": "reaction_diffusion",
+        "numerical": [
+          {
+            "generated_exists": true,
+            "ground_truth_exists": true,
+            "label": "u",
+            "max_l2": 5.751848220825195e-06,
+            "mean_l2": 3.4535277661947686e-06,
+            "physics_score": 0.9999928776189507,
+            "relative_rmse": 7.122431777856751e-06,
+            "rmse": 3.7595176801983268e-06,
+            "shape": [
+              101,
+              100,
+              100
+            ],
+            "status": "measured"
+          },
+          {
+            "generated_exists": true,
+            "ground_truth_exists": true,
+            "label": "v",
+            "max_l2": 8.242237986666813e-06,
+            "mean_l2": 4.572451737224804e-06,
+            "physics_score": 0.9999888452098709,
+            "relative_rmse": 1.1154914559902875e-05,
+            "rmse": 4.771784218008951e-06,
+            "shape": [
+              101,
+              100,
+              100
+            ],
+            "status": "measured"
+          }
+        ],
+        "objective_score": 100.0,
+        "objective_score_coverage": 1.0,
+        "run": {
+          "duration_s": 5.486,
+          "execution_ok": true,
+          "exit_code": 0,
+          "stderr_tail": "D:\\Vivek\\research\\test_reaction_diffusion\\generated_reaction_diffusion_simulation.py:20: DeprecationWarning: phiml.math.length is deprecated in favor of phiml.math.norm\n  r = math.vec_length(x - center)\n",
+          "syntax_error": "",
+          "syntax_ok": true
+        },
+        "script": "D:\\Vivek\\research\\test_reaction_diffusion\\generated_reaction_diffusion_simulation.py"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 5,
+      "source": "D:\\Vivek\\research\\evaluation_report.json"
+    },
+    {
+      "data": {
+        "domain": "smoke_plume",
+        "numerical": [],
+        "objective_score": 0.0,
+        "objective_score_coverage": 0.5,
+        "run": {
+          "duration_s": 11.367,
+          "execution_ok": false,
+          "exit_code": 1,
+          "stderr_tail": "ackprop and 'TensorFlow' in backend.name)  # raises ConvergenceException\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\sreed\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\phiml\\math\\_optimize.py\", line 209, in convergence_check\n    raise NotConverged(self)\nphiml.math._optimize.NotConverged: \\u03a6-ML CG (numpy) with preconditioner 'none' did not converge to rel_tol=1e-05, abs_tol=1e-05 within 1000 iterations. Max residual: -1.9401796e-09\n",
+          "syntax_error": "",
+          "syntax_ok": true
+        },
+        "script": "D:\\Vivek\\research\\test_smoke_plume\\generated_smoke_plume_simulation.py"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 6,
+      "source": "D:\\Vivek\\research\\evaluation_report.json"
+    },
+    {
+      "data": {
+        "domain": "structural_mechanics",
+        "numerical": [],
+        "objective_score": 60.0,
+        "objective_score_coverage": 0.5,
+        "run": {
+          "duration_s": 3.278,
+          "execution_ok": true,
+          "exit_code": 0,
+          "stderr_tail": "",
+          "syntax_error": "",
+          "syntax_ok": true
+        },
+        "script": "D:\\Vivek\\research\\test_structural_mechanics\\generated_structural_mechanics_simulation.py"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 7,
+      "source": "D:\\Vivek\\research\\evaluation_report.json"
+    },
+    {
+      "data": {
+        "domain": "wake_flow",
+        "numerical": [],
+        "objective_score": 0.0,
+        "objective_score_coverage": 0.5,
+        "run": {
+          "duration_s": 1.919,
+          "execution_ok": false,
+          "exit_code": 1,
+          "stderr_tail": "Traceback (most recent call last):\n  File \"D:\\Vivek\\research\\test_wake_flow\\generated_wake_flow_simulation.py\", line 17, in <module>\n    obstacle_geometry = Cylinder(center=vec(x=20, y=50, z=2.5), radius=10, depth=5, axis='z')\n                        ^^^^^^^^\nNameError: name 'Cylinder' is not defined. Did you mean: 'cylinder'?\n",
+          "syntax_error": "",
+          "syntax_ok": true
+        },
+        "script": "D:\\Vivek\\research\\test_wake_flow\\generated_wake_flow_simulation.py"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 8,
+      "source": "D:\\Vivek\\research\\evaluation_report.json"
+    },
+    {
+      "data": {
+        "generated": "test_julia_set/julia_set_trj.npy",
+        "ground_truth": "test_julia_set\\julia_set_ground_truth_trj.npy",
+        "label": "julia_set",
+        "max_l2": "4389.999430523881",
+        "mean_l2": "1551.2946792478624",
+        "rmse": "1974.010298858646"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 1,
+      "source": "D:\\Vivek\\research\\l2summary.csv"
+    },
+    {
+      "data": {
+        "generated": "test_reaction_diffusion/reaction_diffusion_u_trj.npy",
+        "ground_truth": "test_reaction_diffusion\\reaction_diffusion_ground_truth_u_trj.npy",
+        "label": "reaction_diffusion_u",
+        "max_l2": "5.751848220825195e-06",
+        "mean_l2": "3.4535277661947686e-06",
+        "rmse": "3.7595176801983268e-06"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 2,
+      "source": "D:\\Vivek\\research\\l2summary.csv"
+    },
+    {
+      "data": {
+        "generated": "test_reaction_diffusion/reaction_diffusion_v_trj.npy",
+        "ground_truth": "test_reaction_diffusion\\reaction_diffusion_ground_truth_v_trj.npy",
+        "label": "reaction_diffusion_v",
+        "max_l2": "8.242237986666813e-06",
+        "mean_l2": "4.572451737224804e-06",
+        "rmse": "4.771784218008951e-06"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 3,
+      "source": "D:\\Vivek\\research\\l2summary.csv"
+    },
+    {
+      "data": {
+        "burgers2d": "PASS",
+        "class_limit": "4",
+        "config_id": "2b266fbc949d",
+        "description_limit": "8",
+        "execution_rate": "0.5714",
+        "fulltext_limit": "5",
+        "function_limit": "4",
+        "heat_flow": "PASS",
+        "julia_set": "PASS",
+        "lid_driven_cavity": "FAIL",
+        "max_methods_per_class": "5",
+        "max_nodes": "12",
+        "method_min_score": "0.3",
+        "min_score": "0.15",
+        "rank": "1",
+        "reaction_diffusion": "PASS",
+        "smoke_plume": "FAIL",
+        "successful_domains": "4",
+        "tested_domains": "7",
+        "top_k": "12",
+        "wake_flow": "FAIL"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 1,
+      "source": "D:\\Vivek\\research\\optimization_runs\\pruned_cross_domain\\cross_domain_execution_summary.csv"
+    },
+    {
+      "data": {
+        "burgers2d": "PASS",
+        "class_limit": "4",
+        "config_id": "800ba81f8913",
+        "description_limit": "3",
+        "execution_rate": "0.5714",
+        "fulltext_limit": "5",
+        "function_limit": "4",
+        "heat_flow": "PASS",
+        "julia_set": "PASS",
+        "lid_driven_cavity": "FAIL",
+        "max_methods_per_class": "2",
+        "max_nodes": "12",
+        "method_min_score": "0.5",
+        "min_score": "0.2",
+        "rank": "2",
+        "reaction_diffusion": "PASS",
+        "smoke_plume": "FAIL",
+        "successful_domains": "4",
+        "tested_domains": "7",
+        "top_k": "32",
+        "wake_flow": "FAIL"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 2,
+      "source": "D:\\Vivek\\research\\optimization_runs\\pruned_cross_domain\\cross_domain_execution_summary.csv"
+    },
+    {
+      "data": {
+        "burgers2d": "PASS",
+        "class_limit": "2",
+        "config_id": "e905e7297b5f",
+        "description_limit": "5",
+        "execution_rate": "0.5714",
+        "fulltext_limit": "5",
+        "function_limit": "2",
+        "heat_flow": "PASS",
+        "julia_set": "PASS",
+        "lid_driven_cavity": "FAIL",
+        "max_methods_per_class": "5",
+        "max_nodes": "12",
+        "method_min_score": "0.5",
+        "min_score": "0.2",
+        "rank": "3",
+        "reaction_diffusion": "PASS",
+        "smoke_plume": "FAIL",
+        "successful_domains": "4",
+        "tested_domains": "7",
+        "top_k": "12",
+        "wake_flow": "FAIL"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 3,
+      "source": "D:\\Vivek\\research\\optimization_runs\\pruned_cross_domain\\cross_domain_execution_summary.csv"
+    },
+    {
+      "data": {
+        "burgers2d": "PASS",
+        "class_limit": "6",
+        "config_id": "3a899d129273",
+        "description_limit": "3",
+        "execution_rate": "0.5714",
+        "fulltext_limit": "5",
+        "function_limit": "6",
+        "heat_flow": "PASS",
+        "julia_set": "PASS",
+        "lid_driven_cavity": "FAIL",
+        "max_methods_per_class": "5",
+        "max_nodes": "12",
+        "method_min_score": "0.5",
+        "min_score": "0.2",
+        "rank": "4",
+        "reaction_diffusion": "PASS",
+        "smoke_plume": "FAIL",
+        "successful_domains": "4",
+        "tested_domains": "7",
+        "top_k": "32",
+        "wake_flow": "FAIL"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 4,
+      "source": "D:\\Vivek\\research\\optimization_runs\\pruned_cross_domain\\cross_domain_execution_summary.csv"
+    },
+    {
+      "data": {
+        "burgers2d": "PASS",
+        "class_limit": "6",
+        "config_id": "c5573860ecec",
+        "description_limit": "8",
+        "execution_rate": "0.5714",
+        "fulltext_limit": "5",
+        "function_limit": "6",
+        "heat_flow": "PASS",
+        "julia_set": "PASS",
+        "lid_driven_cavity": "FAIL",
+        "max_methods_per_class": "5",
+        "max_nodes": "12",
+        "method_min_score": "0.3",
+        "min_score": "0.2",
+        "rank": "5",
+        "reaction_diffusion": "PASS",
+        "smoke_plume": "FAIL",
+        "successful_domains": "4",
+        "tested_domains": "7",
+        "top_k": "32",
+        "wake_flow": "FAIL"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 5,
+      "source": "D:\\Vivek\\research\\optimization_runs\\pruned_cross_domain\\cross_domain_execution_summary.csv"
+    },
+    {
+      "data": {
+        "avg_physics_score": "0.999999",
+        "class_limit": "6",
+        "config_id": "c5573860ecec",
+        "description_limit": "8",
+        "fulltext_limit": "5",
+        "function_limit": "6",
+        "julia_set_physics": "1.0",
+        "julia_set_rmse": "0.0",
+        "max_methods_per_class": "5",
+        "max_nodes": "12",
+        "mean_relative_rmse": "1e-06",
+        "measured_domains": "julia_set;reaction_diffusion",
+        "method_min_score": "0.3",
+        "min_score": "0.2",
+        "quality_domains": "julia_set;reaction_diffusion",
+        "rank": "1",
+        "reaction_diffusion_physics": "0.999997",
+        "reaction_diffusion_rmse": "3e-06",
+        "successful_domains": "4",
+        "tested_domains": "7",
+        "top_k": "32",
+        "unmeasured_domains": "burgers2d;heat_flow",
+        "worst_relative_rmse": "3e-06"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 1,
+      "source": "D:\\Vivek\\research\\optimization_runs\\pruned_cross_domain\\cross_domain_quality_ranking.csv"
+    },
+    {
+      "data": {
+        "avg_physics_score": "0.999998",
+        "class_limit": "6",
+        "config_id": "3a899d129273",
+        "description_limit": "3",
+        "fulltext_limit": "5",
+        "function_limit": "6",
+        "julia_set_physics": "1.0",
+        "julia_set_rmse": "0.0",
+        "max_methods_per_class": "5",
+        "max_nodes": "12",
+        "mean_relative_rmse": "2e-06",
+        "measured_domains": "julia_set;reaction_diffusion",
+        "method_min_score": "0.5",
+        "min_score": "0.2",
+        "quality_domains": "julia_set;reaction_diffusion",
+        "rank": "2",
+        "reaction_diffusion_physics": "0.999996",
+        "reaction_diffusion_rmse": "4e-06",
+        "successful_domains": "4",
+        "tested_domains": "7",
+        "top_k": "32",
+        "unmeasured_domains": "burgers2d;heat_flow",
+        "worst_relative_rmse": "5e-06"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 2,
+      "source": "D:\\Vivek\\research\\optimization_runs\\pruned_cross_domain\\cross_domain_quality_ranking.csv"
+    },
+    {
+      "data": {
+        "avg_physics_score": "0.999998",
+        "class_limit": "2",
+        "config_id": "e905e7297b5f",
+        "description_limit": "5",
+        "fulltext_limit": "5",
+        "function_limit": "2",
+        "julia_set_physics": "1.0",
+        "julia_set_rmse": "0.0",
+        "max_methods_per_class": "5",
+        "max_nodes": "12",
+        "mean_relative_rmse": "2e-06",
+        "measured_domains": "julia_set;reaction_diffusion",
+        "method_min_score": "0.5",
+        "min_score": "0.2",
+        "quality_domains": "julia_set;reaction_diffusion",
+        "rank": "3",
+        "reaction_diffusion_physics": "0.999995",
+        "reaction_diffusion_rmse": "5e-06",
+        "successful_domains": "4",
+        "tested_domains": "7",
+        "top_k": "12",
+        "unmeasured_domains": "burgers2d;heat_flow",
+        "worst_relative_rmse": "6e-06"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 3,
+      "source": "D:\\Vivek\\research\\optimization_runs\\pruned_cross_domain\\cross_domain_quality_ranking.csv"
+    },
+    {
+      "data": {
+        "avg_physics_score": "0.999995",
+        "class_limit": "4",
+        "config_id": "2b266fbc949d",
+        "description_limit": "8",
+        "fulltext_limit": "5",
+        "function_limit": "4",
+        "julia_set_physics": "1.0",
+        "julia_set_rmse": "0.0",
+        "max_methods_per_class": "5",
+        "max_nodes": "12",
+        "mean_relative_rmse": "5e-06",
+        "measured_domains": "julia_set;reaction_diffusion",
+        "method_min_score": "0.3",
+        "min_score": "0.15",
+        "quality_domains": "julia_set;reaction_diffusion",
+        "rank": "4",
+        "reaction_diffusion_physics": "0.999991",
+        "reaction_diffusion_rmse": "9e-06",
+        "successful_domains": "4",
+        "tested_domains": "7",
+        "top_k": "12",
+        "unmeasured_domains": "burgers2d;heat_flow",
+        "worst_relative_rmse": "1.1e-05"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 4,
+      "source": "D:\\Vivek\\research\\optimization_runs\\pruned_cross_domain\\cross_domain_quality_ranking.csv"
+    },
+    {
+      "data": {
+        "avg_physics_score": "0.999995",
+        "class_limit": "4",
+        "config_id": "800ba81f8913",
+        "description_limit": "3",
+        "fulltext_limit": "5",
+        "function_limit": "4",
+        "julia_set_physics": "1.0",
+        "julia_set_rmse": "0.0",
+        "max_methods_per_class": "2",
+        "max_nodes": "12",
+        "mean_relative_rmse": "5e-06",
+        "measured_domains": "julia_set;reaction_diffusion",
+        "method_min_score": "0.5",
+        "min_score": "0.2",
+        "quality_domains": "julia_set;reaction_diffusion",
+        "rank": "5",
+        "reaction_diffusion_physics": "0.999991",
+        "reaction_diffusion_rmse": "9e-06",
+        "successful_domains": "4",
+        "tested_domains": "7",
+        "top_k": "32",
+        "unmeasured_domains": "burgers2d;heat_flow",
+        "worst_relative_rmse": "1.1e-05"
+      },
+      "provenance": "historical_read_only",
+      "row_index": 5,
+      "source": "D:\\Vivek\\research\\optimization_runs\\pruned_cross_domain\\cross_domain_quality_ranking.csv"
+    }
+  ],
+  "limitations": [
+    "Fresh generation outcomes require real LLM calls; offline graph/retrieval checks do not establish generation improvement.",
+    "Execution success is separate from numerical agreement and physical validity.",
+    "Reference hashes identify the exact stored arrays; references were not regenerated by this report.",
+    "Historical RMSE/objective/physics-score formulas differ from this report and are not directly comparable.",
+    "One paired sample per domain is descriptive evidence and cannot establish statistical superiority."
+  ],
+  "paired_comparisons": [
+    {
+      "code_only_code_context_hash": "fe15cfb996aa62ca95bbeeb799ef51ce2c797ae63b77a14f07e0e9337608a1c8",
+      "code_only_execution": "not_run",
+      "code_only_run_id": "burgers2d_code_only_0",
+      "combined_code_context_hash": "b0d361ce7bd3cfc3c93970d741e8eb86730f2338aba7f15531b783bdd363ec18",
+      "combined_execution": "not_run",
+      "combined_run_id": "burgers2d_combined_0",
+      "comparison_status": "not_fresh_generation",
+      "config_id": "1ad8c65e9940",
+      "domain": "burgers2d",
+      "execution_delta": null,
+      "reason": "No matched fresh generation outcomes; retrieval-only rows, existing-script reruns, and cached results do not measure context-conditioned generation.",
+      "replicate": 0,
+      "rmse_delta": null
+    },
+    {
+      "code_only_code_context_hash": "8624f05113f00e150fbb31a9b4daa31e4504c827066f422f1a5432ff5c7b9b64",
+      "code_only_execution": "not_run",
+      "code_only_run_id": "heat_flow_code_only_0",
+      "combined_code_context_hash": "f938eb4ff0cce9bd8fe13fd573361e14bc54fd705570feb7fda50e4b2197e6fd",
+      "combined_execution": "not_run",
+      "combined_run_id": "heat_flow_combined_0",
+      "comparison_status": "not_fresh_generation",
+      "config_id": "1ad8c65e9940",
+      "domain": "heat_flow",
+      "execution_delta": null,
+      "reason": "No matched fresh generation outcomes; retrieval-only rows, existing-script reruns, and cached results do not measure context-conditioned generation.",
+      "replicate": 0,
+      "rmse_delta": null
+    },
+    {
+      "code_only_code_context_hash": "22712a6bf04f16c9c5365b9cae981cd59c8f9bf1fb597abac732673fd0195285",
+      "code_only_execution": "not_run",
+      "code_only_run_id": "julia_set_code_only_0",
+      "combined_code_context_hash": "d01b3cfb07c322c735023145fd5eb116ad621987c1d86c66198e0f1c7e26ec17",
+      "combined_execution": "not_run",
+      "combined_run_id": "julia_set_combined_0",
+      "comparison_status": "not_fresh_generation",
+      "config_id": "1ad8c65e9940",
+      "domain": "julia_set",
+      "execution_delta": null,
+      "reason": "No matched fresh generation outcomes; retrieval-only rows, existing-script reruns, and cached results do not measure context-conditioned generation.",
+      "replicate": 0,
+      "rmse_delta": null
+    },
+    {
+      "code_only_code_context_hash": "e62b88aa2ff4749316e4c5fb28e799d1713fc5ac83be1913b2fbc609edf1bc67",
+      "code_only_execution": "not_run",
+      "code_only_run_id": "reaction_diffusion_code_only_0",
+      "combined_code_context_hash": "a24e23d24acd1354b1c2c8ca89928924c53f2863af062e0480093ee5050ba466",
+      "combined_execution": "not_run",
+      "combined_run_id": "reaction_diffusion_combined_0",
+      "comparison_status": "not_fresh_generation",
+      "config_id": "1ad8c65e9940",
+      "domain": "reaction_diffusion",
+      "execution_delta": null,
+      "reason": "No matched fresh generation outcomes; retrieval-only rows, existing-script reruns, and cached results do not measure context-conditioned generation.",
+      "replicate": 0,
+      "rmse_delta": null
+    }
+  ],
+  "runs": [
+    {
+      "alignment": {
+        "generated_time_axis": 0,
+        "reference_time_axis": 0
+      },
+      "api_resolution": [],
+      "artifact_provenance": "not_generated",
+      "artifacts": {},
+      "caveats": [
+        "Task initial data are Gaussian; ground-truth source uses unseeded Noise. A trajectory error measures discrepancy between these runs, not solver correctness. Matching a seed alone does not establish the same initial field."
+      ],
+      "config_id": "1ad8c65e9940",
+      "context": {
+        "code_nodes": 12,
+        "context_chars": 15496,
+        "domain_nodes": 0,
+        "filtered_relations": 205,
+        "raw_relations": 3459,
+        "resolved_api_links": 0,
+        "seed_count": 92,
+        "unresolved_api_links": 0
+      },
+      "domain": "burgers2d",
+      "domain_status": "disabled",
+      "execution": {
+        "status": "not_run"
+      },
+      "execution_status": "not_run",
+      "generation": {
+        "reason": "Retrieval-only mode; no LLM call.",
+        "status": "not_requested"
+      },
+      "generation_status": "not_requested",
+      "metadata": {
+        "code_context_hash": "fe15cfb996aa62ca95bbeeb799ef51ce2c797ae63b77a14f07e0e9337608a1c8",
+        "domain_context_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "max_tokens": null,
+        "model": null,
+        "seed": null,
+        "task_hash": "3e40128f9690ce73b6a4febd9e06b4f12b32b29724e02ce4181f8b1d3b22b080",
+        "temperature": 0
+      },
+      "numerical": [
+        {
+          "caveats": [
+            "Task initial data are Gaussian; ground-truth source uses unseeded Noise. A trajectory error measures discrepancy between these runs, not solver correctness. Matching a seed alone does not establish the same initial field."
+          ],
+          "component": "main",
+          "expected_output": "burgers2d_velocity_trj.npy",
+          "expected_shape": [
+            101,
+            64,
+            64,
+            2
+          ],
+          "reason": "No successful current-run execution; outputs are not scored.",
+          "reference_path": "D:\\Vivek\\research\\test_burgers2d\\burgers2d_ground_truth.npy",
+          "reference_source": "D:\\Vivek\\research\\test_burgers2d\\burgers2d_ground_truth.py",
+          "relative_rmse": null,
+          "rmse": null,
+          "status": "not_run"
+        }
+      ],
+      "numerical_status": "not_run",
+      "plan": {
+        "effective_sha256": "52cee9958a804c6af07d8d1cc1bdbaa983e792e1a3498349a2e916d5a609a129",
+        "path": "D:\\Vivek\\research\\optimization_runs\\cache\\burgers2d_8ad5f8e75ea3_blueprint.json",
+        "plan_source": "cached",
+        "sha256": "27713b246ca7d87b3492da62f40471ef849c14ce4e3a07828e9782192b05e4d1",
+        "task_sha1": "8ad5f8e75ea36a2aba40c6d3b5fee35c523e97c7"
+      },
+      "replicate": 0,
+      "retrieval_status": "passed",
+      "run_dir": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\burgers2d\\code_only_0",
+      "run_id": "burgers2d_code_only_0",
+      "task_source": "D:\\Vivek\\research\\test\\burgers2d.md",
+      "variant": "code_only"
+    },
+    {
+      "alignment": {
+        "generated_time_axis": 0,
+        "reference_time_axis": 0
+      },
+      "api_resolution": [
+        {
+          "candidate_count": 1,
+          "candidates": [
+            {
+              "component_type": "Function",
+              "defining_files": [
+                "_grid.py"
+              ],
+              "id": "_grid.py:CenteredGrid",
+              "import_path": "phi.flow.CenteredGrid",
+              "name": "CenteredGrid"
+            }
+          ],
+          "code_id": "_grid.py:CenteredGrid",
+          "code_import_path": "phi.flow.CenteredGrid",
+          "code_name": "CenteredGrid",
+          "configured_aliases": [
+            "phi.field.CenteredGrid",
+            "phi.flow.CenteredGrid"
+          ],
+          "definition_path": "phi/field/_grid.py",
+          "domain_api_id": "dkg:ground_truth_domains:code:phi.field._grid.CenteredGrid",
+          "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+          "observed_call": "CenteredGrid",
+          "qualified_name": "phi.field._grid.CenteredGrid",
+          "quality": "exact_alias",
+          "status": "resolved"
+        },
+        {
+          "candidate_count": 1,
+          "candidates": [
+            {
+              "component_type": "Class",
+              "defining_files": [
+                "_noise.py"
+              ],
+              "id": "_noise.py:Noise",
+              "import_path": "phi.flow.Noise",
+              "name": "Noise"
+            }
+          ],
+          "code_id": "_noise.py:Noise",
+          "code_import_path": "phi.flow.Noise",
+          "code_name": "Noise",
+          "configured_aliases": [
+            "phi.field.Noise",
+            "phi.flow.Noise"
+          ],
+          "definition_path": "phi/field/_noise.py",
+          "domain_api_id": "dkg:ground_truth_domains:code:phi.field._noise.Noise",
+          "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+          "observed_call": "Noise",
+          "qualified_name": "phi.field._noise.Noise",
+          "quality": "exact_alias",
+          "status": "resolved"
+        },
+        {
+          "candidate_count": 1,
+          "candidates": [
+            {
+              "component_type": "Class",
+              "defining_files": [
+                "_box.py"
+              ],
+              "id": "_box.py:Box",
+              "import_path": "phi.flow.Box",
+              "name": "Box"
+            }
+          ],
+          "code_id": "_box.py:Box",
+          "code_import_path": "phi.flow.Box",
+          "code_name": "Box",
+          "configured_aliases": [
+            "phi.flow.Box",
+            "phi.geom.Box"
+          ],
+          "definition_path": "phi/geom/_box.py",
+          "domain_api_id": "dkg:ground_truth_domains:code:phi.geom._box.Box",
+          "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+          "observed_call": "Box",
+          "qualified_name": "phi.geom._box.Box",
+          "quality": "exact_alias",
+          "status": "resolved"
+        },
+        {
+          "candidate_count": 1,
+          "candidates": [
+            {
+              "component_type": "Function",
+              "defining_files": [
+                "advect.py"
+              ],
+              "id": "advect.py:semi_lagrangian",
+              "import_path": "phi.flow.advect.semi_lagrangian",
+              "name": "semi_lagrangian"
+            }
+          ],
+          "code_id": "advect.py:semi_lagrangian",
+          "code_import_path": "phi.flow.advect.semi_lagrangian",
+          "code_name": "semi_lagrangian",
+          "configured_aliases": [
+            "phi.flow.advect.semi_lagrangian",
+            "phi.physics.advect.semi_lagrangian"
+          ],
+          "definition_path": "phi/physics/advect.py",
+          "domain_api_id": "dkg:ground_truth_domains:code:phi.physics.advect.semi_lagrangian",
+          "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+          "observed_call": "advect.semi_lagrangian",
+          "qualified_name": "phi.physics.advect.semi_lagrangian",
+          "quality": "exact_alias",
+          "status": "resolved"
+        },
+        {
+          "candidate_count": 1,
+          "candidates": [
+            {
+              "component_type": "Function",
+              "defining_files": [
+                "diffuse.py"
+              ],
+              "id": "diffuse.py:implicit",
+              "import_path": "phi.flow.diffuse.implicit",
+              "name": "implicit"
+            }
+          ],
+          "code_id": "diffuse.py:implicit",
+          "code_import_path": "phi.flow.diffuse.implicit",
+          "code_name": "implicit",
+          "configured_aliases": [
+            "phi.flow.diffuse.implicit",
+            "phi.physics.diffuse.implicit"
+          ],
+          "definition_path": "phi/physics/diffuse.py",
+          "domain_api_id": "dkg:ground_truth_domains:code:phi.physics.diffuse.implicit",
+          "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+          "observed_call": "diffuse.implicit",
+          "qualified_name": "phi.physics.diffuse.implicit",
+          "quality": "exact_alias",
+          "status": "resolved"
+        }
+      ],
+      "artifact_provenance": "not_generated",
+      "artifacts": {},
+      "caveats": [
+        "Task initial data are Gaussian; ground-truth source uses unseeded Noise. A trajectory error measures discrepancy between these runs, not solver correctness. Matching a seed alone does not establish the same initial field."
+      ],
+      "config_id": "1ad8c65e9940",
+      "context": {
+        "code_nodes": 12,
+        "context_chars": 23033,
+        "domain_nodes": 23,
+        "filtered_relations": 91,
+        "raw_relations": 3555,
+        "resolved_api_links": 5,
+        "seed_count": 97,
+        "unresolved_api_links": 0
+      },
+      "domain": "burgers2d",
+      "domain_status": "available",
+      "execution": {
+        "status": "not_run"
+      },
+      "execution_status": "not_run",
+      "generation": {
+        "reason": "Retrieval-only mode; no LLM call.",
+        "status": "not_requested"
+      },
+      "generation_status": "not_requested",
+      "metadata": {
+        "code_context_hash": "b0d361ce7bd3cfc3c93970d741e8eb86730f2338aba7f15531b783bdd363ec18",
+        "domain_context_hash": "05bed0fe71d27efbaa0824b7f738ff56a5ef653a135465c117d5c9eb9eb19420",
+        "max_tokens": null,
+        "model": null,
+        "seed": null,
+        "task_hash": "3e40128f9690ce73b6a4febd9e06b4f12b32b29724e02ce4181f8b1d3b22b080",
+        "temperature": 0
+      },
+      "numerical": [
+        {
+          "caveats": [
+            "Task initial data are Gaussian; ground-truth source uses unseeded Noise. A trajectory error measures discrepancy between these runs, not solver correctness. Matching a seed alone does not establish the same initial field."
+          ],
+          "component": "main",
+          "expected_output": "burgers2d_velocity_trj.npy",
+          "expected_shape": [
+            101,
+            64,
+            64,
+            2
+          ],
+          "reason": "No successful current-run execution; outputs are not scored.",
+          "reference_path": "D:\\Vivek\\research\\test_burgers2d\\burgers2d_ground_truth.npy",
+          "reference_source": "D:\\Vivek\\research\\test_burgers2d\\burgers2d_ground_truth.py",
+          "relative_rmse": null,
+          "rmse": null,
+          "status": "not_run"
+        }
+      ],
+      "numerical_status": "not_run",
+      "plan": {
+        "effective_sha256": "43884fc42be45c0e27d3d535b41abf81447cb8891c1bbc646c028e97db821165",
+        "path": "D:\\Vivek\\research\\optimization_runs\\cache\\burgers2d_8ad5f8e75ea3_blueprint.json",
+        "plan_source": "cached",
+        "sha256": "27713b246ca7d87b3492da62f40471ef849c14ce4e3a07828e9782192b05e4d1",
+        "task_sha1": "8ad5f8e75ea36a2aba40c6d3b5fee35c523e97c7"
+      },
+      "replicate": 0,
+      "retrieval_status": "passed",
+      "run_dir": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\burgers2d\\combined_0",
+      "run_id": "burgers2d_combined_0",
+      "task_source": "D:\\Vivek\\research\\test\\burgers2d.md",
+      "variant": "combined"
+    },
+    {
+      "alignment": {
+        "generated_time_axis": 0,
+        "reference_time_axis": 0
+      },
+      "artifact_provenance": "existing_outputs_rerun",
+      "artifacts": {},
+      "caveats": [
+        "Task initial data are Gaussian; ground-truth source uses unseeded Noise. A trajectory error measures discrepancy between these runs, not solver correctness. Matching a seed alone does not establish the same initial field."
+      ],
+      "config_id": "1ad8c65e9940",
+      "context": {},
+      "domain": "burgers2d",
+      "execution": {
+        "duration_s": 4.559137,
+        "error": "",
+        "execution_guard": "AST screen and restricted environment; not an OS sandbox",
+        "execution_ok": true,
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "execution_status": "passed",
+      "generation": {
+        "reason": "Existing code; no context-conditioned generation.",
+        "status": "historical_script"
+      },
+      "generation_source": "historical_script_rerun",
+      "generation_status": "historical_script",
+      "metadata": {
+        "code_context_hash": null,
+        "domain_context_hash": null,
+        "max_tokens": null,
+        "model": null,
+        "seed": null,
+        "task_hash": "3e40128f9690ce73b6a4febd9e06b4f12b32b29724e02ce4181f8b1d3b22b080",
+        "temperature": 0
+      },
+      "numerical": [
+        {
+          "caveats": [
+            "Task initial data are Gaussian; ground-truth source uses unseeded Noise. A trajectory error measures discrepancy between these runs, not solver correctness. Matching a seed alone does not establish the same initial field."
+          ],
+          "component": "main",
+          "expected_output": "burgers2d_velocity_trj.npy",
+          "expected_shape": [
+            101,
+            64,
+            64,
+            2
+          ],
+          "reason": "Runner did not report burgers2d_velocity_trj.npy.",
+          "reference_path": "D:\\Vivek\\research\\test_burgers2d\\burgers2d_ground_truth.npy",
+          "reference_source": "D:\\Vivek\\research\\test_burgers2d\\burgers2d_ground_truth.py",
+          "relative_rmse": null,
+          "rmse": null,
+          "status": "generated_artifact_missing"
+        }
+      ],
+      "numerical_status": "generated_artifact_missing",
+      "observed_artifacts": [
+        {
+          "bytes": 3309696,
+          "filename": "burgers2d_trj.npy",
+          "path": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\burgers2d\\historical_rerun_0\\burgers2d_trj.npy",
+          "sha256": "a8377b006a359065f4e701e15d689200aaacc9886c3e21f0d33271440e368214"
+        }
+      ],
+      "plan": {
+        "path": "D:\\Vivek\\research\\optimization_runs\\cache\\burgers2d_8ad5f8e75ea3_blueprint.json",
+        "plan_source": "cached",
+        "sha256": "27713b246ca7d87b3492da62f40471ef849c14ce4e3a07828e9782192b05e4d1",
+        "task_sha1": "8ad5f8e75ea36a2aba40c6d3b5fee35c523e97c7"
+      },
+      "replicate": 0,
+      "run_dir": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\burgers2d\\historical_rerun_0",
+      "run_id": "burgers2d_historical_rerun_0",
+      "script_path": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\burgers2d\\historical_rerun_0\\generated_burgers2d_simulation.py",
+      "script_sha256": "1a98349ee81cbdb089e6ecd69d4b95e7c590dc2e76f693015c3f551051fd6d7c",
+      "script_source": "D:\\Vivek\\research\\test_burgers2d\\generated_burgers2d_simulation.py",
+      "task_source": "D:\\Vivek\\research\\test\\burgers2d.md",
+      "variant": "historical_rerun"
+    },
+    {
+      "alignment": {
+        "generated_time_axis": 0,
+        "reference_time_axis": 0
+      },
+      "api_resolution": [],
+      "artifact_provenance": "not_generated",
+      "artifacts": {},
+      "caveats": [
+        "Task PDE specifies x-only diffusion; ground-truth code calls multidimensional diffuse.implicit with spatial conductivity. Operator agreement is unverified."
+      ],
+      "config_id": "1ad8c65e9940",
+      "context": {
+        "code_nodes": 12,
+        "context_chars": 9688,
+        "domain_nodes": 0,
+        "filtered_relations": 158,
+        "raw_relations": 3579,
+        "resolved_api_links": 0,
+        "seed_count": 89,
+        "unresolved_api_links": 0
+      },
+      "domain": "heat_flow",
+      "domain_status": "disabled",
+      "execution": {
+        "status": "not_run"
+      },
+      "execution_status": "not_run",
+      "generation": {
+        "reason": "Retrieval-only mode; no LLM call.",
+        "status": "not_requested"
+      },
+      "generation_status": "not_requested",
+      "metadata": {
+        "code_context_hash": "8624f05113f00e150fbb31a9b4daa31e4504c827066f422f1a5432ff5c7b9b64",
+        "domain_context_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "max_tokens": null,
+        "model": null,
+        "seed": null,
+        "task_hash": "4894e50322d00c78ab2005d7e2df51383939bb87f0bb3a6c7019d53f1ad3d4f2",
+        "temperature": 0
+      },
+      "numerical": [
+        {
+          "caveats": [
+            "Task PDE specifies x-only diffusion; ground-truth code calls multidimensional diffuse.implicit with spatial conductivity. Operator agreement is unverified."
+          ],
+          "component": "main",
+          "expected_output": "heat_flow_temperature_trj.npy",
+          "expected_shape": [
+            101,
+            100,
+            50
+          ],
+          "reason": "No successful current-run execution; outputs are not scored.",
+          "reference_path": "D:\\Vivek\\research\\test_heat_flow\\heat_flow_ground_truth.npy",
+          "reference_source": "D:\\Vivek\\research\\test_heat_flow\\heat_flow_ground_truth.py",
+          "relative_rmse": null,
+          "rmse": null,
+          "status": "not_run"
+        }
+      ],
+      "numerical_status": "not_run",
+      "plan": {
+        "effective_sha256": "9dcf77b47d8b78a3d95f3f9fcc069920ec1c3775211e16c9dd114261e2323581",
+        "path": "D:\\Vivek\\research\\optimization_runs\\cache\\heat_flow_d18224a907cd_blueprint.json",
+        "plan_source": "cached",
+        "sha256": "46af60fef83f5e96e09913ac7398818ed24e2b5a233536913157758c5881db76",
+        "task_sha1": "d18224a907cd27372226d7a44067dabc04603ce7"
+      },
+      "replicate": 0,
+      "retrieval_status": "passed",
+      "run_dir": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\heat_flow\\code_only_0",
+      "run_id": "heat_flow_code_only_0",
+      "task_source": "D:\\Vivek\\research\\test\\heat_flow.md",
+      "variant": "code_only"
+    },
+    {
+      "alignment": {
+        "generated_time_axis": 0,
+        "reference_time_axis": 0
+      },
+      "api_resolution": [
+        {
+          "candidate_count": 1,
+          "candidates": [
+            {
+              "component_type": "Function",
+              "defining_files": [
+                "_grid.py"
+              ],
+              "id": "_grid.py:CenteredGrid",
+              "import_path": "phi.flow.CenteredGrid",
+              "name": "CenteredGrid"
+            }
+          ],
+          "code_id": "_grid.py:CenteredGrid",
+          "code_import_path": "phi.flow.CenteredGrid",
+          "code_name": "CenteredGrid",
+          "configured_aliases": [
+            "phi.field.CenteredGrid",
+            "phi.flow.CenteredGrid"
+          ],
+          "definition_path": "phi/field/_grid.py",
+          "domain_api_id": "dkg:ground_truth_domains:code:phi.field._grid.CenteredGrid",
+          "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+          "observed_call": "CenteredGrid",
+          "qualified_name": "phi.field._grid.CenteredGrid",
+          "quality": "exact_alias",
+          "status": "resolved"
+        },
+        {
+          "candidate_count": 1,
+          "candidates": [
+            {
+              "component_type": "Class",
+              "defining_files": [
+                "_box.py"
+              ],
+              "id": "_box.py:Box",
+              "import_path": "phi.flow.Box",
+              "name": "Box"
+            }
+          ],
+          "code_id": "_box.py:Box",
+          "code_import_path": "phi.flow.Box",
+          "code_name": "Box",
+          "configured_aliases": [
+            "phi.flow.Box",
+            "phi.geom.Box"
+          ],
+          "definition_path": "phi/geom/_box.py",
+          "domain_api_id": "dkg:ground_truth_domains:code:phi.geom._box.Box",
+          "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+          "observed_call": "Box",
+          "qualified_name": "phi.geom._box.Box",
+          "quality": "exact_alias",
+          "status": "resolved"
+        },
+        {
+          "candidate_count": 1,
+          "candidates": [
+            {
+              "component_type": "Function",
+              "defining_files": [
+                "_geom_ops.py"
+              ],
+              "id": "_geom_ops.py:union",
+              "import_path": "phi.flow.union",
+              "name": "union"
+            }
+          ],
+          "code_id": "_geom_ops.py:union",
+          "code_import_path": "phi.flow.union",
+          "code_name": "union",
+          "configured_aliases": [
+            "phi.flow.union",
+            "phi.geom.union"
+          ],
+          "definition_path": "phi/geom/_geom_ops.py",
+          "domain_api_id": "dkg:ground_truth_domains:code:phi.geom._geom_ops.union",
+          "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+          "observed_call": "union",
+          "qualified_name": "phi.geom._geom_ops.union",
+          "quality": "exact_alias",
+          "status": "resolved"
+        },
+        {
+          "candidate_count": 1,
+          "candidates": [
+            {
+              "component_type": "Function",
+              "defining_files": [
+                "diffuse.py"
+              ],
+              "id": "diffuse.py:implicit",
+              "import_path": "phi.flow.diffuse.implicit",
+              "name": "implicit"
+            }
+          ],
+          "code_id": "diffuse.py:implicit",
+          "code_import_path": "phi.flow.diffuse.implicit",
+          "code_name": "implicit",
+          "configured_aliases": [
+            "phi.flow.diffuse.implicit",
+            "phi.physics.diffuse.implicit"
+          ],
+          "definition_path": "phi/physics/diffuse.py",
+          "domain_api_id": "dkg:ground_truth_domains:code:phi.physics.diffuse.implicit",
+          "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+          "observed_call": "diffuse.implicit",
+          "qualified_name": "phi.physics.diffuse.implicit",
+          "quality": "exact_alias",
+          "status": "resolved"
+        }
+      ],
+      "artifact_provenance": "not_generated",
+      "artifacts": {},
+      "caveats": [
+        "Task PDE specifies x-only diffusion; ground-truth code calls multidimensional diffuse.implicit with spatial conductivity. Operator agreement is unverified."
+      ],
+      "config_id": "1ad8c65e9940",
+      "context": {
+        "code_nodes": 12,
+        "context_chars": 22432,
+        "domain_nodes": 25,
+        "filtered_relations": 91,
+        "raw_relations": 3784,
+        "resolved_api_links": 4,
+        "seed_count": 98,
+        "unresolved_api_links": 0
+      },
+      "domain": "heat_flow",
+      "domain_status": "available",
+      "execution": {
+        "status": "not_run"
+      },
+      "execution_status": "not_run",
+      "generation": {
+        "reason": "Retrieval-only mode; no LLM call.",
+        "status": "not_requested"
+      },
+      "generation_status": "not_requested",
+      "metadata": {
+        "code_context_hash": "f938eb4ff0cce9bd8fe13fd573361e14bc54fd705570feb7fda50e4b2197e6fd",
+        "domain_context_hash": "557f3526b70513a4da594ecffd955d831a03e9eaa2023a670e70112a605f7f78",
+        "max_tokens": null,
+        "model": null,
+        "seed": null,
+        "task_hash": "4894e50322d00c78ab2005d7e2df51383939bb87f0bb3a6c7019d53f1ad3d4f2",
+        "temperature": 0
+      },
+      "numerical": [
+        {
+          "caveats": [
+            "Task PDE specifies x-only diffusion; ground-truth code calls multidimensional diffuse.implicit with spatial conductivity. Operator agreement is unverified."
+          ],
+          "component": "main",
+          "expected_output": "heat_flow_temperature_trj.npy",
+          "expected_shape": [
+            101,
+            100,
+            50
+          ],
+          "reason": "No successful current-run execution; outputs are not scored.",
+          "reference_path": "D:\\Vivek\\research\\test_heat_flow\\heat_flow_ground_truth.npy",
+          "reference_source": "D:\\Vivek\\research\\test_heat_flow\\heat_flow_ground_truth.py",
+          "relative_rmse": null,
+          "rmse": null,
+          "status": "not_run"
+        }
+      ],
+      "numerical_status": "not_run",
+      "plan": {
+        "effective_sha256": "d8fc8dfa3ccdb9e61eabb36156866b16a8f9b028febacb5f3943dcd67d6d498f",
+        "path": "D:\\Vivek\\research\\optimization_runs\\cache\\heat_flow_d18224a907cd_blueprint.json",
+        "plan_source": "cached",
+        "sha256": "46af60fef83f5e96e09913ac7398818ed24e2b5a233536913157758c5881db76",
+        "task_sha1": "d18224a907cd27372226d7a44067dabc04603ce7"
+      },
+      "replicate": 0,
+      "retrieval_status": "passed",
+      "run_dir": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\heat_flow\\combined_0",
+      "run_id": "heat_flow_combined_0",
+      "task_source": "D:\\Vivek\\research\\test\\heat_flow.md",
+      "variant": "combined"
+    },
+    {
+      "alignment": {
+        "generated_time_axis": 0,
+        "reference_time_axis": 0
+      },
+      "artifact_provenance": "existing_outputs_rerun",
+      "artifacts": {},
+      "caveats": [
+        "Task PDE specifies x-only diffusion; ground-truth code calls multidimensional diffuse.implicit with spatial conductivity. Operator agreement is unverified."
+      ],
+      "config_id": "1ad8c65e9940",
+      "context": {},
+      "domain": "heat_flow",
+      "execution": {
+        "duration_s": 5.401386,
+        "error": "",
+        "execution_guard": "AST screen and restricted environment; not an OS sandbox",
+        "execution_ok": true,
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "execution_status": "passed",
+      "generation": {
+        "reason": "Existing code; no context-conditioned generation.",
+        "status": "historical_script"
+      },
+      "generation_source": "historical_script_rerun",
+      "generation_status": "historical_script",
+      "metadata": {
+        "code_context_hash": null,
+        "domain_context_hash": null,
+        "max_tokens": null,
+        "model": null,
+        "seed": null,
+        "task_hash": "4894e50322d00c78ab2005d7e2df51383939bb87f0bb3a6c7019d53f1ad3d4f2",
+        "temperature": 0
+      },
+      "numerical": [
+        {
+          "caveats": [
+            "Task PDE specifies x-only diffusion; ground-truth code calls multidimensional diffuse.implicit with spatial conductivity. Operator agreement is unverified."
+          ],
+          "component": "main",
+          "expected_output": "heat_flow_temperature_trj.npy",
+          "expected_shape": [
+            101,
+            100,
+            50
+          ],
+          "reason": "Runner did not report heat_flow_temperature_trj.npy.",
+          "reference_path": "D:\\Vivek\\research\\test_heat_flow\\heat_flow_ground_truth.npy",
+          "reference_source": "D:\\Vivek\\research\\test_heat_flow\\heat_flow_ground_truth.py",
+          "relative_rmse": null,
+          "rmse": null,
+          "status": "generated_artifact_missing"
+        }
+      ],
+      "numerical_status": "generated_artifact_missing",
+      "observed_artifacts": [
+        {
+          "bytes": 2020128,
+          "filename": "heat_flow_trj.npy",
+          "path": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\heat_flow\\historical_rerun_0\\heat_flow_trj.npy",
+          "sha256": "3a2f0b857cd36b469bcb155e663c0d98fc6c4fc655a4561057a9b63ed3e00b8b"
+        }
+      ],
+      "plan": {
+        "path": "D:\\Vivek\\research\\optimization_runs\\cache\\heat_flow_d18224a907cd_blueprint.json",
+        "plan_source": "cached",
+        "sha256": "46af60fef83f5e96e09913ac7398818ed24e2b5a233536913157758c5881db76",
+        "task_sha1": "d18224a907cd27372226d7a44067dabc04603ce7"
+      },
+      "replicate": 0,
+      "run_dir": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\heat_flow\\historical_rerun_0",
+      "run_id": "heat_flow_historical_rerun_0",
+      "script_path": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\heat_flow\\historical_rerun_0\\generated_heat_flow_simulation.py",
+      "script_sha256": "5bde200198e3a8ce47fe76c8985708f4c5236bd7375e68603c7f8e44c7ff9598",
+      "script_source": "D:\\Vivek\\research\\test_heat_flow\\generated_heat_flow_simulation.py",
+      "task_source": "D:\\Vivek\\research\\test\\heat_flow.md",
+      "variant": "historical_rerun"
+    },
+    {
+      "alignment": {
+        "generated_time_axis": 0,
+        "reference_time_axis": 0
+      },
+      "api_resolution": [],
+      "artifact_provenance": "not_generated",
+      "artifacts": {},
+      "caveats": [],
+      "config_id": "1ad8c65e9940",
+      "context": {
+        "code_nodes": 12,
+        "context_chars": 12196,
+        "domain_nodes": 0,
+        "filtered_relations": 128,
+        "raw_relations": 3564,
+        "resolved_api_links": 0,
+        "seed_count": 104,
+        "unresolved_api_links": 0
+      },
+      "domain": "julia_set",
+      "domain_status": "disabled",
+      "execution": {
+        "status": "not_run"
+      },
+      "execution_status": "not_run",
+      "generation": {
+        "reason": "Retrieval-only mode; no LLM call.",
+        "status": "not_requested"
+      },
+      "generation_status": "not_requested",
+      "metadata": {
+        "code_context_hash": "22712a6bf04f16c9c5365b9cae981cd59c8f9bf1fb597abac732673fd0195285",
+        "domain_context_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "max_tokens": null,
+        "model": null,
+        "seed": null,
+        "task_hash": "10e0a7d9a3905b8241ffa222ab3fadcf9a580d047b1611e78bdabe187830201c",
+        "temperature": 0
+      },
+      "numerical": [
+        {
+          "caveats": [],
+          "component": "main",
+          "expected_output": "julia_set_domain_trj.npy",
+          "expected_shape": [
+            100,
+            256,
+            256
+          ],
+          "reason": "No successful current-run execution; outputs are not scored.",
+          "reference_path": "D:\\Vivek\\research\\test_julia_set\\julia_set_ground_truth_trj.npy",
+          "reference_source": "D:\\Vivek\\research\\test_julia_set\\julia_set_ground_truth.py",
+          "relative_rmse": null,
+          "rmse": null,
+          "status": "not_run"
+        }
+      ],
+      "numerical_status": "not_run",
+      "plan": {
+        "effective_sha256": "38d90ebf4cdbe115d0fce4939f5ac522cb7630488b74c65acddd12fe18859755",
+        "path": "D:\\Vivek\\research\\optimization_runs\\cache\\julia_set_b3c1ba4436b6_blueprint.json",
+        "plan_source": "cached",
+        "sha256": "7103ba9f251f18ba388eb2cdec8d32ee1b50bbf92ff9524f746d3ca3ebbd0f98",
+        "task_sha1": "b3c1ba4436b6a38492ff80fe166bc9966fdcf936"
+      },
+      "replicate": 0,
+      "retrieval_status": "passed",
+      "run_dir": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\julia_set\\code_only_0",
+      "run_id": "julia_set_code_only_0",
+      "task_source": "D:\\Vivek\\research\\test\\julia_set.md",
+      "variant": "code_only"
+    },
+    {
+      "alignment": {
+        "generated_time_axis": 0,
+        "reference_time_axis": 0
+      },
+      "api_resolution": [
+        {
+          "candidate_count": 1,
+          "candidates": [
+            {
+              "component_type": "Function",
+              "defining_files": [
+                "_grid.py"
+              ],
+              "id": "_grid.py:CenteredGrid",
+              "import_path": "phi.flow.CenteredGrid",
+              "name": "CenteredGrid"
+            }
+          ],
+          "code_id": "_grid.py:CenteredGrid",
+          "code_import_path": "phi.flow.CenteredGrid",
+          "code_name": "CenteredGrid",
+          "configured_aliases": [
+            "phi.field.CenteredGrid",
+            "phi.flow.CenteredGrid"
+          ],
+          "definition_path": "phi/field/_grid.py",
+          "domain_api_id": "dkg:ground_truth_domains:code:phi.field._grid.CenteredGrid",
+          "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+          "observed_call": "CenteredGrid",
+          "qualified_name": "phi.field._grid.CenteredGrid",
+          "quality": "exact_alias",
+          "status": "resolved"
+        },
+        {
+          "candidate_count": 1,
+          "candidates": [
+            {
+              "component_type": "Class",
+              "defining_files": [
+                "_box.py"
+              ],
+              "id": "_box.py:Box",
+              "import_path": "phi.flow.Box",
+              "name": "Box"
+            }
+          ],
+          "code_id": "_box.py:Box",
+          "code_import_path": "phi.flow.Box",
+          "code_name": "Box",
+          "configured_aliases": [
+            "phi.flow.Box",
+            "phi.geom.Box"
+          ],
+          "definition_path": "phi/geom/_box.py",
+          "domain_api_id": "dkg:ground_truth_domains:code:phi.geom._box.Box",
+          "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+          "observed_call": "Box",
+          "qualified_name": "phi.geom._box.Box",
+          "quality": "exact_alias",
+          "status": "resolved"
+        }
+      ],
+      "artifact_provenance": "not_generated",
+      "artifacts": {},
+      "caveats": [],
+      "config_id": "1ad8c65e9940",
+      "context": {
+        "code_nodes": 12,
+        "context_chars": 21347,
+        "domain_nodes": 27,
+        "filtered_relations": 82,
+        "raw_relations": 3886,
+        "resolved_api_links": 2,
+        "seed_count": 126,
+        "unresolved_api_links": 0
+      },
+      "domain": "julia_set",
+      "domain_status": "available",
+      "execution": {
+        "status": "not_run"
+      },
+      "execution_status": "not_run",
+      "generation": {
+        "reason": "Retrieval-only mode; no LLM call.",
+        "status": "not_requested"
+      },
+      "generation_status": "not_requested",
+      "metadata": {
+        "code_context_hash": "d01b3cfb07c322c735023145fd5eb116ad621987c1d86c66198e0f1c7e26ec17",
+        "domain_context_hash": "187b87fdcf8eb6ee477f3b731b0286fa5176edd64f1eacfb09b5195bc876b1b7",
+        "max_tokens": null,
+        "model": null,
+        "seed": null,
+        "task_hash": "10e0a7d9a3905b8241ffa222ab3fadcf9a580d047b1611e78bdabe187830201c",
+        "temperature": 0
+      },
+      "numerical": [
+        {
+          "caveats": [],
+          "component": "main",
+          "expected_output": "julia_set_domain_trj.npy",
+          "expected_shape": [
+            100,
+            256,
+            256
+          ],
+          "reason": "No successful current-run execution; outputs are not scored.",
+          "reference_path": "D:\\Vivek\\research\\test_julia_set\\julia_set_ground_truth_trj.npy",
+          "reference_source": "D:\\Vivek\\research\\test_julia_set\\julia_set_ground_truth.py",
+          "relative_rmse": null,
+          "rmse": null,
+          "status": "not_run"
+        }
+      ],
+      "numerical_status": "not_run",
+      "plan": {
+        "effective_sha256": "cb1e23534d9409ae02c34117c05cc8a58c57c18aaae278adbb78eff3d066738a",
+        "path": "D:\\Vivek\\research\\optimization_runs\\cache\\julia_set_b3c1ba4436b6_blueprint.json",
+        "plan_source": "cached",
+        "sha256": "7103ba9f251f18ba388eb2cdec8d32ee1b50bbf92ff9524f746d3ca3ebbd0f98",
+        "task_sha1": "b3c1ba4436b6a38492ff80fe166bc9966fdcf936"
+      },
+      "replicate": 0,
+      "retrieval_status": "passed",
+      "run_dir": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\julia_set\\combined_0",
+      "run_id": "julia_set_combined_0",
+      "task_source": "D:\\Vivek\\research\\test\\julia_set.md",
+      "variant": "combined"
+    },
+    {
+      "alignment": {
+        "generated_time_axis": 0,
+        "reference_time_axis": 0
+      },
+      "artifact_provenance": "existing_outputs_rerun",
+      "artifacts": {
+        "main": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\julia_set\\historical_rerun_0\\julia_set_domain_trj.npy"
+      },
+      "caveats": [],
+      "config_id": "1ad8c65e9940",
+      "context": {},
+      "domain": "julia_set",
+      "execution": {
+        "duration_s": 1.67194,
+        "error": "",
+        "execution_guard": "AST screen and restricted environment; not an OS sandbox",
+        "execution_ok": true,
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "execution_status": "passed",
+      "generation": {
+        "reason": "Existing code; no context-conditioned generation.",
+        "status": "historical_script"
+      },
+      "generation_source": "historical_script_rerun",
+      "generation_status": "historical_script",
+      "metadata": {
+        "code_context_hash": null,
+        "domain_context_hash": null,
+        "max_tokens": null,
+        "model": null,
+        "seed": null,
+        "task_hash": "10e0a7d9a3905b8241ffa222ab3fadcf9a580d047b1611e78bdabe187830201c",
+        "temperature": 0
+      },
+      "numerical": [
+        {
+          "alignment_actions": [],
+          "caveats": [],
+          "component": "main",
+          "expected_output": "julia_set_domain_trj.npy",
+          "expected_shape": [
+            100,
+            256,
+            256
+          ],
+          "generated_path": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\julia_set\\historical_rerun_0\\julia_set_domain_trj.npy",
+          "generated_sha256": "d8986a5d23f0f668bc284c180ed24a628bbfdf906709fce9251acb318809fca0",
+          "generated_shape": [
+            100,
+            256,
+            256
+          ],
+          "max_l2": 0.0,
+          "mean_l2": 0.0,
+          "reference_path": "D:\\Vivek\\research\\test_julia_set\\julia_set_ground_truth_trj.npy",
+          "reference_rms": 1.558870197914282,
+          "reference_sha256": "d8986a5d23f0f668bc284c180ed24a628bbfdf906709fce9251acb318809fca0",
+          "reference_shape": [
+            100,
+            256,
+            256
+          ],
+          "reference_source": "D:\\Vivek\\research\\test_julia_set\\julia_set_ground_truth.py",
+          "reference_source_sha256": "622e2498f5b4b99e0df490ab25d28a26f1ee2dc1f0b2fef1afc1e593fe84d098",
+          "relative_rmse": 0.0,
+          "rmse": 0.0,
+          "shape": [
+            100,
+            256,
+            256
+          ],
+          "status": "measured"
+        }
+      ],
+      "numerical_status": "measured",
+      "observed_artifacts": [
+        {
+          "bytes": 26214528,
+          "filename": "julia_set_domain_trj.npy",
+          "path": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\julia_set\\historical_rerun_0\\julia_set_domain_trj.npy",
+          "sha256": "d8986a5d23f0f668bc284c180ed24a628bbfdf906709fce9251acb318809fca0"
+        }
+      ],
+      "plan": {
+        "path": "D:\\Vivek\\research\\optimization_runs\\cache\\julia_set_b3c1ba4436b6_blueprint.json",
+        "plan_source": "cached",
+        "sha256": "7103ba9f251f18ba388eb2cdec8d32ee1b50bbf92ff9524f746d3ca3ebbd0f98",
+        "task_sha1": "b3c1ba4436b6a38492ff80fe166bc9966fdcf936"
+      },
+      "replicate": 0,
+      "run_dir": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\julia_set\\historical_rerun_0",
+      "run_id": "julia_set_historical_rerun_0",
+      "script_path": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\julia_set\\historical_rerun_0\\generated_julia_set_simulation.py",
+      "script_sha256": "09b7a30cdf686b02791cb22784fb643596d6ea2585d5384170d7f41f8b4ca857",
+      "script_source": "D:\\Vivek\\research\\test_julia_set\\generated_julia_set_simulation.py",
+      "task_source": "D:\\Vivek\\research\\test\\julia_set.md",
+      "variant": "historical_rerun"
+    },
+    {
+      "alignment": {
+        "generated_time_axis": 0,
+        "reference_time_axis": 0
+      },
+      "api_resolution": [],
+      "artifact_provenance": "not_generated",
+      "artifacts": {},
+      "caveats": [],
+      "config_id": "1ad8c65e9940",
+      "context": {
+        "code_nodes": 12,
+        "context_chars": 16155,
+        "domain_nodes": 0,
+        "filtered_relations": 176,
+        "raw_relations": 3241,
+        "resolved_api_links": 0,
+        "seed_count": 82,
+        "unresolved_api_links": 0
+      },
+      "domain": "reaction_diffusion",
+      "domain_status": "disabled",
+      "execution": {
+        "status": "not_run"
+      },
+      "execution_status": "not_run",
+      "generation": {
+        "reason": "Retrieval-only mode; no LLM call.",
+        "status": "not_requested"
+      },
+      "generation_status": "not_requested",
+      "metadata": {
+        "code_context_hash": "e62b88aa2ff4749316e4c5fb28e799d1713fc5ac83be1913b2fbc609edf1bc67",
+        "domain_context_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "max_tokens": null,
+        "model": null,
+        "seed": null,
+        "task_hash": "2aa75359e6b042a44fced58904c7957af95db4663795a95a8ff97f3e6c5073f5",
+        "temperature": 0
+      },
+      "numerical": [
+        {
+          "caveats": [],
+          "component": "u",
+          "expected_output": "reaction_diffusion_u_trj.npy",
+          "expected_shape": [
+            101,
+            100,
+            100
+          ],
+          "reason": "No successful current-run execution; outputs are not scored.",
+          "reference_path": "D:\\Vivek\\research\\test_reaction_diffusion\\reaction_diffusion_ground_truth_u_trj.npy",
+          "reference_source": "D:\\Vivek\\research\\test_reaction_diffusion\\reaction_diffusion_ground_truth.py",
+          "relative_rmse": null,
+          "rmse": null,
+          "status": "not_run"
+        },
+        {
+          "caveats": [],
+          "component": "v",
+          "expected_output": "reaction_diffusion_v_trj.npy",
+          "expected_shape": [
+            101,
+            100,
+            100
+          ],
+          "reason": "No successful current-run execution; outputs are not scored.",
+          "reference_path": "D:\\Vivek\\research\\test_reaction_diffusion\\reaction_diffusion_ground_truth_v_trj.npy",
+          "reference_source": "D:\\Vivek\\research\\test_reaction_diffusion\\reaction_diffusion_ground_truth.py",
+          "relative_rmse": null,
+          "rmse": null,
+          "status": "not_run"
+        }
+      ],
+      "numerical_status": "not_run;not_run",
+      "plan": {
+        "effective_sha256": "3c6542109282f4878d4237d8c47e3ce97df9b885c7c6be1b109e018fac96ed68",
+        "path": "D:\\Vivek\\research\\optimization_runs\\cache\\reaction_diffusion_7a58144cea66_blueprint.json",
+        "plan_source": "cached",
+        "sha256": "d7865ec3ee2db1048fe343fcb96f9d5cf31952654cb87fd2e7dddbe1c213ed89",
+        "task_sha1": "7a58144cea66d4ccdf2bfcc8f49e18cdbd6ab98e"
+      },
+      "replicate": 0,
+      "retrieval_status": "passed",
+      "run_dir": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\reaction_diffusion\\code_only_0",
+      "run_id": "reaction_diffusion_code_only_0",
+      "task_source": "D:\\Vivek\\research\\test\\reaction_diffusion.md",
+      "variant": "code_only"
+    },
+    {
+      "alignment": {
+        "generated_time_axis": 0,
+        "reference_time_axis": 0
+      },
+      "api_resolution": [
+        {
+          "candidate_count": 0,
+          "candidates": [],
+          "code_id": null,
+          "code_import_path": null,
+          "code_name": null,
+          "configured_aliases": [
+            "phi.field.laplace",
+            "phi.flow.field.laplace"
+          ],
+          "definition_path": "phi/field/_field_math.py",
+          "domain_api_id": "dkg:ground_truth_domains:code:phi.field._field_math.laplace",
+          "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+          "observed_call": "field.laplace",
+          "qualified_name": "phi.field._field_math.laplace",
+          "quality": "unresolved",
+          "status": "unresolved"
+        },
+        {
+          "candidate_count": 1,
+          "candidates": [
+            {
+              "component_type": "Function",
+              "defining_files": [
+                "_grid.py"
+              ],
+              "id": "_grid.py:CenteredGrid",
+              "import_path": "phi.flow.CenteredGrid",
+              "name": "CenteredGrid"
+            }
+          ],
+          "code_id": "_grid.py:CenteredGrid",
+          "code_import_path": "phi.flow.CenteredGrid",
+          "code_name": "CenteredGrid",
+          "configured_aliases": [
+            "phi.field.CenteredGrid",
+            "phi.flow.CenteredGrid"
+          ],
+          "definition_path": "phi/field/_grid.py",
+          "domain_api_id": "dkg:ground_truth_domains:code:phi.field._grid.CenteredGrid",
+          "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+          "observed_call": "CenteredGrid",
+          "qualified_name": "phi.field._grid.CenteredGrid",
+          "quality": "exact_alias",
+          "status": "resolved"
+        },
+        {
+          "candidate_count": 1,
+          "candidates": [
+            {
+              "component_type": "Class",
+              "defining_files": [
+                "_box.py"
+              ],
+              "id": "_box.py:Box",
+              "import_path": "phi.flow.Box",
+              "name": "Box"
+            }
+          ],
+          "code_id": "_box.py:Box",
+          "code_import_path": "phi.flow.Box",
+          "code_name": "Box",
+          "configured_aliases": [
+            "phi.flow.Box",
+            "phi.geom.Box"
+          ],
+          "definition_path": "phi/geom/_box.py",
+          "domain_api_id": "dkg:ground_truth_domains:code:phi.geom._box.Box",
+          "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+          "observed_call": "Box",
+          "qualified_name": "phi.geom._box.Box",
+          "quality": "exact_alias",
+          "status": "resolved"
+        }
+      ],
+      "artifact_provenance": "not_generated",
+      "artifacts": {},
+      "caveats": [],
+      "config_id": "1ad8c65e9940",
+      "context": {
+        "code_nodes": 12,
+        "context_chars": 25198,
+        "domain_nodes": 40,
+        "filtered_relations": 81,
+        "raw_relations": 3226,
+        "resolved_api_links": 2,
+        "seed_count": 78,
+        "unresolved_api_links": 1
+      },
+      "domain": "reaction_diffusion",
+      "domain_status": "available",
+      "execution": {
+        "status": "not_run"
+      },
+      "execution_status": "not_run",
+      "generation": {
+        "reason": "Retrieval-only mode; no LLM call.",
+        "status": "not_requested"
+      },
+      "generation_status": "not_requested",
+      "metadata": {
+        "code_context_hash": "a24e23d24acd1354b1c2c8ca89928924c53f2863af062e0480093ee5050ba466",
+        "domain_context_hash": "e58e8921e42b9eb52e2f025ec6aac5527db596d73d3eefeeeb4d29becc73d052",
+        "max_tokens": null,
+        "model": null,
+        "seed": null,
+        "task_hash": "2aa75359e6b042a44fced58904c7957af95db4663795a95a8ff97f3e6c5073f5",
+        "temperature": 0
+      },
+      "numerical": [
+        {
+          "caveats": [],
+          "component": "u",
+          "expected_output": "reaction_diffusion_u_trj.npy",
+          "expected_shape": [
+            101,
+            100,
+            100
+          ],
+          "reason": "No successful current-run execution; outputs are not scored.",
+          "reference_path": "D:\\Vivek\\research\\test_reaction_diffusion\\reaction_diffusion_ground_truth_u_trj.npy",
+          "reference_source": "D:\\Vivek\\research\\test_reaction_diffusion\\reaction_diffusion_ground_truth.py",
+          "relative_rmse": null,
+          "rmse": null,
+          "status": "not_run"
+        },
+        {
+          "caveats": [],
+          "component": "v",
+          "expected_output": "reaction_diffusion_v_trj.npy",
+          "expected_shape": [
+            101,
+            100,
+            100
+          ],
+          "reason": "No successful current-run execution; outputs are not scored.",
+          "reference_path": "D:\\Vivek\\research\\test_reaction_diffusion\\reaction_diffusion_ground_truth_v_trj.npy",
+          "reference_source": "D:\\Vivek\\research\\test_reaction_diffusion\\reaction_diffusion_ground_truth.py",
+          "relative_rmse": null,
+          "rmse": null,
+          "status": "not_run"
+        }
+      ],
+      "numerical_status": "not_run;not_run",
+      "plan": {
+        "effective_sha256": "5cb7bc4b4ff0f9701de52d1f220c417a785fc8af4af409913833702904dd9cc6",
+        "path": "D:\\Vivek\\research\\optimization_runs\\cache\\reaction_diffusion_7a58144cea66_blueprint.json",
+        "plan_source": "cached",
+        "sha256": "d7865ec3ee2db1048fe343fcb96f9d5cf31952654cb87fd2e7dddbe1c213ed89",
+        "task_sha1": "7a58144cea66d4ccdf2bfcc8f49e18cdbd6ab98e"
+      },
+      "replicate": 0,
+      "retrieval_status": "passed",
+      "run_dir": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\reaction_diffusion\\combined_0",
+      "run_id": "reaction_diffusion_combined_0",
+      "task_source": "D:\\Vivek\\research\\test\\reaction_diffusion.md",
+      "variant": "combined"
+    },
+    {
+      "alignment": {
+        "generated_time_axis": 0,
+        "reference_time_axis": 0
+      },
+      "artifact_provenance": "existing_outputs_rerun",
+      "artifacts": {
+        "u": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\reaction_diffusion\\historical_rerun_0\\reaction_diffusion_u_trj.npy",
+        "v": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\reaction_diffusion\\historical_rerun_0\\reaction_diffusion_v_trj.npy"
+      },
+      "caveats": [],
+      "config_id": "1ad8c65e9940",
+      "context": {},
+      "domain": "reaction_diffusion",
+      "execution": {
+        "duration_s": 3.611833,
+        "error": "",
+        "execution_guard": "AST screen and restricted environment; not an OS sandbox",
+        "execution_ok": true,
+        "exit_code": 0,
+        "status": "passed"
+      },
+      "execution_status": "passed",
+      "generation": {
+        "reason": "Existing code; no context-conditioned generation.",
+        "status": "historical_script"
+      },
+      "generation_source": "historical_script_rerun",
+      "generation_status": "historical_script",
+      "metadata": {
+        "code_context_hash": null,
+        "domain_context_hash": null,
+        "max_tokens": null,
+        "model": null,
+        "seed": null,
+        "task_hash": "2aa75359e6b042a44fced58904c7957af95db4663795a95a8ff97f3e6c5073f5",
+        "temperature": 0
+      },
+      "numerical": [
+        {
+          "alignment_actions": [],
+          "caveats": [],
+          "component": "u",
+          "expected_output": "reaction_diffusion_u_trj.npy",
+          "expected_shape": [
+            101,
+            100,
+            100
+          ],
+          "generated_path": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\reaction_diffusion\\historical_rerun_0\\reaction_diffusion_u_trj.npy",
+          "generated_sha256": "6fbbfae32c60e1ae3b88b05b1bf0b47016eed70124b9ebcc6a4a156c09589743",
+          "generated_shape": [
+            101,
+            100,
+            100
+          ],
+          "max_l2": 5.751848220825195e-06,
+          "mean_l2": 3.4535277661947686e-06,
+          "reference_path": "D:\\Vivek\\research\\test_reaction_diffusion\\reaction_diffusion_ground_truth_u_trj.npy",
+          "reference_rms": 0.52784185873051,
+          "reference_sha256": "031c9fa2b47db15a669c9e12191d5987f20706ce668106e209f2b91432d8fd07",
+          "reference_shape": [
+            101,
+            100,
+            100
+          ],
+          "reference_source": "D:\\Vivek\\research\\test_reaction_diffusion\\reaction_diffusion_ground_truth.py",
+          "reference_source_sha256": "ca81049a1ff4f524113c086e1ba863d4c831242529373ba1250ffcacf6f166f9",
+          "relative_rmse": 7.122431876168713e-08,
+          "rmse": 3.759517680198327e-08,
+          "shape": [
+            101,
+            100,
+            100
+          ],
+          "status": "measured"
+        },
+        {
+          "alignment_actions": [],
+          "caveats": [],
+          "component": "v",
+          "expected_output": "reaction_diffusion_v_trj.npy",
+          "expected_shape": [
+            101,
+            100,
+            100
+          ],
+          "generated_path": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\reaction_diffusion\\historical_rerun_0\\reaction_diffusion_v_trj.npy",
+          "generated_sha256": "51c1af6bfbef9ccb9e23c6653b7da2ceb9aa8a316fead44aea80d8444d844348",
+          "generated_shape": [
+            101,
+            100,
+            100
+          ],
+          "max_l2": 8.242237986666813e-06,
+          "mean_l2": 4.572451737224804e-06,
+          "reference_path": "D:\\Vivek\\research\\test_reaction_diffusion\\reaction_diffusion_ground_truth_v_trj.npy",
+          "reference_rms": 0.4277742035218486,
+          "reference_sha256": "246398cc9ac3d33e7c1d99f21ebf1f48502a496e92abb5909a329221fa5c4b72",
+          "reference_shape": [
+            101,
+            100,
+            100
+          ],
+          "reference_source": "D:\\Vivek\\research\\test_reaction_diffusion\\reaction_diffusion_ground_truth.py",
+          "reference_source_sha256": "ca81049a1ff4f524113c086e1ba863d4c831242529373ba1250ffcacf6f166f9",
+          "relative_rmse": 1.1154913453693643e-07,
+          "rmse": 4.7717842180089515e-08,
+          "shape": [
+            101,
+            100,
+            100
+          ],
+          "status": "measured"
+        }
+      ],
+      "numerical_status": "measured;measured",
+      "observed_artifacts": [
+        {
+          "bytes": 4040128,
+          "filename": "reaction_diffusion_u_trj.npy",
+          "path": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\reaction_diffusion\\historical_rerun_0\\reaction_diffusion_u_trj.npy",
+          "sha256": "6fbbfae32c60e1ae3b88b05b1bf0b47016eed70124b9ebcc6a4a156c09589743"
+        },
+        {
+          "bytes": 4040128,
+          "filename": "reaction_diffusion_v_trj.npy",
+          "path": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\reaction_diffusion\\historical_rerun_0\\reaction_diffusion_v_trj.npy",
+          "sha256": "51c1af6bfbef9ccb9e23c6653b7da2ceb9aa8a316fead44aea80d8444d844348"
+        }
+      ],
+      "plan": {
+        "path": "D:\\Vivek\\research\\optimization_runs\\cache\\reaction_diffusion_7a58144cea66_blueprint.json",
+        "plan_source": "cached",
+        "sha256": "d7865ec3ee2db1048fe343fcb96f9d5cf31952654cb87fd2e7dddbe1c213ed89",
+        "task_sha1": "7a58144cea66d4ccdf2bfcc8f49e18cdbd6ab98e"
+      },
+      "replicate": 0,
+      "run_dir": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\reaction_diffusion\\historical_rerun_0",
+      "run_id": "reaction_diffusion_historical_rerun_0",
+      "script_path": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\reaction_diffusion\\historical_rerun_0\\generated_reaction_diffusion_simulation.py",
+      "script_sha256": "3970b06358f8dc63977d8efa76ae4cd52c75a266c6e3a39ddb030fb69790b37e",
+      "script_source": "D:\\Vivek\\research\\test_reaction_diffusion\\generated_reaction_diffusion_simulation.py",
+      "task_source": "D:\\Vivek\\research\\test\\reaction_diffusion.md",
+      "variant": "historical_rerun"
+    }
+  ],
+  "schema_version": 1,
+  "test_outcomes": [
+    {
+      "details": "",
+      "duration_s": 0.118225,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_additional_metadata_is_preserved_in_json",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.029373,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_artifacts_outside_run_directory_are_excluded",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.017444,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_axis_permutation_requires_explicit_metadata",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.120346,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_burgers_unseeded_initialization_is_caveated",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.016604,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_cached_outputs_are_excluded_even_if_execution_passed",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.012932,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_complex_magnitudes_are_preserved",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.012519,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_conventional_rmse_not_spatial_l2_norm",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.135478,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_domain_guided_code_context_changes_are_audited_as_pipeline_treatment",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.019844,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_empty_scalar_and_nonnumeric_arrays_are_rejected",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.014207,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_equal_length_conflicting_initial_frame_semantics_are_rejected",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.014687,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_execution_failure_and_generation_block_are_explicit",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.130943,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_heat_operator_mismatch_is_caveated_until_evidenced",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.022451,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_historical_rows_and_sources_remain_read_only",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.025869,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_initial_frame_is_dropped_only_with_explicit_metadata",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.023056,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_integer_subtraction_does_not_wrap",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.225379,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_matched_pair_does_not_compare_caveated_numerical_values",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.027934,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_missing_generated_artifact_is_explicit",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.031695,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_missing_reference_is_unavailable_not_zero",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.054288,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_nonfinite_arrays_are_not_scored",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.020751,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_numeric_overflow_is_not_reported_as_a_measurement",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.016294,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_pickle_object_arrays_are_rejected",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.021497,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_reference_shape_must_match_ground_truth_profile",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.24298,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_report_contains_detailed_tables_and_blank_missing_scores",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.021694,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_report_refuses_to_overwrite_any_existing_report",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.219308,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_report_serialization_is_deterministic_and_does_not_mutate_inputs",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.215792,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_rerun_can_measure_output_but_is_not_fresh_generation_pair",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.029974,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_shape_mismatch_never_broadcasts_or_truncates",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.256937,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_unmatched_generation_controls_block_claims",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.227065,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_unmeasured_context_does_not_create_efficacy_claim",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.006227,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_unsupported_domain_is_not_applicable",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.036745,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_wrong_filenames_do_not_score_accidental_old_outputs",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.039782,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_zero_reference_matching_output_is_zero_error",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.20266,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_also_rerun_existing_is_one_historical_row_not_fake_arm_pair",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.013403,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_ast_screen_rejects_output_escape_or_dynamic_filenames",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.012772,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_ast_screen_rejects_sensitive_imports_and_dynamic_calls",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.015252,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_child_environment_excludes_all_inherited_secrets",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.168617,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_default_retrieval_makes_no_llm_calls_and_records_cached_plan",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.20903,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_each_arm_uses_new_directory_and_saves_audit_inputs",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.021516,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_execution_guard_blocks_sensitive_code_before_subprocess",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.031455,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_execution_timeout_retains_partial_logs",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.026657,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_existing_output_directory_is_never_reused",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.034307,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_failed_selected_domain_source_does_not_silently_fall_back_to_json",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.160251,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_generate_preflight_block_preserves_retrieval_without_generation",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.189885,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_generate_uses_one_blueprint_per_domain_and_no_implicit_execution",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.095356,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_graph_snapshot_uses_only_read_sessions_and_hashes_ids",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.03567,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_graph_topology_comparison_detects_changed_id_sets",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.211128,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_injected_pipeline_cannot_bypass_generation_preflight_by_default",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.024771,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_invalid_numeric_options_are_rejected",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.034408,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_invalid_test_results_schema_stops_before_any_pipeline_calls",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.121391,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_missing_cached_blueprint_blocks_rows_without_llm_fallback",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.104033,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_no_execute_flag_never_runs_existing_script",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.173852,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_partial_retrieval_failure_keeps_successful_arm_and_manifest",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.172852,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_per_test_results_are_loaded_hashed_and_exported",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.028643,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_retrieval_live_setup_does_not_import_or_configure_llm_client",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.03476,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_subprocess_receives_isolated_cwd_restricted_environment_and_timeout",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.015646,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_unavailable_snapshot_never_claims_graph_unchanged",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.247582,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_variants_share_immutable_blueprint_and_settings",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.016107,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_code_node_statistics_follow_serializer_definition_selection",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.00969,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_code_only_bypasses_domain_driver_and_domain_retriever",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.012308,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_combined_merges_planner_hints_and_uses_terminal_index_names",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.012058,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_driver_calls_are_read_only_explicit_and_not_closed",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.015092,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_duplicate_exact_aliases_are_not_resolved_by_filename_guess",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.017223,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_duplicate_legacy_file_candidates_remain_ambiguous",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.013701,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_exact_alias_resolution_adds_seed_and_retains_caveat",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.007946,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_invalid_variant_and_budgets_fail_before_external_calls",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.011535,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_low_scoring_required_public_api_is_pinned_before_ranked_noise",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.00874,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_metadata_settings_and_automatic_planner_are_forwarded",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.041386,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_missing_domain_uses_code_context_and_reports_status",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.007632,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_no_code_driver_produces_unavailable_resolution_without_connecting",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.011443,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_private_code_candidates_are_never_seeded",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.013168,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_private_raw_relation_cannot_be_pinned_by_id",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.013217,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_shared_blueprint_and_sane_query_caps_are_deterministic",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.012773,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_structural_metadata_completion_runs_after_pinning",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.009257,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_terminal_name_alone_cannot_resolve_wrong_file",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.006615,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_unique_file_basename_match_is_explicit_candidate",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.330732,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_builds_four_references_and_complete_provenance",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.275188,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_burgers_reads_diffused_velocity_for_advection",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.127591,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_cli_connection_overrides_selected_file_only",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.430378,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_cli_reports_underlying_neo4j_error_with_redacted_traceback",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.370265,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_cli_synchronizes_neo4j_by_default",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.124687,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_configuration_check_does_not_build_or_connect",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.155437,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_console_and_log_file_redact_passwords",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.155577,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_explicit_file_is_the_only_credentials_source",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.533636,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_export_only_does_not_load_credentials_or_connect",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.163062,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_extra_state_update_is_not_silently_omitted",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.179228,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_failed_validation_leaves_previous_export_unchanged",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.274494,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_heat_reads_coefficient_but_only_writes_temperature",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.287529,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_helper_and_parameter_dependencies_are_connected",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.094612,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_incomplete_file_blocks_cli_before_build_or_write",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.085496,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_incomplete_local_file_never_borrows_a_password",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.087533,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_interpolation_cannot_import_inherited_credentials",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.07883,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_invalid_uri_rejected_before_connecting",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.251314,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_julia_computed_output_has_no_invented_save",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.087673,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_local_file_wins_over_root_file_and_inherited_environment",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.252852,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_missing_and_empty_sources_reported_without_invented_references",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.091741,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_missing_credentials_have_actionable_error",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.072272,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_missing_dotenv_dependency_does_not_enable_environment_fallback",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.085496,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_missing_local_file_never_falls_back",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.242224,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_neo4j_batches_are_scoped_and_parameterized",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.29175,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_neo4j_logs_connection_batches_commit_and_verified_counts",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.222765,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_notes_remain_guidance",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.104336,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_npy_header_inspection_and_truncation",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.105785,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_path_escape_rejected",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.294772,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_post_commit_mismatch_does_not_report_verified_success",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.26244,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_reaction_cache_retains_old_state_dependencies",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.109414,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_reversed_recipe_is_rejected",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.740808,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_same_inputs_have_identical_graph_and_ids",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.154449,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_source_edit_invalidates_stale_step",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.251381,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_static_resolution_does_not_promote_external_candidates",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.283136,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_writer_rejects_empty_or_cross_dataset_graph",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.000689,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_bounded_neo4j_paths_cover_current_owned_recipe_edges",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.018712,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_burgers_advection_uses_already_diffused_state",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.033786,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_cached_reaction_is_read_at_produced_version",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.031792,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_dataset_isolation_filters_local_nodes_and_edges",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.05347,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_default_context_budget_preserves_every_recipe_step",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.008597,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_empty_graph_and_unknown_domain_fall_back_cleanly",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.015374,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_explicit_selection_does_not_follow_incoming_shared_api_edges",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.017871,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_helper_formulas_parameters_and_output_conventions_are_preserved",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.024787,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_input_snapshot_and_returned_context_are_independent",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.01382,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_julia_temporary_parameter_is_not_lost",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.011418,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_missing_or_blank_domain_does_not_infer_from_task",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.025934,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_neo4j_domain_cannot_change_query_structure",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.023804,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_neo4j_empty_result_is_clean_and_read_errors_remain_visible",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.02978,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_neo4j_null_projection_fields_match_local_export",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.02846,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_neo4j_read_uses_safe_parameterized_query_and_explicit_database",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.01496,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_oversized_core_is_flagged_without_cutting_json_or_steps",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.020319,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_public_alias_survives_missing_observed_call",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.012954,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_public_aliases_are_usable_code_search_hints",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.058917,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_reference_steps_follow_source_order_not_storage_order",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.00075,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_schema_and_adapter_ambiguities_fail_visibly",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.015622,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_task_requirements_override_reference_output_defaults",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.01504,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_unresolved_apis_are_candidates_without_verification_claim",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.02312,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_whole_program_and_save_expression_are_not_prompt_context",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.035618,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_connection_interpolation_rejected_for_every_setting",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.020714,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_describe_connection_is_read_only_and_secret_free",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.034443,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_driver_construction_is_lazy_bounded_and_does_not_create_session",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.022813,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_driver_constructor_error_is_redacted",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.035187,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_explicit_code_and_domain_files_do_not_mix",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.033217,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_inherited_values_are_ignored_and_environment_is_unchanged",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.013491,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_invalid_role_and_implicit_file_are_rejected",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.059359,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_llm_interpolation_and_placeholders_rejected",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.02049,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_llm_missing_key_does_not_use_environment",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.023893,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_llm_model_and_workspace_must_be_literal_if_provided",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.04396,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_llm_model_precedence_and_optional_workspace",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.01879,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_llm_only_file_does_not_require_database_settings",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.020586,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_missing_domain_password_never_uses_root_or_environment",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.01394,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_missing_selected_file_never_falls_back",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.035172,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_placeholder_credentials_rejected_without_echoing_value",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.025056,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_redaction_covers_database_password_and_api_key",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.020915,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_relative_path_is_explicitly_resolved_under_root",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.019468,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_uri_with_embedded_credentials_is_rejected",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.01461,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_blueprint_errors_are_redacted_before_logging",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.000919,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_definition_with_only_description_edge_remains_available",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.001376,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_disabled_llm_blocks_even_injected_client",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.001062,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_generation_prioritizes_task_and_records_usage",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.001135,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_injected_resources_are_not_closed",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.001058,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_injection_does_not_load_config_or_embedding_model",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.000629,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_metadata_closure_is_idempotent_and_ignores_unselected_definitions",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.00116,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_method_description_rows_respect_owning_class_quota",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.000655,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_namespace_attribute_import_and_class_import_are_valid_patterns",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.000833,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_parameter_type_metadata_survives_filtering_and_row_order",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.00058,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_public_method_uses_initialized_instance",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.001216,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_sessions_use_read_access_and_selected_database",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.001185,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_truncated_generation_is_rejected",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    }
+  ]
+}

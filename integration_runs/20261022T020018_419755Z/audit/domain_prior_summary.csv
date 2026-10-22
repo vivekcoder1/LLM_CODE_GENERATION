@@ -1,0 +1,5 @@
+domain,evidence_origin,status,references,nodes,edges,ordered_steps,verified_apis,api_candidates,fields,parameters,helpers,outputs,context_chars,omitted_optional_guidance
+burgers2d,local_domain_graph_snapshot_not_live_query,available,1,23,29,2,5,4,1,1,0,1,11015,0
+heat_flow,local_domain_graph_snapshot_not_live_query,available,1,25,34,1,4,4,2,4,0,1,11484,0
+julia_set,local_domain_graph_snapshot_not_live_query,available,1,27,41,3,2,5,2,6,0,1,11953,0
+reaction_diffusion,local_domain_graph_snapshot_not_live_query,available,1,40,74,3,3,6,2,12,1,2,15975,2

@@ -1,0 +1,12 @@
+{
+  "tests": 164,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "successful": true,
+  "duration_s": 15.297,
+  "scope": "focused_offline_knowledge_context_suite",
+  "created_utc": "2026-10-22T01:59:53.770448+00:00"
+}

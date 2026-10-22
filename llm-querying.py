@@ -1,19 +1,10 @@
 import json
-import os
-import anthropic 
 from pydantic import BaseModel, Field
 from typing import List
-from neo4j import GraphDatabase
-from sentence_transformers import SentenceTransformer
 from pathlib import Path
-from dotenv import load_dotenv
 import numpy as np
 
-# Load credentials securely
-load_dotenv(dotenv_path=Path(__file__).resolve().parent / ".env")
-
-DRY_RUN = False
-
+ROOT = Path(__file__).resolve().parent
 
 class SearchBlueprint(BaseModel):
     """Pydantic model forcing Claude to generate distinct search commands to hit our graph schema."""
@@ -35,32 +26,72 @@ class SearchBlueprint(BaseModel):
 # 2. END-TO-END RAG PIPELINE
 # ==========================================
 class E2ERagPipeline:
-    def __init__(self):
-        # vector transformer matching 
-        self.embed_model = SentenceTransformer('all-MiniLM-L6-v2') 
-        api_key = os.getenv("ANTHROPIC_API_KEY")
-        if not api_key:
-            raise ValueError("ANTHROPIC_API_KEY was not found in environment variables!")
+    def __init__(self, *, driver=None, client=None, embed_model=None,
+                 domain_retriever=None, database=None, model=None,
+                 code_env_file=None, llm_env_file=None, allow_llm=True,
+                 domain_graph_path=ROOT / "knowledge_context" / "domain_knowledge_graph.json"):
+        """Federate code/domain knowledge with independently selected credentials.
 
-        workspace_id = os.getenv("ANTHROPIC_WORKSPACE_ID")
-        default_headers = {"anthropic-workspace-id": workspace_id} if workspace_id else None
-        self.client = anthropic.Anthropic(api_key=api_key, default_headers=default_headers)
-        
-        uri = os.getenv("NEO4J_URI")
-        user = os.getenv("NEO4J_USER")
-        password = os.getenv("NEO4J_PASSWORD")
-        self.driver = GraphDatabase.driver(uri, auth=(user, password))
+        Injected clients make offline tests independent of models and services.
+        The database is only queried; this pipeline never builds or rewrites it.
+        """
+        self.embed_model = embed_model
+        self.client = client
+        self.allow_llm = bool(allow_llm)
+        self.model = model or "claude-sonnet-4-6"
+        self.last_generation_metadata = {}
+        self._owns_client = False
+        self._owns_driver = driver is None
+        self.database = database
+        if driver is None:
+            from knowledge_context.pipeline_config import create_read_driver, load_connection_config
+            config = load_connection_config(code_env_file or ROOT / ".env", role="code", root=ROOT)
+            driver = create_read_driver(config)
+            self.database = database or config.get("database")
+        self.driver = driver
+        if self.client is None and allow_llm:
+            import anthropic
+            from knowledge_context.pipeline_config import load_llm_config
+            settings = load_llm_config(llm_env_file or ROOT / ".env", model=model)
+            headers = {"anthropic-workspace-id": settings["workspace_id"]} if settings.get("workspace_id") else None
+            self.client = anthropic.Anthropic(api_key=settings["api_key"], default_headers=headers,
+                                              timeout=120, max_retries=0)
+            self.model = settings["model"]
+            self._owns_client = True
+        if domain_retriever is None:
+            from knowledge_context.domain_retrieval import DomainKnowledgeRetriever
+            if domain_graph_path is not None and Path(domain_graph_path).is_file():
+                domain_retriever = DomainKnowledgeRetriever.from_json(Path(domain_graph_path))
+            else:
+                domain_retriever = DomainKnowledgeRetriever()
+        self.domain_retriever = domain_retriever
 
     def close(self):
-        self.driver.close()
+        if self._owns_driver:
+            self.driver.close()
+        if self._owns_client:
+            self.client.close()
+
+    def _session(self):
+        return self.driver.session(database=self.database, default_access_mode="READ")
+
+    def _require_llm(self):
+        if not self.allow_llm or self.client is None:
+            raise RuntimeError("LLM calls are disabled. Supply a cached blueprint for retrieval or configure an explicit LLM client.")
+
+    def retrieve_context(self, domain, task_description, variant="combined", blueprint=None, settings=None):
+        from knowledge_context.combined_retrieval import retrieve_context
+        return retrieve_context(self, domain, task_description, variant=variant, blueprint=blueprint, settings=settings)
 
     def generate_search_blueprint(self, task_description: str) -> dict:
         """Instruct Claude to analyze the physics task (including LaTeX math) and map it to framework targets."""
         print("Analyzing task markdown file to extract query parameters...")
+        self._require_llm()
         try:
             response = self.client.messages.create(
-                model="claude-sonnet-5",
+                model=self.model,
                 max_tokens=1000,
+                temperature=0,
                 system=(
                     "You are a repository-level code analyzer specializing in physics simulations and differentiable programming frameworks (like PhiFlow).\n"
                     "Your task is to analyze simulation task requirements (which may contain LaTeX math) and deconstruct them into expected codebase components.\n\n"
@@ -100,7 +131,9 @@ class E2ERagPipeline:
 
             return blueprint.model_dump()
         except Exception as e:
-            print(f"Failed to generate search blueprint: {e}")
+            from knowledge_context.pipeline_config import redact_message
+            self.last_blueprint_error = redact_message(e)
+            print(f"Failed to generate search blueprint: {self.last_blueprint_error}")
             return {"semantic_queries": [], "target_classes": [], "target_functions": []}
 
     def find_seed_nodes(
@@ -114,26 +147,30 @@ class E2ERagPipeline:
         """Step 2: Hybrid Search with wildcards and higher initial seed capacity."""
         seed_ids = set()
         
-        with self.driver.session() as session:
+        with self._session() as session:
             # A. Full-Text Search on Expected Class Names
             for cls_name in blueprint.get("target_classes", []):
-                term = cls_name.strip()
+                term = cls_name.strip().rsplit(".", 1)[-1]
                 if not term or len(term) < 2: continue
                 res = session.run("""
                     CALL db.index.fulltext.queryNodes("classNames", $term) YIELD node, score
                     RETURN node.id AS id LIMIT $limit
                 """, term=f"{term}* OR {term}", limit=fulltext_limit)
-                for r in res: seed_ids.add(r["id"])
+                for r in res:
+                    if r["id"] is not None:
+                        seed_ids.add(r["id"])
 
             # B. Full-Text Search on Expected Function Names
             for func_name in blueprint.get("target_functions", []):
-                term = func_name.strip()
+                term = func_name.strip().rsplit(".", 1)[-1]
                 if not term or len(term) < 2: continue
                 res = session.run("""
                     CALL db.index.fulltext.queryNodes("functionNames", $term) YIELD node, score
                     RETURN node.id AS id LIMIT $limit
                 """, term=f"{term}* OR {term}", limit=fulltext_limit)
-                for r in res: seed_ids.add(r["id"])
+                for r in res:
+                    if r["id"] is not None:
+                        seed_ids.add(r["id"])
 
             # C. Vector Similarity Search across all vector indexes
             for sem_query in blueprint.get("semantic_queries", []):
@@ -146,26 +183,35 @@ class E2ERagPipeline:
                     MATCH (parent)-[:has_description]->(node)
                     RETURN parent.id AS id
                 """, vector=vector, limit=description_limit)
-                for r in res: seed_ids.add(r["id"])
+                for r in res:
+                    if r["id"] is not None:
+                        seed_ids.add(r["id"])
 
                 # Check Function Docstring Index
                 res = session.run("""
                     CALL db.index.vector.queryNodes("funcDocEmbed", $limit, $vector) YIELD node, score
                     RETURN node.id AS id
                 """, vector=vector, limit=function_limit)
-                for r in res: seed_ids.add(r["id"])
+                for r in res:
+                    if r["id"] is not None:
+                        seed_ids.add(r["id"])
 
                 # Check Class Docstring Index
                 res = session.run("""
                     CALL db.index.vector.queryNodes("classDocEmbed", $limit, $vector) YIELD node, score
                     RETURN node.id AS id
                 """, vector=vector, limit=class_limit)
-                for r in res: seed_ids.add(r["id"])
+                for r in res:
+                    if r["id"] is not None:
+                        seed_ids.add(r["id"])
 
-        return list(seed_ids)
+        return sorted(seed_ids)
 
     def get_embedding(self, text: str) -> List[float]:
         """Converts search strings into 384-dimensional vectors."""
+        if self.embed_model is None:
+            from sentence_transformers import SentenceTransformer
+            self.embed_model = SentenceTransformer('all-MiniLM-L6-v2', local_files_only=True)
         return self.embed_model.encode(text).tolist()
 
     def traverse_subgraph(self, seed_ids: List[str]) -> List[dict]:
@@ -174,17 +220,18 @@ class E2ERagPipeline:
             return []
             
         print(f"Performing 2-hop graph traversal starting from {len(seed_ids)} target seed nodes...")
-        with self.driver.session() as session:
+        with self._session() as session:
             query = """
-                MATCH (seed) WHERE seed.id IN $seed_ids
-                OPTIONAL MATCH path = (seed)-[rel:has_parameter|defines_function|defines_class|has_method|returns_type|has_return_type|has_type|has_description*1..2]-(neighbor)
-                UNWIND relationships(path) AS r
-                WITH DISTINCT startNode(r) AS src, r, endNode(r) AS tgt
+                MATCH (seed) WHERE seed.id IN $seed_ids AND NOT seed:DomainKG
+                OPTIONAL MATCH path = (seed)-[rel:has_parameter|defines_function|defines_class|has_method|returns_type|has_return_type|has_type|of_type|has_description*1..2]-(neighbor)
+                UNWIND CASE WHEN path IS NULL THEN [null] ELSE relationships(path) END AS r
+                WITH DISTINCT CASE WHEN r IS NULL THEN seed ELSE startNode(r) END AS src,
+                              r, CASE WHEN r IS NULL THEN seed ELSE endNode(r) END AS tgt
                 
                 OPTIONAL MATCH (src)-[:has_description]->(src_desc:GeneratedDescription)
                 OPTIONAL MATCH (tgt)-[:has_description]->(tgt_desc:GeneratedDescription)
                 
-                RETURN src.id AS src_id,
+                RETURN coalesce(src.id, labels(src)[0] + ':' + coalesce(src.name, src.text, 'unknown')) AS src_id,
                        labels(src)[0] AS src_type,
                        src.name AS src_name,
                        coalesce(src.is_public_api, false) AS src_is_public,
@@ -192,7 +239,7 @@ class E2ERagPipeline:
                        coalesce(src.docstring, "") AS src_doc,
                        coalesce(src_desc.text, src.text, "") AS src_gen_desc,
                        type(r) AS relationship,
-                       tgt.id AS tgt_id,
+                       coalesce(tgt.id, labels(tgt)[0] + ':' + coalesce(tgt.name, tgt.text, 'unknown')) AS tgt_id,
                        labels(tgt)[0] AS tgt_type,
                        tgt.name AS tgt_name,
                        coalesce(tgt.is_public_api, false) AS tgt_is_public,
@@ -222,9 +269,6 @@ class E2ERagPipeline:
         query_vector = np.array(self.get_embedding(task_description), dtype=float).flatten()
         norm_q = np.linalg.norm(query_vector)
 
-        if norm_q == 0:
-            return raw_relations[:top_k]
-
         candidate_texts = []
         clean_rows = []
 
@@ -233,7 +277,17 @@ class E2ERagPipeline:
             target_type = row.get("tgt_type") or ""
             
             if target_type == "GeneratedDescription":
-                continue
+                # A definition can have only a description edge. Rank the
+                # definition itself so this metadata does not erase its API.
+                if row.get("src_is_public") and row.get("src_type") in {"Class", "Function", "Method"}:
+                    row = dict(row)
+                    for key in ("id", "type", "name", "is_public", "import_path", "doc", "gen_desc"):
+                        row["tgt_" + key] = row.get("src_" + key)
+                    row["relationship"] = None
+                    target_name = row.get("tgt_name") or ""
+                    target_type = row.get("tgt_type") or ""
+                else:
+                    continue
                 
             if target_name.startswith("__") and target_name.endswith("__"):
                 continue
@@ -248,6 +302,11 @@ class E2ERagPipeline:
 
         if not candidate_texts:
             return []
+
+        if norm_q == 0:
+            selected = [row for row in clean_rows
+                        if row.get("src_is_public") or row.get("tgt_is_public")][:top_k]
+            return self.complete_code_metadata(raw_relations, selected)
 
         candidate_vectors = self.embed_model.encode(candidate_texts)
         scored_rows = []
@@ -278,6 +337,9 @@ class E2ERagPipeline:
 
         filtered_results = []
         method_counts = {}
+        method_owners = {row.get("tgt_id"): row.get("src_id") for row in raw_relations
+                         if row.get("relationship") == "has_method" and row.get("tgt_type") == "Method"}
+        selected_methods = set()
         for final_score, base_score, row in scored_rows:
             if final_score < min_score:
                 continue
@@ -287,17 +349,46 @@ class E2ERagPipeline:
             if row.get("tgt_type") == "Method":
                 if base_score < method_min_score:
                     continue
-                owner = row.get("src_id")
-                method_counts[owner] = method_counts.get(owner, 0) + 1
-                if method_counts[owner] > max_methods_per_class:
-                    continue
+                method = row.get("tgt_id")
+                owner = method_owners.get(method, "__unknown_owner__")
+                if method not in selected_methods:
+                    if method_counts.get(owner, 0) >= max_methods_per_class:
+                        continue
+                    method_counts[owner] = method_counts.get(owner, 0) + 1
+                    selected_methods.add(method)
 
             filtered_results.append(row)
             if len(filtered_results) == top_k:
                 break
-        print(f"✓ Retained {len(filtered_results)} high-confidence public-api triples (score >= {min_score})")
+        print(f"Retained {len(filtered_results)} high-confidence public-api triples (score >= {min_score})")
 
-        return filtered_results
+        return self.complete_code_metadata(raw_relations, filtered_results)
+
+    def complete_code_metadata(self, raw_relations: List[dict], selected_rows: List[dict]) -> List[dict]:
+        """Keep signatures/descriptions with selected public definitions.
+
+        Structural metadata does not consume the semantic triple budget. This
+        closure uses only the already retrieved rows and performs no queries.
+        """
+        selected_ids = {
+            row.get(side + "_id") for row in selected_rows for side in ("src", "tgt")
+            if row.get(side + "_is_public") and row.get(side + "_type") in {"Class", "Function", "Method"}
+        }
+        parameters = {
+            row.get("tgt_id") for row in raw_relations
+            if row.get("relationship") == "has_parameter" and row.get("src_id") in selected_ids
+        }
+        extra = [row for row in raw_relations if
+                 (row.get("src_id") in selected_ids and row.get("relationship") in
+                  {"has_parameter", "returns_type", "has_return_type", "has_description"}) or
+                 (row.get("src_id") in parameters and row.get("relationship") in {"of_type", "has_type"})]
+        result, seen = [], set()
+        for row in [*selected_rows, *extra]:
+            key = (row.get("src_id"), row.get("relationship"), row.get("tgt_id"))
+            if key not in seen:
+                seen.add(key)
+                result.append(row)
+        return result
 
     def serialize_subgraph(self, raw_relations: List[dict], max_nodes: int = 18) -> str:
         """Formats the retrievable public API context and omits private/internal symbols by default."""
@@ -308,6 +399,11 @@ class E2ERagPipeline:
         relationships = set()
         parameter_types = {}  # Map from parameter ID to type name
         return_types = {}  # Map from function/method ID to return type name
+
+        # Type rows may occur after their owning callable/parameter rows.
+        for row in raw_relations:
+            if row.get("relationship") in ("has_type", "of_type") and row.get("src_type") == "Parameter":
+                parameter_types[str(row.get("src_id"))] = row.get("tgt_name", "Unknown")
 
         # First pass: collect all nodes and build parameter-to-type and return-type mappings
         for row in raw_relations:
@@ -330,7 +426,7 @@ class E2ERagPipeline:
                     "is_public": row.get("src_is_public", False),
                     "import_path": row.get("src_import_path", ""),
                     "docstring": row.get("src_doc") if row.get("src_type") != "GeneratedDescription" else "",
-                    "description": "",
+                    "description": row.get("src_gen_desc") or "",
                     "parameters": [],
                     "return_type": ""
                 }
@@ -342,13 +438,13 @@ class E2ERagPipeline:
                     "is_public": row.get("tgt_is_public", False),
                     "import_path": row.get("tgt_import_path", ""),
                     "docstring": row.get("tgt_doc") if row.get("tgt_type") != "GeneratedDescription" else "",
-                    "description": "",
+                    "description": row.get("tgt_gen_desc") or "",
                     "parameters": [],
                     "return_type": ""
                 }
 
             # Build parameter-to-type mapping: Parameter -[has_type]-> Type
-            if rel == "has_type" and row.get("src_type") == "Parameter":
+            if rel in ("has_type", "of_type") and row.get("src_type") == "Parameter":
                 parameter_types[src_key] = row.get("tgt_name", "Unknown")
             
             # Build return-type mapping: Function/Method -[has_return_type|returns_type]-> Type
@@ -356,7 +452,7 @@ class E2ERagPipeline:
                 return_types[src_key] = row.get("tgt_name", "Unknown")
 
             if rel == "has_description" and row.get("tgt_type") == "GeneratedDescription":
-                nodes_dict[src_key]["description"] = row.get("tgt_doc") or ""
+                nodes_dict[src_key]["description"] = row.get("tgt_gen_desc") or row.get("tgt_doc") or nodes_dict[src_key]["description"]
             elif rel == "has_parameter":
                 param_id = tgt_key
                 param_name = row.get('tgt_name', 'param')
@@ -384,7 +480,7 @@ class E2ERagPipeline:
                 if (
                     node_key in nodes_dict
                     and node_key not in ordered_public_node_ids
-                    and node_type not in ("GeneratedDescription", "Method")
+                    and node_type not in ("GeneratedDescription", "Parameter", "Type", "File", "Attribute")
                     and is_public
                 ):
                     ordered_public_node_ids.append(node_key)
@@ -434,8 +530,15 @@ class E2ERagPipeline:
                 import_path = info["import_path"]
                 md_context += f"**Import Path:** `{import_path}`\n\n"
                 
-                # Extract module context for Functions to show calling convention
-                if info["type"] == "Function" and "." in import_path:
+                if info["type"] == "Method":
+                    owner, method = import_path.rsplit(".", 1)
+                    md_context += f"**Usage:** On an initialized `{owner.rsplit('.', 1)[-1]}` instance, call `instance.{method}(...)`.\n\n"
+                elif import_path.startswith("phi.flow."):
+                    # phi.flow is a module with exported attributes, not a package.
+                    attribute_path = import_path[len("phi.flow."):]
+                    exported = attribute_path.split(".", 1)[0]
+                    md_context += f"**Usage:** `from phi.flow import {exported}; {attribute_path}(...)`\n\n"
+                elif info["type"] == "Function" and "." in import_path:
                     parts = import_path.rsplit(".", 1)
                     if len(parts) == 2:
                         module_path, func_name = parts
@@ -446,10 +549,10 @@ class E2ERagPipeline:
                     parts = import_path.rsplit(".", 1)
                     if len(parts) == 2:
                         module_path, class_name = parts
-                        md_context += f"**Usage:** `from {import_path} import {class_name}; {class_name}(...)` or direct instantiation from phi.flow\n\n"
+                    md_context += f"**Usage:** `from {module_path} import {class_name}; {class_name}(...)`\n\n"
             
             if info["description"]:
-                md_context += f"**Description:**\n{info['description']}\n\n"
+                md_context += f"**Description:**\n{info['description'][:600]}\n\n"
             
             if info["parameters"]:
                 md_context += f"**Parameters:**\n"
@@ -461,7 +564,10 @@ class E2ERagPipeline:
                 md_context += f"**Returns:** `{info['return_type']}`\n\n"
             
             if info["docstring"] and info["docstring"] != "No docstring available.":
-                md_context += f"**Signature/Docstring:**\n```python\n{info['docstring']}\n```\n\n"
+                docstring = info['docstring']
+                if len(docstring) > 3500:
+                    docstring = docstring[:3500] + "\n[Docstring shortened; consult the original for remaining details.]"
+                md_context += f"**Signature/Docstring:**\n```python\n{docstring}\n```\n\n"
 
         if relationships:
             md_context += "---\n\n## 2. GRAPH INTERCONNECTIONS & DEPENDENCIES\n\n"
@@ -469,28 +575,38 @@ class E2ERagPipeline:
 
         return md_context
 
-    def generate_grounded_code(self, task_description: str, codebase_context: str, max_tokens: int = 20000) -> str:
+    def generate_grounded_code(self, task_description: str, codebase_context: str, max_tokens: int = 20000,
+                               domain_context: str = "", api_resolution=None) -> str:
         """Step 5: Code Generation strictly preferring primary public APIs."""
         print("Generating complete codebase-aligned script with Claude...")
+        self._require_llm()
+        from knowledge_context.combined_retrieval import NAMESPACE_CAVEAT
+        resolution_evidence = [{key: item.get(key) for key in
+                                ("observed_call", "status", "quality", "code_id", "code_import_path")}
+                               for item in (api_resolution or [])]
 
         response = self.client.messages.create(
-            model="claude-sonnet-5",
+            model=self.model,
                 max_tokens=max_tokens,
+            temperature=0,
             system=(
                 "You are an expert computational software architect specializing in the PhiFlow differentiable physics framework. "
-                "Your objective is to generate an executable Python simulation script based ONLY on the user's task requirements and the retrieved public API context.\n\n"
+                "Your objective is to generate an executable Python simulation using the current task, retrieved public API documentation, and optional domain-reference guidance.\n"
+                "The CURRENT TASK has authority over reference parameters, initial conditions, equations, time counts, and output filenames. "
+                "Domain references describe prior implementations; adapt their methods without silently replacing the requested problem. "
+                "Never copy a reference output filename over a requested output contract.\n\n"
                 "ABSOLUTE HARD REQUIREMENTS:\n"
                 "Return ONLY raw Python code, with NO markdown fences (```python, ``` etc.), NO prose, NO explanation, and NO comments.\n"
                 "The output must be a complete, runnable script that can be saved directly to a .py file and executed immediately.\n"
-                "CRITICAL: Never invent, define, or use functions or classes that are NOT explicitly documented in the provided context.\n"
-                "Always use ONLY functions and classes from the retrieved public API endpoints.\n"
+                "Use documented public framework APIs. You may define local step/initialization/helper functions and use Python, NumPy, and standard-library arithmetic or output operations. "
+                "Do not invent framework APIs or treat unresolved API candidates as verified signatures.\n"
                 "Do NOT import from internal/private module locations or assume undocumented APIs exist.\n"
-                "Use the exact import paths and signatures shown in the context. Do not guess or modify them.\n"
+                "Follow the provided Usage examples and documented signatures. A qualified attribute endpoint is not necessarily an importable submodule.\n"
                 "PhiFlow compatibility rules: pass grid resolutions as spatial(x=..., y=...) or spatial(x=..., y=..., z=...), never as Python tuples; construct vectors with vec(x=..., y=..., z=...) or tensor(..., channel(vector='...')).\n"
                 "For cylinder(), include named center dimensions. In 2D, pass axis=vec(x=0, y=1) when depth is omitted; in 3D include z in the center and use axis='z' only with a z-dimensional center.\n"
                 "For make_incompressible(), pass obstacles with the named obstacles= argument. For pressure solves, use the documented solve parameter and avoid unconstrained singular systems.\n"
                 "If a required function or class is not in the context, find an alternative approach using only what IS provided.\n"
-                "Ensure all variables, classes, functions, and imports are valid and defined in the context.\n"
+                "Ensure all variables and imports are defined, and preserve named spatial/channel dimensions.\n"
                 "The script should produce the requested simulation or visualization behavior.\n"
                 "Do not include comments, docstrings, markdown blocks, or any textual wrappers of any kind."
             ),
@@ -500,13 +616,26 @@ class E2ERagPipeline:
                     "content": (
                         f"[EXISTING CODEBASE SCHEMA & STRUCTURES]\n"
                         f"{codebase_context}\n\n"
+                        f"[DOMAIN REFERENCE PRIOR: CURRENT TASK OVERRIDES CONFLICTS]\n"
+                        f"{domain_context or 'No domain-reference context supplied.'}\n\n"
+                        f"[DOMAIN TO CODE API RESOLUTION EVIDENCE]\n"
+                        f"{NAMESPACE_CAVEAT}\n{json.dumps(resolution_evidence, ensure_ascii=False)}\n\n"
                         f"[USER SIMULATION TASK REQUIREMENTS]\n"
                         f"{task_description}\n\n"
-                        f"Generate the final Python script now. Output ONLY valid Python code with NO markdown fences, NO comments, and NO extra text. Every function and class must be from the context above."
+                        f"Generate the final Python script now. Output ONLY valid Python code with NO markdown fences, NO comments, and NO extra text."
                     )
                 }
             ]
         )
+        usage = getattr(response, "usage", None)
+        self.last_generation_metadata = {
+            "model": self.model, "temperature": 0, "max_tokens": max_tokens,
+            "stop_reason": getattr(response, "stop_reason", None),
+            "input_tokens": getattr(usage, "input_tokens", None),
+            "output_tokens": getattr(usage, "output_tokens", None),
+        }
+        if self.last_generation_metadata["stop_reason"] == "max_tokens":
+            raise ValueError("LLM generation hit max_tokens; incomplete code is not accepted")
         for block in response.content:
             if block.type == "text":
                 raw_code = block.text.strip()
@@ -532,78 +661,5 @@ class E2ERagPipeline:
 # ==========================================
 
 if __name__ == "__main__":
-    all_dirs = [
-        "heat_flow","burgers2d","julia_set", "lid_driven_cavity", 
-        "reaction_diffusion", "smoke_plume", "structural_mechanics", "wake_flow"
-    ]
-    
-    BASE_DIR = Path("D:/Vivek/research")
-    
-    pipeline = E2ERagPipeline()
-    
-    try:
-        for folder_name in all_dirs:
-            print(f"\n==========================================")
-            print(f" PROCESSING DOMAIN: {folder_name.upper()}")
-            print(f"==========================================")
-            
-            output_dir = BASE_DIR / f"test_{folder_name}"
-            os.makedirs(output_dir, exist_ok=True)
-            
-            task_file = BASE_DIR / "test" / f"{folder_name}.md"
-
-            if not task_file.exists():
-                alt_task_file = output_dir / f"{folder_name}.md"
-                if alt_task_file.exists():
-                    task_file = alt_task_file
-                else:
-                    print(f"❌ ERROR: Task file not found at '{task_file}' or '{alt_task_file}'. Skipping {folder_name}!")
-                    continue
-
-            print(f"Reading task requirements from: {task_file}")
-            with open(task_file, "r", encoding="utf-8") as f:
-                task_sheet_content = f.read()
-
-            first_line = task_sheet_content.strip().split('\n')[0] if task_sheet_content else "EMPTY"
-            print(f"   --> Task Title Preview: {first_line[:80]}")
-
-            blueprint = pipeline.generate_search_blueprint(task_sheet_content)
-            print(f"\n--- [1] Blueprint Generated ---")
-            print(json.dumps(blueprint, indent=2))
-            
-            seed_nodes = pipeline.find_seed_nodes(blueprint)
-            print(f"\n--- [2] Seed Nodes Found ({len(seed_nodes)}) ---")
-            print(seed_nodes)
-            
-            raw_graph_data = pipeline.traverse_subgraph(seed_nodes)
-            filtered_graph_data = pipeline.filter_subgraph(
-                task_sheet_content, 
-                raw_graph_data, 
-                top_k=24, 
-                min_score=0.15,
-                method_min_score=0.30,
-                max_methods_per_class=3,
-                public_boost=0.20,
-                private_penalty=0.15
-            )
-            print(f"--- Retained Top {len(filtered_graph_data)} Relevant Triples ---")
-
-            formatted_context = pipeline.serialize_subgraph(filtered_graph_data, max_nodes=18)
-            
-            context_file = output_dir / "retrieved_context.md"
-            with open(context_file, "w", encoding="utf-8") as cf:
-                cf.write(formatted_context)
-            print(f"✓ Saved retrieved codebase context to: {context_file}")
-
-            if DRY_RUN:
-                print(f"Check context file here: {context_file}")
-            else:
-                final_code = pipeline.generate_grounded_code(task_sheet_content, formatted_context)
-                
-                output_file = output_dir / f"generated_{folder_name}_simulation.py"
-                with open(output_file, "w", encoding="utf-8") as out_f:
-                    out_f.write(final_code)
-                print(f"✓ Successfully saved generated solution to: {output_file}")
-
-    finally:
-        pipeline.close()
+    from knowledge_context.run_combined_experiment import main
+    raise SystemExit(main())

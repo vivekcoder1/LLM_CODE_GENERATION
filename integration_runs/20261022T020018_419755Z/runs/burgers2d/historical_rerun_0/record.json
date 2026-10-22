@@ -1,0 +1,53 @@
+{
+  "alignment": {
+    "generated_time_axis": 0,
+    "reference_time_axis": 0
+  },
+  "artifact_provenance": "existing_outputs_rerun",
+  "artifacts": {},
+  "config_id": "1ad8c65e9940",
+  "context": {},
+  "domain": "burgers2d",
+  "execution": {
+    "duration_s": 4.559137,
+    "error": "",
+    "execution_guard": "AST screen and restricted environment; not an OS sandbox",
+    "execution_ok": true,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  "generation": {
+    "reason": "Existing code; no context-conditioned generation.",
+    "status": "historical_script"
+  },
+  "generation_source": "historical_script_rerun",
+  "metadata": {
+    "max_tokens": null,
+    "model": null,
+    "seed": null,
+    "task_hash": "3e40128f9690ce73b6a4febd9e06b4f12b32b29724e02ce4181f8b1d3b22b080",
+    "temperature": 0
+  },
+  "observed_artifacts": [
+    {
+      "bytes": 3309696,
+      "filename": "burgers2d_trj.npy",
+      "path": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\burgers2d\\historical_rerun_0\\burgers2d_trj.npy",
+      "sha256": "a8377b006a359065f4e701e15d689200aaacc9886c3e21f0d33271440e368214"
+    }
+  ],
+  "plan": {
+    "path": "D:\\Vivek\\research\\optimization_runs\\cache\\burgers2d_8ad5f8e75ea3_blueprint.json",
+    "plan_source": "cached",
+    "sha256": "27713b246ca7d87b3492da62f40471ef849c14ce4e3a07828e9782192b05e4d1",
+    "task_sha1": "8ad5f8e75ea36a2aba40c6d3b5fee35c523e97c7"
+  },
+  "replicate": 0,
+  "run_dir": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\burgers2d\\historical_rerun_0",
+  "run_id": "burgers2d_historical_rerun_0",
+  "script_path": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\burgers2d\\historical_rerun_0\\generated_burgers2d_simulation.py",
+  "script_sha256": "1a98349ee81cbdb089e6ecd69d4b95e7c590dc2e76f693015c3f551051fd6d7c",
+  "script_source": "D:\\Vivek\\research\\test_burgers2d\\generated_burgers2d_simulation.py",
+  "task_source": "D:\\Vivek\\research\\test\\burgers2d.md",
+  "variant": "historical_rerun"
+}

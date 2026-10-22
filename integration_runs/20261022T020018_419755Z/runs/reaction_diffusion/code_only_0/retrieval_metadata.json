@@ -1,0 +1,15 @@
+{
+  "api_resolution": [],
+  "domain_status": "disabled",
+  "provenance": {},
+  "statistics": {
+    "code_nodes": 12,
+    "context_chars": 16155,
+    "domain_nodes": 0,
+    "filtered_relations": 176,
+    "raw_relations": 3241,
+    "resolved_api_links": 0,
+    "seed_count": 82,
+    "unresolved_api_links": 0
+  }
+}

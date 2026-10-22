@@ -1,20 +1,17 @@
-Write-Host "========================================" -ForegroundColor Cyan
-Write-Host " PHIFLOW RAG PIPELINE + VALIDATION" -ForegroundColor Cyan
-Write-Host "========================================" -ForegroundColor Cyan
+# Forward arguments to the isolated combined-KG runner. Its default is cached
+# retrieval only; execution and fresh generation require explicit CLI options.
+$ErrorActionPreference = 'Stop'
+$runnerPath = Join-Path $PSScriptRoot 'knowledge_context\run_combined_experiment.py'
 
-Write-Host "`n[1/2] Generating simulations with LLM...`n" -ForegroundColor Yellow
-python llm-querying.py
+Write-Host 'PhiFlow code + domain knowledge graph pipeline' -ForegroundColor Cyan
+& python $runnerPath @args
+$pipelineExitCode = $LASTEXITCODE
 
-if ($LASTEXITCODE -ne 0) {
-    Write-Host "`n❌ Pipeline generation failed!`n" -ForegroundColor Red
-    exit 1
+if ($pipelineExitCode -eq 0) {
+    Write-Host 'Runner completed. Inspect the manifest and report for per-domain statuses.' -ForegroundColor Green
+}
+else {
+    Write-Host "Runner exited with code $pipelineExitCode." -ForegroundColor Red
 }
 
-Write-Host "`n[2/2] Validating generated scripts...`n" -ForegroundColor Yellow
-python test_generated_scripts.py
-
-if ($LASTEXITCODE -eq 0) {
-    Write-Host "`n✓ All steps completed successfully!`n" -ForegroundColor Green
-} else {
-    Write-Host "`n✗ Validation step had failures.`n" -ForegroundColor Red
-}
+exit $pipelineExitCode

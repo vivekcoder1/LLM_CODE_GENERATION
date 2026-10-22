@@ -1,0 +1,10 @@
+D:\Vivek\research\integration_runs\20261022T020018_419755Z\runs\heat_flow\historical_rerun_0\generated_heat_flow_simulation.py:25: RuntimeWarning: CFL condition violated (CFL = 101.0 > 0.5) in diffuse.explicit() with diffusivity=Field[(x\u02e2=100, y\u02e2=50, vector\u1d9c=x,y)], dt=1.0, dx=(x=0.100, y=0.100) float64. Increase substeps or use diffuse.implicit() instead.
+  return diffuse.explicit(u, diffusivity, dt)
+C:\Users\sreed\AppData\Local\Programs\Python\Python312\Lib\site-packages\phiml\backend\_backend.py:1720: RuntimeWarning: overflow encountered in divide
+  return numerator / denominator
+C:\Users\sreed\AppData\Local\Programs\Python\Python312\Lib\site-packages\phiml\backend\_backend.py:1712: RuntimeWarning: overflow encountered in subtract
+  return a - b
+C:\Users\sreed\AppData\Local\Programs\Python\Python312\Lib\site-packages\phiml\backend\_backend.py:1712: RuntimeWarning: invalid value encountered in subtract
+  return a - b
+C:\Users\sreed\AppData\Local\Programs\Python\Python312\Lib\site-packages\phiml\backend\_backend.py:1716: RuntimeWarning: invalid value encountered in multiply
+  return a * b

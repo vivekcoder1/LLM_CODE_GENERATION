@@ -1,0 +1,285 @@
+test_aggregate_mapping_metadata_does_not_turn_unknown_counts_into_zero (test_audit_experiment.ExperimentAuditTests.test_aggregate_mapping_metadata_does_not_turn_unknown_counts_into_zero) ... ok
+test_all_nonfinite_empty_scalar_and_nonnumeric_arrays (test_audit_experiment.ExperimentAuditTests.test_all_nonfinite_empty_scalar_and_nonnumeric_arrays) ... ok
+test_changed_code_context_has_unknown_retention_not_false_absence (test_audit_experiment.ExperimentAuditTests.test_changed_code_context_has_unknown_retention_not_false_absence) ... ok
+test_changed_hash_and_outside_paths_are_not_loaded (test_audit_experiment.ExperimentAuditTests.test_changed_hash_and_outside_paths_are_not_loaded) ... ok
+test_complex_ranges_are_explicit_magnitudes_and_safe_on_overflow (test_audit_experiment.ExperimentAuditTests.test_complex_ranges_are_explicit_magnitudes_and_safe_on_overflow) ... ok
+test_documentation_retention_uses_literal_code_context_fields_only (test_audit_experiment.ExperimentAuditTests.test_documentation_retention_uses_literal_code_context_fields_only) ... ok
+test_fortran_array_and_nonzero_frame_axis_use_temporal_first (test_audit_experiment.ExperimentAuditTests.test_fortran_array_and_nonzero_frame_axis_use_temporal_first) ... ok
+test_incomplete_manifest_is_rejected_and_output_is_never_overwritten (test_audit_experiment.ExperimentAuditTests.test_incomplete_manifest_is_rejected_and_output_is_never_overwritten) ... ok
+test_local_prior_provenance_and_cached_state_dependencies_remain_explicit (test_audit_experiment.ExperimentAuditTests.test_local_prior_provenance_and_cached_state_dependencies_remain_explicit) ... ok
+test_mapping_statuses_and_ambiguity_are_not_invented_as_exact_matches (test_audit_experiment.ExperimentAuditTests.test_mapping_statuses_and_ambiguity_are_not_invented_as_exact_matches) ... ok
+test_nan_inf_counts_first_frame_and_finite_only_range (test_audit_experiment.ExperimentAuditTests.test_nan_inf_counts_first_frame_and_finite_only_range) ... ok
+test_object_pickle_and_invalid_axis_are_not_accepted (test_audit_experiment.ExperimentAuditTests.test_object_pickle_and_invalid_axis_are_not_accepted) ... ok
+test_requested_filename_is_recognized_without_creating_a_score (test_audit_experiment.ExperimentAuditTests.test_requested_filename_is_recognized_without_creating_a_score) ... ok
+test_wrong_output_name_remains_diagnostic_and_is_not_renamed (test_audit_experiment.ExperimentAuditTests.test_wrong_output_name_remains_diagnostic_and_is_not_renamed) ... ok
+test_additional_metadata_is_preserved_in_json (test_combined_evaluation.CombinedEvaluationTests.test_additional_metadata_is_preserved_in_json) ... ok
+test_artifacts_outside_run_directory_are_excluded (test_combined_evaluation.CombinedEvaluationTests.test_artifacts_outside_run_directory_are_excluded) ... ok
+test_axis_permutation_requires_explicit_metadata (test_combined_evaluation.CombinedEvaluationTests.test_axis_permutation_requires_explicit_metadata) ... ok
+test_burgers_unseeded_initialization_is_caveated (test_combined_evaluation.CombinedEvaluationTests.test_burgers_unseeded_initialization_is_caveated) ... ok
+test_cached_outputs_are_excluded_even_if_execution_passed (test_combined_evaluation.CombinedEvaluationTests.test_cached_outputs_are_excluded_even_if_execution_passed) ... ok
+test_complex_magnitudes_are_preserved (test_combined_evaluation.CombinedEvaluationTests.test_complex_magnitudes_are_preserved) ... ok
+test_conventional_rmse_not_spatial_l2_norm (test_combined_evaluation.CombinedEvaluationTests.test_conventional_rmse_not_spatial_l2_norm) ... ok
+test_domain_guided_code_context_changes_are_audited_as_pipeline_treatment (test_combined_evaluation.CombinedEvaluationTests.test_domain_guided_code_context_changes_are_audited_as_pipeline_treatment) ... ok
+test_empty_scalar_and_nonnumeric_arrays_are_rejected (test_combined_evaluation.CombinedEvaluationTests.test_empty_scalar_and_nonnumeric_arrays_are_rejected) ... ok
+test_equal_length_conflicting_initial_frame_semantics_are_rejected (test_combined_evaluation.CombinedEvaluationTests.test_equal_length_conflicting_initial_frame_semantics_are_rejected) ... ok
+test_execution_failure_and_generation_block_are_explicit (test_combined_evaluation.CombinedEvaluationTests.test_execution_failure_and_generation_block_are_explicit) ... ok
+test_heat_operator_mismatch_is_caveated_until_evidenced (test_combined_evaluation.CombinedEvaluationTests.test_heat_operator_mismatch_is_caveated_until_evidenced) ... ok
+test_historical_rows_and_sources_remain_read_only (test_combined_evaluation.CombinedEvaluationTests.test_historical_rows_and_sources_remain_read_only) ... ok
+test_initial_frame_is_dropped_only_with_explicit_metadata (test_combined_evaluation.CombinedEvaluationTests.test_initial_frame_is_dropped_only_with_explicit_metadata) ... ok
+test_integer_subtraction_does_not_wrap (test_combined_evaluation.CombinedEvaluationTests.test_integer_subtraction_does_not_wrap) ... ok
+test_matched_pair_does_not_compare_caveated_numerical_values (test_combined_evaluation.CombinedEvaluationTests.test_matched_pair_does_not_compare_caveated_numerical_values) ... ok
+test_missing_generated_artifact_is_explicit (test_combined_evaluation.CombinedEvaluationTests.test_missing_generated_artifact_is_explicit) ... ok
+test_missing_reference_is_unavailable_not_zero (test_combined_evaluation.CombinedEvaluationTests.test_missing_reference_is_unavailable_not_zero) ... ok
+test_nonfinite_arrays_are_not_scored (test_combined_evaluation.CombinedEvaluationTests.test_nonfinite_arrays_are_not_scored) ... ok
+test_numeric_overflow_is_not_reported_as_a_measurement (test_combined_evaluation.CombinedEvaluationTests.test_numeric_overflow_is_not_reported_as_a_measurement) ... ok
+test_pickle_object_arrays_are_rejected (test_combined_evaluation.CombinedEvaluationTests.test_pickle_object_arrays_are_rejected) ... ok
+test_reference_shape_must_match_ground_truth_profile (test_combined_evaluation.CombinedEvaluationTests.test_reference_shape_must_match_ground_truth_profile) ... ok
+test_report_contains_detailed_tables_and_blank_missing_scores (test_combined_evaluation.CombinedEvaluationTests.test_report_contains_detailed_tables_and_blank_missing_scores) ... ok
+test_report_refuses_to_overwrite_any_existing_report (test_combined_evaluation.CombinedEvaluationTests.test_report_refuses_to_overwrite_any_existing_report) ... ok
+test_report_serialization_is_deterministic_and_does_not_mutate_inputs (test_combined_evaluation.CombinedEvaluationTests.test_report_serialization_is_deterministic_and_does_not_mutate_inputs) ... ok
+test_rerun_can_measure_output_but_is_not_fresh_generation_pair (test_combined_evaluation.CombinedEvaluationTests.test_rerun_can_measure_output_but_is_not_fresh_generation_pair) ... ok
+test_shape_mismatch_never_broadcasts_or_truncates (test_combined_evaluation.CombinedEvaluationTests.test_shape_mismatch_never_broadcasts_or_truncates) ... ok
+test_unmatched_generation_controls_block_claims (test_combined_evaluation.CombinedEvaluationTests.test_unmatched_generation_controls_block_claims) ... ok
+test_unmeasured_context_does_not_create_efficacy_claim (test_combined_evaluation.CombinedEvaluationTests.test_unmeasured_context_does_not_create_efficacy_claim) ... ok
+test_unsupported_domain_is_not_applicable (test_combined_evaluation.CombinedEvaluationTests.test_unsupported_domain_is_not_applicable) ... ok
+test_wrong_filenames_do_not_score_accidental_old_outputs (test_combined_evaluation.CombinedEvaluationTests.test_wrong_filenames_do_not_score_accidental_old_outputs) ... ok
+test_zero_reference_matching_output_is_zero_error (test_combined_evaluation.CombinedEvaluationTests.test_zero_reference_matching_output_is_zero_error) ... ok
+test_also_rerun_existing_is_one_historical_row_not_fake_arm_pair (test_combined_experiment.CombinedExperimentTests.test_also_rerun_existing_is_one_historical_row_not_fake_arm_pair) ... heat_flow / code_only / 0: retrieval=passed generation=not_requested execution=not_run
+heat_flow / combined / 0: retrieval=passed generation=not_requested execution=not_run
+heat_flow / historical_rerun / 0: retrieval=not_requested generation=historical_script execution=passed
+ok
+test_ast_screen_rejects_output_escape_or_dynamic_filenames (test_combined_experiment.CombinedExperimentTests.test_ast_screen_rejects_output_escape_or_dynamic_filenames) ... ok
+test_ast_screen_rejects_sensitive_imports_and_dynamic_calls (test_combined_experiment.CombinedExperimentTests.test_ast_screen_rejects_sensitive_imports_and_dynamic_calls) ... ok
+test_child_environment_excludes_all_inherited_secrets (test_combined_experiment.CombinedExperimentTests.test_child_environment_excludes_all_inherited_secrets) ... ok
+test_default_retrieval_makes_no_llm_calls_and_records_cached_plan (test_combined_experiment.CombinedExperimentTests.test_default_retrieval_makes_no_llm_calls_and_records_cached_plan) ... heat_flow / code_only / 0: retrieval=passed generation=not_requested execution=not_run
+heat_flow / combined / 0: retrieval=passed generation=not_requested execution=not_run
+ok
+test_each_arm_uses_new_directory_and_saves_audit_inputs (test_combined_experiment.CombinedExperimentTests.test_each_arm_uses_new_directory_and_saves_audit_inputs) ... heat_flow / code_only / 0: retrieval=passed generation=not_requested execution=not_run
+heat_flow / combined / 0: retrieval=passed generation=not_requested execution=not_run
+ok
+test_execution_guard_blocks_sensitive_code_before_subprocess (test_combined_experiment.CombinedExperimentTests.test_execution_guard_blocks_sensitive_code_before_subprocess) ... ok
+test_execution_timeout_retains_partial_logs (test_combined_experiment.CombinedExperimentTests.test_execution_timeout_retains_partial_logs) ... ok
+test_existing_output_directory_is_never_reused (test_combined_experiment.CombinedExperimentTests.test_existing_output_directory_is_never_reused) ... ok
+test_failed_selected_domain_source_does_not_silently_fall_back_to_json (test_combined_experiment.CombinedExperimentTests.test_failed_selected_domain_source_does_not_silently_fall_back_to_json) ... [combined experiment] code: reading the explicitly selected credentials file
+[combined experiment] code: lazy READ driver constructed
+[combined experiment] domain: reading the explicitly selected credentials file
+[combined experiment] domain: configuration unavailable (details saved in manifest)
+[combined experiment] code: required retrieval indexes ONLINE
+[combined experiment] LLM/API access disabled for retrieval mode
+[combined experiment] embedding: importing local SentenceTransformer runtime
+[combined experiment] embedding: loading cached model with local_files_only=True
+[combined experiment] embedding: cached model loaded
+[combined experiment] pipeline: initializing injected READ-only retrieval components
+[combined experiment] pipeline: retrieval initialization complete
+ok
+test_generate_preflight_block_preserves_retrieval_without_generation (test_combined_experiment.CombinedExperimentTests.test_generate_preflight_block_preserves_retrieval_without_generation) ... heat_flow / code_only / 0: retrieval=passed generation=blocked execution=not_run
+heat_flow / combined / 0: retrieval=passed generation=blocked execution=not_run
+ok
+test_generate_uses_one_blueprint_per_domain_and_no_implicit_execution (test_combined_experiment.CombinedExperimentTests.test_generate_uses_one_blueprint_per_domain_and_no_implicit_execution) ... heat_flow / code_only / 0: retrieval=passed generation=generated execution=not_run
+heat_flow / combined / 0: retrieval=passed generation=generated execution=not_run
+ok
+test_generation_receives_unmodified_api_resolution_evidence_and_hash (test_combined_experiment.CombinedExperimentTests.test_generation_receives_unmodified_api_resolution_evidence_and_hash) ... heat_flow / code_only / 0: retrieval=passed generation=generated execution=not_run
+heat_flow / combined / 0: retrieval=passed generation=generated execution=not_run
+ok
+test_graph_snapshot_uses_only_read_sessions_and_hashes_ids (test_combined_experiment.CombinedExperimentTests.test_graph_snapshot_uses_only_read_sessions_and_hashes_ids) ... [combined experiment] graph: READ snapshot nodes IDs
+[combined experiment] graph: READ snapshot nodes complete (2 IDs)
+[combined experiment] graph: READ snapshot relationships IDs
+[combined experiment] graph: READ snapshot relationships complete (2 IDs)
+[combined experiment] graph: READ index names/status
+[combined experiment] graph: READ indexes complete (1 indexes)
+ok
+test_graph_topology_comparison_detects_changed_id_sets (test_combined_experiment.CombinedExperimentTests.test_graph_topology_comparison_detects_changed_id_sets) ... ok
+test_injected_pipeline_cannot_bypass_generation_preflight_by_default (test_combined_experiment.CombinedExperimentTests.test_injected_pipeline_cannot_bypass_generation_preflight_by_default) ... heat_flow / code_only / 0: retrieval=passed generation=blocked execution=not_run
+heat_flow / combined / 0: retrieval=passed generation=blocked execution=not_run
+ok
+test_invalid_numeric_options_are_rejected (test_combined_experiment.CombinedExperimentTests.test_invalid_numeric_options_are_rejected) ... usage: run_offline_tests.py [-h] [--mode {retrieval,generate,existing}]
+                            [--project-root PROJECT_ROOT]
+                            [--output-dir OUTPUT_DIR]
+                            [--domains {burgers2d,heat_flow,julia_set,lid_driven_cavity,reaction_diffusion,smoke_plume,structural_mechanics,wake_flow} [{burgers2d,heat_flow,julia_set,lid_driven_cavity,reaction_diffusion,smoke_plume,structural_mechanics,wake_flow} ...]]
+                            [--repeats REPEATS] [--execute]
+                            [--also-rerun-existing] [--timeout TIMEOUT]
+                            [--max-tokens MAX_TOKENS] [--model MODEL]
+                            [--code-env-file CODE_ENV_FILE]
+                            [--domain-env-file DOMAIN_ENV_FILE]
+                            [--llm-env-file LLM_ENV_FILE]
+                            [--domain-source {neo4j,json}]
+                            [--domain-graph-json DOMAIN_GRAPH_JSON]
+                            [--blueprint-dir BLUEPRINT_DIR]
+                            [--embedding-model EMBEDDING_MODEL]
+                            [--settings-file SETTINGS_FILE]
+                            [--test-results TEST_RESULTS]
+run_offline_tests.py: error: repeats, timeout, and max-tokens must be positive
+ok
+test_invalid_test_results_schema_stops_before_any_pipeline_calls (test_combined_experiment.CombinedExperimentTests.test_invalid_test_results_schema_stops_before_any_pipeline_calls) ... ok
+test_missing_cached_blueprint_blocks_rows_without_llm_fallback (test_combined_experiment.CombinedExperimentTests.test_missing_cached_blueprint_blocks_rows_without_llm_fallback) ... heat_flow / code_only / 0: retrieval=blocked generation=blocked execution=not_run
+heat_flow / combined / 0: retrieval=blocked generation=blocked execution=not_run
+ok
+test_no_execute_flag_never_runs_existing_script (test_combined_experiment.CombinedExperimentTests.test_no_execute_flag_never_runs_existing_script) ... heat_flow / historical_rerun / 0: retrieval=not_requested generation=historical_script execution=not_run
+ok
+test_partial_retrieval_failure_keeps_successful_arm_and_manifest (test_combined_experiment.CombinedExperimentTests.test_partial_retrieval_failure_keeps_successful_arm_and_manifest) ... heat_flow / code_only / 0: retrieval=passed generation=not_requested execution=not_run
+heat_flow / combined / 0: retrieval=blocked generation=blocked execution=not_run
+ok
+test_per_test_results_are_loaded_hashed_and_exported (test_combined_experiment.CombinedExperimentTests.test_per_test_results_are_loaded_hashed_and_exported) ... heat_flow / code_only / 0: retrieval=passed generation=not_requested execution=not_run
+heat_flow / combined / 0: retrieval=passed generation=not_requested execution=not_run
+ok
+test_retrieval_live_setup_does_not_import_or_configure_llm_client (test_combined_experiment.CombinedExperimentTests.test_retrieval_live_setup_does_not_import_or_configure_llm_client) ... [combined experiment] code: reading the explicitly selected credentials file
+[combined experiment] code: configuration unavailable (details saved in manifest)
+[combined experiment] domain: reading the explicitly selected credentials file
+[combined experiment] domain: configuration unavailable (details saved in manifest)
+[combined experiment] code: required retrieval indexes missing or offline; retrieval blocked
+[combined experiment] LLM/API access disabled for retrieval mode
+ok
+test_subprocess_receives_isolated_cwd_restricted_environment_and_timeout (test_combined_experiment.CombinedExperimentTests.test_subprocess_receives_isolated_cwd_restricted_environment_and_timeout) ... ok
+test_unavailable_snapshot_never_claims_graph_unchanged (test_combined_experiment.CombinedExperimentTests.test_unavailable_snapshot_never_claims_graph_unchanged) ... ok
+test_variants_share_immutable_blueprint_and_settings (test_combined_experiment.CombinedExperimentTests.test_variants_share_immutable_blueprint_and_settings) ... heat_flow / code_only / 0: retrieval=passed generation=not_requested execution=not_run
+heat_flow / combined / 0: retrieval=passed generation=not_requested execution=not_run
+ok
+test_code_node_statistics_follow_serializer_definition_selection (test_combined_retrieval.CombinedRetrievalTests.test_code_node_statistics_follow_serializer_definition_selection) ... ok
+test_code_only_bypasses_domain_driver_and_domain_retriever (test_combined_retrieval.CombinedRetrievalTests.test_code_only_bypasses_domain_driver_and_domain_retriever) ... ok
+test_combined_merges_planner_hints_and_uses_terminal_index_names (test_combined_retrieval.CombinedRetrievalTests.test_combined_merges_planner_hints_and_uses_terminal_index_names) ... ok
+test_driver_calls_are_read_only_explicit_and_not_closed (test_combined_retrieval.CombinedRetrievalTests.test_driver_calls_are_read_only_explicit_and_not_closed) ... ok
+test_duplicate_exact_aliases_are_not_resolved_by_filename_guess (test_combined_retrieval.CombinedRetrievalTests.test_duplicate_exact_aliases_are_not_resolved_by_filename_guess) ... ok
+test_duplicate_legacy_file_candidates_remain_ambiguous (test_combined_retrieval.CombinedRetrievalTests.test_duplicate_legacy_file_candidates_remain_ambiguous) ... ok
+test_exact_alias_resolution_adds_seed_and_retains_caveat (test_combined_retrieval.CombinedRetrievalTests.test_exact_alias_resolution_adds_seed_and_retains_caveat) ... ok
+test_invalid_variant_and_budgets_fail_before_external_calls (test_combined_retrieval.CombinedRetrievalTests.test_invalid_variant_and_budgets_fail_before_external_calls) ... ok
+test_low_scoring_required_public_api_is_pinned_before_ranked_noise (test_combined_retrieval.CombinedRetrievalTests.test_low_scoring_required_public_api_is_pinned_before_ranked_noise) ... ok
+test_metadata_settings_and_automatic_planner_are_forwarded (test_combined_retrieval.CombinedRetrievalTests.test_metadata_settings_and_automatic_planner_are_forwarded) ... ok
+test_missing_domain_uses_code_context_and_reports_status (test_combined_retrieval.CombinedRetrievalTests.test_missing_domain_uses_code_context_and_reports_status) ... ok
+test_no_code_driver_produces_unavailable_resolution_without_connecting (test_combined_retrieval.CombinedRetrievalTests.test_no_code_driver_produces_unavailable_resolution_without_connecting) ... ok
+test_private_code_candidates_are_never_seeded (test_combined_retrieval.CombinedRetrievalTests.test_private_code_candidates_are_never_seeded) ... ok
+test_private_raw_relation_cannot_be_pinned_by_id (test_combined_retrieval.CombinedRetrievalTests.test_private_raw_relation_cannot_be_pinned_by_id) ... ok
+test_shared_blueprint_and_sane_query_caps_are_deterministic (test_combined_retrieval.CombinedRetrievalTests.test_shared_blueprint_and_sane_query_caps_are_deterministic) ... ok
+test_structural_metadata_completion_runs_after_pinning (test_combined_retrieval.CombinedRetrievalTests.test_structural_metadata_completion_runs_after_pinning) ... ok
+test_terminal_name_alone_cannot_resolve_wrong_file (test_combined_retrieval.CombinedRetrievalTests.test_terminal_name_alone_cannot_resolve_wrong_file) ... ok
+test_unique_file_basename_match_is_explicit_candidate (test_combined_retrieval.CombinedRetrievalTests.test_unique_file_basename_match_is_explicit_candidate) ... ok
+test_builds_four_references_and_complete_provenance (test_domain_knowledge_graph.DomainGraphTests.test_builds_four_references_and_complete_provenance) ... ok
+test_burgers_reads_diffused_velocity_for_advection (test_domain_knowledge_graph.DomainGraphTests.test_burgers_reads_diffused_velocity_for_advection) ... ok
+test_cli_connection_overrides_selected_file_only (test_domain_knowledge_graph.DomainGraphTests.test_cli_connection_overrides_selected_file_only) ... ok
+test_cli_reports_underlying_neo4j_error_with_redacted_traceback (test_domain_knowledge_graph.DomainGraphTests.test_cli_reports_underlying_neo4j_error_with_redacted_traceback) ... ok
+test_cli_synchronizes_neo4j_by_default (test_domain_knowledge_graph.DomainGraphTests.test_cli_synchronizes_neo4j_by_default) ... ok
+test_configuration_check_does_not_build_or_connect (test_domain_knowledge_graph.DomainGraphTests.test_configuration_check_does_not_build_or_connect) ... ok
+test_console_and_log_file_redact_passwords (test_domain_knowledge_graph.DomainGraphTests.test_console_and_log_file_redact_passwords) ... ok
+test_explicit_file_is_the_only_credentials_source (test_domain_knowledge_graph.DomainGraphTests.test_explicit_file_is_the_only_credentials_source) ... 22:09:25 INFO Selected Neo4j credentials file: C:\Users\sreed\AppData\Local\Temp\tmpd43v7jxb\alternate.env
+22:09:25 INFO Configuration isolation: root .env and inherited NEO4J_* settings are ignored
+22:09:25 INFO Connection settings loaded | URI source=C:\Users\sreed\AppData\Local\Temp\tmpd43v7jxb\alternate.env | user source=C:\Users\sreed\AppData\Local\Temp\tmpd43v7jxb\alternate.env | database source=server default | password source=C:\Users\sreed\AppData\Local\Temp\tmpd43v7jxb\alternate.env (hidden)
+22:09:25 INFO Selected target: uri=bolt://alternate.invalid | user=alternate_user | requested database=<server default>
+22:09:25 INFO Selected Neo4j credentials file: C:\Users\sreed\AppData\Local\Temp\tmpd43v7jxb\alternate.env
+22:09:25 INFO Configuration isolation: root .env and inherited NEO4J_* settings are ignored
+ok
+test_export_only_does_not_load_credentials_or_connect (test_domain_knowledge_graph.DomainGraphTests.test_export_only_does_not_load_credentials_or_connect) ... ok
+test_extra_state_update_is_not_silently_omitted (test_domain_knowledge_graph.DomainGraphTests.test_extra_state_update_is_not_silently_omitted) ... ok
+test_failed_validation_leaves_previous_export_unchanged (test_domain_knowledge_graph.DomainGraphTests.test_failed_validation_leaves_previous_export_unchanged) ... ok
+test_heat_reads_coefficient_but_only_writes_temperature (test_domain_knowledge_graph.DomainGraphTests.test_heat_reads_coefficient_but_only_writes_temperature) ... ok
+test_helper_and_parameter_dependencies_are_connected (test_domain_knowledge_graph.DomainGraphTests.test_helper_and_parameter_dependencies_are_connected) ... ok
+test_incomplete_file_blocks_cli_before_build_or_write (test_domain_knowledge_graph.DomainGraphTests.test_incomplete_file_blocks_cli_before_build_or_write) ... ok
+test_incomplete_local_file_never_borrows_a_password (test_domain_knowledge_graph.DomainGraphTests.test_incomplete_local_file_never_borrows_a_password) ... ok
+test_interpolation_cannot_import_inherited_credentials (test_domain_knowledge_graph.DomainGraphTests.test_interpolation_cannot_import_inherited_credentials) ... ok
+test_invalid_uri_rejected_before_connecting (test_domain_knowledge_graph.DomainGraphTests.test_invalid_uri_rejected_before_connecting) ... ok
+test_julia_computed_output_has_no_invented_save (test_domain_knowledge_graph.DomainGraphTests.test_julia_computed_output_has_no_invented_save) ... ok
+test_local_file_wins_over_root_file_and_inherited_environment (test_domain_knowledge_graph.DomainGraphTests.test_local_file_wins_over_root_file_and_inherited_environment) ... ok
+test_missing_and_empty_sources_reported_without_invented_references (test_domain_knowledge_graph.DomainGraphTests.test_missing_and_empty_sources_reported_without_invented_references) ... ok
+test_missing_credentials_have_actionable_error (test_domain_knowledge_graph.DomainGraphTests.test_missing_credentials_have_actionable_error) ... ok
+test_missing_dotenv_dependency_does_not_enable_environment_fallback (test_domain_knowledge_graph.DomainGraphTests.test_missing_dotenv_dependency_does_not_enable_environment_fallback) ... ok
+test_missing_local_file_never_falls_back (test_domain_knowledge_graph.DomainGraphTests.test_missing_local_file_never_falls_back) ... ok
+test_neo4j_batches_are_scoped_and_parameterized (test_domain_knowledge_graph.DomainGraphTests.test_neo4j_batches_are_scoped_and_parameterized) ... ok
+test_neo4j_logs_connection_batches_commit_and_verified_counts (test_domain_knowledge_graph.DomainGraphTests.test_neo4j_logs_connection_batches_commit_and_verified_counts) ... ok
+test_notes_remain_guidance (test_domain_knowledge_graph.DomainGraphTests.test_notes_remain_guidance) ... ok
+test_npy_header_inspection_and_truncation (test_domain_knowledge_graph.DomainGraphTests.test_npy_header_inspection_and_truncation) ... ok
+test_path_escape_rejected (test_domain_knowledge_graph.DomainGraphTests.test_path_escape_rejected) ... ok
+test_post_commit_mismatch_does_not_report_verified_success (test_domain_knowledge_graph.DomainGraphTests.test_post_commit_mismatch_does_not_report_verified_success) ... ok
+test_reaction_cache_retains_old_state_dependencies (test_domain_knowledge_graph.DomainGraphTests.test_reaction_cache_retains_old_state_dependencies) ... ok
+test_reversed_recipe_is_rejected (test_domain_knowledge_graph.DomainGraphTests.test_reversed_recipe_is_rejected) ... ok
+test_same_inputs_have_identical_graph_and_ids (test_domain_knowledge_graph.DomainGraphTests.test_same_inputs_have_identical_graph_and_ids) ... ok
+test_source_edit_invalidates_stale_step (test_domain_knowledge_graph.DomainGraphTests.test_source_edit_invalidates_stale_step) ... ok
+test_static_resolution_does_not_promote_external_candidates (test_domain_knowledge_graph.DomainGraphTests.test_static_resolution_does_not_promote_external_candidates) ... ok
+test_writer_rejects_empty_or_cross_dataset_graph (test_domain_knowledge_graph.DomainGraphTests.test_writer_rejects_empty_or_cross_dataset_graph) ... ok
+test_bounded_neo4j_paths_cover_current_owned_recipe_edges (test_domain_retrieval.DomainRetrievalTests.test_bounded_neo4j_paths_cover_current_owned_recipe_edges) ... ok
+test_burgers_advection_uses_already_diffused_state (test_domain_retrieval.DomainRetrievalTests.test_burgers_advection_uses_already_diffused_state) ... ok
+test_cached_reaction_is_read_at_produced_version (test_domain_retrieval.DomainRetrievalTests.test_cached_reaction_is_read_at_produced_version) ... ok
+test_dataset_isolation_filters_local_nodes_and_edges (test_domain_retrieval.DomainRetrievalTests.test_dataset_isolation_filters_local_nodes_and_edges) ... ok
+test_default_context_budget_preserves_every_recipe_step (test_domain_retrieval.DomainRetrievalTests.test_default_context_budget_preserves_every_recipe_step) ... ok
+test_empty_graph_and_unknown_domain_fall_back_cleanly (test_domain_retrieval.DomainRetrievalTests.test_empty_graph_and_unknown_domain_fall_back_cleanly) ... ok
+test_explicit_selection_does_not_follow_incoming_shared_api_edges (test_domain_retrieval.DomainRetrievalTests.test_explicit_selection_does_not_follow_incoming_shared_api_edges) ... ok
+test_helper_formulas_parameters_and_output_conventions_are_preserved (test_domain_retrieval.DomainRetrievalTests.test_helper_formulas_parameters_and_output_conventions_are_preserved) ... ok
+test_input_snapshot_and_returned_context_are_independent (test_domain_retrieval.DomainRetrievalTests.test_input_snapshot_and_returned_context_are_independent) ... ok
+test_julia_temporary_parameter_is_not_lost (test_domain_retrieval.DomainRetrievalTests.test_julia_temporary_parameter_is_not_lost) ... ok
+test_missing_or_blank_domain_does_not_infer_from_task (test_domain_retrieval.DomainRetrievalTests.test_missing_or_blank_domain_does_not_infer_from_task) ... ok
+test_neo4j_domain_cannot_change_query_structure (test_domain_retrieval.DomainRetrievalTests.test_neo4j_domain_cannot_change_query_structure) ... ok
+test_neo4j_empty_result_is_clean_and_read_errors_remain_visible (test_domain_retrieval.DomainRetrievalTests.test_neo4j_empty_result_is_clean_and_read_errors_remain_visible) ... ok
+test_neo4j_null_projection_fields_match_local_export (test_domain_retrieval.DomainRetrievalTests.test_neo4j_null_projection_fields_match_local_export) ... ok
+test_neo4j_read_uses_safe_parameterized_query_and_explicit_database (test_domain_retrieval.DomainRetrievalTests.test_neo4j_read_uses_safe_parameterized_query_and_explicit_database) ... ok
+test_oversized_core_is_flagged_without_cutting_json_or_steps (test_domain_retrieval.DomainRetrievalTests.test_oversized_core_is_flagged_without_cutting_json_or_steps) ... ok
+test_public_alias_survives_missing_observed_call (test_domain_retrieval.DomainRetrievalTests.test_public_alias_survives_missing_observed_call) ... ok
+test_public_aliases_are_usable_code_search_hints (test_domain_retrieval.DomainRetrievalTests.test_public_aliases_are_usable_code_search_hints) ... ok
+test_reference_steps_follow_source_order_not_storage_order (test_domain_retrieval.DomainRetrievalTests.test_reference_steps_follow_source_order_not_storage_order) ... ok
+test_schema_and_adapter_ambiguities_fail_visibly (test_domain_retrieval.DomainRetrievalTests.test_schema_and_adapter_ambiguities_fail_visibly) ... ok
+test_task_requirements_override_reference_output_defaults (test_domain_retrieval.DomainRetrievalTests.test_task_requirements_override_reference_output_defaults) ... ok
+test_unresolved_apis_are_candidates_without_verification_claim (test_domain_retrieval.DomainRetrievalTests.test_unresolved_apis_are_candidates_without_verification_claim) ... ok
+test_whole_program_and_save_expression_are_not_prompt_context (test_domain_retrieval.DomainRetrievalTests.test_whole_program_and_save_expression_are_not_prompt_context) ... ok
+test_connection_interpolation_rejected_for_every_setting (test_pipeline_config.PipelineConfigTests.test_connection_interpolation_rejected_for_every_setting) ... ok
+test_describe_connection_is_read_only_and_secret_free (test_pipeline_config.PipelineConfigTests.test_describe_connection_is_read_only_and_secret_free) ... ok
+test_driver_construction_is_lazy_bounded_and_does_not_create_session (test_pipeline_config.PipelineConfigTests.test_driver_construction_is_lazy_bounded_and_does_not_create_session) ... ok
+test_driver_constructor_error_is_redacted (test_pipeline_config.PipelineConfigTests.test_driver_constructor_error_is_redacted) ... ok
+test_explicit_code_and_domain_files_do_not_mix (test_pipeline_config.PipelineConfigTests.test_explicit_code_and_domain_files_do_not_mix) ... ok
+test_inherited_values_are_ignored_and_environment_is_unchanged (test_pipeline_config.PipelineConfigTests.test_inherited_values_are_ignored_and_environment_is_unchanged) ... ok
+test_invalid_role_and_implicit_file_are_rejected (test_pipeline_config.PipelineConfigTests.test_invalid_role_and_implicit_file_are_rejected) ... ok
+test_llm_interpolation_and_placeholders_rejected (test_pipeline_config.PipelineConfigTests.test_llm_interpolation_and_placeholders_rejected) ... ok
+test_llm_missing_key_does_not_use_environment (test_pipeline_config.PipelineConfigTests.test_llm_missing_key_does_not_use_environment) ... ok
+test_llm_model_and_workspace_must_be_literal_if_provided (test_pipeline_config.PipelineConfigTests.test_llm_model_and_workspace_must_be_literal_if_provided) ... ok
+test_llm_model_precedence_and_optional_workspace (test_pipeline_config.PipelineConfigTests.test_llm_model_precedence_and_optional_workspace) ... ok
+test_llm_only_file_does_not_require_database_settings (test_pipeline_config.PipelineConfigTests.test_llm_only_file_does_not_require_database_settings) ... ok
+test_missing_domain_password_never_uses_root_or_environment (test_pipeline_config.PipelineConfigTests.test_missing_domain_password_never_uses_root_or_environment) ... ok
+test_missing_selected_file_never_falls_back (test_pipeline_config.PipelineConfigTests.test_missing_selected_file_never_falls_back) ... ok
+test_placeholder_credentials_rejected_without_echoing_value (test_pipeline_config.PipelineConfigTests.test_placeholder_credentials_rejected_without_echoing_value) ... ok
+test_redaction_covers_database_password_and_api_key (test_pipeline_config.PipelineConfigTests.test_redaction_covers_database_password_and_api_key) ... ok
+test_relative_path_is_explicitly_resolved_under_root (test_pipeline_config.PipelineConfigTests.test_relative_path_is_explicitly_resolved_under_root) ... ok
+test_uri_with_embedded_credentials_is_rejected (test_pipeline_config.PipelineConfigTests.test_uri_with_embedded_credentials_is_rejected) ... ok
+test_blueprint_errors_are_redacted_before_logging (test_pipeline_integration.PipelineIntegrationTests.test_blueprint_errors_are_redacted_before_logging) ... ok
+test_definition_with_only_description_edge_remains_available (test_pipeline_integration.PipelineIntegrationTests.test_definition_with_only_description_edge_remains_available) ... 
+Reranking 1 raw graph triples with Public API prioritization...
+--- Top 10 Reranked Similarity Scores (Adjusted for Public API Priority) ---
+  Score: 1.2000 (Base: 1.0000) | [PUBLIC] [Function] implicit
+Retained 1 high-confidence public-api triples (score >= 0.15)
+ok
+test_disabled_llm_blocks_even_injected_client (test_pipeline_integration.PipelineIntegrationTests.test_disabled_llm_blocks_even_injected_client) ... Analyzing task markdown file to extract query parameters...
+Generating complete codebase-aligned script with Claude...
+ok
+test_generation_prioritizes_task_and_records_usage (test_pipeline_integration.PipelineIntegrationTests.test_generation_prioritizes_task_and_records_usage) ... Generating complete codebase-aligned script with Claude...
+ok
+test_generation_sees_unresolved_mapping_evidence (test_pipeline_integration.PipelineIntegrationTests.test_generation_sees_unresolved_mapping_evidence) ... Generating complete codebase-aligned script with Claude...
+ok
+test_injected_resources_are_not_closed (test_pipeline_integration.PipelineIntegrationTests.test_injected_resources_are_not_closed) ... ok
+test_injection_does_not_load_config_or_embedding_model (test_pipeline_integration.PipelineIntegrationTests.test_injection_does_not_load_config_or_embedding_model) ... ok
+test_metadata_closure_is_idempotent_and_ignores_unselected_definitions (test_pipeline_integration.PipelineIntegrationTests.test_metadata_closure_is_idempotent_and_ignores_unselected_definitions) ... ok
+test_method_description_rows_respect_owning_class_quota (test_pipeline_integration.PipelineIntegrationTests.test_method_description_rows_respect_owning_class_quota) ... 
+Reranking 8 raw graph triples with Public API prioritization...
+--- Top 10 Reranked Similarity Scores (Adjusted for Public API Priority) ---
+  Score: 1.2000 (Base: 1.0000) | [PUBLIC] [Method] method0
+  Score: 1.2000 (Base: 1.0000) | [PUBLIC] [Method] method1
+  Score: 1.2000 (Base: 1.0000) | [PUBLIC] [Method] method2
+  Score: 1.2000 (Base: 1.0000) | [PUBLIC] [Method] method3
+  Score: 1.2000 (Base: 1.0000) | [PUBLIC] [Method] method0
+  Score: 1.2000 (Base: 1.0000) | [PUBLIC] [Method] method1
+  Score: 1.2000 (Base: 1.0000) | [PUBLIC] [Method] method2
+  Score: 1.2000 (Base: 1.0000) | [PUBLIC] [Method] method3
+Retained 2 high-confidence public-api triples (score >= 0.15)
+ok
+test_namespace_attribute_import_and_class_import_are_valid_patterns (test_pipeline_integration.PipelineIntegrationTests.test_namespace_attribute_import_and_class_import_are_valid_patterns) ... ok
+test_parameter_type_metadata_survives_filtering_and_row_order (test_pipeline_integration.PipelineIntegrationTests.test_parameter_type_metadata_survives_filtering_and_row_order) ... 
+Reranking 4 raw graph triples with Public API prioritization...
+--- Top 10 Reranked Similarity Scores (Adjusted for Public API Priority) ---
+  Score: 1.2000 (Base: 1.0000) | [PUBLIC] [Function] implicit
+  Score: 0.8500 (Base: 1.0000) | [INTERNAL] [Type] Field
+  Score: 0.8500 (Base: 1.0000) | [INTERNAL] [Parameter] field
+  Score: 0.8500 (Base: 1.0000) | [INTERNAL] [Type] Field
+Retained 1 high-confidence public-api triples (score >= 0.15)
+ok
+test_public_method_uses_initialized_instance (test_pipeline_integration.PipelineIntegrationTests.test_public_method_uses_initialized_instance) ... ok
+test_sessions_use_read_access_and_selected_database (test_pipeline_integration.PipelineIntegrationTests.test_sessions_use_read_access_and_selected_database) ... ok
+test_truncated_generation_is_rejected (test_pipeline_integration.PipelineIntegrationTests.test_truncated_generation_is_rejected) ... Generating complete codebase-aligned script with Claude...
+ok
+
+----------------------------------------------------------------------
+Ran 180 tests in 11.803s
+
+OK

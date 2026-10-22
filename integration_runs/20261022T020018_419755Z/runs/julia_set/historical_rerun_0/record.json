@@ -1,0 +1,55 @@
+{
+  "alignment": {
+    "generated_time_axis": 0,
+    "reference_time_axis": 0
+  },
+  "artifact_provenance": "existing_outputs_rerun",
+  "artifacts": {
+    "main": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\julia_set\\historical_rerun_0\\julia_set_domain_trj.npy"
+  },
+  "config_id": "1ad8c65e9940",
+  "context": {},
+  "domain": "julia_set",
+  "execution": {
+    "duration_s": 1.67194,
+    "error": "",
+    "execution_guard": "AST screen and restricted environment; not an OS sandbox",
+    "execution_ok": true,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  "generation": {
+    "reason": "Existing code; no context-conditioned generation.",
+    "status": "historical_script"
+  },
+  "generation_source": "historical_script_rerun",
+  "metadata": {
+    "max_tokens": null,
+    "model": null,
+    "seed": null,
+    "task_hash": "10e0a7d9a3905b8241ffa222ab3fadcf9a580d047b1611e78bdabe187830201c",
+    "temperature": 0
+  },
+  "observed_artifacts": [
+    {
+      "bytes": 26214528,
+      "filename": "julia_set_domain_trj.npy",
+      "path": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\julia_set\\historical_rerun_0\\julia_set_domain_trj.npy",
+      "sha256": "d8986a5d23f0f668bc284c180ed24a628bbfdf906709fce9251acb318809fca0"
+    }
+  ],
+  "plan": {
+    "path": "D:\\Vivek\\research\\optimization_runs\\cache\\julia_set_b3c1ba4436b6_blueprint.json",
+    "plan_source": "cached",
+    "sha256": "7103ba9f251f18ba388eb2cdec8d32ee1b50bbf92ff9524f746d3ca3ebbd0f98",
+    "task_sha1": "b3c1ba4436b6a38492ff80fe166bc9966fdcf936"
+  },
+  "replicate": 0,
+  "run_dir": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\julia_set\\historical_rerun_0",
+  "run_id": "julia_set_historical_rerun_0",
+  "script_path": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\julia_set\\historical_rerun_0\\generated_julia_set_simulation.py",
+  "script_sha256": "09b7a30cdf686b02791cb22784fb643596d6ea2585d5384170d7f41f8b4ca857",
+  "script_source": "D:\\Vivek\\research\\test_julia_set\\generated_julia_set_simulation.py",
+  "task_source": "D:\\Vivek\\research\\test\\julia_set.md",
+  "variant": "historical_rerun"
+}

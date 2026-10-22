@@ -1,0 +1,1642 @@
+[
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_additional_metadata_is_preserved_in_json",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.118225
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_artifacts_outside_run_directory_are_excluded",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.029373
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_axis_permutation_requires_explicit_metadata",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.017444
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_burgers_unseeded_initialization_is_caveated",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.120346
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_cached_outputs_are_excluded_even_if_execution_passed",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.016604
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_complex_magnitudes_are_preserved",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.012932
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_conventional_rmse_not_spatial_l2_norm",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.012519
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_domain_guided_code_context_changes_are_audited_as_pipeline_treatment",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.135478
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_empty_scalar_and_nonnumeric_arrays_are_rejected",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.019844
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_equal_length_conflicting_initial_frame_semantics_are_rejected",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.014207
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_execution_failure_and_generation_block_are_explicit",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.014687
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_heat_operator_mismatch_is_caveated_until_evidenced",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.130943
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_historical_rows_and_sources_remain_read_only",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.022451
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_initial_frame_is_dropped_only_with_explicit_metadata",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.025869
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_integer_subtraction_does_not_wrap",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.023056
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_matched_pair_does_not_compare_caveated_numerical_values",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.225379
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_missing_generated_artifact_is_explicit",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.027934
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_missing_reference_is_unavailable_not_zero",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.031695
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_nonfinite_arrays_are_not_scored",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.054288
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_numeric_overflow_is_not_reported_as_a_measurement",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.020751
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_pickle_object_arrays_are_rejected",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.016294
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_reference_shape_must_match_ground_truth_profile",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.021497
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_report_contains_detailed_tables_and_blank_missing_scores",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.24298
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_report_refuses_to_overwrite_any_existing_report",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.021694
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_report_serialization_is_deterministic_and_does_not_mutate_inputs",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.219308
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_rerun_can_measure_output_but_is_not_fresh_generation_pair",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.215792
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_shape_mismatch_never_broadcasts_or_truncates",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.029974
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_unmatched_generation_controls_block_claims",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.256937
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_unmeasured_context_does_not_create_efficacy_claim",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.227065
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_unsupported_domain_is_not_applicable",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.006227
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_wrong_filenames_do_not_score_accidental_old_outputs",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.036745
+  },
+  {
+    "name": "test_combined_evaluation.CombinedEvaluationTests.test_zero_reference_matching_output_is_zero_error",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.039782
+  },
+  {
+    "name": "test_combined_experiment.CombinedExperimentTests.test_also_rerun_existing_is_one_historical_row_not_fake_arm_pair",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.20266
+  },
+  {
+    "name": "test_combined_experiment.CombinedExperimentTests.test_ast_screen_rejects_output_escape_or_dynamic_filenames",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.013403
+  },
+  {
+    "name": "test_combined_experiment.CombinedExperimentTests.test_ast_screen_rejects_sensitive_imports_and_dynamic_calls",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.012772
+  },
+  {
+    "name": "test_combined_experiment.CombinedExperimentTests.test_child_environment_excludes_all_inherited_secrets",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.015252
+  },
+  {
+    "name": "test_combined_experiment.CombinedExperimentTests.test_default_retrieval_makes_no_llm_calls_and_records_cached_plan",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.168617
+  },
+  {
+    "name": "test_combined_experiment.CombinedExperimentTests.test_each_arm_uses_new_directory_and_saves_audit_inputs",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.20903
+  },
+  {
+    "name": "test_combined_experiment.CombinedExperimentTests.test_execution_guard_blocks_sensitive_code_before_subprocess",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.021516
+  },
+  {
+    "name": "test_combined_experiment.CombinedExperimentTests.test_execution_timeout_retains_partial_logs",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.031455
+  },
+  {
+    "name": "test_combined_experiment.CombinedExperimentTests.test_existing_output_directory_is_never_reused",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.026657
+  },
+  {
+    "name": "test_combined_experiment.CombinedExperimentTests.test_failed_selected_domain_source_does_not_silently_fall_back_to_json",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.034307
+  },
+  {
+    "name": "test_combined_experiment.CombinedExperimentTests.test_generate_preflight_block_preserves_retrieval_without_generation",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.160251
+  },
+  {
+    "name": "test_combined_experiment.CombinedExperimentTests.test_generate_uses_one_blueprint_per_domain_and_no_implicit_execution",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.189885
+  },
+  {
+    "name": "test_combined_experiment.CombinedExperimentTests.test_graph_snapshot_uses_only_read_sessions_and_hashes_ids",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.095356
+  },
+  {
+    "name": "test_combined_experiment.CombinedExperimentTests.test_graph_topology_comparison_detects_changed_id_sets",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.03567
+  },
+  {
+    "name": "test_combined_experiment.CombinedExperimentTests.test_injected_pipeline_cannot_bypass_generation_preflight_by_default",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.211128
+  },
+  {
+    "name": "test_combined_experiment.CombinedExperimentTests.test_invalid_numeric_options_are_rejected",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.024771
+  },
+  {
+    "name": "test_combined_experiment.CombinedExperimentTests.test_invalid_test_results_schema_stops_before_any_pipeline_calls",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.034408
+  },
+  {
+    "name": "test_combined_experiment.CombinedExperimentTests.test_missing_cached_blueprint_blocks_rows_without_llm_fallback",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.121391
+  },
+  {
+    "name": "test_combined_experiment.CombinedExperimentTests.test_no_execute_flag_never_runs_existing_script",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.104033
+  },
+  {
+    "name": "test_combined_experiment.CombinedExperimentTests.test_partial_retrieval_failure_keeps_successful_arm_and_manifest",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.173852
+  },
+  {
+    "name": "test_combined_experiment.CombinedExperimentTests.test_per_test_results_are_loaded_hashed_and_exported",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.172852
+  },
+  {
+    "name": "test_combined_experiment.CombinedExperimentTests.test_retrieval_live_setup_does_not_import_or_configure_llm_client",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.028643
+  },
+  {
+    "name": "test_combined_experiment.CombinedExperimentTests.test_subprocess_receives_isolated_cwd_restricted_environment_and_timeout",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.03476
+  },
+  {
+    "name": "test_combined_experiment.CombinedExperimentTests.test_unavailable_snapshot_never_claims_graph_unchanged",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.015646
+  },
+  {
+    "name": "test_combined_experiment.CombinedExperimentTests.test_variants_share_immutable_blueprint_and_settings",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.247582
+  },
+  {
+    "name": "test_combined_retrieval.CombinedRetrievalTests.test_code_node_statistics_follow_serializer_definition_selection",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.016107
+  },
+  {
+    "name": "test_combined_retrieval.CombinedRetrievalTests.test_code_only_bypasses_domain_driver_and_domain_retriever",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.00969
+  },
+  {
+    "name": "test_combined_retrieval.CombinedRetrievalTests.test_combined_merges_planner_hints_and_uses_terminal_index_names",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.012308
+  },
+  {
+    "name": "test_combined_retrieval.CombinedRetrievalTests.test_driver_calls_are_read_only_explicit_and_not_closed",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.012058
+  },
+  {
+    "name": "test_combined_retrieval.CombinedRetrievalTests.test_duplicate_exact_aliases_are_not_resolved_by_filename_guess",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.015092
+  },
+  {
+    "name": "test_combined_retrieval.CombinedRetrievalTests.test_duplicate_legacy_file_candidates_remain_ambiguous",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.017223
+  },
+  {
+    "name": "test_combined_retrieval.CombinedRetrievalTests.test_exact_alias_resolution_adds_seed_and_retains_caveat",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.013701
+  },
+  {
+    "name": "test_combined_retrieval.CombinedRetrievalTests.test_invalid_variant_and_budgets_fail_before_external_calls",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.007946
+  },
+  {
+    "name": "test_combined_retrieval.CombinedRetrievalTests.test_low_scoring_required_public_api_is_pinned_before_ranked_noise",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.011535
+  },
+  {
+    "name": "test_combined_retrieval.CombinedRetrievalTests.test_metadata_settings_and_automatic_planner_are_forwarded",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.00874
+  },
+  {
+    "name": "test_combined_retrieval.CombinedRetrievalTests.test_missing_domain_uses_code_context_and_reports_status",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.041386
+  },
+  {
+    "name": "test_combined_retrieval.CombinedRetrievalTests.test_no_code_driver_produces_unavailable_resolution_without_connecting",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.007632
+  },
+  {
+    "name": "test_combined_retrieval.CombinedRetrievalTests.test_private_code_candidates_are_never_seeded",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.011443
+  },
+  {
+    "name": "test_combined_retrieval.CombinedRetrievalTests.test_private_raw_relation_cannot_be_pinned_by_id",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.013168
+  },
+  {
+    "name": "test_combined_retrieval.CombinedRetrievalTests.test_shared_blueprint_and_sane_query_caps_are_deterministic",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.013217
+  },
+  {
+    "name": "test_combined_retrieval.CombinedRetrievalTests.test_structural_metadata_completion_runs_after_pinning",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.012773
+  },
+  {
+    "name": "test_combined_retrieval.CombinedRetrievalTests.test_terminal_name_alone_cannot_resolve_wrong_file",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.009257
+  },
+  {
+    "name": "test_combined_retrieval.CombinedRetrievalTests.test_unique_file_basename_match_is_explicit_candidate",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.006615
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_builds_four_references_and_complete_provenance",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.330732
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_burgers_reads_diffused_velocity_for_advection",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.275188
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_cli_connection_overrides_selected_file_only",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.127591
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_cli_reports_underlying_neo4j_error_with_redacted_traceback",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.430378
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_cli_synchronizes_neo4j_by_default",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.370265
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_configuration_check_does_not_build_or_connect",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.124687
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_console_and_log_file_redact_passwords",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.155437
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_explicit_file_is_the_only_credentials_source",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.155577
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_export_only_does_not_load_credentials_or_connect",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.533636
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_extra_state_update_is_not_silently_omitted",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.163062
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_failed_validation_leaves_previous_export_unchanged",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.179228
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_heat_reads_coefficient_but_only_writes_temperature",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.274494
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_helper_and_parameter_dependencies_are_connected",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.287529
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_incomplete_file_blocks_cli_before_build_or_write",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.094612
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_incomplete_local_file_never_borrows_a_password",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.085496
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_interpolation_cannot_import_inherited_credentials",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.087533
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_invalid_uri_rejected_before_connecting",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.07883
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_julia_computed_output_has_no_invented_save",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.251314
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_local_file_wins_over_root_file_and_inherited_environment",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.087673
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_missing_and_empty_sources_reported_without_invented_references",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.252852
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_missing_credentials_have_actionable_error",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.091741
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_missing_dotenv_dependency_does_not_enable_environment_fallback",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.072272
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_missing_local_file_never_falls_back",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.085496
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_neo4j_batches_are_scoped_and_parameterized",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.242224
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_neo4j_logs_connection_batches_commit_and_verified_counts",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.29175
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_notes_remain_guidance",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.222765
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_npy_header_inspection_and_truncation",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.104336
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_path_escape_rejected",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.105785
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_post_commit_mismatch_does_not_report_verified_success",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.294772
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_reaction_cache_retains_old_state_dependencies",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.26244
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_reversed_recipe_is_rejected",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.109414
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_same_inputs_have_identical_graph_and_ids",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.740808
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_source_edit_invalidates_stale_step",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.154449
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_static_resolution_does_not_promote_external_candidates",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.251381
+  },
+  {
+    "name": "test_domain_knowledge_graph.DomainGraphTests.test_writer_rejects_empty_or_cross_dataset_graph",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.283136
+  },
+  {
+    "name": "test_domain_retrieval.DomainRetrievalTests.test_bounded_neo4j_paths_cover_current_owned_recipe_edges",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.000689
+  },
+  {
+    "name": "test_domain_retrieval.DomainRetrievalTests.test_burgers_advection_uses_already_diffused_state",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.018712
+  },
+  {
+    "name": "test_domain_retrieval.DomainRetrievalTests.test_cached_reaction_is_read_at_produced_version",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.033786
+  },
+  {
+    "name": "test_domain_retrieval.DomainRetrievalTests.test_dataset_isolation_filters_local_nodes_and_edges",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.031792
+  },
+  {
+    "name": "test_domain_retrieval.DomainRetrievalTests.test_default_context_budget_preserves_every_recipe_step",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.05347
+  },
+  {
+    "name": "test_domain_retrieval.DomainRetrievalTests.test_empty_graph_and_unknown_domain_fall_back_cleanly",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.008597
+  },
+  {
+    "name": "test_domain_retrieval.DomainRetrievalTests.test_explicit_selection_does_not_follow_incoming_shared_api_edges",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.015374
+  },
+  {
+    "name": "test_domain_retrieval.DomainRetrievalTests.test_helper_formulas_parameters_and_output_conventions_are_preserved",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.017871
+  },
+  {
+    "name": "test_domain_retrieval.DomainRetrievalTests.test_input_snapshot_and_returned_context_are_independent",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.024787
+  },
+  {
+    "name": "test_domain_retrieval.DomainRetrievalTests.test_julia_temporary_parameter_is_not_lost",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.01382
+  },
+  {
+    "name": "test_domain_retrieval.DomainRetrievalTests.test_missing_or_blank_domain_does_not_infer_from_task",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.011418
+  },
+  {
+    "name": "test_domain_retrieval.DomainRetrievalTests.test_neo4j_domain_cannot_change_query_structure",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.025934
+  },
+  {
+    "name": "test_domain_retrieval.DomainRetrievalTests.test_neo4j_empty_result_is_clean_and_read_errors_remain_visible",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.023804
+  },
+  {
+    "name": "test_domain_retrieval.DomainRetrievalTests.test_neo4j_null_projection_fields_match_local_export",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.02978
+  },
+  {
+    "name": "test_domain_retrieval.DomainRetrievalTests.test_neo4j_read_uses_safe_parameterized_query_and_explicit_database",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.02846
+  },
+  {
+    "name": "test_domain_retrieval.DomainRetrievalTests.test_oversized_core_is_flagged_without_cutting_json_or_steps",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.01496
+  },
+  {
+    "name": "test_domain_retrieval.DomainRetrievalTests.test_public_alias_survives_missing_observed_call",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.020319
+  },
+  {
+    "name": "test_domain_retrieval.DomainRetrievalTests.test_public_aliases_are_usable_code_search_hints",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.012954
+  },
+  {
+    "name": "test_domain_retrieval.DomainRetrievalTests.test_reference_steps_follow_source_order_not_storage_order",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.058917
+  },
+  {
+    "name": "test_domain_retrieval.DomainRetrievalTests.test_schema_and_adapter_ambiguities_fail_visibly",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.00075
+  },
+  {
+    "name": "test_domain_retrieval.DomainRetrievalTests.test_task_requirements_override_reference_output_defaults",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.015622
+  },
+  {
+    "name": "test_domain_retrieval.DomainRetrievalTests.test_unresolved_apis_are_candidates_without_verification_claim",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.01504
+  },
+  {
+    "name": "test_domain_retrieval.DomainRetrievalTests.test_whole_program_and_save_expression_are_not_prompt_context",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.02312
+  },
+  {
+    "name": "test_pipeline_config.PipelineConfigTests.test_connection_interpolation_rejected_for_every_setting",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.035618
+  },
+  {
+    "name": "test_pipeline_config.PipelineConfigTests.test_describe_connection_is_read_only_and_secret_free",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.020714
+  },
+  {
+    "name": "test_pipeline_config.PipelineConfigTests.test_driver_construction_is_lazy_bounded_and_does_not_create_session",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.034443
+  },
+  {
+    "name": "test_pipeline_config.PipelineConfigTests.test_driver_constructor_error_is_redacted",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.022813
+  },
+  {
+    "name": "test_pipeline_config.PipelineConfigTests.test_explicit_code_and_domain_files_do_not_mix",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.035187
+  },
+  {
+    "name": "test_pipeline_config.PipelineConfigTests.test_inherited_values_are_ignored_and_environment_is_unchanged",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.033217
+  },
+  {
+    "name": "test_pipeline_config.PipelineConfigTests.test_invalid_role_and_implicit_file_are_rejected",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.013491
+  },
+  {
+    "name": "test_pipeline_config.PipelineConfigTests.test_llm_interpolation_and_placeholders_rejected",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.059359
+  },
+  {
+    "name": "test_pipeline_config.PipelineConfigTests.test_llm_missing_key_does_not_use_environment",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.02049
+  },
+  {
+    "name": "test_pipeline_config.PipelineConfigTests.test_llm_model_and_workspace_must_be_literal_if_provided",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.023893
+  },
+  {
+    "name": "test_pipeline_config.PipelineConfigTests.test_llm_model_precedence_and_optional_workspace",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.04396
+  },
+  {
+    "name": "test_pipeline_config.PipelineConfigTests.test_llm_only_file_does_not_require_database_settings",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.01879
+  },
+  {
+    "name": "test_pipeline_config.PipelineConfigTests.test_missing_domain_password_never_uses_root_or_environment",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.020586
+  },
+  {
+    "name": "test_pipeline_config.PipelineConfigTests.test_missing_selected_file_never_falls_back",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.01394
+  },
+  {
+    "name": "test_pipeline_config.PipelineConfigTests.test_placeholder_credentials_rejected_without_echoing_value",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.035172
+  },
+  {
+    "name": "test_pipeline_config.PipelineConfigTests.test_redaction_covers_database_password_and_api_key",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.025056
+  },
+  {
+    "name": "test_pipeline_config.PipelineConfigTests.test_relative_path_is_explicitly_resolved_under_root",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.020915
+  },
+  {
+    "name": "test_pipeline_config.PipelineConfigTests.test_uri_with_embedded_credentials_is_rejected",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.019468
+  },
+  {
+    "name": "test_pipeline_integration.PipelineIntegrationTests.test_blueprint_errors_are_redacted_before_logging",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.01461
+  },
+  {
+    "name": "test_pipeline_integration.PipelineIntegrationTests.test_definition_with_only_description_edge_remains_available",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.000919
+  },
+  {
+    "name": "test_pipeline_integration.PipelineIntegrationTests.test_disabled_llm_blocks_even_injected_client",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.001376
+  },
+  {
+    "name": "test_pipeline_integration.PipelineIntegrationTests.test_generation_prioritizes_task_and_records_usage",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.001062
+  },
+  {
+    "name": "test_pipeline_integration.PipelineIntegrationTests.test_injected_resources_are_not_closed",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.001135
+  },
+  {
+    "name": "test_pipeline_integration.PipelineIntegrationTests.test_injection_does_not_load_config_or_embedding_model",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.001058
+  },
+  {
+    "name": "test_pipeline_integration.PipelineIntegrationTests.test_metadata_closure_is_idempotent_and_ignores_unselected_definitions",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.000629
+  },
+  {
+    "name": "test_pipeline_integration.PipelineIntegrationTests.test_method_description_rows_respect_owning_class_quota",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.00116
+  },
+  {
+    "name": "test_pipeline_integration.PipelineIntegrationTests.test_namespace_attribute_import_and_class_import_are_valid_patterns",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.000655
+  },
+  {
+    "name": "test_pipeline_integration.PipelineIntegrationTests.test_parameter_type_metadata_survives_filtering_and_row_order",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.000833
+  },
+  {
+    "name": "test_pipeline_integration.PipelineIntegrationTests.test_public_method_uses_initialized_instance",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.00058
+  },
+  {
+    "name": "test_pipeline_integration.PipelineIntegrationTests.test_sessions_use_read_access_and_selected_database",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.001216
+  },
+  {
+    "name": "test_pipeline_integration.PipelineIntegrationTests.test_truncated_generation_is_rejected",
+    "status": "passed",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "details": "",
+    "duration_s": 0.001185
+  }
+]

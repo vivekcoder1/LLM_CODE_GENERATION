@@ -1,0 +1,4 @@
+C:\Users\sreed\AppData\Local\Programs\Python\Python312\Lib\site-packages\phiml\math\_tensors.py:1229: RuntimeWarning: overflow encountered in square
+  result = op(n1, n2)
+C:\Users\sreed\AppData\Local\Programs\Python\Python312\Lib\site-packages\phiml\math\_tensors.py:1229: RuntimeWarning: invalid value encountered in square
+  result = op(n1, n2)

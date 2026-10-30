@@ -464,6 +464,9 @@ def run_experiment(args, *, pipeline=None, runtime=None, executor: Callable = ex
                             elif not runtime.get("generation_allowed"):
                                 record["generation"] = {"status": "blocked", "error": "; ".join(runtime.get("errors", [])) or "LLM model/auth preflight did not pass."}
                                 script = None
+                            elif variant == "combined" and (record.get("domain_status") != "available" or not domain_context.strip()):
+                                record["generation"] = {"status": "blocked", "error": "Combined generation requires available, nonempty domain evidence from the selected source."}
+                                script = None
                             else:
                                 code = pipeline.generate_grounded_code(
                                     task, code_context, max_tokens=args.max_tokens,

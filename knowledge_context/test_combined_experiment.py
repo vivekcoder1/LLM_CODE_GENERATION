@@ -187,6 +187,33 @@ class CombinedExperimentTests(unittest.TestCase):
             expected = hashlib.sha256(json.dumps(record["api_resolution"], sort_keys=True).encode("utf-8")).hexdigest()
             self.assertEqual(record["metadata"]["api_resolution_hash"], expected)
 
+    def test_combined_generation_requires_available_domain(self):
+        original = self.pipeline.retrieve_context
+        def unavailable(*args, **kwargs):
+            result = original(*args, **kwargs)
+            if kwargs["variant"] == "combined":
+                result["domain_status"] = "unavailable"
+            return result
+        self.pipeline.retrieve_context = unavailable
+        runtime = {"connections": [], "preflight": {}, "errors": [], "generation_allowed": True, "model": "test-model"}
+        manifest = runner.run_experiment(self.args("--mode", "generate"), pipeline=self.pipeline, runtime=runtime)
+        self.assertEqual(self.pipeline.generations, 1)
+        self.assertEqual(manifest["runs"][1]["generation"]["status"], "blocked")
+        self.assertIn("domain evidence", manifest["runs"][1]["generation"]["error"])
+
+    def test_combined_generation_rejects_empty_available_domain_context(self):
+        original = self.pipeline.retrieve_context
+        def empty(*args, **kwargs):
+            result = original(*args, **kwargs)
+            if kwargs["variant"] == "combined":
+                result["domain_context"] = "  "
+            return result
+        self.pipeline.retrieve_context = empty
+        runtime = {"connections": [], "preflight": {}, "errors": [], "generation_allowed": True, "model": "test-model"}
+        manifest = runner.run_experiment(self.args("--mode", "generate"), pipeline=self.pipeline, runtime=runtime)
+        self.assertEqual(self.pipeline.generations, 1)
+        self.assertEqual(manifest["runs"][1]["generation"]["status"], "blocked")
+
     def test_injected_pipeline_cannot_bypass_generation_preflight_by_default(self):
         manifest = runner.run_experiment(self.args("--mode", "generate"), pipeline=self.pipeline)
         self.assertEqual(self.pipeline.generations, 0)

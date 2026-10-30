@@ -1,0 +1,193 @@
+{
+  "alignment": {
+    "generated_time_axis": 0,
+    "reference_time_axis": 0
+  },
+  "api_resolution": [
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "component_type": "Function",
+          "defining_files": [
+            "_grid.py"
+          ],
+          "id": "_grid.py:CenteredGrid",
+          "import_path": "phi.flow.CenteredGrid",
+          "name": "CenteredGrid"
+        }
+      ],
+      "code_id": "_grid.py:CenteredGrid",
+      "code_import_path": "phi.flow.CenteredGrid",
+      "code_name": "CenteredGrid",
+      "configured_aliases": [
+        "phi.field.CenteredGrid",
+        "phi.flow.CenteredGrid"
+      ],
+      "definition_path": "phi/field/_grid.py",
+      "domain_api_id": "dkg:ground_truth_domains:code:phi.field._grid.CenteredGrid",
+      "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+      "observed_call": "CenteredGrid",
+      "qualified_name": "phi.field._grid.CenteredGrid",
+      "quality": "exact_alias",
+      "status": "resolved"
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "component_type": "Class",
+          "defining_files": [
+            "_noise.py"
+          ],
+          "id": "_noise.py:Noise",
+          "import_path": "phi.flow.Noise",
+          "name": "Noise"
+        }
+      ],
+      "code_id": "_noise.py:Noise",
+      "code_import_path": "phi.flow.Noise",
+      "code_name": "Noise",
+      "configured_aliases": [
+        "phi.field.Noise",
+        "phi.flow.Noise"
+      ],
+      "definition_path": "phi/field/_noise.py",
+      "domain_api_id": "dkg:ground_truth_domains:code:phi.field._noise.Noise",
+      "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+      "observed_call": "Noise",
+      "qualified_name": "phi.field._noise.Noise",
+      "quality": "exact_alias",
+      "status": "resolved"
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "component_type": "Class",
+          "defining_files": [
+            "_box.py"
+          ],
+          "id": "_box.py:Box",
+          "import_path": "phi.flow.Box",
+          "name": "Box"
+        }
+      ],
+      "code_id": "_box.py:Box",
+      "code_import_path": "phi.flow.Box",
+      "code_name": "Box",
+      "configured_aliases": [
+        "phi.flow.Box",
+        "phi.geom.Box"
+      ],
+      "definition_path": "phi/geom/_box.py",
+      "domain_api_id": "dkg:ground_truth_domains:code:phi.geom._box.Box",
+      "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+      "observed_call": "Box",
+      "qualified_name": "phi.geom._box.Box",
+      "quality": "exact_alias",
+      "status": "resolved"
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "component_type": "Function",
+          "defining_files": [
+            "advect.py"
+          ],
+          "id": "advect.py:semi_lagrangian",
+          "import_path": "phi.flow.advect.semi_lagrangian",
+          "name": "semi_lagrangian"
+        }
+      ],
+      "code_id": "advect.py:semi_lagrangian",
+      "code_import_path": "phi.flow.advect.semi_lagrangian",
+      "code_name": "semi_lagrangian",
+      "configured_aliases": [
+        "phi.flow.advect.semi_lagrangian",
+        "phi.physics.advect.semi_lagrangian"
+      ],
+      "definition_path": "phi/physics/advect.py",
+      "domain_api_id": "dkg:ground_truth_domains:code:phi.physics.advect.semi_lagrangian",
+      "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+      "observed_call": "advect.semi_lagrangian",
+      "qualified_name": "phi.physics.advect.semi_lagrangian",
+      "quality": "exact_alias",
+      "status": "resolved"
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "component_type": "Function",
+          "defining_files": [
+            "diffuse.py"
+          ],
+          "id": "diffuse.py:implicit",
+          "import_path": "phi.flow.diffuse.implicit",
+          "name": "implicit"
+        }
+      ],
+      "code_id": "diffuse.py:implicit",
+      "code_import_path": "phi.flow.diffuse.implicit",
+      "code_name": "implicit",
+      "configured_aliases": [
+        "phi.flow.diffuse.implicit",
+        "phi.physics.diffuse.implicit"
+      ],
+      "definition_path": "phi/physics/diffuse.py",
+      "domain_api_id": "dkg:ground_truth_domains:code:phi.physics.diffuse.implicit",
+      "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+      "observed_call": "diffuse.implicit",
+      "qualified_name": "phi.physics.diffuse.implicit",
+      "quality": "exact_alias",
+      "status": "resolved"
+    }
+  ],
+  "artifact_provenance": "not_generated",
+  "artifacts": {},
+  "config_id": "1ad8c65e9940",
+  "context": {
+    "code_nodes": 12,
+    "context_chars": 23033,
+    "domain_nodes": 23,
+    "filtered_relations": 91,
+    "raw_relations": 3555,
+    "resolved_api_links": 5,
+    "seed_count": 97,
+    "unresolved_api_links": 0
+  },
+  "domain": "burgers2d",
+  "domain_status": "available",
+  "execution": {
+    "status": "not_run"
+  },
+  "generation": {
+    "reason": "Retrieval-only mode; no LLM call.",
+    "status": "not_requested"
+  },
+  "metadata": {
+    "api_resolution_hash": "b399c8b87147a45b30508b288eaba810f522ae86ea36ded43ec14a34aaf6ebd3",
+    "code_context_hash": "b0d361ce7bd3cfc3c93970d741e8eb86730f2338aba7f15531b783bdd363ec18",
+    "domain_context_hash": "05bed0fe71d27efbaa0824b7f738ff56a5ef653a135465c117d5c9eb9eb19420",
+    "max_tokens": null,
+    "model": null,
+    "seed": null,
+    "task_hash": "3e40128f9690ce73b6a4febd9e06b4f12b32b29724e02ce4181f8b1d3b22b080",
+    "temperature": 0
+  },
+  "plan": {
+    "effective_sha256": "43884fc42be45c0e27d3d535b41abf81447cb8891c1bbc646c028e97db821165",
+    "path": "D:\\Vivek\\research\\optimization_runs\\cache\\burgers2d_8ad5f8e75ea3_blueprint.json",
+    "plan_source": "cached",
+    "sha256": "27713b246ca7d87b3492da62f40471ef849c14ce4e3a07828e9782192b05e4d1",
+    "task_sha1": "8ad5f8e75ea36a2aba40c6d3b5fee35c523e97c7"
+  },
+  "replicate": 0,
+  "retrieval_status": "passed",
+  "run_dir": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\burgers2d\\combined_0",
+  "run_id": "burgers2d_combined_0",
+  "task_source": "D:\\Vivek\\research\\test\\burgers2d.md",
+  "variant": "combined"
+}

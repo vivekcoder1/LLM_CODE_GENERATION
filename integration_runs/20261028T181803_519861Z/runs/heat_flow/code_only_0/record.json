@@ -1,0 +1,52 @@
+{
+  "alignment": {
+    "generated_time_axis": 0,
+    "reference_time_axis": 0
+  },
+  "api_resolution": [],
+  "artifact_provenance": "not_generated",
+  "artifacts": {},
+  "config_id": "1ad8c65e9940",
+  "context": {
+    "code_nodes": 12,
+    "context_chars": 9688,
+    "domain_nodes": 0,
+    "filtered_relations": 158,
+    "raw_relations": 3579,
+    "resolved_api_links": 0,
+    "seed_count": 89,
+    "unresolved_api_links": 0
+  },
+  "domain": "heat_flow",
+  "domain_status": "disabled",
+  "execution": {
+    "status": "not_run"
+  },
+  "generation": {
+    "reason": "Retrieval-only mode; no LLM call.",
+    "status": "not_requested"
+  },
+  "metadata": {
+    "api_resolution_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "code_context_hash": "8624f05113f00e150fbb31a9b4daa31e4504c827066f422f1a5432ff5c7b9b64",
+    "domain_context_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "max_tokens": null,
+    "model": null,
+    "seed": null,
+    "task_hash": "4894e50322d00c78ab2005d7e2df51383939bb87f0bb3a6c7019d53f1ad3d4f2",
+    "temperature": 0
+  },
+  "plan": {
+    "effective_sha256": "9dcf77b47d8b78a3d95f3f9fcc069920ec1c3775211e16c9dd114261e2323581",
+    "path": "D:\\Vivek\\research\\optimization_runs\\cache\\heat_flow_d18224a907cd_blueprint.json",
+    "plan_source": "cached",
+    "sha256": "46af60fef83f5e96e09913ac7398818ed24e2b5a233536913157758c5881db76",
+    "task_sha1": "d18224a907cd27372226d7a44067dabc04603ce7"
+  },
+  "replicate": 0,
+  "retrieval_status": "passed",
+  "run_dir": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\heat_flow\\code_only_0",
+  "run_id": "heat_flow_code_only_0",
+  "task_source": "D:\\Vivek\\research\\test\\heat_flow.md",
+  "variant": "code_only"
+}

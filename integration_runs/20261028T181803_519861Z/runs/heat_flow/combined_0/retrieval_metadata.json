@@ -1,0 +1,128 @@
+{
+  "api_resolution": [
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "component_type": "Function",
+          "defining_files": [
+            "_grid.py"
+          ],
+          "id": "_grid.py:CenteredGrid",
+          "import_path": "phi.flow.CenteredGrid",
+          "name": "CenteredGrid"
+        }
+      ],
+      "code_id": "_grid.py:CenteredGrid",
+      "code_import_path": "phi.flow.CenteredGrid",
+      "code_name": "CenteredGrid",
+      "configured_aliases": [
+        "phi.field.CenteredGrid",
+        "phi.flow.CenteredGrid"
+      ],
+      "definition_path": "phi/field/_grid.py",
+      "domain_api_id": "dkg:ground_truth_domains:code:phi.field._grid.CenteredGrid",
+      "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+      "observed_call": "CenteredGrid",
+      "qualified_name": "phi.field._grid.CenteredGrid",
+      "quality": "exact_alias",
+      "status": "resolved"
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "component_type": "Class",
+          "defining_files": [
+            "_box.py"
+          ],
+          "id": "_box.py:Box",
+          "import_path": "phi.flow.Box",
+          "name": "Box"
+        }
+      ],
+      "code_id": "_box.py:Box",
+      "code_import_path": "phi.flow.Box",
+      "code_name": "Box",
+      "configured_aliases": [
+        "phi.flow.Box",
+        "phi.geom.Box"
+      ],
+      "definition_path": "phi/geom/_box.py",
+      "domain_api_id": "dkg:ground_truth_domains:code:phi.geom._box.Box",
+      "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+      "observed_call": "Box",
+      "qualified_name": "phi.geom._box.Box",
+      "quality": "exact_alias",
+      "status": "resolved"
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "component_type": "Function",
+          "defining_files": [
+            "_geom_ops.py"
+          ],
+          "id": "_geom_ops.py:union",
+          "import_path": "phi.flow.union",
+          "name": "union"
+        }
+      ],
+      "code_id": "_geom_ops.py:union",
+      "code_import_path": "phi.flow.union",
+      "code_name": "union",
+      "configured_aliases": [
+        "phi.flow.union",
+        "phi.geom.union"
+      ],
+      "definition_path": "phi/geom/_geom_ops.py",
+      "domain_api_id": "dkg:ground_truth_domains:code:phi.geom._geom_ops.union",
+      "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+      "observed_call": "union",
+      "qualified_name": "phi.geom._geom_ops.union",
+      "quality": "exact_alias",
+      "status": "resolved"
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "component_type": "Function",
+          "defining_files": [
+            "diffuse.py"
+          ],
+          "id": "diffuse.py:implicit",
+          "import_path": "phi.flow.diffuse.implicit",
+          "name": "implicit"
+        }
+      ],
+      "code_id": "diffuse.py:implicit",
+      "code_import_path": "phi.flow.diffuse.implicit",
+      "code_name": "implicit",
+      "configured_aliases": [
+        "phi.flow.diffuse.implicit",
+        "phi.physics.diffuse.implicit"
+      ],
+      "definition_path": "phi/physics/diffuse.py",
+      "domain_api_id": "dkg:ground_truth_domains:code:phi.physics.diffuse.implicit",
+      "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+      "observed_call": "diffuse.implicit",
+      "qualified_name": "phi.physics.diffuse.implicit",
+      "quality": "exact_alias",
+      "status": "resolved"
+    }
+  ],
+  "domain_status": "available",
+  "provenance": {},
+  "statistics": {
+    "code_nodes": 12,
+    "context_chars": 22432,
+    "domain_nodes": 25,
+    "filtered_relations": 91,
+    "raw_relations": 3784,
+    "resolved_api_links": 4,
+    "seed_count": 98,
+    "unresolved_api_links": 0
+  }
+}

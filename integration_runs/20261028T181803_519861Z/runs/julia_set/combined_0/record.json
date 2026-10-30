@@ -1,0 +1,109 @@
+{
+  "alignment": {
+    "generated_time_axis": 0,
+    "reference_time_axis": 0
+  },
+  "api_resolution": [
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "component_type": "Function",
+          "defining_files": [
+            "_grid.py"
+          ],
+          "id": "_grid.py:CenteredGrid",
+          "import_path": "phi.flow.CenteredGrid",
+          "name": "CenteredGrid"
+        }
+      ],
+      "code_id": "_grid.py:CenteredGrid",
+      "code_import_path": "phi.flow.CenteredGrid",
+      "code_name": "CenteredGrid",
+      "configured_aliases": [
+        "phi.field.CenteredGrid",
+        "phi.flow.CenteredGrid"
+      ],
+      "definition_path": "phi/field/_grid.py",
+      "domain_api_id": "dkg:ground_truth_domains:code:phi.field._grid.CenteredGrid",
+      "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+      "observed_call": "CenteredGrid",
+      "qualified_name": "phi.field._grid.CenteredGrid",
+      "quality": "exact_alias",
+      "status": "resolved"
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "component_type": "Class",
+          "defining_files": [
+            "_box.py"
+          ],
+          "id": "_box.py:Box",
+          "import_path": "phi.flow.Box",
+          "name": "Box"
+        }
+      ],
+      "code_id": "_box.py:Box",
+      "code_import_path": "phi.flow.Box",
+      "code_name": "Box",
+      "configured_aliases": [
+        "phi.flow.Box",
+        "phi.geom.Box"
+      ],
+      "definition_path": "phi/geom/_box.py",
+      "domain_api_id": "dkg:ground_truth_domains:code:phi.geom._box.Box",
+      "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+      "observed_call": "Box",
+      "qualified_name": "phi.geom._box.Box",
+      "quality": "exact_alias",
+      "status": "resolved"
+    }
+  ],
+  "artifact_provenance": "not_generated",
+  "artifacts": {},
+  "config_id": "1ad8c65e9940",
+  "context": {
+    "code_nodes": 12,
+    "context_chars": 21347,
+    "domain_nodes": 27,
+    "filtered_relations": 82,
+    "raw_relations": 3886,
+    "resolved_api_links": 2,
+    "seed_count": 126,
+    "unresolved_api_links": 0
+  },
+  "domain": "julia_set",
+  "domain_status": "available",
+  "execution": {
+    "status": "not_run"
+  },
+  "generation": {
+    "reason": "Retrieval-only mode; no LLM call.",
+    "status": "not_requested"
+  },
+  "metadata": {
+    "api_resolution_hash": "995352b52c136e5fbaf1eb111aeaf4296b9e4a61c2712fdbbb4a2022f0a0dd5a",
+    "code_context_hash": "d01b3cfb07c322c735023145fd5eb116ad621987c1d86c66198e0f1c7e26ec17",
+    "domain_context_hash": "187b87fdcf8eb6ee477f3b731b0286fa5176edd64f1eacfb09b5195bc876b1b7",
+    "max_tokens": null,
+    "model": null,
+    "seed": null,
+    "task_hash": "10e0a7d9a3905b8241ffa222ab3fadcf9a580d047b1611e78bdabe187830201c",
+    "temperature": 0
+  },
+  "plan": {
+    "effective_sha256": "cb1e23534d9409ae02c34117c05cc8a58c57c18aaae278adbb78eff3d066738a",
+    "path": "D:\\Vivek\\research\\optimization_runs\\cache\\julia_set_b3c1ba4436b6_blueprint.json",
+    "plan_source": "cached",
+    "sha256": "7103ba9f251f18ba388eb2cdec8d32ee1b50bbf92ff9524f746d3ca3ebbd0f98",
+    "task_sha1": "b3c1ba4436b6a38492ff80fe166bc9966fdcf936"
+  },
+  "replicate": 0,
+  "retrieval_status": "passed",
+  "run_dir": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\julia_set\\combined_0",
+  "run_id": "julia_set_combined_0",
+  "task_source": "D:\\Vivek\\research\\test\\julia_set.md",
+  "variant": "combined"
+}

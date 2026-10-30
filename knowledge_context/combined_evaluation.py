@@ -201,7 +201,7 @@ def compare_trajectories(
         )
         if reference_rms == 0 and rmse > 0:
             result["normalization_note"] = "Relative RMSE undefined because reference RMS is zero."
-    except (OSError, ValueError, TypeError, FloatingPointError) as exc:
+    except (OSError, EOFError, ValueError, TypeError, FloatingPointError) as exc:
         result["error"] = str(exc)
     return result
 

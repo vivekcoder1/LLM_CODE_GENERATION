@@ -1,0 +1,39 @@
+{
+  "alignment": {
+    "generated_time_axis": 0,
+    "reference_time_axis": 0
+  },
+  "artifact_provenance": "not_generated",
+  "artifacts": {},
+  "config_id": "1ad8c65e9940",
+  "context": {},
+  "domain": "reaction_diffusion",
+  "execution": {
+    "error": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+    "status": "not_run"
+  },
+  "generation": {
+    "error": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+    "status": "failed"
+  },
+  "metadata": {
+    "max_tokens": 20000,
+    "model": "claude-sonnet-4-6",
+    "seed": null,
+    "task_hash": "2aa75359e6b042a44fced58904c7957af95db4663795a95a8ff97f3e6c5073f5",
+    "temperature": 0
+  },
+  "plan": {
+    "path": "D:\\Vivek\\research\\optimization_runs\\cache\\reaction_diffusion_7a58144cea66_blueprint.json",
+    "plan_source": "cached",
+    "sha256": "d7865ec3ee2db1048fe343fcb96f9d5cf31952654cb87fd2e7dddbe1c213ed89",
+    "task_sha1": "7a58144cea66d4ccdf2bfcc8f49e18cdbd6ab98e"
+  },
+  "reason": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+  "replicate": 0,
+  "retrieval_status": "blocked",
+  "run_dir": "D:\\Vivek\\research\\integration_runs\\20261028T180317_552196Z\\runs\\reaction_diffusion\\code_only_0",
+  "run_id": "reaction_diffusion_code_only_0",
+  "task_source": "D:\\Vivek\\research\\test\\reaction_diffusion.md",
+  "variant": "code_only"
+}

@@ -55,7 +55,7 @@ does not mean every domain passed.
 | --- | --- | --- | --- |
 | Existing code graph | Project root `.env` | `NEO4J_URI`, `NEO4J_USER`, `NEO4J_PASSWORD`; optional `NEO4J_DATABASE` | Retrieval/generation |
 | Domain graph | `knowledge_context/.env` | Same Neo4j keys, independently parsed | `--domain-source neo4j` |
-| LLM | Project root `.env` | `ANTHROPIC_API_KEY`; optional `ANTHROPIC_WORKSPACE_ID`, `ANTHROPIC_MODEL` | Explicit `generate` mode |
+| LLM | Project root `.env` | `ANTHROPIC_API_KEY`; optional `ANTHROPIC_WORKSPACE_ID`, `ANTHROPIC_MODEL` | Explicit live or saved-context generation |
 | Domain inspection export | `knowledge_context/domain_knowledge_graph.json` | No connection credentials | Explicit `--domain-source json` |
 
 The constructor in [KNOWLEDGE_GRAPH.md](KNOWLEDGE_GRAPH.md) still selects
@@ -175,7 +175,7 @@ which have populated recipes and stored references. Other selectable domains
 may lack a recipe, numerical profile, or cached plan; absences receive explicit
 statuses.
 
-Fresh generation is a separate future opt-in. A later authorized run can use
+Fresh generation requires an explicit opt-in. A live-retrieval run can use
 `--mode generate --execute`, a valid `--llm-env-file`, and an appropriate
 `--model`. The runner checks the account's model listing first. Model precedence
 is explicit `--model`, then `ANTHROPIC_MODEL` in that file, then
@@ -187,6 +187,82 @@ prompt permits local step/initialization helpers and standard Python/NumPy
 operations while requiring documented public framework APIs. The current task
 takes priority over reference values and filenames. A response stopped by
 `max_tokens` is rejected as incomplete.
+
+Before submitting a `combined` generation, the runner requires domain status
+`available` and nonempty domain context. Missing/unavailable evidence records a
+blocked generation and no execution; it is not silently submitted as an empty
+prior or replaced with another source. Code-only generation remains independent.
+
+## Fresh generation from a frozen retrieval snapshot
+
+[`run_saved_context_experiment.py`](run_saved_context_experiment.py) is a separate,
+explicit generation entry point. It uses the eight saved `code_only`/`combined`
+contexts from a completed four-domain experiment rather than performing new
+retrieval. It makes fresh provider generation requests and executes the resulting
+scripts, with one attempt per arm and no automatic rerolls or script repairs.
+
+```powershell
+python .\knowledge_context\run_saved_context_experiment.py --context-manifest .\integration_runs\20261022T020018_419755Z\manifest.json --execute --test-results .\integration_runs\validation_20261028T181257_012262Z\test_outcomes.json
+```
+
+This command selects the retrieval snapshot created on October 21 in New York
+(October 22 UTC). All four current task sheets were verified against their saved
+task hashes on October 28. The module requires every source arm to pass validation
+before loading LLM settings or constructing a provider client:
+
+| Validation | Requirement |
+| --- | --- |
+| Snapshot completion/configuration | Completed manifest; canonical settings hash matches `config_id` |
+| Source arms | Exactly one `code_only` and one `combined` arm for each of the four supported domains, with passed original retrieval and matching configuration |
+| File scope | Source arm directories are inside the selected snapshot directory |
+| Tasks | Current task text and saved task text match the original task hash |
+| Contexts | Nonempty public-code context; saved code/domain text hashes match original metadata |
+| Combined treatment | Original domain status is `available` with nonempty domain context |
+| Code-only treatment | No unexpected domain prior |
+| Planner evidence | Saved base blueprints are valid and match across each pair; any saved effective blueprint matches its recorded hash |
+| API mappings | Evidence is preserved and checked against its recorded hash when available |
+
+The original context/task hashes describe normalized text: files are read as
+UTF-8 with universal newline handling before hashing. Raw file hashes can differ
+because Windows wrote CRLF line endings. Both the text hashes and current raw
+source-file hashes remain recorded. The old snapshot did not record a hash of
+the complete `context.md`; its original character count is checked, and a current
+file hash is recorded with that limitation explicitly stated.
+
+This path constructs no Neo4j connection and performs no graph query, graph
+snapshot, embedding load, or planner request. Injected guards reject accidental
+graph/domain retrieval. LLM credentials still come only from the explicitly
+selected `--llm-env-file` (root `.env` by default); there is no Neo4j credential
+fallback. Model listing precedes generation, and authentication/credit failures
+block remaining attempts rather than repeatedly submitting rejected requests.
+
+| Saved-context option | Default/requirement |
+| --- | --- |
+| `--context-manifest` | Required completed snapshot manifest |
+| `--execute` | Required explicit execution flag |
+| `--project-root` | Research project root used to validate current tasks |
+| `--llm-env-file` | Root `.env` |
+| `--model` | Explicit override, then file model, then `claude-sonnet-4-6` |
+| `--output-dir` | New UTC-stamped directory under `integration_runs/`, ending `_saved_context` |
+| `--test-results` | Optional recorded offline test-outcome JSON |
+| `--timeout` | 120 seconds per execution |
+| `--max-tokens` | 20,000 output tokens per generation |
+
+The source snapshot is copied into provenance, with manifest/file/record hashes,
+dates, settings, saved API mappings, and source directories. New scripts have
+fresh-generation provenance; context records say `restored_not_requeried` and
+`context_origin="saved_retrieval_snapshot"`. The output also retains provider
+usage, stop reason, script/artifact hashes, execution logs, and the usual report
+tables. It does **not** establish current graph counts, contents, or integrity;
+`graph_integrity` is explicitly `not_queried`.
+
+The [October 28 live preflight](../integration_runs/20261028T180317_552196Z/manifest.json)
+illustrates the distinction: API/model authentication passed, while code-graph
+DNS resolution and local domain-graph routing were unavailable. That attempt
+could not perform live retrieval. Selecting a saved snapshot is a separate
+explicit action, not an automatic fallback or proof that those connections have
+recovered. Its scientific comparison concerns fresh generation conditioned on
+the recorded contexts, without fresh planning or retrieval.
 
 ## CLI reference
 
@@ -328,11 +404,16 @@ metrics. The new report assigns no synthetic objective or physics ranking.
 
 `measured_caveated` values quantify discrepancy but are excluded from paired
 numerical deltas. Eligible pairs require one fresh `code_only` and one fresh
-`combined` record per replicate, matched model/task/code-context/temperature
-metadata, and attempted execution in both. Historical reruns receive
-`not_fresh_generation`. Differing retrieved code contexts prevent a claim that
-the pair isolates only the added domain prior. Even eligible single pairs are
-descriptive observations without variance estimates or statistical superiority.
+`combined` record for the same domain, configuration, and replicate, matched
+model/task/temperature metadata and seed/output-token settings, and attempted
+execution in both. The runner supplies the same base blueprint and retrieval
+settings to each variant. Domain-guided code retrieval is part of the treatment,
+so the code contexts may differ; both code-context hashes remain recorded rather
+than being required to match. This compares the complete code-only and combined
+retrieval pipelines, not a fixed-code-context prompt addition. Historical reruns
+receive `not_fresh_generation`. Even eligible single pairs are descriptive
+observations without variance estimates or statistical superiority; an absent
+provider seed leaves stochastic generation uncontrolled.
 
 ## Offline audit and additional data tables
 

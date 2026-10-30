@@ -1,0 +1,39 @@
+{
+  "alignment": {
+    "generated_time_axis": 0,
+    "reference_time_axis": 0
+  },
+  "artifact_provenance": "not_generated",
+  "artifacts": {},
+  "config_id": "1ad8c65e9940",
+  "context": {},
+  "domain": "burgers2d",
+  "execution": {
+    "error": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+    "status": "not_run"
+  },
+  "generation": {
+    "error": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+    "status": "failed"
+  },
+  "metadata": {
+    "max_tokens": 20000,
+    "model": "claude-sonnet-4-6",
+    "seed": null,
+    "task_hash": "3e40128f9690ce73b6a4febd9e06b4f12b32b29724e02ce4181f8b1d3b22b080",
+    "temperature": 0
+  },
+  "plan": {
+    "path": "D:\\Vivek\\research\\optimization_runs\\cache\\burgers2d_8ad5f8e75ea3_blueprint.json",
+    "plan_source": "cached",
+    "sha256": "27713b246ca7d87b3492da62f40471ef849c14ce4e3a07828e9782192b05e4d1",
+    "task_sha1": "8ad5f8e75ea36a2aba40c6d3b5fee35c523e97c7"
+  },
+  "reason": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+  "replicate": 0,
+  "retrieval_status": "blocked",
+  "run_dir": "D:\\Vivek\\research\\integration_runs\\20261028T180317_552196Z\\runs\\burgers2d\\code_only_0",
+  "run_id": "burgers2d_code_only_0",
+  "task_source": "D:\\Vivek\\research\\test\\burgers2d.md",
+  "variant": "code_only"
+}

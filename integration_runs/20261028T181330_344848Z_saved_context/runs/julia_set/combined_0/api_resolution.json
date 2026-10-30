@@ -1,0 +1,58 @@
+[
+  {
+    "candidate_count": 1,
+    "candidates": [
+      {
+        "component_type": "Function",
+        "defining_files": [
+          "_grid.py"
+        ],
+        "id": "_grid.py:CenteredGrid",
+        "import_path": "phi.flow.CenteredGrid",
+        "name": "CenteredGrid"
+      }
+    ],
+    "code_id": "_grid.py:CenteredGrid",
+    "code_import_path": "phi.flow.CenteredGrid",
+    "code_name": "CenteredGrid",
+    "configured_aliases": [
+      "phi.field.CenteredGrid",
+      "phi.flow.CenteredGrid"
+    ],
+    "definition_path": "phi/field/_grid.py",
+    "domain_api_id": "dkg:ground_truth_domains:code:phi.field._grid.CenteredGrid",
+    "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+    "observed_call": "CenteredGrid",
+    "qualified_name": "phi.field._grid.CenteredGrid",
+    "quality": "exact_alias",
+    "status": "resolved"
+  },
+  {
+    "candidate_count": 1,
+    "candidates": [
+      {
+        "component_type": "Class",
+        "defining_files": [
+          "_box.py"
+        ],
+        "id": "_box.py:Box",
+        "import_path": "phi.flow.Box",
+        "name": "Box"
+      }
+    ],
+    "code_id": "_box.py:Box",
+    "code_import_path": "phi.flow.Box",
+    "code_name": "Box",
+    "configured_aliases": [
+      "phi.flow.Box",
+      "phi.geom.Box"
+    ],
+    "definition_path": "phi/geom/_box.py",
+    "domain_api_id": "dkg:ground_truth_domains:code:phi.geom._box.Box",
+    "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+    "observed_call": "Box",
+    "qualified_name": "phi.geom._box.Box",
+    "quality": "exact_alias",
+    "status": "resolved"
+  }
+]

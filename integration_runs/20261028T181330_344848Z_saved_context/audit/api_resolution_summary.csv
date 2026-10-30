@@ -1,0 +1,9 @@
+run_id,domain,variant,retrieval_status,domain_status,mapping_records_status,mapping_count,exact_alias_count,legacy_candidate_count,ambiguous_count,unavailable_count,unresolved_count,code_nodes,domain_nodes,seed_count,raw_relations,filtered_relations,context_chars
+burgers2d_code_only_0,burgers2d,code_only,restored_not_requeried,disabled,available,0,0,0,0,0,0,12,0,92,3459,205,15496
+burgers2d_combined_0,burgers2d,combined,restored_not_requeried,available,available,5,5,0,0,0,0,12,23,97,3555,91,23033
+heat_flow_code_only_0,heat_flow,code_only,restored_not_requeried,disabled,available,0,0,0,0,0,0,12,0,89,3579,158,9688
+heat_flow_combined_0,heat_flow,combined,restored_not_requeried,available,available,4,4,0,0,0,0,12,25,98,3784,91,22432
+julia_set_code_only_0,julia_set,code_only,restored_not_requeried,disabled,available,0,0,0,0,0,0,12,0,104,3564,128,12196
+julia_set_combined_0,julia_set,combined,restored_not_requeried,available,available,2,2,0,0,0,0,12,27,126,3886,82,21347
+reaction_diffusion_code_only_0,reaction_diffusion,code_only,restored_not_requeried,disabled,available,0,0,0,0,0,0,12,0,82,3241,176,16155
+reaction_diffusion_combined_0,reaction_diffusion,combined,restored_not_requeried,available,available,3,2,0,0,0,1,12,40,78,3226,81,25198

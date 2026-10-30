@@ -1,0 +1,9 @@
+run_id,variant,domain,code_nodes,domain_nodes,resolved_api_links,unresolved_api_links,context_chars,retrieval_status,domain_status,plan_source,reason
+burgers2d_code_only_0,code_only,burgers2d,,,,,,blocked,,cached,"Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames"
+burgers2d_combined_0,combined,burgers2d,,,,,,blocked,,cached,"Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames"
+heat_flow_code_only_0,code_only,heat_flow,,,,,,blocked,,cached,"Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames"
+heat_flow_combined_0,combined,heat_flow,,,,,,blocked,,cached,"Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames"
+julia_set_code_only_0,code_only,julia_set,,,,,,blocked,,cached,"Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames"
+julia_set_combined_0,combined,julia_set,,,,,,blocked,,cached,"Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames"
+reaction_diffusion_code_only_0,code_only,reaction_diffusion,,,,,,blocked,,cached,"Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames"
+reaction_diffusion_combined_0,combined,reaction_diffusion,,,,,,blocked,,cached,"Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames"

@@ -1,0 +1,4084 @@
+{
+  "schema_version": 1,
+  "audit_created_utc": "2026-10-28T18:17:48.160037+00:00",
+  "experiment_completed_utc": "2026-10-28T18:16:32.639701+00:00",
+  "experiment_mode": "generate_saved_context",
+  "local_graph_declared_sha256": "6f5a12e02f2f8e779ea1d8bb7224e535eeb82fe476a00520e8e7aee81701035d",
+  "limitations": [
+    "API resolution records describe the completed run's metadata joins; no live graph was queried by this audit.",
+    "Domain recipe tables come from the explicitly selected local graph snapshot. They do not prove that the live domain graph had identical content.",
+    "Artifact diagnostics describe only manifest-reported files inside each isolated run directory. Recorded hashes are checked when available.",
+    "Wrong-name arrays remain diagnostic observations. No file is renamed, substituted into a requested output, or awarded a task-contract score.",
+    "Finite-only ranges omit NaN/infinite entries; a finite range does not establish stability, correctness, or agreement with a reference.",
+    "First nonfinite frame is zero-based on the run's declared generated_time_axis (default 0). Scalar arrays have no frame axis.",
+    "For complex arrays, finite min/max are magnitudes, as labelled. Empty and nonnumeric arrays have no numerical range.",
+    "Historical-script reruns do not measure generation improvements from combined retrieval. This audit makes no causal improvement claim.",
+    "API documentation retention matches only literal Import Path fields in code_context.md for the same resolved hints. It excludes unresolved hints from the matchable denominator and does not count resolution metadata in the combined prompt."
+  ],
+  "tables": {
+    "api_resolution": [
+      {
+        "run_id": "burgers2d_combined_0",
+        "domain": "burgers2d",
+        "variant": "combined",
+        "evidence_origin": "completed_run_manifest",
+        "mapping_class": "exact_alias",
+        "quality": "exact_alias",
+        "status": "resolved",
+        "observed_call": "CenteredGrid",
+        "qualified_name": "phi.field._grid.CenteredGrid",
+        "code_id": "_grid.py:CenteredGrid",
+        "code_import_path": "phi.flow.CenteredGrid",
+        "candidate_count": 1,
+        "definition_path": "phi/field/_grid.py",
+        "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+        "resolved_for_retrieval": true
+      },
+      {
+        "run_id": "burgers2d_combined_0",
+        "domain": "burgers2d",
+        "variant": "combined",
+        "evidence_origin": "completed_run_manifest",
+        "mapping_class": "exact_alias",
+        "quality": "exact_alias",
+        "status": "resolved",
+        "observed_call": "Noise",
+        "qualified_name": "phi.field._noise.Noise",
+        "code_id": "_noise.py:Noise",
+        "code_import_path": "phi.flow.Noise",
+        "candidate_count": 1,
+        "definition_path": "phi/field/_noise.py",
+        "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+        "resolved_for_retrieval": true
+      },
+      {
+        "run_id": "burgers2d_combined_0",
+        "domain": "burgers2d",
+        "variant": "combined",
+        "evidence_origin": "completed_run_manifest",
+        "mapping_class": "exact_alias",
+        "quality": "exact_alias",
+        "status": "resolved",
+        "observed_call": "Box",
+        "qualified_name": "phi.geom._box.Box",
+        "code_id": "_box.py:Box",
+        "code_import_path": "phi.flow.Box",
+        "candidate_count": 1,
+        "definition_path": "phi/geom/_box.py",
+        "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+        "resolved_for_retrieval": true
+      },
+      {
+        "run_id": "burgers2d_combined_0",
+        "domain": "burgers2d",
+        "variant": "combined",
+        "evidence_origin": "completed_run_manifest",
+        "mapping_class": "exact_alias",
+        "quality": "exact_alias",
+        "status": "resolved",
+        "observed_call": "advect.semi_lagrangian",
+        "qualified_name": "phi.physics.advect.semi_lagrangian",
+        "code_id": "advect.py:semi_lagrangian",
+        "code_import_path": "phi.flow.advect.semi_lagrangian",
+        "candidate_count": 1,
+        "definition_path": "phi/physics/advect.py",
+        "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+        "resolved_for_retrieval": true
+      },
+      {
+        "run_id": "burgers2d_combined_0",
+        "domain": "burgers2d",
+        "variant": "combined",
+        "evidence_origin": "completed_run_manifest",
+        "mapping_class": "exact_alias",
+        "quality": "exact_alias",
+        "status": "resolved",
+        "observed_call": "diffuse.implicit",
+        "qualified_name": "phi.physics.diffuse.implicit",
+        "code_id": "diffuse.py:implicit",
+        "code_import_path": "phi.flow.diffuse.implicit",
+        "candidate_count": 1,
+        "definition_path": "phi/physics/diffuse.py",
+        "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+        "resolved_for_retrieval": true
+      },
+      {
+        "run_id": "heat_flow_combined_0",
+        "domain": "heat_flow",
+        "variant": "combined",
+        "evidence_origin": "completed_run_manifest",
+        "mapping_class": "exact_alias",
+        "quality": "exact_alias",
+        "status": "resolved",
+        "observed_call": "CenteredGrid",
+        "qualified_name": "phi.field._grid.CenteredGrid",
+        "code_id": "_grid.py:CenteredGrid",
+        "code_import_path": "phi.flow.CenteredGrid",
+        "candidate_count": 1,
+        "definition_path": "phi/field/_grid.py",
+        "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+        "resolved_for_retrieval": true
+      },
+      {
+        "run_id": "heat_flow_combined_0",
+        "domain": "heat_flow",
+        "variant": "combined",
+        "evidence_origin": "completed_run_manifest",
+        "mapping_class": "exact_alias",
+        "quality": "exact_alias",
+        "status": "resolved",
+        "observed_call": "Box",
+        "qualified_name": "phi.geom._box.Box",
+        "code_id": "_box.py:Box",
+        "code_import_path": "phi.flow.Box",
+        "candidate_count": 1,
+        "definition_path": "phi/geom/_box.py",
+        "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+        "resolved_for_retrieval": true
+      },
+      {
+        "run_id": "heat_flow_combined_0",
+        "domain": "heat_flow",
+        "variant": "combined",
+        "evidence_origin": "completed_run_manifest",
+        "mapping_class": "exact_alias",
+        "quality": "exact_alias",
+        "status": "resolved",
+        "observed_call": "union",
+        "qualified_name": "phi.geom._geom_ops.union",
+        "code_id": "_geom_ops.py:union",
+        "code_import_path": "phi.flow.union",
+        "candidate_count": 1,
+        "definition_path": "phi/geom/_geom_ops.py",
+        "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+        "resolved_for_retrieval": true
+      },
+      {
+        "run_id": "heat_flow_combined_0",
+        "domain": "heat_flow",
+        "variant": "combined",
+        "evidence_origin": "completed_run_manifest",
+        "mapping_class": "exact_alias",
+        "quality": "exact_alias",
+        "status": "resolved",
+        "observed_call": "diffuse.implicit",
+        "qualified_name": "phi.physics.diffuse.implicit",
+        "code_id": "diffuse.py:implicit",
+        "code_import_path": "phi.flow.diffuse.implicit",
+        "candidate_count": 1,
+        "definition_path": "phi/physics/diffuse.py",
+        "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+        "resolved_for_retrieval": true
+      },
+      {
+        "run_id": "julia_set_combined_0",
+        "domain": "julia_set",
+        "variant": "combined",
+        "evidence_origin": "completed_run_manifest",
+        "mapping_class": "exact_alias",
+        "quality": "exact_alias",
+        "status": "resolved",
+        "observed_call": "CenteredGrid",
+        "qualified_name": "phi.field._grid.CenteredGrid",
+        "code_id": "_grid.py:CenteredGrid",
+        "code_import_path": "phi.flow.CenteredGrid",
+        "candidate_count": 1,
+        "definition_path": "phi/field/_grid.py",
+        "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+        "resolved_for_retrieval": true
+      },
+      {
+        "run_id": "julia_set_combined_0",
+        "domain": "julia_set",
+        "variant": "combined",
+        "evidence_origin": "completed_run_manifest",
+        "mapping_class": "exact_alias",
+        "quality": "exact_alias",
+        "status": "resolved",
+        "observed_call": "Box",
+        "qualified_name": "phi.geom._box.Box",
+        "code_id": "_box.py:Box",
+        "code_import_path": "phi.flow.Box",
+        "candidate_count": 1,
+        "definition_path": "phi/geom/_box.py",
+        "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+        "resolved_for_retrieval": true
+      },
+      {
+        "run_id": "reaction_diffusion_combined_0",
+        "domain": "reaction_diffusion",
+        "variant": "combined",
+        "evidence_origin": "completed_run_manifest",
+        "mapping_class": "unresolved",
+        "quality": "unresolved",
+        "status": "unresolved",
+        "observed_call": "field.laplace",
+        "qualified_name": "phi.field._field_math.laplace",
+        "code_id": null,
+        "code_import_path": null,
+        "candidate_count": 0,
+        "definition_path": "phi/field/_field_math.py",
+        "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+        "resolved_for_retrieval": false
+      },
+      {
+        "run_id": "reaction_diffusion_combined_0",
+        "domain": "reaction_diffusion",
+        "variant": "combined",
+        "evidence_origin": "completed_run_manifest",
+        "mapping_class": "exact_alias",
+        "quality": "exact_alias",
+        "status": "resolved",
+        "observed_call": "CenteredGrid",
+        "qualified_name": "phi.field._grid.CenteredGrid",
+        "code_id": "_grid.py:CenteredGrid",
+        "code_import_path": "phi.flow.CenteredGrid",
+        "candidate_count": 1,
+        "definition_path": "phi/field/_grid.py",
+        "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+        "resolved_for_retrieval": true
+      },
+      {
+        "run_id": "reaction_diffusion_combined_0",
+        "domain": "reaction_diffusion",
+        "variant": "combined",
+        "evidence_origin": "completed_run_manifest",
+        "mapping_class": "exact_alias",
+        "quality": "exact_alias",
+        "status": "resolved",
+        "observed_call": "Box",
+        "qualified_name": "phi.geom._box.Box",
+        "code_id": "_box.py:Box",
+        "code_import_path": "phi.flow.Box",
+        "candidate_count": 1,
+        "definition_path": "phi/geom/_box.py",
+        "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+        "resolved_for_retrieval": true
+      }
+    ],
+    "api_resolution_summary": [
+      {
+        "run_id": "burgers2d_code_only_0",
+        "domain": "burgers2d",
+        "variant": "code_only",
+        "retrieval_status": "restored_not_requeried",
+        "domain_status": "disabled",
+        "mapping_records_status": "available",
+        "mapping_count": 0,
+        "exact_alias_count": 0,
+        "legacy_candidate_count": 0,
+        "ambiguous_count": 0,
+        "unavailable_count": 0,
+        "unresolved_count": 0,
+        "code_nodes": 12,
+        "domain_nodes": 0,
+        "seed_count": 92,
+        "raw_relations": 3459,
+        "filtered_relations": 205,
+        "context_chars": 15496
+      },
+      {
+        "run_id": "burgers2d_combined_0",
+        "domain": "burgers2d",
+        "variant": "combined",
+        "retrieval_status": "restored_not_requeried",
+        "domain_status": "available",
+        "mapping_records_status": "available",
+        "mapping_count": 5,
+        "exact_alias_count": 5,
+        "legacy_candidate_count": 0,
+        "ambiguous_count": 0,
+        "unavailable_count": 0,
+        "unresolved_count": 0,
+        "code_nodes": 12,
+        "domain_nodes": 23,
+        "seed_count": 97,
+        "raw_relations": 3555,
+        "filtered_relations": 91,
+        "context_chars": 23033
+      },
+      {
+        "run_id": "heat_flow_code_only_0",
+        "domain": "heat_flow",
+        "variant": "code_only",
+        "retrieval_status": "restored_not_requeried",
+        "domain_status": "disabled",
+        "mapping_records_status": "available",
+        "mapping_count": 0,
+        "exact_alias_count": 0,
+        "legacy_candidate_count": 0,
+        "ambiguous_count": 0,
+        "unavailable_count": 0,
+        "unresolved_count": 0,
+        "code_nodes": 12,
+        "domain_nodes": 0,
+        "seed_count": 89,
+        "raw_relations": 3579,
+        "filtered_relations": 158,
+        "context_chars": 9688
+      },
+      {
+        "run_id": "heat_flow_combined_0",
+        "domain": "heat_flow",
+        "variant": "combined",
+        "retrieval_status": "restored_not_requeried",
+        "domain_status": "available",
+        "mapping_records_status": "available",
+        "mapping_count": 4,
+        "exact_alias_count": 4,
+        "legacy_candidate_count": 0,
+        "ambiguous_count": 0,
+        "unavailable_count": 0,
+        "unresolved_count": 0,
+        "code_nodes": 12,
+        "domain_nodes": 25,
+        "seed_count": 98,
+        "raw_relations": 3784,
+        "filtered_relations": 91,
+        "context_chars": 22432
+      },
+      {
+        "run_id": "julia_set_code_only_0",
+        "domain": "julia_set",
+        "variant": "code_only",
+        "retrieval_status": "restored_not_requeried",
+        "domain_status": "disabled",
+        "mapping_records_status": "available",
+        "mapping_count": 0,
+        "exact_alias_count": 0,
+        "legacy_candidate_count": 0,
+        "ambiguous_count": 0,
+        "unavailable_count": 0,
+        "unresolved_count": 0,
+        "code_nodes": 12,
+        "domain_nodes": 0,
+        "seed_count": 104,
+        "raw_relations": 3564,
+        "filtered_relations": 128,
+        "context_chars": 12196
+      },
+      {
+        "run_id": "julia_set_combined_0",
+        "domain": "julia_set",
+        "variant": "combined",
+        "retrieval_status": "restored_not_requeried",
+        "domain_status": "available",
+        "mapping_records_status": "available",
+        "mapping_count": 2,
+        "exact_alias_count": 2,
+        "legacy_candidate_count": 0,
+        "ambiguous_count": 0,
+        "unavailable_count": 0,
+        "unresolved_count": 0,
+        "code_nodes": 12,
+        "domain_nodes": 27,
+        "seed_count": 126,
+        "raw_relations": 3886,
+        "filtered_relations": 82,
+        "context_chars": 21347
+      },
+      {
+        "run_id": "reaction_diffusion_code_only_0",
+        "domain": "reaction_diffusion",
+        "variant": "code_only",
+        "retrieval_status": "restored_not_requeried",
+        "domain_status": "disabled",
+        "mapping_records_status": "available",
+        "mapping_count": 0,
+        "exact_alias_count": 0,
+        "legacy_candidate_count": 0,
+        "ambiguous_count": 0,
+        "unavailable_count": 0,
+        "unresolved_count": 0,
+        "code_nodes": 12,
+        "domain_nodes": 0,
+        "seed_count": 82,
+        "raw_relations": 3241,
+        "filtered_relations": 176,
+        "context_chars": 16155
+      },
+      {
+        "run_id": "reaction_diffusion_combined_0",
+        "domain": "reaction_diffusion",
+        "variant": "combined",
+        "retrieval_status": "restored_not_requeried",
+        "domain_status": "available",
+        "mapping_records_status": "available",
+        "mapping_count": 3,
+        "exact_alias_count": 2,
+        "legacy_candidate_count": 0,
+        "ambiguous_count": 0,
+        "unavailable_count": 0,
+        "unresolved_count": 1,
+        "code_nodes": 12,
+        "domain_nodes": 40,
+        "seed_count": 78,
+        "raw_relations": 3226,
+        "filtered_relations": 81,
+        "context_chars": 25198
+      }
+    ],
+    "domain_prior_summary": [
+      {
+        "domain": "burgers2d",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "status": "available",
+        "references": 1,
+        "nodes": 23,
+        "edges": 29,
+        "ordered_steps": 2,
+        "verified_apis": 5,
+        "api_candidates": 4,
+        "fields": 1,
+        "parameters": 1,
+        "helpers": 0,
+        "outputs": 1,
+        "context_chars": 11015,
+        "omitted_optional_guidance": 0
+      },
+      {
+        "domain": "heat_flow",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "status": "available",
+        "references": 1,
+        "nodes": 25,
+        "edges": 34,
+        "ordered_steps": 1,
+        "verified_apis": 4,
+        "api_candidates": 4,
+        "fields": 2,
+        "parameters": 4,
+        "helpers": 0,
+        "outputs": 1,
+        "context_chars": 11484,
+        "omitted_optional_guidance": 0
+      },
+      {
+        "domain": "julia_set",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "status": "available",
+        "references": 1,
+        "nodes": 27,
+        "edges": 41,
+        "ordered_steps": 3,
+        "verified_apis": 2,
+        "api_candidates": 5,
+        "fields": 2,
+        "parameters": 6,
+        "helpers": 0,
+        "outputs": 1,
+        "context_chars": 11953,
+        "omitted_optional_guidance": 0
+      },
+      {
+        "domain": "reaction_diffusion",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "status": "available",
+        "references": 1,
+        "nodes": 40,
+        "edges": 74,
+        "ordered_steps": 3,
+        "verified_apis": 3,
+        "api_candidates": 6,
+        "fields": 2,
+        "parameters": 12,
+        "helpers": 1,
+        "outputs": 2,
+        "context_chars": 15975,
+        "omitted_optional_guidance": 2
+      }
+    ],
+    "domain_fields": [
+      {
+        "domain": "burgers2d",
+        "reference_id": "dkg:ground_truth_domains:reference:burgers2d:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "velocity",
+        "variable": "v0",
+        "role": "velocity",
+        "representation": "centered_vector_grid",
+        "expression": "v0 = CenteredGrid(Noise(vector='x,y'), PERIODIC, x=64, y=64, bounds=Box(x=40, y=20))",
+        "source_path": "test_burgers2d/burgers2d_ground_truth.py",
+        "source_lines": [
+          10,
+          10
+        ],
+        "source_sha256": "83a31cd673dfc671662a2efc77d28c79fd3c2ade31a8e4534ebb3529174f280e",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "heat_flow",
+        "reference_id": "dkg:ground_truth_domains:reference:heat_flow:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "conductivity",
+        "variable": "conductivity",
+        "role": "coefficient",
+        "representation": "centered_scalar_grid",
+        "expression": "conductivity = CenteredGrid(bars, ZERO_GRADIENT, domain, x=100, y=50) + .01",
+        "source_path": "test_heat_flow/heat_flow_ground_truth.py",
+        "source_lines": [
+          11,
+          11
+        ],
+        "source_sha256": "838e8888091f80f1e9cf2f32c11bc575893551a97d04af8b6efcaba5fb19cf3d",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "heat_flow",
+        "reference_id": "dkg:ground_truth_domains:reference:heat_flow:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "temperature",
+        "variable": "t0",
+        "role": "temperature",
+        "representation": "centered_scalar_grid",
+        "expression": "t0 = CenteredGrid(0, boundary, domain, x=100, y=50)",
+        "source_path": "test_heat_flow/heat_flow_ground_truth.py",
+        "source_lines": [
+          15,
+          15
+        ],
+        "source_sha256": "838e8888091f80f1e9cf2f32c11bc575893551a97d04af8b6efcaba5fb19cf3d",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "reference_id": "dkg:ground_truth_domains:reference:julia_set:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "complex_state",
+        "variable": "z_field",
+        "role": "persistent_complex_state",
+        "representation": "complex_centered_grid_values",
+        "expression": "z_field = CenteredGrid(\n    lambda position: position.vector['x'] + 1j * position.vector['y'],\n    extrapolation=0,\n    bounds=bounds,\n    resolution=resolution,\n)",
+        "source_path": "test_julia_set/julia_set_ground_truth.py",
+        "source_lines": [
+          11,
+          16
+        ],
+        "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "reference_id": "dkg:ground_truth_domains:reference:julia_set:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "threshold_count",
+        "variable": "escape_count",
+        "role": "cumulative_threshold_count",
+        "representation": "scalar_tensor",
+        "expression": "escape_count = math.zeros(resolution)",
+        "source_path": "test_julia_set/julia_set_ground_truth.py",
+        "source_lines": [
+          18,
+          18
+        ],
+        "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "u",
+        "variable": "u",
+        "role": "first_species",
+        "representation": "centered_scalar_grid",
+        "expression": "u = CenteredGrid(initial_condition, PERIODIC, bounds=bounds, resolution=resolution)",
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          24,
+          24
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "v",
+        "variable": "v",
+        "role": "second_species",
+        "representation": "centered_scalar_grid",
+        "expression": "v = CenteredGrid(initial_condition, PERIODIC, bounds=bounds, resolution=resolution)",
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          25,
+          25
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      }
+    ],
+    "domain_parameters": [
+      {
+        "domain": "burgers2d",
+        "reference_id": "dkg:ground_truth_domains:reference:burgers2d:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "dt",
+        "expression": ".5",
+        "reference_value": null,
+        "parameter_kind": "function_argument",
+        "source_path": "test_burgers2d/burgers2d_ground_truth.py",
+        "source_lines": [
+          5,
+          5
+        ],
+        "source_sha256": "83a31cd673dfc671662a2efc77d28c79fd3c2ade31a8e4534ebb3529174f280e",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "heat_flow",
+        "reference_id": "dkg:ground_truth_domains:reference:heat_flow:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "bars",
+        "expression": "bars = union(Box(x=(0, 10), y=(2, 3)), Box(x=(4.5, 5.5), y=(1, 4)))",
+        "reference_value": null,
+        "parameter_kind": null,
+        "source_path": "test_heat_flow/heat_flow_ground_truth.py",
+        "source_lines": [
+          10,
+          10
+        ],
+        "source_sha256": "838e8888091f80f1e9cf2f32c11bc575893551a97d04af8b6efcaba5fb19cf3d",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "heat_flow",
+        "reference_id": "dkg:ground_truth_domains:reference:heat_flow:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "boundary",
+        "expression": "boundary = {'x-': 1, 'x+': ZERO_GRADIENT, 'y': PERIODIC}",
+        "reference_value": null,
+        "parameter_kind": null,
+        "source_path": "test_heat_flow/heat_flow_ground_truth.py",
+        "source_lines": [
+          9,
+          9
+        ],
+        "source_sha256": "838e8888091f80f1e9cf2f32c11bc575893551a97d04af8b6efcaba5fb19cf3d",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "heat_flow",
+        "reference_id": "dkg:ground_truth_domains:reference:heat_flow:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "domain",
+        "expression": "domain = Box(x=10, y=5)",
+        "reference_value": null,
+        "parameter_kind": null,
+        "source_path": "test_heat_flow/heat_flow_ground_truth.py",
+        "source_lines": [
+          8,
+          8
+        ],
+        "source_sha256": "838e8888091f80f1e9cf2f32c11bc575893551a97d04af8b6efcaba5fb19cf3d",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "heat_flow",
+        "reference_id": "dkg:ground_truth_domains:reference:heat_flow:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "dt",
+        "expression": "required_argument",
+        "reference_value": null,
+        "parameter_kind": "function_argument",
+        "source_path": "test_heat_flow/heat_flow_ground_truth.py",
+        "source_lines": [
+          4,
+          4
+        ],
+        "source_sha256": "838e8888091f80f1e9cf2f32c11bc575893551a97d04af8b6efcaba5fb19cf3d",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "reference_id": "dkg:ground_truth_domains:reference:julia_set:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "Nx",
+        "expression": "Nx = Ny = 256",
+        "reference_value": 256,
+        "parameter_kind": null,
+        "source_path": "test_julia_set/julia_set_ground_truth.py",
+        "source_lines": [
+          6,
+          6
+        ],
+        "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "reference_id": "dkg:ground_truth_domains:reference:julia_set:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "Ny",
+        "expression": "Nx = Ny = 256",
+        "reference_value": 256,
+        "parameter_kind": null,
+        "source_path": "test_julia_set/julia_set_ground_truth.py",
+        "source_lines": [
+          6,
+          6
+        ],
+        "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "reference_id": "dkg:ground_truth_domains:reference:julia_set:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "bounds",
+        "expression": "bounds = Box(x=(-2, 2), y=(-2, 2))",
+        "reference_value": null,
+        "parameter_kind": null,
+        "source_path": "test_julia_set/julia_set_ground_truth.py",
+        "source_lines": [
+          8,
+          8
+        ],
+        "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "reference_id": "dkg:ground_truth_domains:reference:julia_set:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "resolution",
+        "expression": "resolution = spatial(x=Nx, y=Ny)",
+        "reference_value": null,
+        "parameter_kind": null,
+        "source_path": "test_julia_set/julia_set_ground_truth.py",
+        "source_lines": [
+          9,
+          9
+        ],
+        "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "reference_id": "dkg:ground_truth_domains:reference:julia_set:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "steps",
+        "expression": "steps = 100",
+        "reference_value": 100,
+        "parameter_kind": null,
+        "source_path": "test_julia_set/julia_set_ground_truth.py",
+        "source_lines": [
+          7,
+          7
+        ],
+        "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "reference_id": "dkg:ground_truth_domains:reference:julia_set:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "z",
+        "expression": "z = z_field.values",
+        "reference_value": null,
+        "parameter_kind": null,
+        "source_path": "test_julia_set/julia_set_ground_truth.py",
+        "source_lines": [
+          17,
+          17
+        ],
+        "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "Du",
+        "expression": "Du = 0.19",
+        "reference_value": 0.19,
+        "parameter_kind": null,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          8,
+          8
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "Dv",
+        "expression": "Dv = 0.05",
+        "reference_value": 0.05,
+        "parameter_kind": null,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          9,
+          9
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "Lx",
+        "expression": "Lx = 100",
+        "reference_value": 100,
+        "parameter_kind": null,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          3,
+          3
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "Ly",
+        "expression": "Ly = 100",
+        "reference_value": 100,
+        "parameter_kind": null,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          4,
+          4
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "Nx",
+        "expression": "Nx = 100",
+        "reference_value": 100,
+        "parameter_kind": null,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          5,
+          5
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "Ny",
+        "expression": "Ny = 100",
+        "reference_value": 100,
+        "parameter_kind": null,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          6,
+          6
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "bounds",
+        "expression": "bounds = Box(x=Lx, y=Ly)",
+        "reference_value": null,
+        "parameter_kind": null,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          14,
+          14
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "dt",
+        "expression": "dt = 0.5",
+        "reference_value": 0.5,
+        "parameter_kind": null,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          7,
+          7
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "feed_rate",
+        "expression": "feed_rate = 0.06",
+        "reference_value": 0.06,
+        "parameter_kind": null,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          10,
+          10
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "kill_rate",
+        "expression": "kill_rate = 0.062",
+        "reference_value": 0.062,
+        "parameter_kind": null,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          11,
+          11
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "resolution",
+        "expression": "resolution = spatial(x=Nx, y=Ny)",
+        "reference_value": null,
+        "parameter_kind": null,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          15,
+          15
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "s",
+        "expression": "s = 3",
+        "reference_value": 3,
+        "parameter_kind": null,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          12,
+          12
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      }
+    ],
+    "domain_helpers": [
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "initial_condition",
+        "arguments": [
+          "x"
+        ],
+        "local_expressions": [
+          {
+            "targets": [
+              "center"
+            ],
+            "value": "vec(x=Lx / 2, y=Ly / 2)"
+          },
+          {
+            "targets": [
+              "radius"
+            ],
+            "value": "math.vec_length(x - center)"
+          }
+        ],
+        "return_expressions": [
+          "math.cos(radius / s)"
+        ],
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          18,
+          21
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      }
+    ],
+    "domain_update_steps": [
+      {
+        "domain": "burgers2d",
+        "reference_id": "dkg:ground_truth_domains:reference:burgers2d:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_id": "dkg:ground_truth_domains:reference:burgers2d:ground_truth:step:diffusion",
+        "order": 0,
+        "name": "Implicit diffusion",
+        "expression": "v = diffuse.implicit(v, 0.1, dt=dt)",
+        "reads": [
+          {
+            "id": "dkg:ground_truth_domains:reference:burgers2d:ground_truth:field:velocity",
+            "name": "velocity",
+            "kind": "FieldSpec",
+            "variable": "v",
+            "state_version": 0,
+            "analysis": "AST name load within one update",
+            "provenance": {
+              "source_path": "test_burgers2d/burgers2d_ground_truth.py",
+              "source_lines": [
+                6,
+                6
+              ],
+              "source_sha256": "83a31cd673dfc671662a2efc77d28c79fd3c2ade31a8e4534ebb3529174f280e",
+              "evidence_kind": "interpretation",
+              "review_status": "draft"
+            }
+          }
+        ],
+        "writes": [
+          {
+            "id": "dkg:ground_truth_domains:reference:burgers2d:ground_truth:field:velocity",
+            "name": "velocity",
+            "kind": "FieldSpec",
+            "variable": "v",
+            "state_version": 1,
+            "analysis": "AST assignment or configured return target",
+            "provenance": {
+              "source_path": "test_burgers2d/burgers2d_ground_truth.py",
+              "source_lines": [
+                6,
+                6
+              ],
+              "source_sha256": "83a31cd673dfc671662a2efc77d28c79fd3c2ade31a8e4534ebb3529174f280e",
+              "evidence_kind": "interpretation",
+              "review_status": "draft"
+            }
+          }
+        ],
+        "source_path": "test_burgers2d/burgers2d_ground_truth.py",
+        "source_lines": [
+          6,
+          6
+        ],
+        "source_sha256": "83a31cd673dfc671662a2efc77d28c79fd3c2ade31a8e4534ebb3529174f280e",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "burgers2d",
+        "reference_id": "dkg:ground_truth_domains:reference:burgers2d:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_id": "dkg:ground_truth_domains:reference:burgers2d:ground_truth:step:self_advection",
+        "order": 1,
+        "name": "Self-advection of diffused velocity",
+        "expression": "v = advect.semi_lagrangian(v, v, dt=dt)",
+        "reads": [
+          {
+            "id": "dkg:ground_truth_domains:reference:burgers2d:ground_truth:field:velocity",
+            "name": "velocity",
+            "kind": "FieldSpec",
+            "variable": "v",
+            "state_version": 1,
+            "analysis": "AST name load within one update",
+            "provenance": {
+              "source_path": "test_burgers2d/burgers2d_ground_truth.py",
+              "source_lines": [
+                7,
+                7
+              ],
+              "source_sha256": "83a31cd673dfc671662a2efc77d28c79fd3c2ade31a8e4534ebb3529174f280e",
+              "evidence_kind": "interpretation",
+              "review_status": "draft"
+            }
+          }
+        ],
+        "writes": [
+          {
+            "id": "dkg:ground_truth_domains:reference:burgers2d:ground_truth:field:velocity",
+            "name": "velocity",
+            "kind": "FieldSpec",
+            "variable": "v",
+            "state_version": 2,
+            "analysis": "AST assignment or configured return target",
+            "provenance": {
+              "source_path": "test_burgers2d/burgers2d_ground_truth.py",
+              "source_lines": [
+                7,
+                7
+              ],
+              "source_sha256": "83a31cd673dfc671662a2efc77d28c79fd3c2ade31a8e4534ebb3529174f280e",
+              "evidence_kind": "interpretation",
+              "review_status": "draft"
+            }
+          }
+        ],
+        "source_path": "test_burgers2d/burgers2d_ground_truth.py",
+        "source_lines": [
+          7,
+          7
+        ],
+        "source_sha256": "83a31cd673dfc671662a2efc77d28c79fd3c2ade31a8e4534ebb3529174f280e",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "heat_flow",
+        "reference_id": "dkg:ground_truth_domains:reference:heat_flow:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_id": "dkg:ground_truth_domains:reference:heat_flow:ground_truth:step:diffusion",
+        "order": 0,
+        "name": "Implicit diffusion with spatial conductivity",
+        "expression": "return diffuse.implicit(t, conductivity, dt)",
+        "reads": [
+          {
+            "id": "dkg:ground_truth_domains:reference:heat_flow:ground_truth:field:conductivity",
+            "name": "conductivity",
+            "kind": "FieldSpec",
+            "variable": "conductivity",
+            "state_version": 0,
+            "analysis": "AST name load within one update",
+            "provenance": {
+              "source_path": "test_heat_flow/heat_flow_ground_truth.py",
+              "source_lines": [
+                5,
+                5
+              ],
+              "source_sha256": "838e8888091f80f1e9cf2f32c11bc575893551a97d04af8b6efcaba5fb19cf3d",
+              "evidence_kind": "interpretation",
+              "review_status": "draft"
+            }
+          },
+          {
+            "id": "dkg:ground_truth_domains:reference:heat_flow:ground_truth:field:temperature",
+            "name": "temperature",
+            "kind": "FieldSpec",
+            "variable": "t",
+            "state_version": 0,
+            "analysis": "AST name load within one update",
+            "provenance": {
+              "source_path": "test_heat_flow/heat_flow_ground_truth.py",
+              "source_lines": [
+                5,
+                5
+              ],
+              "source_sha256": "838e8888091f80f1e9cf2f32c11bc575893551a97d04af8b6efcaba5fb19cf3d",
+              "evidence_kind": "interpretation",
+              "review_status": "draft"
+            }
+          }
+        ],
+        "writes": [
+          {
+            "id": "dkg:ground_truth_domains:reference:heat_flow:ground_truth:field:temperature",
+            "name": "temperature",
+            "kind": "FieldSpec",
+            "variable": "temperature",
+            "state_version": 1,
+            "analysis": "AST assignment or configured return target",
+            "provenance": {
+              "source_path": "test_heat_flow/heat_flow_ground_truth.py",
+              "source_lines": [
+                5,
+                5
+              ],
+              "source_sha256": "838e8888091f80f1e9cf2f32c11bc575893551a97d04af8b6efcaba5fb19cf3d",
+              "evidence_kind": "interpretation",
+              "review_status": "draft"
+            }
+          }
+        ],
+        "source_path": "test_heat_flow/heat_flow_ground_truth.py",
+        "source_lines": [
+          5,
+          5
+        ],
+        "source_sha256": "838e8888091f80f1e9cf2f32c11bc575893551a97d04af8b6efcaba5fb19cf3d",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "reference_id": "dkg:ground_truth_domains:reference:julia_set:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_id": "dkg:ground_truth_domains:reference:julia_set:ground_truth:step:rotating_parameter",
+        "order": 0,
+        "name": "Compute rotating complex parameter",
+        "expression": "c = 0.7885 * cmath.exp(1j * 2 * cmath.pi * step / steps)",
+        "reads": [],
+        "writes": [
+          {
+            "id": "dkg:ground_truth_domains:reference:julia_set:ground_truth:value:c",
+            "name": "c",
+            "kind": "ValueSpec",
+            "variable": "c",
+            "state_version": 1,
+            "analysis": "AST assignment or configured return target",
+            "provenance": {
+              "source_path": "test_julia_set/julia_set_ground_truth.py",
+              "source_lines": [
+                22,
+                22
+              ],
+              "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+              "evidence_kind": "interpretation",
+              "review_status": "draft"
+            }
+          }
+        ],
+        "source_path": "test_julia_set/julia_set_ground_truth.py",
+        "source_lines": [
+          22,
+          22
+        ],
+        "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "reference_id": "dkg:ground_truth_domains:reference:julia_set:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_id": "dkg:ground_truth_domains:reference:julia_set:ground_truth:step:quadratic_update",
+        "order": 1,
+        "name": "Update persistent complex state",
+        "expression": "z = z ** 2 + c",
+        "reads": [
+          {
+            "id": "dkg:ground_truth_domains:reference:julia_set:ground_truth:field:complex_state",
+            "name": "complex_state",
+            "kind": "FieldSpec",
+            "variable": "z",
+            "state_version": 0,
+            "analysis": "AST name load within one update",
+            "provenance": {
+              "source_path": "test_julia_set/julia_set_ground_truth.py",
+              "source_lines": [
+                23,
+                23
+              ],
+              "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+              "evidence_kind": "interpretation",
+              "review_status": "draft"
+            }
+          },
+          {
+            "id": "dkg:ground_truth_domains:reference:julia_set:ground_truth:value:c",
+            "name": "c",
+            "kind": "ValueSpec",
+            "variable": "c",
+            "state_version": 1,
+            "analysis": "AST name load within one update",
+            "provenance": {
+              "source_path": "test_julia_set/julia_set_ground_truth.py",
+              "source_lines": [
+                23,
+                23
+              ],
+              "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+              "evidence_kind": "interpretation",
+              "review_status": "draft"
+            }
+          }
+        ],
+        "writes": [
+          {
+            "id": "dkg:ground_truth_domains:reference:julia_set:ground_truth:field:complex_state",
+            "name": "complex_state",
+            "kind": "FieldSpec",
+            "variable": "z",
+            "state_version": 1,
+            "analysis": "AST assignment or configured return target",
+            "provenance": {
+              "source_path": "test_julia_set/julia_set_ground_truth.py",
+              "source_lines": [
+                23,
+                23
+              ],
+              "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+              "evidence_kind": "interpretation",
+              "review_status": "draft"
+            }
+          }
+        ],
+        "source_path": "test_julia_set/julia_set_ground_truth.py",
+        "source_lines": [
+          23,
+          23
+        ],
+        "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "reference_id": "dkg:ground_truth_domains:reference:julia_set:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_id": "dkg:ground_truth_domains:reference:julia_set:ground_truth:step:threshold_count",
+        "order": 2,
+        "name": "Accumulate strict magnitude threshold",
+        "expression": "escape_count = escape_count + (abs(z) < 2)",
+        "reads": [
+          {
+            "id": "dkg:ground_truth_domains:reference:julia_set:ground_truth:field:complex_state",
+            "name": "complex_state",
+            "kind": "FieldSpec",
+            "variable": "z",
+            "state_version": 1,
+            "analysis": "AST name load within one update",
+            "provenance": {
+              "source_path": "test_julia_set/julia_set_ground_truth.py",
+              "source_lines": [
+                24,
+                24
+              ],
+              "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+              "evidence_kind": "interpretation",
+              "review_status": "draft"
+            }
+          },
+          {
+            "id": "dkg:ground_truth_domains:reference:julia_set:ground_truth:field:threshold_count",
+            "name": "threshold_count",
+            "kind": "FieldSpec",
+            "variable": "escape_count",
+            "state_version": 0,
+            "analysis": "AST name load within one update",
+            "provenance": {
+              "source_path": "test_julia_set/julia_set_ground_truth.py",
+              "source_lines": [
+                24,
+                24
+              ],
+              "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+              "evidence_kind": "interpretation",
+              "review_status": "draft"
+            }
+          }
+        ],
+        "writes": [
+          {
+            "id": "dkg:ground_truth_domains:reference:julia_set:ground_truth:field:threshold_count",
+            "name": "threshold_count",
+            "kind": "FieldSpec",
+            "variable": "escape_count",
+            "state_version": 1,
+            "analysis": "AST assignment or configured return target",
+            "provenance": {
+              "source_path": "test_julia_set/julia_set_ground_truth.py",
+              "source_lines": [
+                24,
+                24
+              ],
+              "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+              "evidence_kind": "interpretation",
+              "review_status": "draft"
+            }
+          }
+        ],
+        "source_path": "test_julia_set/julia_set_ground_truth.py",
+        "source_lines": [
+          24,
+          24
+        ],
+        "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth:step:cache_reaction",
+        "order": 0,
+        "name": "Cache reaction from old u and v",
+        "expression": "reaction = u * v ** 2",
+        "reads": [
+          {
+            "id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth:field:u",
+            "name": "u",
+            "kind": "FieldSpec",
+            "variable": "u",
+            "state_version": 0,
+            "analysis": "AST name load within one update",
+            "provenance": {
+              "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+              "source_lines": [
+                31,
+                31
+              ],
+              "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+              "evidence_kind": "interpretation",
+              "review_status": "draft"
+            }
+          },
+          {
+            "id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth:field:v",
+            "name": "v",
+            "kind": "FieldSpec",
+            "variable": "v",
+            "state_version": 0,
+            "analysis": "AST name load within one update",
+            "provenance": {
+              "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+              "source_lines": [
+                31,
+                31
+              ],
+              "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+              "evidence_kind": "interpretation",
+              "review_status": "draft"
+            }
+          }
+        ],
+        "writes": [
+          {
+            "id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth:value:reaction",
+            "name": "reaction",
+            "kind": "ValueSpec",
+            "variable": "reaction",
+            "state_version": 1,
+            "analysis": "AST assignment or configured return target",
+            "provenance": {
+              "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+              "source_lines": [
+                31,
+                31
+              ],
+              "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+              "evidence_kind": "interpretation",
+              "review_status": "draft"
+            }
+          }
+        ],
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          31,
+          31
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth:step:update_u",
+        "order": 1,
+        "name": "Explicit update of u",
+        "expression": "u = u + dt * (Du * field.laplace(u) - reaction + feed_rate * (1 - u))",
+        "reads": [
+          {
+            "id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth:field:u",
+            "name": "u",
+            "kind": "FieldSpec",
+            "variable": "u",
+            "state_version": 0,
+            "analysis": "AST name load within one update",
+            "provenance": {
+              "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+              "source_lines": [
+                32,
+                32
+              ],
+              "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+              "evidence_kind": "interpretation",
+              "review_status": "draft"
+            }
+          },
+          {
+            "id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth:value:reaction",
+            "name": "reaction",
+            "kind": "ValueSpec",
+            "variable": "reaction",
+            "state_version": 1,
+            "analysis": "AST name load within one update",
+            "provenance": {
+              "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+              "source_lines": [
+                32,
+                32
+              ],
+              "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+              "evidence_kind": "interpretation",
+              "review_status": "draft"
+            }
+          }
+        ],
+        "writes": [
+          {
+            "id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth:field:u",
+            "name": "u",
+            "kind": "FieldSpec",
+            "variable": "u",
+            "state_version": 1,
+            "analysis": "AST assignment or configured return target",
+            "provenance": {
+              "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+              "source_lines": [
+                32,
+                32
+              ],
+              "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+              "evidence_kind": "interpretation",
+              "review_status": "draft"
+            }
+          }
+        ],
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          32,
+          32
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth:step:update_v",
+        "order": 2,
+        "name": "Explicit update of v using cached reaction",
+        "expression": "v = v + dt * (Dv * field.laplace(v) + reaction - (feed_rate + kill_rate) * v)",
+        "reads": [
+          {
+            "id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth:field:v",
+            "name": "v",
+            "kind": "FieldSpec",
+            "variable": "v",
+            "state_version": 0,
+            "analysis": "AST name load within one update",
+            "provenance": {
+              "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+              "source_lines": [
+                33,
+                33
+              ],
+              "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+              "evidence_kind": "interpretation",
+              "review_status": "draft"
+            }
+          },
+          {
+            "id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth:value:reaction",
+            "name": "reaction",
+            "kind": "ValueSpec",
+            "variable": "reaction",
+            "state_version": 1,
+            "analysis": "AST name load within one update",
+            "provenance": {
+              "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+              "source_lines": [
+                33,
+                33
+              ],
+              "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+              "evidence_kind": "interpretation",
+              "review_status": "draft"
+            }
+          }
+        ],
+        "writes": [
+          {
+            "id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth:field:v",
+            "name": "v",
+            "kind": "FieldSpec",
+            "variable": "v",
+            "state_version": 1,
+            "analysis": "AST assignment or configured return target",
+            "provenance": {
+              "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+              "source_lines": [
+                33,
+                33
+              ],
+              "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+              "evidence_kind": "interpretation",
+              "review_status": "draft"
+            }
+          }
+        ],
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          33,
+          33
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      }
+    ],
+    "domain_dependencies": [
+      {
+        "domain": "burgers2d",
+        "reference_id": "dkg:ground_truth_domains:reference:burgers2d:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 0,
+        "step_name": "Implicit diffusion",
+        "relationship": "READS",
+        "target": "velocity",
+        "target_kind": "FieldSpec",
+        "variable": "v",
+        "state_version": 0,
+        "source_path": "test_burgers2d/burgers2d_ground_truth.py",
+        "source_lines": [
+          6,
+          6
+        ],
+        "source_sha256": "83a31cd673dfc671662a2efc77d28c79fd3c2ade31a8e4534ebb3529174f280e",
+        "evidence_kind": "interpretation",
+        "review_status": "draft"
+      },
+      {
+        "domain": "burgers2d",
+        "reference_id": "dkg:ground_truth_domains:reference:burgers2d:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 0,
+        "step_name": "Implicit diffusion",
+        "relationship": "WRITES",
+        "target": "velocity",
+        "target_kind": "FieldSpec",
+        "variable": "v",
+        "state_version": 1,
+        "source_path": "test_burgers2d/burgers2d_ground_truth.py",
+        "source_lines": [
+          6,
+          6
+        ],
+        "source_sha256": "83a31cd673dfc671662a2efc77d28c79fd3c2ade31a8e4534ebb3529174f280e",
+        "evidence_kind": "interpretation",
+        "review_status": "draft"
+      },
+      {
+        "domain": "burgers2d",
+        "reference_id": "dkg:ground_truth_domains:reference:burgers2d:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 0,
+        "step_name": "Implicit diffusion",
+        "relationship": "USES_PARAMETER",
+        "target": "dt",
+        "target_kind": "ParameterSpec",
+        "variable": "dt",
+        "state_version": null,
+        "source_path": "test_burgers2d/burgers2d_ground_truth.py",
+        "source_lines": [
+          6,
+          6
+        ],
+        "source_sha256": "83a31cd673dfc671662a2efc77d28c79fd3c2ade31a8e4534ebb3529174f280e",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "burgers2d",
+        "reference_id": "dkg:ground_truth_domains:reference:burgers2d:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 1,
+        "step_name": "Self-advection of diffused velocity",
+        "relationship": "READS",
+        "target": "velocity",
+        "target_kind": "FieldSpec",
+        "variable": "v",
+        "state_version": 1,
+        "source_path": "test_burgers2d/burgers2d_ground_truth.py",
+        "source_lines": [
+          7,
+          7
+        ],
+        "source_sha256": "83a31cd673dfc671662a2efc77d28c79fd3c2ade31a8e4534ebb3529174f280e",
+        "evidence_kind": "interpretation",
+        "review_status": "draft"
+      },
+      {
+        "domain": "burgers2d",
+        "reference_id": "dkg:ground_truth_domains:reference:burgers2d:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 1,
+        "step_name": "Self-advection of diffused velocity",
+        "relationship": "WRITES",
+        "target": "velocity",
+        "target_kind": "FieldSpec",
+        "variable": "v",
+        "state_version": 2,
+        "source_path": "test_burgers2d/burgers2d_ground_truth.py",
+        "source_lines": [
+          7,
+          7
+        ],
+        "source_sha256": "83a31cd673dfc671662a2efc77d28c79fd3c2ade31a8e4534ebb3529174f280e",
+        "evidence_kind": "interpretation",
+        "review_status": "draft"
+      },
+      {
+        "domain": "burgers2d",
+        "reference_id": "dkg:ground_truth_domains:reference:burgers2d:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 1,
+        "step_name": "Self-advection of diffused velocity",
+        "relationship": "USES_PARAMETER",
+        "target": "dt",
+        "target_kind": "ParameterSpec",
+        "variable": "dt",
+        "state_version": null,
+        "source_path": "test_burgers2d/burgers2d_ground_truth.py",
+        "source_lines": [
+          7,
+          7
+        ],
+        "source_sha256": "83a31cd673dfc671662a2efc77d28c79fd3c2ade31a8e4534ebb3529174f280e",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "heat_flow",
+        "reference_id": "dkg:ground_truth_domains:reference:heat_flow:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 0,
+        "step_name": "Implicit diffusion with spatial conductivity",
+        "relationship": "READS",
+        "target": "conductivity",
+        "target_kind": "FieldSpec",
+        "variable": "conductivity",
+        "state_version": 0,
+        "source_path": "test_heat_flow/heat_flow_ground_truth.py",
+        "source_lines": [
+          5,
+          5
+        ],
+        "source_sha256": "838e8888091f80f1e9cf2f32c11bc575893551a97d04af8b6efcaba5fb19cf3d",
+        "evidence_kind": "interpretation",
+        "review_status": "draft"
+      },
+      {
+        "domain": "heat_flow",
+        "reference_id": "dkg:ground_truth_domains:reference:heat_flow:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 0,
+        "step_name": "Implicit diffusion with spatial conductivity",
+        "relationship": "READS",
+        "target": "temperature",
+        "target_kind": "FieldSpec",
+        "variable": "t",
+        "state_version": 0,
+        "source_path": "test_heat_flow/heat_flow_ground_truth.py",
+        "source_lines": [
+          5,
+          5
+        ],
+        "source_sha256": "838e8888091f80f1e9cf2f32c11bc575893551a97d04af8b6efcaba5fb19cf3d",
+        "evidence_kind": "interpretation",
+        "review_status": "draft"
+      },
+      {
+        "domain": "heat_flow",
+        "reference_id": "dkg:ground_truth_domains:reference:heat_flow:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 0,
+        "step_name": "Implicit diffusion with spatial conductivity",
+        "relationship": "WRITES",
+        "target": "temperature",
+        "target_kind": "FieldSpec",
+        "variable": "temperature",
+        "state_version": 1,
+        "source_path": "test_heat_flow/heat_flow_ground_truth.py",
+        "source_lines": [
+          5,
+          5
+        ],
+        "source_sha256": "838e8888091f80f1e9cf2f32c11bc575893551a97d04af8b6efcaba5fb19cf3d",
+        "evidence_kind": "interpretation",
+        "review_status": "draft"
+      },
+      {
+        "domain": "heat_flow",
+        "reference_id": "dkg:ground_truth_domains:reference:heat_flow:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 0,
+        "step_name": "Implicit diffusion with spatial conductivity",
+        "relationship": "USES_PARAMETER",
+        "target": "dt",
+        "target_kind": "ParameterSpec",
+        "variable": "dt",
+        "state_version": null,
+        "source_path": "test_heat_flow/heat_flow_ground_truth.py",
+        "source_lines": [
+          5,
+          5
+        ],
+        "source_sha256": "838e8888091f80f1e9cf2f32c11bc575893551a97d04af8b6efcaba5fb19cf3d",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "reference_id": "dkg:ground_truth_domains:reference:julia_set:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 0,
+        "step_name": "Compute rotating complex parameter",
+        "relationship": "WRITES",
+        "target": "c",
+        "target_kind": "ValueSpec",
+        "variable": "c",
+        "state_version": 1,
+        "source_path": "test_julia_set/julia_set_ground_truth.py",
+        "source_lines": [
+          22,
+          22
+        ],
+        "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+        "evidence_kind": "interpretation",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "reference_id": "dkg:ground_truth_domains:reference:julia_set:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 0,
+        "step_name": "Compute rotating complex parameter",
+        "relationship": "USES_PARAMETER",
+        "target": "steps",
+        "target_kind": "ParameterSpec",
+        "variable": "steps",
+        "state_version": null,
+        "source_path": "test_julia_set/julia_set_ground_truth.py",
+        "source_lines": [
+          22,
+          22
+        ],
+        "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "reference_id": "dkg:ground_truth_domains:reference:julia_set:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 1,
+        "step_name": "Update persistent complex state",
+        "relationship": "READS",
+        "target": "complex_state",
+        "target_kind": "FieldSpec",
+        "variable": "z",
+        "state_version": 0,
+        "source_path": "test_julia_set/julia_set_ground_truth.py",
+        "source_lines": [
+          23,
+          23
+        ],
+        "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+        "evidence_kind": "interpretation",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "reference_id": "dkg:ground_truth_domains:reference:julia_set:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 1,
+        "step_name": "Update persistent complex state",
+        "relationship": "READS",
+        "target": "c",
+        "target_kind": "ValueSpec",
+        "variable": "c",
+        "state_version": 1,
+        "source_path": "test_julia_set/julia_set_ground_truth.py",
+        "source_lines": [
+          23,
+          23
+        ],
+        "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+        "evidence_kind": "interpretation",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "reference_id": "dkg:ground_truth_domains:reference:julia_set:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 1,
+        "step_name": "Update persistent complex state",
+        "relationship": "WRITES",
+        "target": "complex_state",
+        "target_kind": "FieldSpec",
+        "variable": "z",
+        "state_version": 1,
+        "source_path": "test_julia_set/julia_set_ground_truth.py",
+        "source_lines": [
+          23,
+          23
+        ],
+        "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+        "evidence_kind": "interpretation",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "reference_id": "dkg:ground_truth_domains:reference:julia_set:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 2,
+        "step_name": "Accumulate strict magnitude threshold",
+        "relationship": "READS",
+        "target": "complex_state",
+        "target_kind": "FieldSpec",
+        "variable": "z",
+        "state_version": 1,
+        "source_path": "test_julia_set/julia_set_ground_truth.py",
+        "source_lines": [
+          24,
+          24
+        ],
+        "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+        "evidence_kind": "interpretation",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "reference_id": "dkg:ground_truth_domains:reference:julia_set:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 2,
+        "step_name": "Accumulate strict magnitude threshold",
+        "relationship": "READS",
+        "target": "threshold_count",
+        "target_kind": "FieldSpec",
+        "variable": "escape_count",
+        "state_version": 0,
+        "source_path": "test_julia_set/julia_set_ground_truth.py",
+        "source_lines": [
+          24,
+          24
+        ],
+        "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+        "evidence_kind": "interpretation",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "reference_id": "dkg:ground_truth_domains:reference:julia_set:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 2,
+        "step_name": "Accumulate strict magnitude threshold",
+        "relationship": "WRITES",
+        "target": "threshold_count",
+        "target_kind": "FieldSpec",
+        "variable": "escape_count",
+        "state_version": 1,
+        "source_path": "test_julia_set/julia_set_ground_truth.py",
+        "source_lines": [
+          24,
+          24
+        ],
+        "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+        "evidence_kind": "interpretation",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 0,
+        "step_name": "Cache reaction from old u and v",
+        "relationship": "READS",
+        "target": "u",
+        "target_kind": "FieldSpec",
+        "variable": "u",
+        "state_version": 0,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          31,
+          31
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "interpretation",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 0,
+        "step_name": "Cache reaction from old u and v",
+        "relationship": "READS",
+        "target": "v",
+        "target_kind": "FieldSpec",
+        "variable": "v",
+        "state_version": 0,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          31,
+          31
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "interpretation",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 0,
+        "step_name": "Cache reaction from old u and v",
+        "relationship": "WRITES",
+        "target": "reaction",
+        "target_kind": "ValueSpec",
+        "variable": "reaction",
+        "state_version": 1,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          31,
+          31
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "interpretation",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 1,
+        "step_name": "Explicit update of u",
+        "relationship": "READS",
+        "target": "u",
+        "target_kind": "FieldSpec",
+        "variable": "u",
+        "state_version": 0,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          32,
+          32
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "interpretation",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 1,
+        "step_name": "Explicit update of u",
+        "relationship": "READS",
+        "target": "reaction",
+        "target_kind": "ValueSpec",
+        "variable": "reaction",
+        "state_version": 1,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          32,
+          32
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "interpretation",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 1,
+        "step_name": "Explicit update of u",
+        "relationship": "WRITES",
+        "target": "u",
+        "target_kind": "FieldSpec",
+        "variable": "u",
+        "state_version": 1,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          32,
+          32
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "interpretation",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 1,
+        "step_name": "Explicit update of u",
+        "relationship": "USES_PARAMETER",
+        "target": "Du",
+        "target_kind": "ParameterSpec",
+        "variable": "Du",
+        "state_version": null,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          32,
+          32
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 1,
+        "step_name": "Explicit update of u",
+        "relationship": "USES_PARAMETER",
+        "target": "dt",
+        "target_kind": "ParameterSpec",
+        "variable": "dt",
+        "state_version": null,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          32,
+          32
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 1,
+        "step_name": "Explicit update of u",
+        "relationship": "USES_PARAMETER",
+        "target": "feed_rate",
+        "target_kind": "ParameterSpec",
+        "variable": "feed_rate",
+        "state_version": null,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          32,
+          32
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 2,
+        "step_name": "Explicit update of v using cached reaction",
+        "relationship": "READS",
+        "target": "v",
+        "target_kind": "FieldSpec",
+        "variable": "v",
+        "state_version": 0,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          33,
+          33
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "interpretation",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 2,
+        "step_name": "Explicit update of v using cached reaction",
+        "relationship": "READS",
+        "target": "reaction",
+        "target_kind": "ValueSpec",
+        "variable": "reaction",
+        "state_version": 1,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          33,
+          33
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "interpretation",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 2,
+        "step_name": "Explicit update of v using cached reaction",
+        "relationship": "WRITES",
+        "target": "v",
+        "target_kind": "FieldSpec",
+        "variable": "v",
+        "state_version": 1,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          33,
+          33
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "interpretation",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 2,
+        "step_name": "Explicit update of v using cached reaction",
+        "relationship": "USES_PARAMETER",
+        "target": "Dv",
+        "target_kind": "ParameterSpec",
+        "variable": "Dv",
+        "state_version": null,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          33,
+          33
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 2,
+        "step_name": "Explicit update of v using cached reaction",
+        "relationship": "USES_PARAMETER",
+        "target": "dt",
+        "target_kind": "ParameterSpec",
+        "variable": "dt",
+        "state_version": null,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          33,
+          33
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 2,
+        "step_name": "Explicit update of v using cached reaction",
+        "relationship": "USES_PARAMETER",
+        "target": "feed_rate",
+        "target_kind": "ParameterSpec",
+        "variable": "feed_rate",
+        "state_version": null,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          33,
+          33
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "step_order": 2,
+        "step_name": "Explicit update of v using cached reaction",
+        "relationship": "USES_PARAMETER",
+        "target": "kill_rate",
+        "target_kind": "ParameterSpec",
+        "variable": "kill_rate",
+        "state_version": null,
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          33,
+          33
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      }
+    ],
+    "domain_outputs": [
+      {
+        "domain": "burgers2d",
+        "reference_id": "dkg:ground_truth_domains:reference:burgers2d:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "velocity_trajectory",
+        "variable": "v_trj",
+        "axis_order": [
+          "time",
+          "x",
+          "y",
+          "vector"
+        ],
+        "initial_frame": "library_default",
+        "save_status": "explicit",
+        "artifact_observations": [
+          {
+            "id": "dkg:ground_truth_domains:artifact:test_burgers2d/burgers2d_ground_truth.npy",
+            "shape": [
+              101,
+              64,
+              64,
+              2
+            ],
+            "dtype": "<f4",
+            "header_sha256": "4a0d2100ce8949a1e808c67a04ea69e54a570d17423a3aa15af612d3055ffd57",
+            "provenance_status": "production_history_unverified",
+            "provenance": {
+              "source_path": "test_burgers2d/burgers2d_ground_truth.npy",
+              "source_lines": [],
+              "evidence_kind": "artifact_observation",
+              "review_status": "draft"
+            }
+          },
+          {
+            "id": "dkg:ground_truth_domains:artifact:test_burgers2d/burgers2d_ground_truth_trj.npy",
+            "shape": [
+              101,
+              64,
+              64,
+              2
+            ],
+            "dtype": "<f4",
+            "header_sha256": "4a0d2100ce8949a1e808c67a04ea69e54a570d17423a3aa15af612d3055ffd57",
+            "provenance_status": "production_history_unverified",
+            "provenance": {
+              "source_path": "test_burgers2d/burgers2d_ground_truth_trj.npy",
+              "source_lines": [],
+              "evidence_kind": "artifact_observation",
+              "review_status": "draft"
+            }
+          }
+        ],
+        "source_path": "test_burgers2d/burgers2d_ground_truth.py",
+        "source_lines": [
+          11,
+          11
+        ],
+        "source_sha256": "83a31cd673dfc671662a2efc77d28c79fd3c2ade31a8e4534ebb3529174f280e",
+        "evidence_kind": "source_fact",
+        "review_status": "draft",
+        "reference_only_not_task_output_contract": true
+      },
+      {
+        "domain": "heat_flow",
+        "reference_id": "dkg:ground_truth_domains:reference:heat_flow:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "temperature_trajectory",
+        "variable": "v_trj",
+        "axis_order": [
+          "time",
+          "x",
+          "y"
+        ],
+        "initial_frame": "library_default",
+        "save_status": "explicit",
+        "artifact_observations": [
+          {
+            "id": "dkg:ground_truth_domains:artifact:test_heat_flow/heat_flow_ground_truth.npy",
+            "shape": [
+              101,
+              100,
+              50
+            ],
+            "dtype": "<f4",
+            "header_sha256": "3dd653994ce2d584fa0b6fc53956e8d50d131a892af0f0174bc34257026feafb",
+            "provenance_status": "production_history_unverified",
+            "provenance": {
+              "source_path": "test_heat_flow/heat_flow_ground_truth.npy",
+              "source_lines": [],
+              "evidence_kind": "artifact_observation",
+              "review_status": "draft"
+            }
+          },
+          {
+            "id": "dkg:ground_truth_domains:artifact:test_heat_flow/heat_flow_ground_truth_trj.npy",
+            "shape": [
+              101,
+              100,
+              50
+            ],
+            "dtype": "<f4",
+            "header_sha256": "3dd653994ce2d584fa0b6fc53956e8d50d131a892af0f0174bc34257026feafb",
+            "provenance_status": "production_history_unverified",
+            "provenance": {
+              "source_path": "test_heat_flow/heat_flow_ground_truth_trj.npy",
+              "source_lines": [],
+              "evidence_kind": "artifact_observation",
+              "review_status": "draft"
+            }
+          }
+        ],
+        "source_path": "test_heat_flow/heat_flow_ground_truth.py",
+        "source_lines": [
+          16,
+          16
+        ],
+        "source_sha256": "838e8888091f80f1e9cf2f32c11bc575893551a97d04af8b6efcaba5fb19cf3d",
+        "evidence_kind": "source_fact",
+        "review_status": "draft",
+        "reference_only_not_task_output_contract": true
+      },
+      {
+        "domain": "julia_set",
+        "reference_id": "dkg:ground_truth_domains:reference:julia_set:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "count_trajectory",
+        "variable": "v_trj",
+        "axis_order": [
+          "time",
+          "x",
+          "y"
+        ],
+        "initial_frame": "excluded_by_profile",
+        "save_status": "not_explicit",
+        "artifact_observations": [
+          {
+            "id": "dkg:ground_truth_domains:artifact:test_julia_set/julia_set_ground_truth_trj.npy",
+            "shape": [
+              100,
+              256,
+              256
+            ],
+            "dtype": "<f4",
+            "header_sha256": "8a21bb49213145c53f0aa79ddfcb1fdae0bb1de3b9ceeb4ef4e349b766037cdb",
+            "provenance_status": "production_history_unverified",
+            "provenance": {
+              "source_path": "test_julia_set/julia_set_ground_truth_trj.npy",
+              "source_lines": [],
+              "evidence_kind": "artifact_observation",
+              "review_status": "draft"
+            }
+          }
+        ],
+        "source_path": "test_julia_set/julia_set_ground_truth.py",
+        "source_lines": [
+          27,
+          27
+        ],
+        "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+        "evidence_kind": "source_fact",
+        "review_status": "draft",
+        "reference_only_not_task_output_contract": true
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "u_trajectory",
+        "variable": "u_trj",
+        "axis_order": [
+          "time",
+          "x",
+          "y"
+        ],
+        "initial_frame": "included_by_profile",
+        "save_status": "explicit",
+        "artifact_observations": [
+          {
+            "id": "dkg:ground_truth_domains:artifact:test_reaction_diffusion/reaction_diffusion_ground_truth_u_trj.npy",
+            "shape": [
+              101,
+              100,
+              100
+            ],
+            "dtype": "<f4",
+            "header_sha256": "15ede6069bff429ec97d8b904ad43fb9d0a98e01dc9956dd6fb0f15d95fafaea",
+            "provenance_status": "production_history_unverified",
+            "provenance": {
+              "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth_u_trj.npy",
+              "source_lines": [],
+              "evidence_kind": "artifact_observation",
+              "review_status": "draft"
+            }
+          }
+        ],
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          37,
+          37
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft",
+        "reference_only_not_task_output_contract": true
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "v_trajectory",
+        "variable": "v_trj",
+        "axis_order": [
+          "time",
+          "x",
+          "y"
+        ],
+        "initial_frame": "included_by_profile",
+        "save_status": "explicit",
+        "artifact_observations": [
+          {
+            "id": "dkg:ground_truth_domains:artifact:test_reaction_diffusion/reaction_diffusion_ground_truth_v_trj.npy",
+            "shape": [
+              101,
+              100,
+              100
+            ],
+            "dtype": "<f4",
+            "header_sha256": "15ede6069bff429ec97d8b904ad43fb9d0a98e01dc9956dd6fb0f15d95fafaea",
+            "provenance_status": "production_history_unverified",
+            "provenance": {
+              "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth_v_trj.npy",
+              "source_lines": [],
+              "evidence_kind": "artifact_observation",
+              "review_status": "draft"
+            }
+          }
+        ],
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          38,
+          38
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft",
+        "reference_only_not_task_output_contract": true
+      }
+    ],
+    "domain_api_coverage": [
+      {
+        "domain": "burgers2d",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "verified_local_static_definition",
+        "observed_call": "CenteredGrid",
+        "qualified_name": "phi.field._grid.CenteredGrid",
+        "configured_aliases": [
+          "phi.field.CenteredGrid"
+        ],
+        "component_type": "Function",
+        "definition_path": "phi/field/_grid.py",
+        "reason": null,
+        "source_path": "phiflow/phi/field/_grid.py",
+        "source_lines": [
+          21,
+          86
+        ],
+        "source_sha256": "ad4071e74714652214d26c4f4476c1f1332cc4699fd8deec4a7ce22f5a75af79",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "burgers2d",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "verified_local_static_definition",
+        "observed_call": "Noise",
+        "qualified_name": "phi.field._noise.Noise",
+        "configured_aliases": [
+          "phi.field.Noise"
+        ],
+        "component_type": "Class",
+        "definition_path": "phi/field/_noise.py",
+        "reason": null,
+        "source_path": "phiflow/phi/field/_noise.py",
+        "source_lines": [
+          9,
+          60
+        ],
+        "source_sha256": "6c0fbef39b24f0e68a03994ab8a55f118d23ae85ec142e7d80c84880ed51ac73",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "burgers2d",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "verified_local_static_definition",
+        "observed_call": "Box",
+        "qualified_name": "phi.geom._box.Box",
+        "configured_aliases": [
+          "phi.geom.Box"
+        ],
+        "component_type": "Class",
+        "definition_path": "phi/geom/_box.py",
+        "reason": null,
+        "source_path": "phiflow/phi/geom/_box.py",
+        "source_lines": [
+          46,
+          358
+        ],
+        "source_sha256": "a5ea440de4b9d7a9d0574077eda6ee1ec0d8df64e13ea0e126e977f8138c37b8",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "burgers2d",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "verified_local_static_definition",
+        "observed_call": "advect.semi_lagrangian",
+        "qualified_name": "phi.physics.advect.semi_lagrangian",
+        "configured_aliases": [
+          "phi.physics.advect.semi_lagrangian"
+        ],
+        "component_type": "Function",
+        "definition_path": "phi/physics/advect.py",
+        "reason": null,
+        "source_path": "phiflow/phi/physics/advect.py",
+        "source_lines": [
+          156,
+          179
+        ],
+        "source_sha256": "6b71c0d23b6685695fa15a965d00b760afa9c0696676d5dc04161c30ea58ad73",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "burgers2d",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "verified_local_static_definition",
+        "observed_call": "diffuse.implicit",
+        "qualified_name": "phi.physics.diffuse.implicit",
+        "configured_aliases": [
+          "phi.physics.diffuse.implicit"
+        ],
+        "component_type": "Function",
+        "definition_path": "phi/physics/diffuse.py",
+        "reason": null,
+        "source_path": "phiflow/phi/physics/diffuse.py",
+        "source_lines": [
+          63,
+          95
+        ],
+        "source_sha256": "6642729d4989dbb4dcd9fe3e970ca3d8754c8d64a766d2260a48057ed1f2131c",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "burgers2d",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "unresolved_candidate_only",
+        "observed_call": "batch",
+        "qualified_name": null,
+        "configured_aliases": null,
+        "component_type": null,
+        "definition_path": null,
+        "reason": "External API, instance method, or alias without a local definition",
+        "source_path": "test_burgers2d/burgers2d_ground_truth.py",
+        "source_lines": [
+          11,
+          11
+        ],
+        "source_sha256": "83a31cd673dfc671662a2efc77d28c79fd3c2ade31a8e4534ebb3529174f280e",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "burgers2d",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "unresolved_candidate_only",
+        "observed_call": "iterate",
+        "qualified_name": null,
+        "configured_aliases": null,
+        "component_type": null,
+        "definition_path": null,
+        "reason": "External API, instance method, or alias without a local definition",
+        "source_path": "test_burgers2d/burgers2d_ground_truth.py",
+        "source_lines": [
+          11,
+          11
+        ],
+        "source_sha256": "83a31cd673dfc671662a2efc77d28c79fd3c2ade31a8e4534ebb3529174f280e",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "burgers2d",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "unresolved_candidate_only",
+        "observed_call": "np.save",
+        "qualified_name": null,
+        "configured_aliases": null,
+        "component_type": null,
+        "definition_path": null,
+        "reason": "External API, instance method, or alias without a local definition",
+        "source_path": "test_burgers2d/burgers2d_ground_truth.py",
+        "source_lines": [
+          13,
+          13
+        ],
+        "source_sha256": "83a31cd673dfc671662a2efc77d28c79fd3c2ade31a8e4534ebb3529174f280e",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "burgers2d",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "unresolved_candidate_only",
+        "observed_call": "v_trj.values.numpy",
+        "qualified_name": null,
+        "configured_aliases": null,
+        "component_type": null,
+        "definition_path": null,
+        "reason": "External API, instance method, or alias without a local definition",
+        "source_path": "test_burgers2d/burgers2d_ground_truth.py",
+        "source_lines": [
+          13,
+          13
+        ],
+        "source_sha256": "83a31cd673dfc671662a2efc77d28c79fd3c2ade31a8e4534ebb3529174f280e",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "heat_flow",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "verified_local_static_definition",
+        "observed_call": "CenteredGrid",
+        "qualified_name": "phi.field._grid.CenteredGrid",
+        "configured_aliases": [
+          "phi.field.CenteredGrid"
+        ],
+        "component_type": "Function",
+        "definition_path": "phi/field/_grid.py",
+        "reason": null,
+        "source_path": "phiflow/phi/field/_grid.py",
+        "source_lines": [
+          21,
+          86
+        ],
+        "source_sha256": "ad4071e74714652214d26c4f4476c1f1332cc4699fd8deec4a7ce22f5a75af79",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "heat_flow",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "verified_local_static_definition",
+        "observed_call": "Box",
+        "qualified_name": "phi.geom._box.Box",
+        "configured_aliases": [
+          "phi.geom.Box"
+        ],
+        "component_type": "Class",
+        "definition_path": "phi/geom/_box.py",
+        "reason": null,
+        "source_path": "phiflow/phi/geom/_box.py",
+        "source_lines": [
+          46,
+          358
+        ],
+        "source_sha256": "a5ea440de4b9d7a9d0574077eda6ee1ec0d8df64e13ea0e126e977f8138c37b8",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "heat_flow",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "verified_local_static_definition",
+        "observed_call": "union",
+        "qualified_name": "phi.geom._geom_ops.union",
+        "configured_aliases": [
+          "phi.geom.union"
+        ],
+        "component_type": "Function",
+        "definition_path": "phi/geom/_geom_ops.py",
+        "reason": null,
+        "source_path": "phiflow/phi/geom/_geom_ops.py",
+        "source_lines": [
+          297,
+          319
+        ],
+        "source_sha256": "4167d655d79449a09936e85a5e2af9a452e7b0cc894a06d8c4d5dae32f3274c4",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "heat_flow",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "verified_local_static_definition",
+        "observed_call": "diffuse.implicit",
+        "qualified_name": "phi.physics.diffuse.implicit",
+        "configured_aliases": [
+          "phi.physics.diffuse.implicit"
+        ],
+        "component_type": "Function",
+        "definition_path": "phi/physics/diffuse.py",
+        "reason": null,
+        "source_path": "phiflow/phi/physics/diffuse.py",
+        "source_lines": [
+          63,
+          95
+        ],
+        "source_sha256": "6642729d4989dbb4dcd9fe3e970ca3d8754c8d64a766d2260a48057ed1f2131c",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "heat_flow",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "unresolved_candidate_only",
+        "observed_call": "batch",
+        "qualified_name": null,
+        "configured_aliases": null,
+        "component_type": null,
+        "definition_path": null,
+        "reason": "External API, instance method, or alias without a local definition",
+        "source_path": "test_heat_flow/heat_flow_ground_truth.py",
+        "source_lines": [
+          16,
+          16
+        ],
+        "source_sha256": "838e8888091f80f1e9cf2f32c11bc575893551a97d04af8b6efcaba5fb19cf3d",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "heat_flow",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "unresolved_candidate_only",
+        "observed_call": "iterate",
+        "qualified_name": null,
+        "configured_aliases": null,
+        "component_type": null,
+        "definition_path": null,
+        "reason": "External API, instance method, or alias without a local definition",
+        "source_path": "test_heat_flow/heat_flow_ground_truth.py",
+        "source_lines": [
+          16,
+          16
+        ],
+        "source_sha256": "838e8888091f80f1e9cf2f32c11bc575893551a97d04af8b6efcaba5fb19cf3d",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "heat_flow",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "unresolved_candidate_only",
+        "observed_call": "np.save",
+        "qualified_name": null,
+        "configured_aliases": null,
+        "component_type": null,
+        "definition_path": null,
+        "reason": "External API, instance method, or alias without a local definition",
+        "source_path": "test_heat_flow/heat_flow_ground_truth.py",
+        "source_lines": [
+          17,
+          17
+        ],
+        "source_sha256": "838e8888091f80f1e9cf2f32c11bc575893551a97d04af8b6efcaba5fb19cf3d",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "heat_flow",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "unresolved_candidate_only",
+        "observed_call": "v_trj.values.numpy",
+        "qualified_name": null,
+        "configured_aliases": null,
+        "component_type": null,
+        "definition_path": null,
+        "reason": "External API, instance method, or alias without a local definition",
+        "source_path": "test_heat_flow/heat_flow_ground_truth.py",
+        "source_lines": [
+          17,
+          17
+        ],
+        "source_sha256": "838e8888091f80f1e9cf2f32c11bc575893551a97d04af8b6efcaba5fb19cf3d",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "verified_local_static_definition",
+        "observed_call": "CenteredGrid",
+        "qualified_name": "phi.field._grid.CenteredGrid",
+        "configured_aliases": [
+          "phi.field.CenteredGrid"
+        ],
+        "component_type": "Function",
+        "definition_path": "phi/field/_grid.py",
+        "reason": null,
+        "source_path": "phiflow/phi/field/_grid.py",
+        "source_lines": [
+          21,
+          86
+        ],
+        "source_sha256": "ad4071e74714652214d26c4f4476c1f1332cc4699fd8deec4a7ce22f5a75af79",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "verified_local_static_definition",
+        "observed_call": "Box",
+        "qualified_name": "phi.geom._box.Box",
+        "configured_aliases": [
+          "phi.geom.Box"
+        ],
+        "component_type": "Class",
+        "definition_path": "phi/geom/_box.py",
+        "reason": null,
+        "source_path": "phiflow/phi/geom/_box.py",
+        "source_lines": [
+          46,
+          358
+        ],
+        "source_sha256": "a5ea440de4b9d7a9d0574077eda6ee1ec0d8df64e13ea0e126e977f8138c37b8",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "unresolved_candidate_only",
+        "observed_call": "abs",
+        "qualified_name": null,
+        "configured_aliases": null,
+        "component_type": null,
+        "definition_path": null,
+        "reason": "External API, instance method, or alias without a local definition",
+        "source_path": "test_julia_set/julia_set_ground_truth.py",
+        "source_lines": [
+          24,
+          24
+        ],
+        "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "unresolved_candidate_only",
+        "observed_call": "cmath.exp",
+        "qualified_name": null,
+        "configured_aliases": null,
+        "component_type": null,
+        "definition_path": null,
+        "reason": "External API, instance method, or alias without a local definition",
+        "source_path": "test_julia_set/julia_set_ground_truth.py",
+        "source_lines": [
+          22,
+          22
+        ],
+        "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "unresolved_candidate_only",
+        "observed_call": "math.zeros",
+        "qualified_name": null,
+        "configured_aliases": null,
+        "component_type": null,
+        "definition_path": null,
+        "reason": "External API, instance method, or alias without a local definition",
+        "source_path": "test_julia_set/julia_set_ground_truth.py",
+        "source_lines": [
+          18,
+          18
+        ],
+        "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "unresolved_candidate_only",
+        "observed_call": "np.stack",
+        "qualified_name": null,
+        "configured_aliases": null,
+        "component_type": null,
+        "definition_path": null,
+        "reason": "External API, instance method, or alias without a local definition",
+        "source_path": "test_julia_set/julia_set_ground_truth.py",
+        "source_lines": [
+          27,
+          27
+        ],
+        "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "unresolved_candidate_only",
+        "observed_call": "spatial",
+        "qualified_name": null,
+        "configured_aliases": null,
+        "component_type": null,
+        "definition_path": null,
+        "reason": "External API, instance method, or alias without a local definition",
+        "source_path": "test_julia_set/julia_set_ground_truth.py",
+        "source_lines": [
+          9,
+          9
+        ],
+        "source_sha256": "60d465609787726a0f6bd77db2a76716627f4c0a42b913ba44e9d9d22e4e7885",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "verified_local_static_definition",
+        "observed_call": "field.laplace",
+        "qualified_name": "phi.field._field_math.laplace",
+        "configured_aliases": [
+          "phi.field.laplace"
+        ],
+        "component_type": "Function",
+        "definition_path": "phi/field/_field_math.py",
+        "reason": null,
+        "source_path": "phiflow/phi/field/_field_math.py",
+        "source_lines": [
+          46,
+          145
+        ],
+        "source_sha256": "2a38e4f0d904cc1476ff4d1be2730b7dc07a3f85248792cb6fbbe57142d53224",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "verified_local_static_definition",
+        "observed_call": "CenteredGrid",
+        "qualified_name": "phi.field._grid.CenteredGrid",
+        "configured_aliases": [
+          "phi.field.CenteredGrid"
+        ],
+        "component_type": "Function",
+        "definition_path": "phi/field/_grid.py",
+        "reason": null,
+        "source_path": "phiflow/phi/field/_grid.py",
+        "source_lines": [
+          21,
+          86
+        ],
+        "source_sha256": "ad4071e74714652214d26c4f4476c1f1332cc4699fd8deec4a7ce22f5a75af79",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "verified_local_static_definition",
+        "observed_call": "Box",
+        "qualified_name": "phi.geom._box.Box",
+        "configured_aliases": [
+          "phi.geom.Box"
+        ],
+        "component_type": "Class",
+        "definition_path": "phi/geom/_box.py",
+        "reason": null,
+        "source_path": "phiflow/phi/geom/_box.py",
+        "source_lines": [
+          46,
+          358
+        ],
+        "source_sha256": "a5ea440de4b9d7a9d0574077eda6ee1ec0d8df64e13ea0e126e977f8138c37b8",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "unresolved_candidate_only",
+        "observed_call": "math.cos",
+        "qualified_name": null,
+        "configured_aliases": null,
+        "component_type": null,
+        "definition_path": null,
+        "reason": "External API, instance method, or alias without a local definition",
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          21,
+          21
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "unresolved_candidate_only",
+        "observed_call": "math.vec_length",
+        "qualified_name": null,
+        "configured_aliases": null,
+        "component_type": null,
+        "definition_path": null,
+        "reason": "External API, instance method, or alias without a local definition",
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          20,
+          20
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "unresolved_candidate_only",
+        "observed_call": "np.save",
+        "qualified_name": null,
+        "configured_aliases": null,
+        "component_type": null,
+        "definition_path": null,
+        "reason": "External API, instance method, or alias without a local definition",
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          41,
+          41
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "unresolved_candidate_only",
+        "observed_call": "np.stack",
+        "qualified_name": null,
+        "configured_aliases": null,
+        "component_type": null,
+        "definition_path": null,
+        "reason": "External API, instance method, or alias without a local definition",
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          38,
+          38
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "unresolved_candidate_only",
+        "observed_call": "spatial",
+        "qualified_name": null,
+        "configured_aliases": null,
+        "component_type": null,
+        "definition_path": null,
+        "reason": "External API, instance method, or alias without a local definition",
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          15,
+          15
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "verification_class": "unresolved_candidate_only",
+        "observed_call": "vec",
+        "qualified_name": null,
+        "configured_aliases": null,
+        "component_type": null,
+        "definition_path": null,
+        "reason": "External API, instance method, or alias without a local definition",
+        "source_path": "test_reaction_diffusion/reaction_diffusion_ground_truth.py",
+        "source_lines": [
+          19,
+          19
+        ],
+        "source_sha256": "18a9c71b5988c9231ab84b8fcf0d815e44ec565b5ffc201eeeffccedb7b80968",
+        "evidence_kind": "source_fact",
+        "review_status": "draft"
+      }
+    ],
+    "domain_guidance": [
+      {
+        "domain": "burgers2d",
+        "reference_id": "dkg:ground_truth_domains:reference:burgers2d:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "Context to give an LLM",
+        "text": "To reproduce this Burgers reference, construct a periodic, cell-centered 2D vector\nfield initialized with noise. Each update applies implicit diffusion first and\nthen semi-Lagrangian self-advection using the diffused field as both the advected\nquantity and the transport velocity. Preserve this order and the two vector\ncomponents. The initialization and method choices describe this reference run.",
+        "condition": "When planning or reproducing this reference",
+        "source_path": "knowledge_context/domains/burgers2d.md",
+        "source_lines": [
+          7,
+          14
+        ],
+        "source_sha256": "99d41753f73150db2ff12fc384388e7a115c498f9bb312e42d3d174b55207990",
+        "evidence_kind": "proposed_hint",
+        "review_status": "draft"
+      },
+      {
+        "domain": "burgers2d",
+        "reference_id": "dkg:ground_truth_domains:reference:burgers2d:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "Differences and unresolved details",
+        "text": "- `test/burgers2d.md` specifies a Gaussian initial expression. The labeled\n  reference instead uses `Noise(vector='x,y')`; use the latter for reproducing\n  this reference and retain the disagreement as separate evidence.\n- The task sheet requests `burgers2d_velocity_trj.npy`; the source explicitly\n  saves `<reference artifact>`. Output names depend on whether the current\n  request is reference reproduction or fulfillment of the task sheet.\n- The saved artifacts were not regenerated or compared numerically during this\n  extraction. Random seed, noise defaults, and solver defaults remain to be\n  recorded for exact reproduction.",
+        "condition": "When planning or reproducing this reference",
+        "source_path": "knowledge_context/domains/burgers2d.md",
+        "source_lines": [
+          76,
+          87
+        ],
+        "source_sha256": "99d41753f73150db2ff12fc384388e7a115c498f9bb312e42d3d174b55207990",
+        "evidence_kind": "unresolved",
+        "review_status": "draft"
+      },
+      {
+        "domain": "burgers2d",
+        "reference_id": "dkg:ground_truth_domains:reference:burgers2d:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "Retrieval hints",
+        "text": "- Semantic searches: periodic centered vector grid with noise initialization;\n  implicit vector diffusion followed by self-advection; named vector-channel\n  trajectory export.\n- API candidates observed in source: `CenteredGrid`, `Noise`, `Box`,\n  `diffuse.implicit`, `advect.semi_lagrangian`, `iterate`, `batch`.\n- Retrieve both numerical operations and the grid/initialization APIs. Retrieving\n  only an advection function leaves part of the reference recipe unspecified.",
+        "condition": "When planning or reproducing this reference",
+        "source_path": "knowledge_context/domains/burgers2d.md",
+        "source_lines": [
+          52,
+          61
+        ],
+        "source_sha256": "99d41753f73150db2ff12fc384388e7a115c498f9bb312e42d3d174b55207990",
+        "evidence_kind": "proposed_hint",
+        "review_status": "draft"
+      },
+      {
+        "domain": "heat_flow",
+        "reference_id": "dkg:ground_truth_domains:reference:heat_flow:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "Context to give an LLM",
+        "text": "To reproduce this heat-flow reference, use the JAX PhiFlow import, a zero-initialized\ncentered temperature field, mixed boundaries, and a spatial conductivity grid\nformed from two rectangular inclusions. Advance temperature with\n`diffuse.implicit(temperature, conductivity, dt)`. Preserve the conductivity as a\nfield and the different boundary settings on the two x faces and the y axis.",
+        "condition": "When planning or reproducing this reference",
+        "source_path": "knowledge_context/domains/heat_flow.md",
+        "source_lines": [
+          7,
+          14
+        ],
+        "source_sha256": "2957905d544ef1223380b889201296697b57793895d1b4ecfc112b47e9abb473",
+        "evidence_kind": "proposed_hint",
+        "review_status": "draft"
+      },
+      {
+        "domain": "heat_flow",
+        "reference_id": "dkg:ground_truth_domains:reference:heat_flow:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "Differences and unresolved details",
+        "text": "- `test/heat_flow.md` writes a PDE with only an x second derivative. The reference\n  calls `diffuse.implicit` without an explicit directional restriction. Preserve\n  that call when reproducing the reference and record the PDE/API interpretation\n  as a discrepancy to resolve against the matching library.\n- The task sheet requests `heat_flow_temperature_trj.npy`; the source saves\n  `<reference artifact>`.\n- No explicit solver configuration or dependency version is recorded. The source\n  uses JAX; backend substitution and solver-default changes need review when\n  exact reproduction matters.",
+        "condition": "When planning or reproducing this reference",
+        "source_path": "knowledge_context/domains/heat_flow.md",
+        "source_lines": [
+          81,
+          92
+        ],
+        "source_sha256": "2957905d544ef1223380b889201296697b57793895d1b4ecfc112b47e9abb473",
+        "evidence_kind": "unresolved",
+        "review_status": "draft"
+      },
+      {
+        "domain": "heat_flow",
+        "reference_id": "dkg:ground_truth_domains:reference:heat_flow:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "Retrieval hints",
+        "text": "- Semantic searches: implicit diffusion with a spatial coefficient field;\n  centered scalar grid with fixed left value, zero-gradient right boundary, and\n  periodic y boundaries; union of rectangular inclusions as a grid mask.\n- API candidates observed in source: `CenteredGrid`, `Box`, `union`,\n  `diffuse.implicit`, `iterate`, `batch`, `ZERO_GRADIENT`, `PERIODIC`.\n- Boundary constants are retrieval concepts even if the current code graph does\n  not represent them as searchable classes. Use semantic searches and verify\n  their exports rather than assuming a class node exists.",
+        "condition": "When planning or reproducing this reference",
+        "source_path": "knowledge_context/domains/heat_flow.md",
+        "source_lines": [
+          56,
+          66
+        ],
+        "source_sha256": "2957905d544ef1223380b889201296697b57793895d1b4ecfc112b47e9abb473",
+        "evidence_kind": "proposed_hint",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "reference_id": "dkg:ground_truth_domains:reference:julia_set:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "Context to give an LLM",
+        "text": "This reference constructs complex coordinates on a centered 2D grid, then evolves\none persistent complex state for 100 updates while rotating the parameter `c`.\nAfter each update it adds the Boolean condition `abs(z) < 2` to a cumulative\ncount and stores that count. It does not restart the complex state for each frame,\nfreeze escaped points, or run an inner escape loop. Preserve these details when\nreproducing this particular implementation.",
+        "condition": "When planning or reproducing this reference",
+        "source_path": "knowledge_context/domains/julia_set.md",
+        "source_lines": [
+          7,
+          15
+        ],
+        "source_sha256": "003dba0f842e6cadb680daf11e32e38ebac6d3a35d083452f1433ee97db3a0b1",
+        "evidence_kind": "proposed_hint",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "reference_id": "dkg:ground_truth_domains:reference:julia_set:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "Differences and unresolved details",
+        "text": "- `test/julia_set.md` mentions `N_escape=50`; the reference has no 50-iteration\n  inner loop or corresponding variable. Do not add one during reproduction.\n- The task requests `julia_set_domain_trj.npy`; the reference only computes\n  `v_trj`. Saving it is an additional output action when requested.\n- No dependency versions or numeric precision settings are specified. Arithmetic\n  behavior after large complex magnitudes has not been assessed in these notes.",
+        "condition": "When planning or reproducing this reference",
+        "source_path": "knowledge_context/domains/julia_set.md",
+        "source_lines": [
+          82,
+          90
+        ],
+        "source_sha256": "003dba0f842e6cadb680daf11e32e38ebac6d3a35d083452f1433ee97db3a0b1",
+        "evidence_kind": "unresolved",
+        "review_status": "draft"
+      },
+      {
+        "domain": "julia_set",
+        "reference_id": "dkg:ground_truth_domains:reference:julia_set:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "Retrieval hints",
+        "text": "- Semantic searches: centered grid initialized with complex spatial coordinates;\n  persistent quadratic complex iteration with rotating parameter; cumulative\n  magnitude-threshold count; named spatial axes to NumPy trajectory.\n- API candidates observed in source: `CenteredGrid`, `Box`, `spatial`,\n  `math.zeros`, tensor `.numpy()`, `cmath.exp`, `np.stack`.\n- Some operations are tensor arithmetic or standard-library/NumPy operations,\n  which may be outside the ingested PhiFlow code graph. Record this coverage gap\n  instead of substituting an unrelated physics solver.",
+        "condition": "When planning or reproducing this reference",
+        "source_path": "knowledge_context/domains/julia_set.md",
+        "source_lines": [
+          57,
+          67
+        ],
+        "source_sha256": "003dba0f842e6cadb680daf11e32e38ebac6d3a35d083452f1433ee97db3a0b1",
+        "evidence_kind": "proposed_hint",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "Context to give an LLM",
+        "text": "This reference evolves two periodic centered scalar fields with Laplacian\ndiffusion, a shared nonlinear reaction, feed, and removal terms. Both fields start\nfrom the same radial cosine. Each update caches `u*v**2` before changing either\nfield, then applies the two explicit increments. Preserve that dependency, the\nseparate diffusion coefficients, and the initial snapshot in both trajectories.",
+        "condition": "When planning or reproducing this reference",
+        "source_path": "knowledge_context/domains/reaction_diffusion.md",
+        "source_lines": [
+          7,
+          14
+        ],
+        "source_sha256": "da86cdc2743f2719153b6ae8a97f49f37549f69e8942f581b365a10a9d76ac90",
+        "evidence_kind": "proposed_hint",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "Differences and unresolved details",
+        "text": "- `test/reaction_diffusion.md` omits a boundary specification. The ground-truth\n  source supplies `PERIODIC`; retain that source-derived detail.\n- The task uses output names without `ground_truth`; distinguish those names\n  from the source's explicit save calls.\n- The source contains no clipping, normalization, or pressure projection in the\n  main update. Adding those operations would change the reference.\n- Dependency versions and explicit Laplacian options are unspecified; matching\n  operator defaults may matter when reproducing numerical values.",
+        "condition": "When planning or reproducing this reference",
+        "source_path": "knowledge_context/domains/reaction_diffusion.md",
+        "source_lines": [
+          88,
+          98
+        ],
+        "source_sha256": "da86cdc2743f2719153b6ae8a97f49f37549f69e8942f581b365a10a9d76ac90",
+        "evidence_kind": "unresolved",
+        "review_status": "draft"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "reference_id": "dkg:ground_truth_domains:reference:reaction_diffusion:ground_truth",
+        "evidence_origin": "local_domain_graph_snapshot_not_live_query",
+        "name": "Retrieval hints",
+        "text": "- Semantic searches: periodic scalar grid with radial cosine initialization;\n  explicit coupled reaction diffusion with cached nonlinear reaction; Laplacian\n  of a scalar field; initial-frame-preserving trajectory export.\n- API candidates observed in the main simulation: `CenteredGrid`, `Box`,\n  `spatial`, `vec`, `math.vec_length`, `math.cos`, `field.laplace`, `np.stack`.\n- Retrieve the operator as `field.laplace`, with its namespace. The main\n  trajectory does not call `diffuse.implicit`, and its nonlinear terms are\n  arithmetic expressions rather than a named reaction solver.",
+        "condition": "When planning or reproducing this reference",
+        "source_path": "knowledge_context/domains/reaction_diffusion.md",
+        "source_lines": [
+          62,
+          72
+        ],
+        "source_sha256": "da86cdc2743f2719153b6ae8a97f49f37549f69e8942f581b365a10a9d76ac90",
+        "evidence_kind": "proposed_hint",
+        "review_status": "draft"
+      }
+    ],
+    "api_documentation_retention": [
+      {
+        "run_id": "burgers2d_combined_0",
+        "paired_code_only_run_id": "burgers2d_code_only_0",
+        "domain": "burgers2d",
+        "replicate": 0,
+        "observed_call": "CenteredGrid",
+        "mapping_quality": "exact_alias",
+        "mapping_status": "resolved",
+        "code_id": "_grid.py:CenteredGrid",
+        "code_import_path": "phi.flow.CenteredGrid",
+        "matchable_resolved_binding": true,
+        "combined_documented": true,
+        "code_only_documented": false,
+        "combined_document_status": "available",
+        "code_only_document_status": "available",
+        "evidence_origin": "literal_import_path_fields_in_code_context_only"
+      },
+      {
+        "run_id": "burgers2d_combined_0",
+        "paired_code_only_run_id": "burgers2d_code_only_0",
+        "domain": "burgers2d",
+        "replicate": 0,
+        "observed_call": "Noise",
+        "mapping_quality": "exact_alias",
+        "mapping_status": "resolved",
+        "code_id": "_noise.py:Noise",
+        "code_import_path": "phi.flow.Noise",
+        "matchable_resolved_binding": true,
+        "combined_documented": true,
+        "code_only_documented": false,
+        "combined_document_status": "available",
+        "code_only_document_status": "available",
+        "evidence_origin": "literal_import_path_fields_in_code_context_only"
+      },
+      {
+        "run_id": "burgers2d_combined_0",
+        "paired_code_only_run_id": "burgers2d_code_only_0",
+        "domain": "burgers2d",
+        "replicate": 0,
+        "observed_call": "Box",
+        "mapping_quality": "exact_alias",
+        "mapping_status": "resolved",
+        "code_id": "_box.py:Box",
+        "code_import_path": "phi.flow.Box",
+        "matchable_resolved_binding": true,
+        "combined_documented": true,
+        "code_only_documented": false,
+        "combined_document_status": "available",
+        "code_only_document_status": "available",
+        "evidence_origin": "literal_import_path_fields_in_code_context_only"
+      },
+      {
+        "run_id": "burgers2d_combined_0",
+        "paired_code_only_run_id": "burgers2d_code_only_0",
+        "domain": "burgers2d",
+        "replicate": 0,
+        "observed_call": "advect.semi_lagrangian",
+        "mapping_quality": "exact_alias",
+        "mapping_status": "resolved",
+        "code_id": "advect.py:semi_lagrangian",
+        "code_import_path": "phi.flow.advect.semi_lagrangian",
+        "matchable_resolved_binding": true,
+        "combined_documented": true,
+        "code_only_documented": false,
+        "combined_document_status": "available",
+        "code_only_document_status": "available",
+        "evidence_origin": "literal_import_path_fields_in_code_context_only"
+      },
+      {
+        "run_id": "burgers2d_combined_0",
+        "paired_code_only_run_id": "burgers2d_code_only_0",
+        "domain": "burgers2d",
+        "replicate": 0,
+        "observed_call": "diffuse.implicit",
+        "mapping_quality": "exact_alias",
+        "mapping_status": "resolved",
+        "code_id": "diffuse.py:implicit",
+        "code_import_path": "phi.flow.diffuse.implicit",
+        "matchable_resolved_binding": true,
+        "combined_documented": true,
+        "code_only_documented": true,
+        "combined_document_status": "available",
+        "code_only_document_status": "available",
+        "evidence_origin": "literal_import_path_fields_in_code_context_only"
+      },
+      {
+        "run_id": "heat_flow_combined_0",
+        "paired_code_only_run_id": "heat_flow_code_only_0",
+        "domain": "heat_flow",
+        "replicate": 0,
+        "observed_call": "CenteredGrid",
+        "mapping_quality": "exact_alias",
+        "mapping_status": "resolved",
+        "code_id": "_grid.py:CenteredGrid",
+        "code_import_path": "phi.flow.CenteredGrid",
+        "matchable_resolved_binding": true,
+        "combined_documented": true,
+        "code_only_documented": false,
+        "combined_document_status": "available",
+        "code_only_document_status": "available",
+        "evidence_origin": "literal_import_path_fields_in_code_context_only"
+      },
+      {
+        "run_id": "heat_flow_combined_0",
+        "paired_code_only_run_id": "heat_flow_code_only_0",
+        "domain": "heat_flow",
+        "replicate": 0,
+        "observed_call": "Box",
+        "mapping_quality": "exact_alias",
+        "mapping_status": "resolved",
+        "code_id": "_box.py:Box",
+        "code_import_path": "phi.flow.Box",
+        "matchable_resolved_binding": true,
+        "combined_documented": true,
+        "code_only_documented": false,
+        "combined_document_status": "available",
+        "code_only_document_status": "available",
+        "evidence_origin": "literal_import_path_fields_in_code_context_only"
+      },
+      {
+        "run_id": "heat_flow_combined_0",
+        "paired_code_only_run_id": "heat_flow_code_only_0",
+        "domain": "heat_flow",
+        "replicate": 0,
+        "observed_call": "union",
+        "mapping_quality": "exact_alias",
+        "mapping_status": "resolved",
+        "code_id": "_geom_ops.py:union",
+        "code_import_path": "phi.flow.union",
+        "matchable_resolved_binding": true,
+        "combined_documented": true,
+        "code_only_documented": false,
+        "combined_document_status": "available",
+        "code_only_document_status": "available",
+        "evidence_origin": "literal_import_path_fields_in_code_context_only"
+      },
+      {
+        "run_id": "heat_flow_combined_0",
+        "paired_code_only_run_id": "heat_flow_code_only_0",
+        "domain": "heat_flow",
+        "replicate": 0,
+        "observed_call": "diffuse.implicit",
+        "mapping_quality": "exact_alias",
+        "mapping_status": "resolved",
+        "code_id": "diffuse.py:implicit",
+        "code_import_path": "phi.flow.diffuse.implicit",
+        "matchable_resolved_binding": true,
+        "combined_documented": true,
+        "code_only_documented": false,
+        "combined_document_status": "available",
+        "code_only_document_status": "available",
+        "evidence_origin": "literal_import_path_fields_in_code_context_only"
+      },
+      {
+        "run_id": "julia_set_combined_0",
+        "paired_code_only_run_id": "julia_set_code_only_0",
+        "domain": "julia_set",
+        "replicate": 0,
+        "observed_call": "CenteredGrid",
+        "mapping_quality": "exact_alias",
+        "mapping_status": "resolved",
+        "code_id": "_grid.py:CenteredGrid",
+        "code_import_path": "phi.flow.CenteredGrid",
+        "matchable_resolved_binding": true,
+        "combined_documented": true,
+        "code_only_documented": false,
+        "combined_document_status": "available",
+        "code_only_document_status": "available",
+        "evidence_origin": "literal_import_path_fields_in_code_context_only"
+      },
+      {
+        "run_id": "julia_set_combined_0",
+        "paired_code_only_run_id": "julia_set_code_only_0",
+        "domain": "julia_set",
+        "replicate": 0,
+        "observed_call": "Box",
+        "mapping_quality": "exact_alias",
+        "mapping_status": "resolved",
+        "code_id": "_box.py:Box",
+        "code_import_path": "phi.flow.Box",
+        "matchable_resolved_binding": true,
+        "combined_documented": true,
+        "code_only_documented": false,
+        "combined_document_status": "available",
+        "code_only_document_status": "available",
+        "evidence_origin": "literal_import_path_fields_in_code_context_only"
+      },
+      {
+        "run_id": "reaction_diffusion_combined_0",
+        "paired_code_only_run_id": "reaction_diffusion_code_only_0",
+        "domain": "reaction_diffusion",
+        "replicate": 0,
+        "observed_call": "field.laplace",
+        "mapping_quality": "unresolved",
+        "mapping_status": "unresolved",
+        "code_id": null,
+        "code_import_path": null,
+        "matchable_resolved_binding": false,
+        "combined_documented": null,
+        "code_only_documented": null,
+        "combined_document_status": "available",
+        "code_only_document_status": "available",
+        "evidence_origin": "literal_import_path_fields_in_code_context_only"
+      },
+      {
+        "run_id": "reaction_diffusion_combined_0",
+        "paired_code_only_run_id": "reaction_diffusion_code_only_0",
+        "domain": "reaction_diffusion",
+        "replicate": 0,
+        "observed_call": "CenteredGrid",
+        "mapping_quality": "exact_alias",
+        "mapping_status": "resolved",
+        "code_id": "_grid.py:CenteredGrid",
+        "code_import_path": "phi.flow.CenteredGrid",
+        "matchable_resolved_binding": true,
+        "combined_documented": true,
+        "code_only_documented": true,
+        "combined_document_status": "available",
+        "code_only_document_status": "available",
+        "evidence_origin": "literal_import_path_fields_in_code_context_only"
+      },
+      {
+        "run_id": "reaction_diffusion_combined_0",
+        "paired_code_only_run_id": "reaction_diffusion_code_only_0",
+        "domain": "reaction_diffusion",
+        "replicate": 0,
+        "observed_call": "Box",
+        "mapping_quality": "exact_alias",
+        "mapping_status": "resolved",
+        "code_id": "_box.py:Box",
+        "code_import_path": "phi.flow.Box",
+        "matchable_resolved_binding": true,
+        "combined_documented": true,
+        "code_only_documented": false,
+        "combined_document_status": "available",
+        "code_only_document_status": "available",
+        "evidence_origin": "literal_import_path_fields_in_code_context_only"
+      }
+    ],
+    "api_documentation_summary": [
+      {
+        "domain": "burgers2d",
+        "replicate": 0,
+        "combined_run_id": "burgers2d_combined_0",
+        "code_only_run_id": "burgers2d_code_only_0",
+        "total_bindings": 5,
+        "matchable_resolved_bindings": 5,
+        "excluded_unresolved_bindings": 0,
+        "combined_documented_count": 5,
+        "code_only_documented_count": 1,
+        "combined_document_status": "available",
+        "code_only_document_status": "available"
+      },
+      {
+        "domain": "heat_flow",
+        "replicate": 0,
+        "combined_run_id": "heat_flow_combined_0",
+        "code_only_run_id": "heat_flow_code_only_0",
+        "total_bindings": 4,
+        "matchable_resolved_bindings": 4,
+        "excluded_unresolved_bindings": 0,
+        "combined_documented_count": 4,
+        "code_only_documented_count": 0,
+        "combined_document_status": "available",
+        "code_only_document_status": "available"
+      },
+      {
+        "domain": "julia_set",
+        "replicate": 0,
+        "combined_run_id": "julia_set_combined_0",
+        "code_only_run_id": "julia_set_code_only_0",
+        "total_bindings": 2,
+        "matchable_resolved_bindings": 2,
+        "excluded_unresolved_bindings": 0,
+        "combined_documented_count": 2,
+        "code_only_documented_count": 0,
+        "combined_document_status": "available",
+        "code_only_document_status": "available"
+      },
+      {
+        "domain": "reaction_diffusion",
+        "replicate": 0,
+        "combined_run_id": "reaction_diffusion_combined_0",
+        "code_only_run_id": "reaction_diffusion_code_only_0",
+        "total_bindings": 3,
+        "matchable_resolved_bindings": 2,
+        "excluded_unresolved_bindings": 1,
+        "combined_documented_count": 2,
+        "code_only_documented_count": 1,
+        "combined_document_status": "available",
+        "code_only_document_status": "available"
+      }
+    ],
+    "artifact_diagnostics": [
+      {
+        "run_id": "burgers2d_code_only_0",
+        "domain": "burgers2d",
+        "variant": "code_only",
+        "artifact_provenance": "fresh",
+        "execution_status": "passed",
+        "observation_source": "manifest_observed_artifacts",
+        "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\burgers2d\\code_only_0\\burgers2d_velocity_trj.npy",
+        "filename": "burgers2d_velocity_trj.npy",
+        "contract_name_match": true,
+        "task_component": "main",
+        "scoring_policy": "diagnostic_only_not_a_score",
+        "recorded_sha256": "5d63e09130e27474fac843f0b37bca81c61da5a6ae8dad4a3d1a7d448426fdf0",
+        "actual_sha256": "5d63e09130e27474fac843f0b37bca81c61da5a6ae8dad4a3d1a7d448426fdf0",
+        "hash_status": "matched",
+        "array_status": "nonfinite",
+        "shape": [
+          101,
+          64,
+          64,
+          2
+        ],
+        "dtype": "float32",
+        "element_count": 827392,
+        "finite_count": 325838,
+        "nonfinite_count": 501554,
+        "first_nonfinite_frame": 13,
+        "finite_min": -1.5499860012170774e+38,
+        "finite_max": 6.583761428188549e+37,
+        "range_basis": "real_values",
+        "range_omitted_count": 0,
+        "frame_axis": 0,
+        "frame_count": 101,
+        "error": ""
+      },
+      {
+        "run_id": "burgers2d_combined_0",
+        "domain": "burgers2d",
+        "variant": "combined",
+        "artifact_provenance": "fresh",
+        "execution_status": "passed",
+        "observation_source": "manifest_observed_artifacts",
+        "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\burgers2d\\combined_0\\burgers2d_velocity_trj.npy",
+        "filename": "burgers2d_velocity_trj.npy",
+        "contract_name_match": true,
+        "task_component": "main",
+        "scoring_policy": "diagnostic_only_not_a_score",
+        "recorded_sha256": "de004807cd10faffe9c4d64be48249ac4a8a0dde9a96ef6f4ae3d4d5b773b0aa",
+        "actual_sha256": "de004807cd10faffe9c4d64be48249ac4a8a0dde9a96ef6f4ae3d4d5b773b0aa",
+        "hash_status": "matched",
+        "array_status": "finite",
+        "shape": [
+          101,
+          64,
+          64,
+          2
+        ],
+        "dtype": "float32",
+        "element_count": 827392,
+        "finite_count": 827392,
+        "nonfinite_count": 0,
+        "first_nonfinite_frame": null,
+        "finite_min": -5.770984246034061e-10,
+        "finite_max": 0.8850861191749573,
+        "range_basis": "real_values",
+        "range_omitted_count": 0,
+        "frame_axis": 0,
+        "frame_count": 101,
+        "error": ""
+      },
+      {
+        "run_id": "heat_flow_code_only_0",
+        "domain": "heat_flow",
+        "variant": "code_only",
+        "artifact_provenance": "fresh",
+        "execution_status": "passed",
+        "observation_source": "manifest_observed_artifacts",
+        "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\heat_flow\\code_only_0\\heat_flow_temperature_trj.npy",
+        "filename": "heat_flow_temperature_trj.npy",
+        "contract_name_match": true,
+        "task_component": "main",
+        "scoring_policy": "diagnostic_only_not_a_score",
+        "recorded_sha256": "cf13272b3bd22805f53265235caa9e9a5a85372d3fc9d64da952cdc0f440f9d1",
+        "actual_sha256": "cf13272b3bd22805f53265235caa9e9a5a85372d3fc9d64da952cdc0f440f9d1",
+        "hash_status": "matched",
+        "array_status": "nonfinite",
+        "shape": [
+          101,
+          100,
+          50
+        ],
+        "dtype": "float32",
+        "element_count": 505000,
+        "finite_count": 294926,
+        "nonfinite_count": 210074,
+        "first_nonfinite_frame": 16,
+        "finite_min": -2.703652907482417e+38,
+        "finite_max": 1.7596375619743754e+38,
+        "range_basis": "real_values",
+        "range_omitted_count": 0,
+        "frame_axis": 0,
+        "frame_count": 101,
+        "error": ""
+      },
+      {
+        "run_id": "heat_flow_combined_0",
+        "domain": "heat_flow",
+        "variant": "combined",
+        "artifact_provenance": "fresh",
+        "execution_status": "passed",
+        "observation_source": "manifest_observed_artifacts",
+        "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\heat_flow\\combined_0\\heat_flow_temperature_trj.npy",
+        "filename": "heat_flow_temperature_trj.npy",
+        "contract_name_match": true,
+        "task_component": "main",
+        "scoring_policy": "diagnostic_only_not_a_score",
+        "recorded_sha256": "dfea1bcee2952381b5917a254c767f04f634be9c8cdc421fa047b3aad3c5633c",
+        "actual_sha256": "dfea1bcee2952381b5917a254c767f04f634be9c8cdc421fa047b3aad3c5633c",
+        "hash_status": "matched",
+        "array_status": "finite",
+        "shape": [
+          101,
+          100,
+          50
+        ],
+        "dtype": "float32",
+        "element_count": 505000,
+        "finite_count": 505000,
+        "nonfinite_count": 0,
+        "first_nonfinite_frame": null,
+        "finite_min": 0.0,
+        "finite_max": 0.9890159964561462,
+        "range_basis": "real_values",
+        "range_omitted_count": 0,
+        "frame_axis": 0,
+        "frame_count": 101,
+        "error": ""
+      },
+      {
+        "run_id": "julia_set_code_only_0",
+        "domain": "julia_set",
+        "variant": "code_only",
+        "artifact_provenance": "fresh",
+        "execution_status": "passed",
+        "observation_source": "manifest_observed_artifacts",
+        "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\julia_set\\code_only_0\\julia_set_domain_trj.npy",
+        "filename": "julia_set_domain_trj.npy",
+        "contract_name_match": true,
+        "task_component": "main",
+        "scoring_policy": "diagnostic_only_not_a_score",
+        "recorded_sha256": "c883269d1348ebcf99a98716174a639b7d83a64104cb7c240e6e05467bc78e48",
+        "actual_sha256": "c883269d1348ebcf99a98716174a639b7d83a64104cb7c240e6e05467bc78e48",
+        "hash_status": "matched",
+        "array_status": "finite",
+        "shape": [
+          100,
+          256,
+          256
+        ],
+        "dtype": "float64",
+        "element_count": 6553600,
+        "finite_count": 6553600,
+        "nonfinite_count": 0,
+        "first_nonfinite_frame": null,
+        "finite_min": 0.0,
+        "finite_max": 50.0,
+        "range_basis": "real_values",
+        "range_omitted_count": 0,
+        "frame_axis": 0,
+        "frame_count": 100,
+        "error": ""
+      },
+      {
+        "run_id": "julia_set_combined_0",
+        "domain": "julia_set",
+        "variant": "combined",
+        "artifact_provenance": "fresh",
+        "execution_status": "passed",
+        "observation_source": "manifest_observed_artifacts",
+        "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\julia_set\\combined_0\\julia_set_domain_trj.npy",
+        "filename": "julia_set_domain_trj.npy",
+        "contract_name_match": true,
+        "task_component": "main",
+        "scoring_policy": "diagnostic_only_not_a_score",
+        "recorded_sha256": "d8986a5d23f0f668bc284c180ed24a628bbfdf906709fce9251acb318809fca0",
+        "actual_sha256": "d8986a5d23f0f668bc284c180ed24a628bbfdf906709fce9251acb318809fca0",
+        "hash_status": "matched",
+        "array_status": "finite",
+        "shape": [
+          100,
+          256,
+          256
+        ],
+        "dtype": "float32",
+        "element_count": 6553600,
+        "finite_count": 6553600,
+        "nonfinite_count": 0,
+        "first_nonfinite_frame": null,
+        "finite_min": 0.0,
+        "finite_max": 19.0,
+        "range_basis": "real_values",
+        "range_omitted_count": 0,
+        "frame_axis": 0,
+        "frame_count": 100,
+        "error": ""
+      },
+      {
+        "run_id": "reaction_diffusion_code_only_0",
+        "domain": "reaction_diffusion",
+        "variant": "code_only",
+        "artifact_provenance": "fresh",
+        "execution_status": "passed",
+        "observation_source": "manifest_observed_artifacts",
+        "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\code_only_0\\reaction_diffusion_u_trj.npy",
+        "filename": "reaction_diffusion_u_trj.npy",
+        "contract_name_match": true,
+        "task_component": "u",
+        "scoring_policy": "diagnostic_only_not_a_score",
+        "recorded_sha256": "f53d7880c21f01875ef1eb605b034c87aeb8cfa95335072b2fb645efe50cc049",
+        "actual_sha256": "f53d7880c21f01875ef1eb605b034c87aeb8cfa95335072b2fb645efe50cc049",
+        "hash_status": "matched",
+        "array_status": "finite",
+        "shape": [
+          101,
+          100,
+          100
+        ],
+        "dtype": "float32",
+        "element_count": 1010000,
+        "finite_count": 1010000,
+        "nonfinite_count": 0,
+        "first_nonfinite_frame": null,
+        "finite_min": -0.9999998211860657,
+        "finite_max": 0.999984085559845,
+        "range_basis": "real_values",
+        "range_omitted_count": 0,
+        "frame_axis": 0,
+        "frame_count": 101,
+        "error": ""
+      },
+      {
+        "run_id": "reaction_diffusion_code_only_0",
+        "domain": "reaction_diffusion",
+        "variant": "code_only",
+        "artifact_provenance": "fresh",
+        "execution_status": "passed",
+        "observation_source": "manifest_observed_artifacts",
+        "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\code_only_0\\reaction_diffusion_v_trj.npy",
+        "filename": "reaction_diffusion_v_trj.npy",
+        "contract_name_match": true,
+        "task_component": "v",
+        "scoring_policy": "diagnostic_only_not_a_score",
+        "recorded_sha256": "624dcaf7dcc428d4a1ecfa425f4f2c0225acce0d5a30d3c9aef286f09d72b712",
+        "actual_sha256": "624dcaf7dcc428d4a1ecfa425f4f2c0225acce0d5a30d3c9aef286f09d72b712",
+        "hash_status": "matched",
+        "array_status": "finite",
+        "shape": [
+          101,
+          100,
+          100
+        ],
+        "dtype": "float32",
+        "element_count": 1010000,
+        "finite_count": 1010000,
+        "nonfinite_count": 0,
+        "first_nonfinite_frame": null,
+        "finite_min": -1.7889177799224854,
+        "finite_max": 1.8555850982666016,
+        "range_basis": "real_values",
+        "range_omitted_count": 0,
+        "frame_axis": 0,
+        "frame_count": 101,
+        "error": ""
+      },
+      {
+        "run_id": "reaction_diffusion_combined_0",
+        "domain": "reaction_diffusion",
+        "variant": "combined",
+        "artifact_provenance": "fresh",
+        "execution_status": "passed",
+        "observation_source": "manifest_observed_artifacts",
+        "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\combined_0\\reaction_diffusion_u_trj.npy",
+        "filename": "reaction_diffusion_u_trj.npy",
+        "contract_name_match": true,
+        "task_component": "u",
+        "scoring_policy": "diagnostic_only_not_a_score",
+        "recorded_sha256": "031c9fa2b47db15a669c9e12191d5987f20706ce668106e209f2b91432d8fd07",
+        "actual_sha256": "031c9fa2b47db15a669c9e12191d5987f20706ce668106e209f2b91432d8fd07",
+        "hash_status": "matched",
+        "array_status": "finite",
+        "shape": [
+          101,
+          100,
+          100
+        ],
+        "dtype": "float32",
+        "element_count": 1010000,
+        "finite_count": 1010000,
+        "nonfinite_count": 0,
+        "first_nonfinite_frame": null,
+        "finite_min": -0.9999998211860657,
+        "finite_max": 0.999984085559845,
+        "range_basis": "real_values",
+        "range_omitted_count": 0,
+        "frame_axis": 0,
+        "frame_count": 101,
+        "error": ""
+      },
+      {
+        "run_id": "reaction_diffusion_combined_0",
+        "domain": "reaction_diffusion",
+        "variant": "combined",
+        "artifact_provenance": "fresh",
+        "execution_status": "passed",
+        "observation_source": "manifest_observed_artifacts",
+        "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\combined_0\\reaction_diffusion_v_trj.npy",
+        "filename": "reaction_diffusion_v_trj.npy",
+        "contract_name_match": true,
+        "task_component": "v",
+        "scoring_policy": "diagnostic_only_not_a_score",
+        "recorded_sha256": "246398cc9ac3d33e7c1d99f21ebf1f48502a496e92abb5909a329221fa5c4b72",
+        "actual_sha256": "246398cc9ac3d33e7c1d99f21ebf1f48502a496e92abb5909a329221fa5c4b72",
+        "hash_status": "matched",
+        "array_status": "finite",
+        "shape": [
+          101,
+          100,
+          100
+        ],
+        "dtype": "float32",
+        "element_count": 1010000,
+        "finite_count": 1010000,
+        "nonfinite_count": 0,
+        "first_nonfinite_frame": null,
+        "finite_min": -1.7889177799224854,
+        "finite_max": 1.8555850982666016,
+        "range_basis": "real_values",
+        "range_omitted_count": 0,
+        "frame_axis": 0,
+        "frame_count": 101,
+        "error": ""
+      }
+    ]
+  },
+  "sources": {
+    "manifest": {
+      "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\manifest.json",
+      "sha256": "01ae70ef48ed4e9ddd3119514cee0a41738eb5d0e881b45d85c21eb023760018"
+    },
+    "local_domain_snapshot": {
+      "path": "D:\\Vivek\\research\\knowledge_context\\domain_knowledge_graph.json",
+      "sha256": "6320d316662d8be090aafc3620d353feeb5d95130012548e30ad9db0d2b46a07",
+      "evidence_origin": "local_domain_graph_snapshot_not_live_query"
+    }
+  }
+}

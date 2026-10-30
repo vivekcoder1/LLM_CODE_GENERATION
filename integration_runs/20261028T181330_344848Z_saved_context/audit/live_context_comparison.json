@@ -1,0 +1,1174 @@
+{
+  "schema_version": 1,
+  "purpose": "Post-generation comparison of used frozen inputs with a later live retrieval",
+  "chronology": {
+    "generation_completed_utc": "2026-10-28T18:16:32.639701+00:00",
+    "live_created_utc": "2026-10-28T18:18:03.521330+00:00",
+    "live_completed_utc": "2026-10-28T18:21:32.638693+00:00",
+    "order": "live_retrieval_started_after_generation_completed"
+  },
+  "sources": {
+    "used_manifest": {
+      "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\manifest.json",
+      "sha256": "01ae70ef48ed4e9ddd3119514cee0a41738eb5d0e881b45d85c21eb023760018"
+    },
+    "live_manifest": {
+      "path": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\manifest.json",
+      "sha256": "0e1585e0815b9911bbefc91bc7c008c31d631229b7f12f920f642fee0891c32a"
+    }
+  },
+  "summary": {
+    "paired_arms": 8,
+    "matching_input_contexts": 8,
+    "matching_full_context_texts": 8,
+    "matching_core_statistics": 8
+  },
+  "comparison": [
+    {
+      "domain": "burgers2d",
+      "variant": "code_only",
+      "used_run_id": "burgers2d_code_only_0",
+      "live_run_id": "burgers2d_code_only_0",
+      "used_context_origin": "saved_retrieval_snapshot",
+      "live_retrieval_status": "passed",
+      "task_hash_equal": true,
+      "code_context_hash_equal": true,
+      "domain_context_hash_equal": true,
+      "api_resolution_hash_equal": true,
+      "used_files_verified": true,
+      "live_files_verified": true,
+      "generation_input_contexts_equal": true,
+      "base_blueprint_equal": true,
+      "effective_blueprint_equal": true,
+      "full_context_text_equal": true,
+      "core_statistics_equal": true,
+      "used_context_chars": 15496,
+      "live_context_chars": 15496,
+      "changed_statistics": {}
+    },
+    {
+      "domain": "burgers2d",
+      "variant": "combined",
+      "used_run_id": "burgers2d_combined_0",
+      "live_run_id": "burgers2d_combined_0",
+      "used_context_origin": "saved_retrieval_snapshot",
+      "live_retrieval_status": "passed",
+      "task_hash_equal": true,
+      "code_context_hash_equal": true,
+      "domain_context_hash_equal": true,
+      "api_resolution_hash_equal": true,
+      "used_files_verified": true,
+      "live_files_verified": true,
+      "generation_input_contexts_equal": true,
+      "base_blueprint_equal": true,
+      "effective_blueprint_equal": true,
+      "full_context_text_equal": true,
+      "core_statistics_equal": true,
+      "used_context_chars": 23033,
+      "live_context_chars": 23033,
+      "changed_statistics": {}
+    },
+    {
+      "domain": "heat_flow",
+      "variant": "code_only",
+      "used_run_id": "heat_flow_code_only_0",
+      "live_run_id": "heat_flow_code_only_0",
+      "used_context_origin": "saved_retrieval_snapshot",
+      "live_retrieval_status": "passed",
+      "task_hash_equal": true,
+      "code_context_hash_equal": true,
+      "domain_context_hash_equal": true,
+      "api_resolution_hash_equal": true,
+      "used_files_verified": true,
+      "live_files_verified": true,
+      "generation_input_contexts_equal": true,
+      "base_blueprint_equal": true,
+      "effective_blueprint_equal": true,
+      "full_context_text_equal": true,
+      "core_statistics_equal": true,
+      "used_context_chars": 9688,
+      "live_context_chars": 9688,
+      "changed_statistics": {}
+    },
+    {
+      "domain": "heat_flow",
+      "variant": "combined",
+      "used_run_id": "heat_flow_combined_0",
+      "live_run_id": "heat_flow_combined_0",
+      "used_context_origin": "saved_retrieval_snapshot",
+      "live_retrieval_status": "passed",
+      "task_hash_equal": true,
+      "code_context_hash_equal": true,
+      "domain_context_hash_equal": true,
+      "api_resolution_hash_equal": true,
+      "used_files_verified": true,
+      "live_files_verified": true,
+      "generation_input_contexts_equal": true,
+      "base_blueprint_equal": true,
+      "effective_blueprint_equal": true,
+      "full_context_text_equal": true,
+      "core_statistics_equal": true,
+      "used_context_chars": 22432,
+      "live_context_chars": 22432,
+      "changed_statistics": {}
+    },
+    {
+      "domain": "julia_set",
+      "variant": "code_only",
+      "used_run_id": "julia_set_code_only_0",
+      "live_run_id": "julia_set_code_only_0",
+      "used_context_origin": "saved_retrieval_snapshot",
+      "live_retrieval_status": "passed",
+      "task_hash_equal": true,
+      "code_context_hash_equal": true,
+      "domain_context_hash_equal": true,
+      "api_resolution_hash_equal": true,
+      "used_files_verified": true,
+      "live_files_verified": true,
+      "generation_input_contexts_equal": true,
+      "base_blueprint_equal": true,
+      "effective_blueprint_equal": true,
+      "full_context_text_equal": true,
+      "core_statistics_equal": true,
+      "used_context_chars": 12196,
+      "live_context_chars": 12196,
+      "changed_statistics": {}
+    },
+    {
+      "domain": "julia_set",
+      "variant": "combined",
+      "used_run_id": "julia_set_combined_0",
+      "live_run_id": "julia_set_combined_0",
+      "used_context_origin": "saved_retrieval_snapshot",
+      "live_retrieval_status": "passed",
+      "task_hash_equal": true,
+      "code_context_hash_equal": true,
+      "domain_context_hash_equal": true,
+      "api_resolution_hash_equal": true,
+      "used_files_verified": true,
+      "live_files_verified": true,
+      "generation_input_contexts_equal": true,
+      "base_blueprint_equal": true,
+      "effective_blueprint_equal": true,
+      "full_context_text_equal": true,
+      "core_statistics_equal": true,
+      "used_context_chars": 21347,
+      "live_context_chars": 21347,
+      "changed_statistics": {}
+    },
+    {
+      "domain": "reaction_diffusion",
+      "variant": "code_only",
+      "used_run_id": "reaction_diffusion_code_only_0",
+      "live_run_id": "reaction_diffusion_code_only_0",
+      "used_context_origin": "saved_retrieval_snapshot",
+      "live_retrieval_status": "passed",
+      "task_hash_equal": true,
+      "code_context_hash_equal": true,
+      "domain_context_hash_equal": true,
+      "api_resolution_hash_equal": true,
+      "used_files_verified": true,
+      "live_files_verified": true,
+      "generation_input_contexts_equal": true,
+      "base_blueprint_equal": true,
+      "effective_blueprint_equal": true,
+      "full_context_text_equal": true,
+      "core_statistics_equal": true,
+      "used_context_chars": 16155,
+      "live_context_chars": 16155,
+      "changed_statistics": {}
+    },
+    {
+      "domain": "reaction_diffusion",
+      "variant": "combined",
+      "used_run_id": "reaction_diffusion_combined_0",
+      "live_run_id": "reaction_diffusion_combined_0",
+      "used_context_origin": "saved_retrieval_snapshot",
+      "live_retrieval_status": "passed",
+      "task_hash_equal": true,
+      "code_context_hash_equal": true,
+      "domain_context_hash_equal": true,
+      "api_resolution_hash_equal": true,
+      "used_files_verified": true,
+      "live_files_verified": true,
+      "generation_input_contexts_equal": true,
+      "base_blueprint_equal": true,
+      "effective_blueprint_equal": true,
+      "full_context_text_equal": true,
+      "core_statistics_equal": true,
+      "used_context_chars": 25198,
+      "live_context_chars": 25198,
+      "changed_statistics": {}
+    }
+  ],
+  "file_verification": [
+    {
+      "domain": "burgers2d",
+      "variant": "code_only",
+      "used": {
+        "run_id": "burgers2d_code_only_0",
+        "file_checks": [
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\burgers2d\\code_only_0\\task.md",
+            "metadata_field": "task_hash",
+            "expected": "3e40128f9690ce73b6a4febd9e06b4f12b32b29724e02ce4181f8b1d3b22b080",
+            "actual": "3e40128f9690ce73b6a4febd9e06b4f12b32b29724e02ce4181f8b1d3b22b080",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\burgers2d\\code_only_0\\code_context.md",
+            "metadata_field": "code_context_hash",
+            "expected": "fe15cfb996aa62ca95bbeeb799ef51ce2c797ae63b77a14f07e0e9337608a1c8",
+            "actual": "fe15cfb996aa62ca95bbeeb799ef51ce2c797ae63b77a14f07e0e9337608a1c8",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\burgers2d\\code_only_0\\domain_context.md",
+            "metadata_field": "domain_context_hash",
+            "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\burgers2d\\code_only_0\\api_resolution.json",
+            "metadata_field": "api_resolution_hash",
+            "expected": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "actual": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "manifest_value_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "matches": true
+          }
+        ],
+        "blueprints": {
+          "base": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\burgers2d\\code_only_0\\blueprint.json",
+            "actual_hash": "9eabc0352fa19c331bed118dac35ac51a0a282625a4b925d94ae6cc1572a47b7",
+            "recorded_canonical_hash": "9eabc0352fa19c331bed118dac35ac51a0a282625a4b925d94ae6cc1572a47b7",
+            "recorded_hash_matches": true
+          },
+          "effective": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\burgers2d\\code_only_0\\effective_blueprint.json",
+            "actual_hash": "52cee9958a804c6af07d8d1cc1bdbaa983e792e1a3498349a2e916d5a609a129",
+            "recorded_canonical_hash": "52cee9958a804c6af07d8d1cc1bdbaa983e792e1a3498349a2e916d5a609a129",
+            "recorded_hash_matches": true
+          }
+        },
+        "all_input_files_match_metadata": true,
+        "full_context": {
+          "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\burgers2d\\code_only_0\\context.md",
+          "actual_hash": "9717c18a6c099ca84a1b151cb8164a2202b8b57c80b7b7c1916d23015f4e828b",
+          "actual_characters": 15496,
+          "recorded_characters": 15496,
+          "recorded_characters_match": true
+        }
+      },
+      "live": {
+        "run_id": "burgers2d_code_only_0",
+        "file_checks": [
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\burgers2d\\code_only_0\\task.md",
+            "metadata_field": "task_hash",
+            "expected": "3e40128f9690ce73b6a4febd9e06b4f12b32b29724e02ce4181f8b1d3b22b080",
+            "actual": "3e40128f9690ce73b6a4febd9e06b4f12b32b29724e02ce4181f8b1d3b22b080",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\burgers2d\\code_only_0\\code_context.md",
+            "metadata_field": "code_context_hash",
+            "expected": "fe15cfb996aa62ca95bbeeb799ef51ce2c797ae63b77a14f07e0e9337608a1c8",
+            "actual": "fe15cfb996aa62ca95bbeeb799ef51ce2c797ae63b77a14f07e0e9337608a1c8",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\burgers2d\\code_only_0\\domain_context.md",
+            "metadata_field": "domain_context_hash",
+            "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\burgers2d\\code_only_0\\retrieval_metadata.json",
+            "metadata_field": "api_resolution_hash",
+            "expected": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "actual": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "manifest_value_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "matches": true
+          }
+        ],
+        "blueprints": {
+          "base": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\burgers2d\\code_only_0\\blueprint.json",
+            "actual_hash": "9eabc0352fa19c331bed118dac35ac51a0a282625a4b925d94ae6cc1572a47b7",
+            "recorded_canonical_hash": null,
+            "recorded_hash_matches": null
+          },
+          "effective": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\burgers2d\\code_only_0\\effective_blueprint.json",
+            "actual_hash": "52cee9958a804c6af07d8d1cc1bdbaa983e792e1a3498349a2e916d5a609a129",
+            "recorded_canonical_hash": "52cee9958a804c6af07d8d1cc1bdbaa983e792e1a3498349a2e916d5a609a129",
+            "recorded_hash_matches": true
+          }
+        },
+        "all_input_files_match_metadata": true,
+        "full_context": {
+          "path": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\burgers2d\\code_only_0\\context.md",
+          "actual_hash": "9717c18a6c099ca84a1b151cb8164a2202b8b57c80b7b7c1916d23015f4e828b",
+          "actual_characters": 15496,
+          "recorded_characters": 15496,
+          "recorded_characters_match": true
+        }
+      }
+    },
+    {
+      "domain": "burgers2d",
+      "variant": "combined",
+      "used": {
+        "run_id": "burgers2d_combined_0",
+        "file_checks": [
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\burgers2d\\combined_0\\task.md",
+            "metadata_field": "task_hash",
+            "expected": "3e40128f9690ce73b6a4febd9e06b4f12b32b29724e02ce4181f8b1d3b22b080",
+            "actual": "3e40128f9690ce73b6a4febd9e06b4f12b32b29724e02ce4181f8b1d3b22b080",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\burgers2d\\combined_0\\code_context.md",
+            "metadata_field": "code_context_hash",
+            "expected": "b0d361ce7bd3cfc3c93970d741e8eb86730f2338aba7f15531b783bdd363ec18",
+            "actual": "b0d361ce7bd3cfc3c93970d741e8eb86730f2338aba7f15531b783bdd363ec18",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\burgers2d\\combined_0\\domain_context.md",
+            "metadata_field": "domain_context_hash",
+            "expected": "05bed0fe71d27efbaa0824b7f738ff56a5ef653a135465c117d5c9eb9eb19420",
+            "actual": "05bed0fe71d27efbaa0824b7f738ff56a5ef653a135465c117d5c9eb9eb19420",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\burgers2d\\combined_0\\api_resolution.json",
+            "metadata_field": "api_resolution_hash",
+            "expected": "b399c8b87147a45b30508b288eaba810f522ae86ea36ded43ec14a34aaf6ebd3",
+            "actual": "b399c8b87147a45b30508b288eaba810f522ae86ea36ded43ec14a34aaf6ebd3",
+            "manifest_value_hash": "b399c8b87147a45b30508b288eaba810f522ae86ea36ded43ec14a34aaf6ebd3",
+            "matches": true
+          }
+        ],
+        "blueprints": {
+          "base": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\burgers2d\\combined_0\\blueprint.json",
+            "actual_hash": "9eabc0352fa19c331bed118dac35ac51a0a282625a4b925d94ae6cc1572a47b7",
+            "recorded_canonical_hash": "9eabc0352fa19c331bed118dac35ac51a0a282625a4b925d94ae6cc1572a47b7",
+            "recorded_hash_matches": true
+          },
+          "effective": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\burgers2d\\combined_0\\effective_blueprint.json",
+            "actual_hash": "43884fc42be45c0e27d3d535b41abf81447cb8891c1bbc646c028e97db821165",
+            "recorded_canonical_hash": "43884fc42be45c0e27d3d535b41abf81447cb8891c1bbc646c028e97db821165",
+            "recorded_hash_matches": true
+          }
+        },
+        "all_input_files_match_metadata": true,
+        "full_context": {
+          "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\burgers2d\\combined_0\\context.md",
+          "actual_hash": "cf756b3f411d35bdd9aa34532d7c477963b417177faa72ddd6b6949d3d90bda0",
+          "actual_characters": 23033,
+          "recorded_characters": 23033,
+          "recorded_characters_match": true
+        }
+      },
+      "live": {
+        "run_id": "burgers2d_combined_0",
+        "file_checks": [
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\burgers2d\\combined_0\\task.md",
+            "metadata_field": "task_hash",
+            "expected": "3e40128f9690ce73b6a4febd9e06b4f12b32b29724e02ce4181f8b1d3b22b080",
+            "actual": "3e40128f9690ce73b6a4febd9e06b4f12b32b29724e02ce4181f8b1d3b22b080",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\burgers2d\\combined_0\\code_context.md",
+            "metadata_field": "code_context_hash",
+            "expected": "b0d361ce7bd3cfc3c93970d741e8eb86730f2338aba7f15531b783bdd363ec18",
+            "actual": "b0d361ce7bd3cfc3c93970d741e8eb86730f2338aba7f15531b783bdd363ec18",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\burgers2d\\combined_0\\domain_context.md",
+            "metadata_field": "domain_context_hash",
+            "expected": "05bed0fe71d27efbaa0824b7f738ff56a5ef653a135465c117d5c9eb9eb19420",
+            "actual": "05bed0fe71d27efbaa0824b7f738ff56a5ef653a135465c117d5c9eb9eb19420",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\burgers2d\\combined_0\\retrieval_metadata.json",
+            "metadata_field": "api_resolution_hash",
+            "expected": "b399c8b87147a45b30508b288eaba810f522ae86ea36ded43ec14a34aaf6ebd3",
+            "actual": "b399c8b87147a45b30508b288eaba810f522ae86ea36ded43ec14a34aaf6ebd3",
+            "manifest_value_hash": "b399c8b87147a45b30508b288eaba810f522ae86ea36ded43ec14a34aaf6ebd3",
+            "matches": true
+          }
+        ],
+        "blueprints": {
+          "base": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\burgers2d\\combined_0\\blueprint.json",
+            "actual_hash": "9eabc0352fa19c331bed118dac35ac51a0a282625a4b925d94ae6cc1572a47b7",
+            "recorded_canonical_hash": null,
+            "recorded_hash_matches": null
+          },
+          "effective": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\burgers2d\\combined_0\\effective_blueprint.json",
+            "actual_hash": "43884fc42be45c0e27d3d535b41abf81447cb8891c1bbc646c028e97db821165",
+            "recorded_canonical_hash": "43884fc42be45c0e27d3d535b41abf81447cb8891c1bbc646c028e97db821165",
+            "recorded_hash_matches": true
+          }
+        },
+        "all_input_files_match_metadata": true,
+        "full_context": {
+          "path": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\burgers2d\\combined_0\\context.md",
+          "actual_hash": "cf756b3f411d35bdd9aa34532d7c477963b417177faa72ddd6b6949d3d90bda0",
+          "actual_characters": 23033,
+          "recorded_characters": 23033,
+          "recorded_characters_match": true
+        }
+      }
+    },
+    {
+      "domain": "heat_flow",
+      "variant": "code_only",
+      "used": {
+        "run_id": "heat_flow_code_only_0",
+        "file_checks": [
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\heat_flow\\code_only_0\\task.md",
+            "metadata_field": "task_hash",
+            "expected": "4894e50322d00c78ab2005d7e2df51383939bb87f0bb3a6c7019d53f1ad3d4f2",
+            "actual": "4894e50322d00c78ab2005d7e2df51383939bb87f0bb3a6c7019d53f1ad3d4f2",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\heat_flow\\code_only_0\\code_context.md",
+            "metadata_field": "code_context_hash",
+            "expected": "8624f05113f00e150fbb31a9b4daa31e4504c827066f422f1a5432ff5c7b9b64",
+            "actual": "8624f05113f00e150fbb31a9b4daa31e4504c827066f422f1a5432ff5c7b9b64",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\heat_flow\\code_only_0\\domain_context.md",
+            "metadata_field": "domain_context_hash",
+            "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\heat_flow\\code_only_0\\api_resolution.json",
+            "metadata_field": "api_resolution_hash",
+            "expected": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "actual": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "manifest_value_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "matches": true
+          }
+        ],
+        "blueprints": {
+          "base": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\heat_flow\\code_only_0\\blueprint.json",
+            "actual_hash": "94648976c2dbe09c28faf32e5640c2b1d4caa0f2115f1a43e79e5d296945f26e",
+            "recorded_canonical_hash": "94648976c2dbe09c28faf32e5640c2b1d4caa0f2115f1a43e79e5d296945f26e",
+            "recorded_hash_matches": true
+          },
+          "effective": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\heat_flow\\code_only_0\\effective_blueprint.json",
+            "actual_hash": "9dcf77b47d8b78a3d95f3f9fcc069920ec1c3775211e16c9dd114261e2323581",
+            "recorded_canonical_hash": "9dcf77b47d8b78a3d95f3f9fcc069920ec1c3775211e16c9dd114261e2323581",
+            "recorded_hash_matches": true
+          }
+        },
+        "all_input_files_match_metadata": true,
+        "full_context": {
+          "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\heat_flow\\code_only_0\\context.md",
+          "actual_hash": "147821aca70d15a47617f902826600d66eb7d6c9fd08248d39365aaf80d576bf",
+          "actual_characters": 9688,
+          "recorded_characters": 9688,
+          "recorded_characters_match": true
+        }
+      },
+      "live": {
+        "run_id": "heat_flow_code_only_0",
+        "file_checks": [
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\heat_flow\\code_only_0\\task.md",
+            "metadata_field": "task_hash",
+            "expected": "4894e50322d00c78ab2005d7e2df51383939bb87f0bb3a6c7019d53f1ad3d4f2",
+            "actual": "4894e50322d00c78ab2005d7e2df51383939bb87f0bb3a6c7019d53f1ad3d4f2",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\heat_flow\\code_only_0\\code_context.md",
+            "metadata_field": "code_context_hash",
+            "expected": "8624f05113f00e150fbb31a9b4daa31e4504c827066f422f1a5432ff5c7b9b64",
+            "actual": "8624f05113f00e150fbb31a9b4daa31e4504c827066f422f1a5432ff5c7b9b64",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\heat_flow\\code_only_0\\domain_context.md",
+            "metadata_field": "domain_context_hash",
+            "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\heat_flow\\code_only_0\\retrieval_metadata.json",
+            "metadata_field": "api_resolution_hash",
+            "expected": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "actual": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "manifest_value_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "matches": true
+          }
+        ],
+        "blueprints": {
+          "base": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\heat_flow\\code_only_0\\blueprint.json",
+            "actual_hash": "94648976c2dbe09c28faf32e5640c2b1d4caa0f2115f1a43e79e5d296945f26e",
+            "recorded_canonical_hash": null,
+            "recorded_hash_matches": null
+          },
+          "effective": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\heat_flow\\code_only_0\\effective_blueprint.json",
+            "actual_hash": "9dcf77b47d8b78a3d95f3f9fcc069920ec1c3775211e16c9dd114261e2323581",
+            "recorded_canonical_hash": "9dcf77b47d8b78a3d95f3f9fcc069920ec1c3775211e16c9dd114261e2323581",
+            "recorded_hash_matches": true
+          }
+        },
+        "all_input_files_match_metadata": true,
+        "full_context": {
+          "path": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\heat_flow\\code_only_0\\context.md",
+          "actual_hash": "147821aca70d15a47617f902826600d66eb7d6c9fd08248d39365aaf80d576bf",
+          "actual_characters": 9688,
+          "recorded_characters": 9688,
+          "recorded_characters_match": true
+        }
+      }
+    },
+    {
+      "domain": "heat_flow",
+      "variant": "combined",
+      "used": {
+        "run_id": "heat_flow_combined_0",
+        "file_checks": [
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\heat_flow\\combined_0\\task.md",
+            "metadata_field": "task_hash",
+            "expected": "4894e50322d00c78ab2005d7e2df51383939bb87f0bb3a6c7019d53f1ad3d4f2",
+            "actual": "4894e50322d00c78ab2005d7e2df51383939bb87f0bb3a6c7019d53f1ad3d4f2",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\heat_flow\\combined_0\\code_context.md",
+            "metadata_field": "code_context_hash",
+            "expected": "f938eb4ff0cce9bd8fe13fd573361e14bc54fd705570feb7fda50e4b2197e6fd",
+            "actual": "f938eb4ff0cce9bd8fe13fd573361e14bc54fd705570feb7fda50e4b2197e6fd",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\heat_flow\\combined_0\\domain_context.md",
+            "metadata_field": "domain_context_hash",
+            "expected": "557f3526b70513a4da594ecffd955d831a03e9eaa2023a670e70112a605f7f78",
+            "actual": "557f3526b70513a4da594ecffd955d831a03e9eaa2023a670e70112a605f7f78",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\heat_flow\\combined_0\\api_resolution.json",
+            "metadata_field": "api_resolution_hash",
+            "expected": "d9ac2b8b54e1e738788e0ac6054b28f1bebf5533d1f7b927be4907528007b2ab",
+            "actual": "d9ac2b8b54e1e738788e0ac6054b28f1bebf5533d1f7b927be4907528007b2ab",
+            "manifest_value_hash": "d9ac2b8b54e1e738788e0ac6054b28f1bebf5533d1f7b927be4907528007b2ab",
+            "matches": true
+          }
+        ],
+        "blueprints": {
+          "base": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\heat_flow\\combined_0\\blueprint.json",
+            "actual_hash": "94648976c2dbe09c28faf32e5640c2b1d4caa0f2115f1a43e79e5d296945f26e",
+            "recorded_canonical_hash": "94648976c2dbe09c28faf32e5640c2b1d4caa0f2115f1a43e79e5d296945f26e",
+            "recorded_hash_matches": true
+          },
+          "effective": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\heat_flow\\combined_0\\effective_blueprint.json",
+            "actual_hash": "d8fc8dfa3ccdb9e61eabb36156866b16a8f9b028febacb5f3943dcd67d6d498f",
+            "recorded_canonical_hash": "d8fc8dfa3ccdb9e61eabb36156866b16a8f9b028febacb5f3943dcd67d6d498f",
+            "recorded_hash_matches": true
+          }
+        },
+        "all_input_files_match_metadata": true,
+        "full_context": {
+          "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\heat_flow\\combined_0\\context.md",
+          "actual_hash": "e5a4695f9c23eee1956e5070c9c6e877cc1e5cbee63f5125b378be8229be39b1",
+          "actual_characters": 22432,
+          "recorded_characters": 22432,
+          "recorded_characters_match": true
+        }
+      },
+      "live": {
+        "run_id": "heat_flow_combined_0",
+        "file_checks": [
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\heat_flow\\combined_0\\task.md",
+            "metadata_field": "task_hash",
+            "expected": "4894e50322d00c78ab2005d7e2df51383939bb87f0bb3a6c7019d53f1ad3d4f2",
+            "actual": "4894e50322d00c78ab2005d7e2df51383939bb87f0bb3a6c7019d53f1ad3d4f2",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\heat_flow\\combined_0\\code_context.md",
+            "metadata_field": "code_context_hash",
+            "expected": "f938eb4ff0cce9bd8fe13fd573361e14bc54fd705570feb7fda50e4b2197e6fd",
+            "actual": "f938eb4ff0cce9bd8fe13fd573361e14bc54fd705570feb7fda50e4b2197e6fd",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\heat_flow\\combined_0\\domain_context.md",
+            "metadata_field": "domain_context_hash",
+            "expected": "557f3526b70513a4da594ecffd955d831a03e9eaa2023a670e70112a605f7f78",
+            "actual": "557f3526b70513a4da594ecffd955d831a03e9eaa2023a670e70112a605f7f78",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\heat_flow\\combined_0\\retrieval_metadata.json",
+            "metadata_field": "api_resolution_hash",
+            "expected": "d9ac2b8b54e1e738788e0ac6054b28f1bebf5533d1f7b927be4907528007b2ab",
+            "actual": "d9ac2b8b54e1e738788e0ac6054b28f1bebf5533d1f7b927be4907528007b2ab",
+            "manifest_value_hash": "d9ac2b8b54e1e738788e0ac6054b28f1bebf5533d1f7b927be4907528007b2ab",
+            "matches": true
+          }
+        ],
+        "blueprints": {
+          "base": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\heat_flow\\combined_0\\blueprint.json",
+            "actual_hash": "94648976c2dbe09c28faf32e5640c2b1d4caa0f2115f1a43e79e5d296945f26e",
+            "recorded_canonical_hash": null,
+            "recorded_hash_matches": null
+          },
+          "effective": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\heat_flow\\combined_0\\effective_blueprint.json",
+            "actual_hash": "d8fc8dfa3ccdb9e61eabb36156866b16a8f9b028febacb5f3943dcd67d6d498f",
+            "recorded_canonical_hash": "d8fc8dfa3ccdb9e61eabb36156866b16a8f9b028febacb5f3943dcd67d6d498f",
+            "recorded_hash_matches": true
+          }
+        },
+        "all_input_files_match_metadata": true,
+        "full_context": {
+          "path": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\heat_flow\\combined_0\\context.md",
+          "actual_hash": "e5a4695f9c23eee1956e5070c9c6e877cc1e5cbee63f5125b378be8229be39b1",
+          "actual_characters": 22432,
+          "recorded_characters": 22432,
+          "recorded_characters_match": true
+        }
+      }
+    },
+    {
+      "domain": "julia_set",
+      "variant": "code_only",
+      "used": {
+        "run_id": "julia_set_code_only_0",
+        "file_checks": [
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\julia_set\\code_only_0\\task.md",
+            "metadata_field": "task_hash",
+            "expected": "10e0a7d9a3905b8241ffa222ab3fadcf9a580d047b1611e78bdabe187830201c",
+            "actual": "10e0a7d9a3905b8241ffa222ab3fadcf9a580d047b1611e78bdabe187830201c",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\julia_set\\code_only_0\\code_context.md",
+            "metadata_field": "code_context_hash",
+            "expected": "22712a6bf04f16c9c5365b9cae981cd59c8f9bf1fb597abac732673fd0195285",
+            "actual": "22712a6bf04f16c9c5365b9cae981cd59c8f9bf1fb597abac732673fd0195285",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\julia_set\\code_only_0\\domain_context.md",
+            "metadata_field": "domain_context_hash",
+            "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\julia_set\\code_only_0\\api_resolution.json",
+            "metadata_field": "api_resolution_hash",
+            "expected": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "actual": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "manifest_value_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "matches": true
+          }
+        ],
+        "blueprints": {
+          "base": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\julia_set\\code_only_0\\blueprint.json",
+            "actual_hash": "38d90ebf4cdbe115d0fce4939f5ac522cb7630488b74c65acddd12fe18859755",
+            "recorded_canonical_hash": "38d90ebf4cdbe115d0fce4939f5ac522cb7630488b74c65acddd12fe18859755",
+            "recorded_hash_matches": true
+          },
+          "effective": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\julia_set\\code_only_0\\effective_blueprint.json",
+            "actual_hash": "38d90ebf4cdbe115d0fce4939f5ac522cb7630488b74c65acddd12fe18859755",
+            "recorded_canonical_hash": "38d90ebf4cdbe115d0fce4939f5ac522cb7630488b74c65acddd12fe18859755",
+            "recorded_hash_matches": true
+          }
+        },
+        "all_input_files_match_metadata": true,
+        "full_context": {
+          "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\julia_set\\code_only_0\\context.md",
+          "actual_hash": "eab1a5656dd38971b03d390a47c5b2ae801a1144f60571e2482943a1effc141f",
+          "actual_characters": 12196,
+          "recorded_characters": 12196,
+          "recorded_characters_match": true
+        }
+      },
+      "live": {
+        "run_id": "julia_set_code_only_0",
+        "file_checks": [
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\julia_set\\code_only_0\\task.md",
+            "metadata_field": "task_hash",
+            "expected": "10e0a7d9a3905b8241ffa222ab3fadcf9a580d047b1611e78bdabe187830201c",
+            "actual": "10e0a7d9a3905b8241ffa222ab3fadcf9a580d047b1611e78bdabe187830201c",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\julia_set\\code_only_0\\code_context.md",
+            "metadata_field": "code_context_hash",
+            "expected": "22712a6bf04f16c9c5365b9cae981cd59c8f9bf1fb597abac732673fd0195285",
+            "actual": "22712a6bf04f16c9c5365b9cae981cd59c8f9bf1fb597abac732673fd0195285",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\julia_set\\code_only_0\\domain_context.md",
+            "metadata_field": "domain_context_hash",
+            "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\julia_set\\code_only_0\\retrieval_metadata.json",
+            "metadata_field": "api_resolution_hash",
+            "expected": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "actual": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "manifest_value_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "matches": true
+          }
+        ],
+        "blueprints": {
+          "base": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\julia_set\\code_only_0\\blueprint.json",
+            "actual_hash": "38d90ebf4cdbe115d0fce4939f5ac522cb7630488b74c65acddd12fe18859755",
+            "recorded_canonical_hash": null,
+            "recorded_hash_matches": null
+          },
+          "effective": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\julia_set\\code_only_0\\effective_blueprint.json",
+            "actual_hash": "38d90ebf4cdbe115d0fce4939f5ac522cb7630488b74c65acddd12fe18859755",
+            "recorded_canonical_hash": "38d90ebf4cdbe115d0fce4939f5ac522cb7630488b74c65acddd12fe18859755",
+            "recorded_hash_matches": true
+          }
+        },
+        "all_input_files_match_metadata": true,
+        "full_context": {
+          "path": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\julia_set\\code_only_0\\context.md",
+          "actual_hash": "eab1a5656dd38971b03d390a47c5b2ae801a1144f60571e2482943a1effc141f",
+          "actual_characters": 12196,
+          "recorded_characters": 12196,
+          "recorded_characters_match": true
+        }
+      }
+    },
+    {
+      "domain": "julia_set",
+      "variant": "combined",
+      "used": {
+        "run_id": "julia_set_combined_0",
+        "file_checks": [
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\julia_set\\combined_0\\task.md",
+            "metadata_field": "task_hash",
+            "expected": "10e0a7d9a3905b8241ffa222ab3fadcf9a580d047b1611e78bdabe187830201c",
+            "actual": "10e0a7d9a3905b8241ffa222ab3fadcf9a580d047b1611e78bdabe187830201c",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\julia_set\\combined_0\\code_context.md",
+            "metadata_field": "code_context_hash",
+            "expected": "d01b3cfb07c322c735023145fd5eb116ad621987c1d86c66198e0f1c7e26ec17",
+            "actual": "d01b3cfb07c322c735023145fd5eb116ad621987c1d86c66198e0f1c7e26ec17",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\julia_set\\combined_0\\domain_context.md",
+            "metadata_field": "domain_context_hash",
+            "expected": "187b87fdcf8eb6ee477f3b731b0286fa5176edd64f1eacfb09b5195bc876b1b7",
+            "actual": "187b87fdcf8eb6ee477f3b731b0286fa5176edd64f1eacfb09b5195bc876b1b7",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\julia_set\\combined_0\\api_resolution.json",
+            "metadata_field": "api_resolution_hash",
+            "expected": "995352b52c136e5fbaf1eb111aeaf4296b9e4a61c2712fdbbb4a2022f0a0dd5a",
+            "actual": "995352b52c136e5fbaf1eb111aeaf4296b9e4a61c2712fdbbb4a2022f0a0dd5a",
+            "manifest_value_hash": "995352b52c136e5fbaf1eb111aeaf4296b9e4a61c2712fdbbb4a2022f0a0dd5a",
+            "matches": true
+          }
+        ],
+        "blueprints": {
+          "base": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\julia_set\\combined_0\\blueprint.json",
+            "actual_hash": "38d90ebf4cdbe115d0fce4939f5ac522cb7630488b74c65acddd12fe18859755",
+            "recorded_canonical_hash": "38d90ebf4cdbe115d0fce4939f5ac522cb7630488b74c65acddd12fe18859755",
+            "recorded_hash_matches": true
+          },
+          "effective": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\julia_set\\combined_0\\effective_blueprint.json",
+            "actual_hash": "cb1e23534d9409ae02c34117c05cc8a58c57c18aaae278adbb78eff3d066738a",
+            "recorded_canonical_hash": "cb1e23534d9409ae02c34117c05cc8a58c57c18aaae278adbb78eff3d066738a",
+            "recorded_hash_matches": true
+          }
+        },
+        "all_input_files_match_metadata": true,
+        "full_context": {
+          "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\julia_set\\combined_0\\context.md",
+          "actual_hash": "b57454af0dde3077a2701aeb7d2ea7a49f4ac0ab6431e29b6206bfd0562e7814",
+          "actual_characters": 21347,
+          "recorded_characters": 21347,
+          "recorded_characters_match": true
+        }
+      },
+      "live": {
+        "run_id": "julia_set_combined_0",
+        "file_checks": [
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\julia_set\\combined_0\\task.md",
+            "metadata_field": "task_hash",
+            "expected": "10e0a7d9a3905b8241ffa222ab3fadcf9a580d047b1611e78bdabe187830201c",
+            "actual": "10e0a7d9a3905b8241ffa222ab3fadcf9a580d047b1611e78bdabe187830201c",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\julia_set\\combined_0\\code_context.md",
+            "metadata_field": "code_context_hash",
+            "expected": "d01b3cfb07c322c735023145fd5eb116ad621987c1d86c66198e0f1c7e26ec17",
+            "actual": "d01b3cfb07c322c735023145fd5eb116ad621987c1d86c66198e0f1c7e26ec17",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\julia_set\\combined_0\\domain_context.md",
+            "metadata_field": "domain_context_hash",
+            "expected": "187b87fdcf8eb6ee477f3b731b0286fa5176edd64f1eacfb09b5195bc876b1b7",
+            "actual": "187b87fdcf8eb6ee477f3b731b0286fa5176edd64f1eacfb09b5195bc876b1b7",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\julia_set\\combined_0\\retrieval_metadata.json",
+            "metadata_field": "api_resolution_hash",
+            "expected": "995352b52c136e5fbaf1eb111aeaf4296b9e4a61c2712fdbbb4a2022f0a0dd5a",
+            "actual": "995352b52c136e5fbaf1eb111aeaf4296b9e4a61c2712fdbbb4a2022f0a0dd5a",
+            "manifest_value_hash": "995352b52c136e5fbaf1eb111aeaf4296b9e4a61c2712fdbbb4a2022f0a0dd5a",
+            "matches": true
+          }
+        ],
+        "blueprints": {
+          "base": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\julia_set\\combined_0\\blueprint.json",
+            "actual_hash": "38d90ebf4cdbe115d0fce4939f5ac522cb7630488b74c65acddd12fe18859755",
+            "recorded_canonical_hash": null,
+            "recorded_hash_matches": null
+          },
+          "effective": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\julia_set\\combined_0\\effective_blueprint.json",
+            "actual_hash": "cb1e23534d9409ae02c34117c05cc8a58c57c18aaae278adbb78eff3d066738a",
+            "recorded_canonical_hash": "cb1e23534d9409ae02c34117c05cc8a58c57c18aaae278adbb78eff3d066738a",
+            "recorded_hash_matches": true
+          }
+        },
+        "all_input_files_match_metadata": true,
+        "full_context": {
+          "path": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\julia_set\\combined_0\\context.md",
+          "actual_hash": "b57454af0dde3077a2701aeb7d2ea7a49f4ac0ab6431e29b6206bfd0562e7814",
+          "actual_characters": 21347,
+          "recorded_characters": 21347,
+          "recorded_characters_match": true
+        }
+      }
+    },
+    {
+      "domain": "reaction_diffusion",
+      "variant": "code_only",
+      "used": {
+        "run_id": "reaction_diffusion_code_only_0",
+        "file_checks": [
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\code_only_0\\task.md",
+            "metadata_field": "task_hash",
+            "expected": "2aa75359e6b042a44fced58904c7957af95db4663795a95a8ff97f3e6c5073f5",
+            "actual": "2aa75359e6b042a44fced58904c7957af95db4663795a95a8ff97f3e6c5073f5",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\code_only_0\\code_context.md",
+            "metadata_field": "code_context_hash",
+            "expected": "e62b88aa2ff4749316e4c5fb28e799d1713fc5ac83be1913b2fbc609edf1bc67",
+            "actual": "e62b88aa2ff4749316e4c5fb28e799d1713fc5ac83be1913b2fbc609edf1bc67",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\code_only_0\\domain_context.md",
+            "metadata_field": "domain_context_hash",
+            "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\code_only_0\\api_resolution.json",
+            "metadata_field": "api_resolution_hash",
+            "expected": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "actual": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "manifest_value_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "matches": true
+          }
+        ],
+        "blueprints": {
+          "base": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\code_only_0\\blueprint.json",
+            "actual_hash": "3c6542109282f4878d4237d8c47e3ce97df9b885c7c6be1b109e018fac96ed68",
+            "recorded_canonical_hash": "3c6542109282f4878d4237d8c47e3ce97df9b885c7c6be1b109e018fac96ed68",
+            "recorded_hash_matches": true
+          },
+          "effective": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\code_only_0\\effective_blueprint.json",
+            "actual_hash": "3c6542109282f4878d4237d8c47e3ce97df9b885c7c6be1b109e018fac96ed68",
+            "recorded_canonical_hash": "3c6542109282f4878d4237d8c47e3ce97df9b885c7c6be1b109e018fac96ed68",
+            "recorded_hash_matches": true
+          }
+        },
+        "all_input_files_match_metadata": true,
+        "full_context": {
+          "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\code_only_0\\context.md",
+          "actual_hash": "1737f4b15ba16c10adbc53e63e17e9746e858056908e02972f54d8db79ceb029",
+          "actual_characters": 16155,
+          "recorded_characters": 16155,
+          "recorded_characters_match": true
+        }
+      },
+      "live": {
+        "run_id": "reaction_diffusion_code_only_0",
+        "file_checks": [
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\reaction_diffusion\\code_only_0\\task.md",
+            "metadata_field": "task_hash",
+            "expected": "2aa75359e6b042a44fced58904c7957af95db4663795a95a8ff97f3e6c5073f5",
+            "actual": "2aa75359e6b042a44fced58904c7957af95db4663795a95a8ff97f3e6c5073f5",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\reaction_diffusion\\code_only_0\\code_context.md",
+            "metadata_field": "code_context_hash",
+            "expected": "e62b88aa2ff4749316e4c5fb28e799d1713fc5ac83be1913b2fbc609edf1bc67",
+            "actual": "e62b88aa2ff4749316e4c5fb28e799d1713fc5ac83be1913b2fbc609edf1bc67",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\reaction_diffusion\\code_only_0\\domain_context.md",
+            "metadata_field": "domain_context_hash",
+            "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\reaction_diffusion\\code_only_0\\retrieval_metadata.json",
+            "metadata_field": "api_resolution_hash",
+            "expected": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "actual": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "manifest_value_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "matches": true
+          }
+        ],
+        "blueprints": {
+          "base": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\reaction_diffusion\\code_only_0\\blueprint.json",
+            "actual_hash": "3c6542109282f4878d4237d8c47e3ce97df9b885c7c6be1b109e018fac96ed68",
+            "recorded_canonical_hash": null,
+            "recorded_hash_matches": null
+          },
+          "effective": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\reaction_diffusion\\code_only_0\\effective_blueprint.json",
+            "actual_hash": "3c6542109282f4878d4237d8c47e3ce97df9b885c7c6be1b109e018fac96ed68",
+            "recorded_canonical_hash": "3c6542109282f4878d4237d8c47e3ce97df9b885c7c6be1b109e018fac96ed68",
+            "recorded_hash_matches": true
+          }
+        },
+        "all_input_files_match_metadata": true,
+        "full_context": {
+          "path": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\reaction_diffusion\\code_only_0\\context.md",
+          "actual_hash": "1737f4b15ba16c10adbc53e63e17e9746e858056908e02972f54d8db79ceb029",
+          "actual_characters": 16155,
+          "recorded_characters": 16155,
+          "recorded_characters_match": true
+        }
+      }
+    },
+    {
+      "domain": "reaction_diffusion",
+      "variant": "combined",
+      "used": {
+        "run_id": "reaction_diffusion_combined_0",
+        "file_checks": [
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\combined_0\\task.md",
+            "metadata_field": "task_hash",
+            "expected": "2aa75359e6b042a44fced58904c7957af95db4663795a95a8ff97f3e6c5073f5",
+            "actual": "2aa75359e6b042a44fced58904c7957af95db4663795a95a8ff97f3e6c5073f5",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\combined_0\\code_context.md",
+            "metadata_field": "code_context_hash",
+            "expected": "a24e23d24acd1354b1c2c8ca89928924c53f2863af062e0480093ee5050ba466",
+            "actual": "a24e23d24acd1354b1c2c8ca89928924c53f2863af062e0480093ee5050ba466",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\combined_0\\domain_context.md",
+            "metadata_field": "domain_context_hash",
+            "expected": "e58e8921e42b9eb52e2f025ec6aac5527db596d73d3eefeeeb4d29becc73d052",
+            "actual": "e58e8921e42b9eb52e2f025ec6aac5527db596d73d3eefeeeb4d29becc73d052",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\combined_0\\api_resolution.json",
+            "metadata_field": "api_resolution_hash",
+            "expected": "b53a8e9512406e6c75b5de3d4614a6172c7d4bcca57a79ae2033df62db57b746",
+            "actual": "b53a8e9512406e6c75b5de3d4614a6172c7d4bcca57a79ae2033df62db57b746",
+            "manifest_value_hash": "b53a8e9512406e6c75b5de3d4614a6172c7d4bcca57a79ae2033df62db57b746",
+            "matches": true
+          }
+        ],
+        "blueprints": {
+          "base": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\combined_0\\blueprint.json",
+            "actual_hash": "3c6542109282f4878d4237d8c47e3ce97df9b885c7c6be1b109e018fac96ed68",
+            "recorded_canonical_hash": "3c6542109282f4878d4237d8c47e3ce97df9b885c7c6be1b109e018fac96ed68",
+            "recorded_hash_matches": true
+          },
+          "effective": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\combined_0\\effective_blueprint.json",
+            "actual_hash": "5cb7bc4b4ff0f9701de52d1f220c417a785fc8af4af409913833702904dd9cc6",
+            "recorded_canonical_hash": "5cb7bc4b4ff0f9701de52d1f220c417a785fc8af4af409913833702904dd9cc6",
+            "recorded_hash_matches": true
+          }
+        },
+        "all_input_files_match_metadata": true,
+        "full_context": {
+          "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\combined_0\\context.md",
+          "actual_hash": "55d22e14d7cce53889b32d689b16e0ca207c5c124654c8f23f70bfd5b738f748",
+          "actual_characters": 25198,
+          "recorded_characters": 25198,
+          "recorded_characters_match": true
+        }
+      },
+      "live": {
+        "run_id": "reaction_diffusion_combined_0",
+        "file_checks": [
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\reaction_diffusion\\combined_0\\task.md",
+            "metadata_field": "task_hash",
+            "expected": "2aa75359e6b042a44fced58904c7957af95db4663795a95a8ff97f3e6c5073f5",
+            "actual": "2aa75359e6b042a44fced58904c7957af95db4663795a95a8ff97f3e6c5073f5",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\reaction_diffusion\\combined_0\\code_context.md",
+            "metadata_field": "code_context_hash",
+            "expected": "a24e23d24acd1354b1c2c8ca89928924c53f2863af062e0480093ee5050ba466",
+            "actual": "a24e23d24acd1354b1c2c8ca89928924c53f2863af062e0480093ee5050ba466",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\reaction_diffusion\\combined_0\\domain_context.md",
+            "metadata_field": "domain_context_hash",
+            "expected": "e58e8921e42b9eb52e2f025ec6aac5527db596d73d3eefeeeb4d29becc73d052",
+            "actual": "e58e8921e42b9eb52e2f025ec6aac5527db596d73d3eefeeeb4d29becc73d052",
+            "matches": true
+          },
+          {
+            "file": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\reaction_diffusion\\combined_0\\retrieval_metadata.json",
+            "metadata_field": "api_resolution_hash",
+            "expected": "b53a8e9512406e6c75b5de3d4614a6172c7d4bcca57a79ae2033df62db57b746",
+            "actual": "b53a8e9512406e6c75b5de3d4614a6172c7d4bcca57a79ae2033df62db57b746",
+            "manifest_value_hash": "b53a8e9512406e6c75b5de3d4614a6172c7d4bcca57a79ae2033df62db57b746",
+            "matches": true
+          }
+        ],
+        "blueprints": {
+          "base": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\reaction_diffusion\\combined_0\\blueprint.json",
+            "actual_hash": "3c6542109282f4878d4237d8c47e3ce97df9b885c7c6be1b109e018fac96ed68",
+            "recorded_canonical_hash": null,
+            "recorded_hash_matches": null
+          },
+          "effective": {
+            "path": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\reaction_diffusion\\combined_0\\effective_blueprint.json",
+            "actual_hash": "5cb7bc4b4ff0f9701de52d1f220c417a785fc8af4af409913833702904dd9cc6",
+            "recorded_canonical_hash": "5cb7bc4b4ff0f9701de52d1f220c417a785fc8af4af409913833702904dd9cc6",
+            "recorded_hash_matches": true
+          }
+        },
+        "all_input_files_match_metadata": true,
+        "full_context": {
+          "path": "D:\\Vivek\\research\\integration_runs\\20261028T181803_519861Z\\runs\\reaction_diffusion\\combined_0\\context.md",
+          "actual_hash": "55d22e14d7cce53889b32d689b16e0ca207c5c124654c8f23f70bfd5b738f748",
+          "actual_characters": 25198,
+          "recorded_characters": 25198,
+          "recorded_characters_match": true
+        }
+      }
+    }
+  ],
+  "live_graph_integrity": [
+    {
+      "role": "code",
+      "before_status": "available",
+      "after_status": "available",
+      "unchanged_topology_ids": true,
+      "recorded_comparison": "unchanged_topology_ids",
+      "before_nodes_count": 6391,
+      "before_relationships_count": 8483,
+      "before_nodes_id_sha256": "e7e61ec28d3061f8dbf551edf6de644efd56a74472139ed1f7e1fdf438356250",
+      "before_relationships_id_sha256": "f95bf959e51ee2cb7d1bbdb2a19ad1b971865c7f72df3c15e45ee863759b000e",
+      "after_nodes_count": 6391,
+      "after_relationships_count": 8483,
+      "after_nodes_id_sha256": "e7e61ec28d3061f8dbf551edf6de644efd56a74472139ed1f7e1fdf438356250",
+      "after_relationships_id_sha256": "f95bf959e51ee2cb7d1bbdb2a19ad1b971865c7f72df3c15e45ee863759b000e",
+      "scope": "within_new_live_retrieval_only; properties_not_hashed"
+    },
+    {
+      "role": "domain",
+      "before_status": "available",
+      "after_status": "available",
+      "unchanged_topology_ids": true,
+      "recorded_comparison": "unchanged_topology_ids",
+      "before_nodes_count": 108,
+      "before_relationships_count": 178,
+      "before_nodes_id_sha256": "755bae099e781a1f297387aefc72c1d18c83efb9eaee60fd52969db22b95609e",
+      "before_relationships_id_sha256": "d444e98319ad3e008b4a9e504ce2e068790047fe4e91f8dc055d512163bb924f",
+      "after_nodes_count": 108,
+      "after_relationships_count": 178,
+      "after_nodes_id_sha256": "755bae099e781a1f297387aefc72c1d18c83efb9eaee60fd52969db22b95609e",
+      "after_relationships_id_sha256": "d444e98319ad3e008b4a9e504ce2e068790047fe4e91f8dc055d512163bb924f",
+      "scope": "within_new_live_retrieval_only; properties_not_hashed"
+    }
+  ],
+  "limitations": [
+    "The generated scripts used frozen retrieval inputs. This later check does not retroactively make those generations a live-retrieval experiment.",
+    "Matching hashes establish identical recorded task/code/domain/API-resolution inputs for these arms, not general equivalence of database contents.",
+    "Graph integrity compares element-ID sets and counts only before/after the new live retrieval. Properties are not hashed, and old-versus-restored database IDs are not compared.",
+    "This script performs no API calls, graph queries, generations, executions or credential reads."
+  ]
+}

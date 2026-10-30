@@ -1,0 +1,4 @@
+D:\Vivek\research\integration_runs\20261028T181330_344848Z_saved_context\runs\julia_set\code_only_0\generated_julia_set_simulation.py:19: RuntimeWarning: overflow encountered in square
+  z = z ** 2 + c
+D:\Vivek\research\integration_runs\20261028T181330_344848Z_saved_context\runs\julia_set\code_only_0\generated_julia_set_simulation.py:19: RuntimeWarning: invalid value encountered in square
+  z = z ** 2 + c

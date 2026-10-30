@@ -1,0 +1,39 @@
+{
+  "alignment": {
+    "generated_time_axis": 0,
+    "reference_time_axis": 0
+  },
+  "artifact_provenance": "not_generated",
+  "artifacts": {},
+  "config_id": "1ad8c65e9940",
+  "context": {},
+  "domain": "julia_set",
+  "execution": {
+    "error": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+    "status": "not_run"
+  },
+  "generation": {
+    "error": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+    "status": "failed"
+  },
+  "metadata": {
+    "max_tokens": 20000,
+    "model": "claude-sonnet-4-6",
+    "seed": null,
+    "task_hash": "10e0a7d9a3905b8241ffa222ab3fadcf9a580d047b1611e78bdabe187830201c",
+    "temperature": 0
+  },
+  "plan": {
+    "path": "D:\\Vivek\\research\\optimization_runs\\cache\\julia_set_b3c1ba4436b6_blueprint.json",
+    "plan_source": "cached",
+    "sha256": "7103ba9f251f18ba388eb2cdec8d32ee1b50bbf92ff9524f746d3ca3ebbd0f98",
+    "task_sha1": "b3c1ba4436b6a38492ff80fe166bc9966fdcf936"
+  },
+  "reason": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+  "replicate": 0,
+  "retrieval_status": "blocked",
+  "run_dir": "D:\\Vivek\\research\\integration_runs\\20261028T180317_552196Z\\runs\\julia_set\\code_only_0",
+  "run_id": "julia_set_code_only_0",
+  "task_source": "D:\\Vivek\\research\\test\\julia_set.md",
+  "variant": "code_only"
+}

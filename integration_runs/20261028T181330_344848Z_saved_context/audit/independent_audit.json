@@ -1,0 +1,1269 @@
+{
+  "manifest": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\manifest.json",
+  "manifest_sha256": "01ae70ef48ed4e9ddd3119514cee0a41738eb5d0e881b45d85c21eb023760018",
+  "source_context_date_utc": "2026-10-22T02:04:31.638761+00:00",
+  "checks": 202,
+  "passed": 202,
+  "failed": [],
+  "generated_scripts": 8,
+  "execution_passes": 8,
+  "recorded_trajectory_artifacts": 10,
+  "input_tokens": 48979,
+  "output_tokens": 3293,
+  "interpretation": [
+    "All scripts exiting successfully does not imply every trajectory is finite or physically correct.",
+    "Burgers and heat reference comparisons remain caveated by initial-condition/operator disagreements.",
+    "Julia and reaction-diffusion exact-array agreement is observed for these deterministic reference cases, not general proof of domain performance.",
+    "Eight fresh scripts used previously saved retrieval contexts; no current graph integrity claim is made.",
+    "Provider seed is absent and one sample per arm cannot establish statistical superiority."
+  ],
+  "array_inventory": [
+    {
+      "run_id": "burgers2d_code_only_0",
+      "domain": "burgers2d",
+      "variant": "code_only",
+      "component": "main",
+      "generated_path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\burgers2d\\code_only_0\\burgers2d_velocity_trj.npy",
+      "generated_shape": [
+        101,
+        64,
+        64,
+        2
+      ],
+      "reference_shape": [
+        101,
+        64,
+        64,
+        2
+      ],
+      "nonfinite_count": 501554,
+      "reference_all_finite": true,
+      "report_status": "comparison_error",
+      "report_rmse": null,
+      "independent_rmse": null,
+      "first_nonfinite_index": [
+        13,
+        30,
+        36,
+        0
+      ]
+    },
+    {
+      "run_id": "burgers2d_combined_0",
+      "domain": "burgers2d",
+      "variant": "combined",
+      "component": "main",
+      "generated_path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\burgers2d\\combined_0\\burgers2d_velocity_trj.npy",
+      "generated_shape": [
+        101,
+        64,
+        64,
+        2
+      ],
+      "reference_shape": [
+        101,
+        64,
+        64,
+        2
+      ],
+      "nonfinite_count": 0,
+      "reference_all_finite": true,
+      "report_status": "measured_caveated",
+      "report_rmse": 0.3798066919711809,
+      "independent_rmse": 0.3798066919711809
+    },
+    {
+      "run_id": "heat_flow_code_only_0",
+      "domain": "heat_flow",
+      "variant": "code_only",
+      "component": "main",
+      "generated_path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\heat_flow\\code_only_0\\heat_flow_temperature_trj.npy",
+      "generated_shape": [
+        101,
+        100,
+        50
+      ],
+      "reference_shape": [
+        101,
+        100,
+        50
+      ],
+      "nonfinite_count": 210074,
+      "reference_all_finite": true,
+      "report_status": "comparison_error",
+      "report_rmse": null,
+      "independent_rmse": null,
+      "first_nonfinite_index": [
+        16,
+        0,
+        19
+      ]
+    },
+    {
+      "run_id": "heat_flow_combined_0",
+      "domain": "heat_flow",
+      "variant": "combined",
+      "component": "main",
+      "generated_path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\heat_flow\\combined_0\\heat_flow_temperature_trj.npy",
+      "generated_shape": [
+        101,
+        100,
+        50
+      ],
+      "reference_shape": [
+        101,
+        100,
+        50
+      ],
+      "nonfinite_count": 0,
+      "reference_all_finite": true,
+      "report_status": "measured_caveated",
+      "report_rmse": 2.082628732015258e-06,
+      "independent_rmse": 2.082628732015258e-06
+    },
+    {
+      "run_id": "julia_set_code_only_0",
+      "domain": "julia_set",
+      "variant": "code_only",
+      "component": "main",
+      "generated_path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\julia_set\\code_only_0\\julia_set_domain_trj.npy",
+      "generated_shape": [
+        100,
+        256,
+        256
+      ],
+      "reference_shape": [
+        100,
+        256,
+        256
+      ],
+      "nonfinite_count": 0,
+      "reference_all_finite": true,
+      "report_status": "measured",
+      "report_rmse": 7.519814523885068,
+      "independent_rmse": 7.519814523885068
+    },
+    {
+      "run_id": "julia_set_combined_0",
+      "domain": "julia_set",
+      "variant": "combined",
+      "component": "main",
+      "generated_path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\julia_set\\combined_0\\julia_set_domain_trj.npy",
+      "generated_shape": [
+        100,
+        256,
+        256
+      ],
+      "reference_shape": [
+        100,
+        256,
+        256
+      ],
+      "nonfinite_count": 0,
+      "reference_all_finite": true,
+      "report_status": "measured",
+      "report_rmse": 0.0,
+      "independent_rmse": 0.0
+    },
+    {
+      "run_id": "reaction_diffusion_code_only_0",
+      "domain": "reaction_diffusion",
+      "variant": "code_only",
+      "component": "u",
+      "generated_path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\code_only_0\\reaction_diffusion_u_trj.npy",
+      "generated_shape": [
+        101,
+        100,
+        100
+      ],
+      "reference_shape": [
+        101,
+        100,
+        100
+      ],
+      "nonfinite_count": 0,
+      "reference_all_finite": true,
+      "report_status": "measured",
+      "report_rmse": 3.7222935701477625e-08,
+      "independent_rmse": 3.7222935701477625e-08
+    },
+    {
+      "run_id": "reaction_diffusion_code_only_0",
+      "domain": "reaction_diffusion",
+      "variant": "code_only",
+      "component": "v",
+      "generated_path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\code_only_0\\reaction_diffusion_v_trj.npy",
+      "generated_shape": [
+        101,
+        100,
+        100
+      ],
+      "reference_shape": [
+        101,
+        100,
+        100
+      ],
+      "nonfinite_count": 0,
+      "reference_all_finite": true,
+      "report_status": "measured",
+      "report_rmse": 4.713715222466051e-08,
+      "independent_rmse": 4.713715222466051e-08
+    },
+    {
+      "run_id": "reaction_diffusion_combined_0",
+      "domain": "reaction_diffusion",
+      "variant": "combined",
+      "component": "u",
+      "generated_path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\combined_0\\reaction_diffusion_u_trj.npy",
+      "generated_shape": [
+        101,
+        100,
+        100
+      ],
+      "reference_shape": [
+        101,
+        100,
+        100
+      ],
+      "nonfinite_count": 0,
+      "reference_all_finite": true,
+      "report_status": "measured",
+      "report_rmse": 0.0,
+      "independent_rmse": 0.0
+    },
+    {
+      "run_id": "reaction_diffusion_combined_0",
+      "domain": "reaction_diffusion",
+      "variant": "combined",
+      "component": "v",
+      "generated_path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\combined_0\\reaction_diffusion_v_trj.npy",
+      "generated_shape": [
+        101,
+        100,
+        100
+      ],
+      "reference_shape": [
+        101,
+        100,
+        100
+      ],
+      "nonfinite_count": 0,
+      "reference_all_finite": true,
+      "report_status": "measured",
+      "report_rmse": 0.0,
+      "independent_rmse": 0.0
+    }
+  ],
+  "checks_detail": [
+    {
+      "check": "completed manifest",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "exactly eight requested generation arms",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source manifest file hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "current graph integrity is explicitly unmeasured",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "API preflight model listed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_code_only_0: successful fresh generation and execution",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_code_only_0: restored context remains labeled historical retrieval",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_code_only_0: source record hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_code_only_0: generated script hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_code_only_0: task.md normalized content hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_code_only_0: code_context.md normalized content hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_code_only_0: domain_context.md normalized content hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_code_only_0: original blueprint.json byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_code_only_0: original code_context.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_code_only_0: original context.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_code_only_0: original domain_context.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_code_only_0: original task.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_code_only_0: source API resolution preserved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_code_only_0: API resolution hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_code_only_0: generation controls match metadata",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_code_only_0/main: expected output filename",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_code_only_0/main: isolated artifact path",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_code_only_0/main: generated data hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_code_only_0/main: reference array hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_code_only_0/main: reference program hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_code_only_0/main: source-profile shape",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_code_only_0/main: invalid data excluded from numerical scores",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_code_only_0/main: physical comparability caveat retained",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_combined_0: successful fresh generation and execution",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_combined_0: restored context remains labeled historical retrieval",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_combined_0: source record hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_combined_0: generated script hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_combined_0: task.md normalized content hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_combined_0: code_context.md normalized content hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_combined_0: domain_context.md normalized content hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_combined_0: original blueprint.json byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_combined_0: original code_context.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_combined_0: original context.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_combined_0: original domain_context.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_combined_0: original task.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_combined_0: source API resolution preserved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_combined_0: API resolution hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_combined_0: generation controls match metadata",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_combined_0/main: expected output filename",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_combined_0/main: isolated artifact path",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_combined_0/main: generated data hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_combined_0/main: reference array hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_combined_0/main: reference program hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_combined_0/main: source-profile shape",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_combined_0/main: independently recomputed elementwise RMSE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "burgers2d_combined_0/main: physical comparability caveat retained",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_code_only_0: successful fresh generation and execution",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_code_only_0: restored context remains labeled historical retrieval",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_code_only_0: source record hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_code_only_0: generated script hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_code_only_0: task.md normalized content hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_code_only_0: code_context.md normalized content hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_code_only_0: domain_context.md normalized content hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_code_only_0: original blueprint.json byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_code_only_0: original code_context.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_code_only_0: original context.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_code_only_0: original domain_context.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_code_only_0: original task.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_code_only_0: source API resolution preserved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_code_only_0: API resolution hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_code_only_0: generation controls match metadata",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_code_only_0/main: expected output filename",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_code_only_0/main: isolated artifact path",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_code_only_0/main: generated data hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_code_only_0/main: reference array hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_code_only_0/main: reference program hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_code_only_0/main: source-profile shape",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_code_only_0/main: invalid data excluded from numerical scores",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_code_only_0/main: physical comparability caveat retained",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_combined_0: successful fresh generation and execution",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_combined_0: restored context remains labeled historical retrieval",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_combined_0: source record hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_combined_0: generated script hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_combined_0: task.md normalized content hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_combined_0: code_context.md normalized content hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_combined_0: domain_context.md normalized content hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_combined_0: original blueprint.json byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_combined_0: original code_context.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_combined_0: original context.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_combined_0: original domain_context.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_combined_0: original task.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_combined_0: source API resolution preserved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_combined_0: API resolution hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_combined_0: generation controls match metadata",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_combined_0/main: expected output filename",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_combined_0/main: isolated artifact path",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_combined_0/main: generated data hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_combined_0/main: reference array hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_combined_0/main: reference program hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_combined_0/main: source-profile shape",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_combined_0/main: independently recomputed elementwise RMSE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "heat_flow_combined_0/main: physical comparability caveat retained",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_code_only_0: successful fresh generation and execution",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_code_only_0: restored context remains labeled historical retrieval",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_code_only_0: source record hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_code_only_0: generated script hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_code_only_0: task.md normalized content hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_code_only_0: code_context.md normalized content hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_code_only_0: domain_context.md normalized content hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_code_only_0: original blueprint.json byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_code_only_0: original code_context.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_code_only_0: original context.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_code_only_0: original domain_context.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_code_only_0: original task.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_code_only_0: source API resolution preserved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_code_only_0: API resolution hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_code_only_0: generation controls match metadata",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_code_only_0/main: expected output filename",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_code_only_0/main: isolated artifact path",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_code_only_0/main: generated data hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_code_only_0/main: reference array hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_code_only_0/main: reference program hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_code_only_0/main: source-profile shape",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_code_only_0/main: independently recomputed elementwise RMSE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_combined_0: successful fresh generation and execution",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_combined_0: restored context remains labeled historical retrieval",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_combined_0: source record hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_combined_0: generated script hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_combined_0: task.md normalized content hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_combined_0: code_context.md normalized content hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_combined_0: domain_context.md normalized content hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_combined_0: original blueprint.json byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_combined_0: original code_context.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_combined_0: original context.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_combined_0: original domain_context.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_combined_0: original task.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_combined_0: source API resolution preserved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_combined_0: API resolution hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_combined_0: generation controls match metadata",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_combined_0/main: expected output filename",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_combined_0/main: isolated artifact path",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_combined_0/main: generated data hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_combined_0/main: reference array hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_combined_0/main: reference program hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_combined_0/main: source-profile shape",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "julia_set_combined_0/main: independently recomputed elementwise RMSE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0: successful fresh generation and execution",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0: restored context remains labeled historical retrieval",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0: source record hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0: generated script hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0: task.md normalized content hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0: code_context.md normalized content hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0: domain_context.md normalized content hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0: original blueprint.json byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0: original code_context.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0: original context.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0: original domain_context.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0: original task.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0: source API resolution preserved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0: API resolution hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0: generation controls match metadata",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0/u: expected output filename",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0/u: isolated artifact path",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0/u: generated data hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0/u: reference array hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0/u: reference program hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0/u: source-profile shape",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0/u: independently recomputed elementwise RMSE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0/v: expected output filename",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0/v: isolated artifact path",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0/v: generated data hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0/v: reference array hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0/v: reference program hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0/v: source-profile shape",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_code_only_0/v: independently recomputed elementwise RMSE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0: successful fresh generation and execution",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0: restored context remains labeled historical retrieval",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0: source record hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0: generated script hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0: task.md normalized content hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0: code_context.md normalized content hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0: domain_context.md normalized content hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0: original blueprint.json byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0: original code_context.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0: original context.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0: original domain_context.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0: original task.md byte hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0: source API resolution preserved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0: API resolution hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0: generation controls match metadata",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0/u: expected output filename",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0/u: isolated artifact path",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0/u: generated data hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0/u: reference array hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0/u: reference program hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0/u: source-profile shape",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0/u: independently recomputed elementwise RMSE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0/v: expected output filename",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0/v: isolated artifact path",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0/v: generated data hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0/v: reference array hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0/v: reference program hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0/v: source-profile shape",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reaction_diffusion_combined_0/v: independently recomputed elementwise RMSE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "four matched descriptive pairs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "execution deltas reflect equal pass outcomes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "caveated domains have no numerical delta",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

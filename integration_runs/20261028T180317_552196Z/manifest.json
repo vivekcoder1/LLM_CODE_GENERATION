@@ -1,0 +1,2247 @@
+{
+  "completed_utc": "2026-10-28T18:03:51.652899+00:00",
+  "config_id": "1ad8c65e9940",
+  "connections": [
+    {
+      "database": null,
+      "env_file": "D:\\Vivek\\research\\.env",
+      "mode": "READ",
+      "role": "code",
+      "uri": "neo4j+s://50546e3c.databases.neo4j.io",
+      "user": "50546e3c"
+    },
+    {
+      "database": null,
+      "env_file": "D:\\Vivek\\research\\knowledge_context\\.env",
+      "mode": "READ",
+      "role": "domain",
+      "uri": "neo4j://127.0.0.1:7687",
+      "user": "neo4j"
+    }
+  ],
+  "created_utc": "2026-10-28T18:03:17.555232+00:00",
+  "execution_limitations": "AST screening/restricted environment are not an OS sandbox.",
+  "generation_policy": "No fresh LLM calls in retrieval/existing modes.",
+  "graph_integrity": {
+    "after": {
+      "code": {
+        "error": "Failed to DNS resolve address 50546e3c.databases.neo4j.io:7687: [Errno 11001] getaddrinfo failed",
+        "status": "unavailable"
+      },
+      "domain": {
+        "error": "Unable to retrieve routing information",
+        "status": "unavailable"
+      }
+    },
+    "before": {
+      "code": {
+        "error": "Failed to DNS resolve address 50546e3c.databases.neo4j.io:7687: [Errno 11001] getaddrinfo failed",
+        "status": "unavailable"
+      },
+      "domain": {
+        "error": "Unable to retrieve routing information",
+        "status": "unavailable"
+      }
+    },
+    "comparison": {
+      "code": "unavailable",
+      "domain": "unavailable"
+    },
+    "scope": "Counts and element-ID sets only; property values and concurrent changes are not attributed."
+  },
+  "mode": "generate",
+  "output_dir": "D:\\Vivek\\research\\integration_runs\\20261028T180317_552196Z",
+  "preflight": {
+    "graphs": {
+      "code": {
+        "error": "Failed to DNS resolve address 50546e3c.databases.neo4j.io:7687: [Errno 11001] getaddrinfo failed",
+        "status": "unavailable"
+      },
+      "domain": {
+        "error": "Unable to retrieve routing information",
+        "status": "unavailable"
+      }
+    },
+    "llm": {
+      "available_models": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5",
+        "claude-opus-5-5",
+        "claude-fable-5-1",
+        "claude-opus-5",
+        "claude-sonnet-5",
+        "claude-fable-5",
+        "claude-opus-4-8",
+        "claude-opus-4-7",
+        "claude-sonnet-4-6",
+        "claude-opus-4-6",
+        "claude-opus-4-5-20251101",
+        "claude-haiku-4-5-20251001",
+        "claude-sonnet-4-5-20250929"
+      ],
+      "model": "claude-sonnet-4-6",
+      "status": "passed"
+    },
+    "required_indexes": {
+      "missing_or_offline": [
+        "classDocEmbed",
+        "classNames",
+        "descEmbed",
+        "funcDocEmbed",
+        "functionNames"
+      ],
+      "status": "blocked"
+    }
+  },
+  "preflight_errors": [
+    "Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames"
+  ],
+  "reports": {
+    "csv": "D:\\Vivek\\research\\integration_runs\\20261028T180317_552196Z\\reports\\combined_evaluation.csv",
+    "historical_rows": "D:\\Vivek\\research\\integration_runs\\20261028T180317_552196Z\\reports\\historical_rows.csv",
+    "history": "D:\\Vivek\\research\\integration_runs\\20261028T180317_552196Z\\reports\\historical_inventory.csv",
+    "json": "D:\\Vivek\\research\\integration_runs\\20261028T180317_552196Z\\reports\\combined_evaluation.json",
+    "markdown": "D:\\Vivek\\research\\integration_runs\\20261028T180317_552196Z\\reports\\combined_evaluation.md",
+    "numerical": "D:\\Vivek\\research\\integration_runs\\20261028T180317_552196Z\\reports\\numerical_comparisons.csv",
+    "paired": "D:\\Vivek\\research\\integration_runs\\20261028T180317_552196Z\\reports\\paired_comparisons.csv",
+    "retrieval": "D:\\Vivek\\research\\integration_runs\\20261028T180317_552196Z\\reports\\retrieval_coverage.csv",
+    "tests": "D:\\Vivek\\research\\integration_runs\\20261028T180317_552196Z\\reports\\test_outcomes.csv"
+  },
+  "runs": [
+    {
+      "alignment": {
+        "generated_time_axis": 0,
+        "reference_time_axis": 0
+      },
+      "artifact_provenance": "not_generated",
+      "artifacts": {},
+      "config_id": "1ad8c65e9940",
+      "context": {},
+      "domain": "burgers2d",
+      "execution": {
+        "error": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+        "status": "not_run"
+      },
+      "generation": {
+        "error": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+        "status": "failed"
+      },
+      "metadata": {
+        "max_tokens": 20000,
+        "model": "claude-sonnet-4-6",
+        "seed": null,
+        "task_hash": "3e40128f9690ce73b6a4febd9e06b4f12b32b29724e02ce4181f8b1d3b22b080",
+        "temperature": 0
+      },
+      "plan": {
+        "path": "D:\\Vivek\\research\\optimization_runs\\cache\\burgers2d_8ad5f8e75ea3_blueprint.json",
+        "plan_source": "cached",
+        "sha256": "27713b246ca7d87b3492da62f40471ef849c14ce4e3a07828e9782192b05e4d1",
+        "task_sha1": "8ad5f8e75ea36a2aba40c6d3b5fee35c523e97c7"
+      },
+      "reason": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+      "replicate": 0,
+      "retrieval_status": "blocked",
+      "run_dir": "D:\\Vivek\\research\\integration_runs\\20261028T180317_552196Z\\runs\\burgers2d\\code_only_0",
+      "run_id": "burgers2d_code_only_0",
+      "task_source": "D:\\Vivek\\research\\test\\burgers2d.md",
+      "variant": "code_only"
+    },
+    {
+      "alignment": {
+        "generated_time_axis": 0,
+        "reference_time_axis": 0
+      },
+      "artifact_provenance": "not_generated",
+      "artifacts": {},
+      "config_id": "1ad8c65e9940",
+      "context": {},
+      "domain": "burgers2d",
+      "execution": {
+        "error": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+        "status": "not_run"
+      },
+      "generation": {
+        "error": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+        "status": "failed"
+      },
+      "metadata": {
+        "max_tokens": 20000,
+        "model": "claude-sonnet-4-6",
+        "seed": null,
+        "task_hash": "3e40128f9690ce73b6a4febd9e06b4f12b32b29724e02ce4181f8b1d3b22b080",
+        "temperature": 0
+      },
+      "plan": {
+        "path": "D:\\Vivek\\research\\optimization_runs\\cache\\burgers2d_8ad5f8e75ea3_blueprint.json",
+        "plan_source": "cached",
+        "sha256": "27713b246ca7d87b3492da62f40471ef849c14ce4e3a07828e9782192b05e4d1",
+        "task_sha1": "8ad5f8e75ea36a2aba40c6d3b5fee35c523e97c7"
+      },
+      "reason": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+      "replicate": 0,
+      "retrieval_status": "blocked",
+      "run_dir": "D:\\Vivek\\research\\integration_runs\\20261028T180317_552196Z\\runs\\burgers2d\\combined_0",
+      "run_id": "burgers2d_combined_0",
+      "task_source": "D:\\Vivek\\research\\test\\burgers2d.md",
+      "variant": "combined"
+    },
+    {
+      "alignment": {
+        "generated_time_axis": 0,
+        "reference_time_axis": 0
+      },
+      "artifact_provenance": "not_generated",
+      "artifacts": {},
+      "config_id": "1ad8c65e9940",
+      "context": {},
+      "domain": "heat_flow",
+      "execution": {
+        "error": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+        "status": "not_run"
+      },
+      "generation": {
+        "error": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+        "status": "failed"
+      },
+      "metadata": {
+        "max_tokens": 20000,
+        "model": "claude-sonnet-4-6",
+        "seed": null,
+        "task_hash": "4894e50322d00c78ab2005d7e2df51383939bb87f0bb3a6c7019d53f1ad3d4f2",
+        "temperature": 0
+      },
+      "plan": {
+        "path": "D:\\Vivek\\research\\optimization_runs\\cache\\heat_flow_d18224a907cd_blueprint.json",
+        "plan_source": "cached",
+        "sha256": "46af60fef83f5e96e09913ac7398818ed24e2b5a233536913157758c5881db76",
+        "task_sha1": "d18224a907cd27372226d7a44067dabc04603ce7"
+      },
+      "reason": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+      "replicate": 0,
+      "retrieval_status": "blocked",
+      "run_dir": "D:\\Vivek\\research\\integration_runs\\20261028T180317_552196Z\\runs\\heat_flow\\code_only_0",
+      "run_id": "heat_flow_code_only_0",
+      "task_source": "D:\\Vivek\\research\\test\\heat_flow.md",
+      "variant": "code_only"
+    },
+    {
+      "alignment": {
+        "generated_time_axis": 0,
+        "reference_time_axis": 0
+      },
+      "artifact_provenance": "not_generated",
+      "artifacts": {},
+      "config_id": "1ad8c65e9940",
+      "context": {},
+      "domain": "heat_flow",
+      "execution": {
+        "error": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+        "status": "not_run"
+      },
+      "generation": {
+        "error": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+        "status": "failed"
+      },
+      "metadata": {
+        "max_tokens": 20000,
+        "model": "claude-sonnet-4-6",
+        "seed": null,
+        "task_hash": "4894e50322d00c78ab2005d7e2df51383939bb87f0bb3a6c7019d53f1ad3d4f2",
+        "temperature": 0
+      },
+      "plan": {
+        "path": "D:\\Vivek\\research\\optimization_runs\\cache\\heat_flow_d18224a907cd_blueprint.json",
+        "plan_source": "cached",
+        "sha256": "46af60fef83f5e96e09913ac7398818ed24e2b5a233536913157758c5881db76",
+        "task_sha1": "d18224a907cd27372226d7a44067dabc04603ce7"
+      },
+      "reason": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+      "replicate": 0,
+      "retrieval_status": "blocked",
+      "run_dir": "D:\\Vivek\\research\\integration_runs\\20261028T180317_552196Z\\runs\\heat_flow\\combined_0",
+      "run_id": "heat_flow_combined_0",
+      "task_source": "D:\\Vivek\\research\\test\\heat_flow.md",
+      "variant": "combined"
+    },
+    {
+      "alignment": {
+        "generated_time_axis": 0,
+        "reference_time_axis": 0
+      },
+      "artifact_provenance": "not_generated",
+      "artifacts": {},
+      "config_id": "1ad8c65e9940",
+      "context": {},
+      "domain": "julia_set",
+      "execution": {
+        "error": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+        "status": "not_run"
+      },
+      "generation": {
+        "error": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+        "status": "failed"
+      },
+      "metadata": {
+        "max_tokens": 20000,
+        "model": "claude-sonnet-4-6",
+        "seed": null,
+        "task_hash": "10e0a7d9a3905b8241ffa222ab3fadcf9a580d047b1611e78bdabe187830201c",
+        "temperature": 0
+      },
+      "plan": {
+        "path": "D:\\Vivek\\research\\optimization_runs\\cache\\julia_set_b3c1ba4436b6_blueprint.json",
+        "plan_source": "cached",
+        "sha256": "7103ba9f251f18ba388eb2cdec8d32ee1b50bbf92ff9524f746d3ca3ebbd0f98",
+        "task_sha1": "b3c1ba4436b6a38492ff80fe166bc9966fdcf936"
+      },
+      "reason": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+      "replicate": 0,
+      "retrieval_status": "blocked",
+      "run_dir": "D:\\Vivek\\research\\integration_runs\\20261028T180317_552196Z\\runs\\julia_set\\code_only_0",
+      "run_id": "julia_set_code_only_0",
+      "task_source": "D:\\Vivek\\research\\test\\julia_set.md",
+      "variant": "code_only"
+    },
+    {
+      "alignment": {
+        "generated_time_axis": 0,
+        "reference_time_axis": 0
+      },
+      "artifact_provenance": "not_generated",
+      "artifacts": {},
+      "config_id": "1ad8c65e9940",
+      "context": {},
+      "domain": "julia_set",
+      "execution": {
+        "error": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+        "status": "not_run"
+      },
+      "generation": {
+        "error": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+        "status": "failed"
+      },
+      "metadata": {
+        "max_tokens": 20000,
+        "model": "claude-sonnet-4-6",
+        "seed": null,
+        "task_hash": "10e0a7d9a3905b8241ffa222ab3fadcf9a580d047b1611e78bdabe187830201c",
+        "temperature": 0
+      },
+      "plan": {
+        "path": "D:\\Vivek\\research\\optimization_runs\\cache\\julia_set_b3c1ba4436b6_blueprint.json",
+        "plan_source": "cached",
+        "sha256": "7103ba9f251f18ba388eb2cdec8d32ee1b50bbf92ff9524f746d3ca3ebbd0f98",
+        "task_sha1": "b3c1ba4436b6a38492ff80fe166bc9966fdcf936"
+      },
+      "reason": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+      "replicate": 0,
+      "retrieval_status": "blocked",
+      "run_dir": "D:\\Vivek\\research\\integration_runs\\20261028T180317_552196Z\\runs\\julia_set\\combined_0",
+      "run_id": "julia_set_combined_0",
+      "task_source": "D:\\Vivek\\research\\test\\julia_set.md",
+      "variant": "combined"
+    },
+    {
+      "alignment": {
+        "generated_time_axis": 0,
+        "reference_time_axis": 0
+      },
+      "artifact_provenance": "not_generated",
+      "artifacts": {},
+      "config_id": "1ad8c65e9940",
+      "context": {},
+      "domain": "reaction_diffusion",
+      "execution": {
+        "error": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+        "status": "not_run"
+      },
+      "generation": {
+        "error": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+        "status": "failed"
+      },
+      "metadata": {
+        "max_tokens": 20000,
+        "model": "claude-sonnet-4-6",
+        "seed": null,
+        "task_hash": "2aa75359e6b042a44fced58904c7957af95db4663795a95a8ff97f3e6c5073f5",
+        "temperature": 0
+      },
+      "plan": {
+        "path": "D:\\Vivek\\research\\optimization_runs\\cache\\reaction_diffusion_7a58144cea66_blueprint.json",
+        "plan_source": "cached",
+        "sha256": "d7865ec3ee2db1048fe343fcb96f9d5cf31952654cb87fd2e7dddbe1c213ed89",
+        "task_sha1": "7a58144cea66d4ccdf2bfcc8f49e18cdbd6ab98e"
+      },
+      "reason": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+      "replicate": 0,
+      "retrieval_status": "blocked",
+      "run_dir": "D:\\Vivek\\research\\integration_runs\\20261028T180317_552196Z\\runs\\reaction_diffusion\\code_only_0",
+      "run_id": "reaction_diffusion_code_only_0",
+      "task_source": "D:\\Vivek\\research\\test\\reaction_diffusion.md",
+      "variant": "code_only"
+    },
+    {
+      "alignment": {
+        "generated_time_axis": 0,
+        "reference_time_axis": 0
+      },
+      "artifact_provenance": "not_generated",
+      "artifacts": {},
+      "config_id": "1ad8c65e9940",
+      "context": {},
+      "domain": "reaction_diffusion",
+      "execution": {
+        "error": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+        "status": "not_run"
+      },
+      "generation": {
+        "error": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+        "status": "failed"
+      },
+      "metadata": {
+        "max_tokens": 20000,
+        "model": "claude-sonnet-4-6",
+        "seed": null,
+        "task_hash": "2aa75359e6b042a44fced58904c7957af95db4663795a95a8ff97f3e6c5073f5",
+        "temperature": 0
+      },
+      "plan": {
+        "path": "D:\\Vivek\\research\\optimization_runs\\cache\\reaction_diffusion_7a58144cea66_blueprint.json",
+        "plan_source": "cached",
+        "sha256": "d7865ec3ee2db1048fe343fcb96f9d5cf31952654cb87fd2e7dddbe1c213ed89",
+        "task_sha1": "7a58144cea66d4ccdf2bfcc8f49e18cdbd6ab98e"
+      },
+      "reason": "Retrieval unavailable: Code retrieval indexes missing/offline: classDocEmbed, classNames, descEmbed, funcDocEmbed, functionNames",
+      "replicate": 0,
+      "retrieval_status": "blocked",
+      "run_dir": "D:\\Vivek\\research\\integration_runs\\20261028T180317_552196Z\\runs\\reaction_diffusion\\combined_0",
+      "run_id": "reaction_diffusion_combined_0",
+      "task_source": "D:\\Vivek\\research\\test\\reaction_diffusion.md",
+      "variant": "combined"
+    }
+  ],
+  "schema_version": 1,
+  "settings": {
+    "class_limit": 6,
+    "description_limit": 8,
+    "fulltext_limit": 5,
+    "function_limit": 6,
+    "max_methods_per_class": 5,
+    "max_nodes": 12,
+    "max_semantic_queries": 12,
+    "max_target_classes": 24,
+    "max_target_functions": 32,
+    "method_min_score": 0.3,
+    "min_score": 0.2,
+    "private_penalty": 0.15,
+    "public_boost": 0.2,
+    "top_k": 32
+  },
+  "test_results_source": {
+    "path": "D:\\Vivek\\research\\integration_runs\\validation_20261028T180227_386250Z\\test_outcomes.json",
+    "sha256": "4b3a92a87d5a37bbee1793a393f085b5893b05b554ee3022572aaf143b9392ca"
+  },
+  "tests": [
+    {
+      "details": "",
+      "duration_s": 0.077607,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_audit_experiment.ExperimentAuditTests.test_aggregate_mapping_metadata_does_not_turn_unknown_counts_into_zero",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.184066,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_audit_experiment.ExperimentAuditTests.test_all_nonfinite_empty_scalar_and_nonnumeric_arrays",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.134053,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_audit_experiment.ExperimentAuditTests.test_changed_code_context_has_unknown_retention_not_false_absence",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.16958,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_audit_experiment.ExperimentAuditTests.test_changed_hash_and_outside_paths_are_not_loaded",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.112425,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_audit_experiment.ExperimentAuditTests.test_complex_ranges_are_explicit_magnitudes_and_safe_on_overflow",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.131817,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_audit_experiment.ExperimentAuditTests.test_documentation_retention_uses_literal_code_context_fields_only",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.060851,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_audit_experiment.ExperimentAuditTests.test_fortran_array_and_nonzero_frame_axis_use_temporal_first",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.368496,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_audit_experiment.ExperimentAuditTests.test_incomplete_manifest_is_rejected_and_output_is_never_overwritten",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.068615,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_audit_experiment.ExperimentAuditTests.test_local_prior_provenance_and_cached_state_dependencies_remain_explicit",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.055792,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_audit_experiment.ExperimentAuditTests.test_mapping_statuses_and_ambiguity_are_not_invented_as_exact_matches",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.059416,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_audit_experiment.ExperimentAuditTests.test_nan_inf_counts_first_frame_and_finite_only_range",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.0821,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_audit_experiment.ExperimentAuditTests.test_object_pickle_and_invalid_axis_are_not_accepted",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.152057,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_audit_experiment.ExperimentAuditTests.test_requested_filename_is_recognized_without_creating_a_score",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.108457,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_audit_experiment.ExperimentAuditTests.test_wrong_output_name_remains_diagnostic_and_is_not_renamed",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.160213,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_additional_metadata_is_preserved_in_json",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.030424,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_artifacts_outside_run_directory_are_excluded",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.057573,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_axis_permutation_requires_explicit_metadata",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.193869,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_burgers_unseeded_initialization_is_caveated",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.025427,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_cached_outputs_are_excluded_even_if_execution_passed",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.058364,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_complex_magnitudes_are_preserved",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.051368,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_conventional_rmse_not_spatial_l2_norm",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.252949,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_domain_guided_code_context_changes_are_audited_as_pipeline_treatment",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.077777,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_empty_scalar_and_nonnumeric_arrays_are_rejected",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.03497,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_equal_length_conflicting_initial_frame_semantics_are_rejected",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.032431,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_execution_failure_and_generation_block_are_explicit",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.172873,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_heat_operator_mismatch_is_caveated_until_evidenced",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.029108,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_historical_rows_and_sources_remain_read_only",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.025736,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_initial_frame_is_dropped_only_with_explicit_metadata",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.038564,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_integer_subtraction_does_not_wrap",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.189452,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_matched_pair_does_not_compare_caveated_numerical_values",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.019724,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_missing_generated_artifact_is_explicit",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.019037,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_missing_reference_is_unavailable_not_zero",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.049882,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_nonfinite_arrays_are_not_scored",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.02201,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_numeric_overflow_is_not_reported_as_a_measurement",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.019281,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_pickle_object_arrays_are_rejected",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.015044,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_reference_shape_must_match_ground_truth_profile",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.095662,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_report_contains_detailed_tables_and_blank_missing_scores",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.023128,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_report_refuses_to_overwrite_any_existing_report",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.152354,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_report_serialization_is_deterministic_and_does_not_mutate_inputs",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.159004,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_rerun_can_measure_output_but_is_not_fresh_generation_pair",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.045009,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_shape_mismatch_never_broadcasts_or_truncates",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.140974,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_unmatched_generation_controls_block_claims",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.161703,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_unmeasured_context_does_not_create_efficacy_claim",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.003665,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_unsupported_domain_is_not_applicable",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.024361,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_wrong_filenames_do_not_score_accidental_old_outputs",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.016943,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_evaluation.CombinedEvaluationTests.test_zero_reference_matching_output_is_zero_error",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.218064,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_also_rerun_existing_is_one_historical_row_not_fake_arm_pair",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.011323,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_ast_screen_rejects_output_escape_or_dynamic_filenames",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.012053,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_ast_screen_rejects_sensitive_imports_and_dynamic_calls",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.012934,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_child_environment_excludes_all_inherited_secrets",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.116606,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_default_retrieval_makes_no_llm_calls_and_records_cached_plan",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.129749,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_each_arm_uses_new_directory_and_saves_audit_inputs",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.024146,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_execution_guard_blocks_sensitive_code_before_subprocess",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.052744,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_execution_timeout_retains_partial_logs",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.017471,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_existing_output_directory_is_never_reused",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.024207,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_failed_selected_domain_source_does_not_silently_fall_back_to_json",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.109453,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_generate_preflight_block_preserves_retrieval_without_generation",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.194293,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_generate_uses_one_blueprint_per_domain_and_no_implicit_execution",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.334715,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_generation_receives_unmodified_api_resolution_evidence_and_hash",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.035672,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_graph_snapshot_uses_only_read_sessions_and_hashes_ids",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.014095,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_graph_topology_comparison_detects_changed_id_sets",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.217316,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_injected_pipeline_cannot_bypass_generation_preflight_by_default",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.044618,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_invalid_numeric_options_are_rejected",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.041107,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_invalid_test_results_schema_stops_before_any_pipeline_calls",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.109746,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_missing_cached_blueprint_blocks_rows_without_llm_fallback",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.108553,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_no_execute_flag_never_runs_existing_script",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.205313,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_partial_retrieval_failure_keeps_successful_arm_and_manifest",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.212947,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_per_test_results_are_loaded_hashed_and_exported",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.040005,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_retrieval_live_setup_does_not_import_or_configure_llm_client",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.02489,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_subprocess_receives_isolated_cwd_restricted_environment_and_timeout",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.011232,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_unavailable_snapshot_never_claims_graph_unchanged",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.111232,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_experiment.CombinedExperimentTests.test_variants_share_immutable_blueprint_and_settings",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.005961,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_code_node_statistics_follow_serializer_definition_selection",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.00809,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_code_only_bypasses_domain_driver_and_domain_retriever",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.006662,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_combined_merges_planner_hints_and_uses_terminal_index_names",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.007513,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_driver_calls_are_read_only_explicit_and_not_closed",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.009301,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_duplicate_exact_aliases_are_not_resolved_by_filename_guess",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.005522,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_duplicate_legacy_file_candidates_remain_ambiguous",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.008348,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_exact_alias_resolution_adds_seed_and_retains_caveat",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.004274,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_invalid_variant_and_budgets_fail_before_external_calls",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.012023,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_low_scoring_required_public_api_is_pinned_before_ranked_noise",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.005533,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_metadata_settings_and_automatic_planner_are_forwarded",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.004907,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_missing_domain_uses_code_context_and_reports_status",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.005002,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_no_code_driver_produces_unavailable_resolution_without_connecting",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.007383,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_private_code_candidates_are_never_seeded",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.008931,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_private_raw_relation_cannot_be_pinned_by_id",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.006034,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_shared_blueprint_and_sane_query_caps_are_deterministic",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.007834,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_structural_metadata_completion_runs_after_pinning",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.006971,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_terminal_name_alone_cannot_resolve_wrong_file",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.005643,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_combined_retrieval.CombinedRetrievalTests.test_unique_file_basename_match_is_explicit_candidate",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.419935,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_builds_four_references_and_complete_provenance",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.183585,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_burgers_reads_diffused_velocity_for_advection",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.123382,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_cli_connection_overrides_selected_file_only",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.266599,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_cli_reports_underlying_neo4j_error_with_redacted_traceback",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.214125,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_cli_synchronizes_neo4j_by_default",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.048031,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_configuration_check_does_not_build_or_connect",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.05552,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_console_and_log_file_redact_passwords",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.070225,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_explicit_file_is_the_only_credentials_source",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.149374,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_export_only_does_not_load_credentials_or_connect",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.096555,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_extra_state_update_is_not_silently_omitted",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.071344,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_failed_validation_leaves_previous_export_unchanged",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.094586,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_heat_reads_coefficient_but_only_writes_temperature",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.083019,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_helper_and_parameter_dependencies_are_connected",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.036739,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_incomplete_file_blocks_cli_before_build_or_write",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.040095,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_incomplete_local_file_never_borrows_a_password",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.060569,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_interpolation_cannot_import_inherited_credentials",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.046789,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_invalid_uri_rejected_before_connecting",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.13179,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_julia_computed_output_has_no_invented_save",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.039775,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_local_file_wins_over_root_file_and_inherited_environment",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.137953,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_missing_and_empty_sources_reported_without_invented_references",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.039419,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_missing_credentials_have_actionable_error",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.034404,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_missing_dotenv_dependency_does_not_enable_environment_fallback",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.054533,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_missing_local_file_never_falls_back",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.12443,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_neo4j_batches_are_scoped_and_parameterized",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.169278,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_neo4j_logs_connection_batches_commit_and_verified_counts",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.140233,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_notes_remain_guidance",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.054623,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_npy_header_inspection_and_truncation",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.062107,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_path_escape_rejected",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.167524,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_post_commit_mismatch_does_not_report_verified_success",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.115666,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_reaction_cache_retains_old_state_dependencies",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.067195,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_reversed_recipe_is_rejected",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.315043,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_same_inputs_have_identical_graph_and_ids",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.069235,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_source_edit_invalidates_stale_step",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.176519,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_static_resolution_does_not_promote_external_candidates",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.166916,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_knowledge_graph.DomainGraphTests.test_writer_rejects_empty_or_cross_dataset_graph",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.000319,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_bounded_neo4j_paths_cover_current_owned_recipe_edges",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.007855,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_burgers_advection_uses_already_diffused_state",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.011778,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_cached_reaction_is_read_at_produced_version",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.023759,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_dataset_isolation_filters_local_nodes_and_edges",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.094208,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_default_context_budget_preserves_every_recipe_step",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.007858,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_empty_graph_and_unknown_domain_fall_back_cleanly",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.010916,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_explicit_selection_does_not_follow_incoming_shared_api_edges",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.011755,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_helper_formulas_parameters_and_output_conventions_are_preserved",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.025872,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_input_snapshot_and_returned_context_are_independent",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.008103,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_julia_temporary_parameter_is_not_lost",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.003684,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_missing_or_blank_domain_does_not_infer_from_task",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.01103,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_neo4j_domain_cannot_change_query_structure",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.009393,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_neo4j_empty_result_is_clean_and_read_errors_remain_visible",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.009243,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_neo4j_null_projection_fields_match_local_export",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.008803,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_neo4j_read_uses_safe_parameterized_query_and_explicit_database",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.025653,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_oversized_core_is_flagged_without_cutting_json_or_steps",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.018661,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_public_alias_survives_missing_observed_call",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.00953,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_public_aliases_are_usable_code_search_hints",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.031729,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_reference_steps_follow_source_order_not_storage_order",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.000485,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_schema_and_adapter_ambiguities_fail_visibly",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.00989,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_task_requirements_override_reference_output_defaults",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.010496,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_unresolved_apis_are_candidates_without_verification_claim",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.016898,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_domain_retrieval.DomainRetrievalTests.test_whole_program_and_save_expression_are_not_prompt_context",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.041371,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_connection_interpolation_rejected_for_every_setting",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.014831,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_describe_connection_is_read_only_and_secret_free",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.009331,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_driver_construction_is_lazy_bounded_and_does_not_create_session",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.004768,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_driver_constructor_error_is_redacted",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.015708,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_explicit_code_and_domain_files_do_not_mix",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.012134,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_inherited_values_are_ignored_and_environment_is_unchanged",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.0044,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_invalid_role_and_implicit_file_are_rejected",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.033485,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_llm_interpolation_and_placeholders_rejected",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.015008,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_llm_missing_key_does_not_use_environment",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.0229,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_llm_model_and_workspace_must_be_literal_if_provided",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.015794,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_llm_model_precedence_and_optional_workspace",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.012331,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_llm_only_file_does_not_require_database_settings",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.015066,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_missing_domain_password_never_uses_root_or_environment",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.005384,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_missing_selected_file_never_falls_back",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.043235,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_placeholder_credentials_rejected_without_echoing_value",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.012202,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_redaction_covers_database_password_and_api_key",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.008644,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_relative_path_is_explicitly_resolved_under_root",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.021264,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_config.PipelineConfigTests.test_uri_with_embedded_credentials_is_rejected",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.008173,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_blueprint_errors_are_redacted_before_logging",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.00055,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_definition_with_only_description_edge_remains_available",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.000755,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_disabled_llm_blocks_even_injected_client",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.00065,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_generation_prioritizes_task_and_records_usage",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.000684,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_generation_sees_unresolved_mapping_evidence",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.000356,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_injected_resources_are_not_closed",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.000746,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_injection_does_not_load_config_or_embedding_model",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.000348,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_metadata_closure_is_idempotent_and_ignores_unselected_definitions",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.000661,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_method_description_rows_respect_owning_class_quota",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.00038,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_namespace_attribute_import_and_class_import_are_valid_patterns",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.000771,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_parameter_type_metadata_survives_filtering_and_row_order",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.0004,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_public_method_uses_initialized_instance",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.001556,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_sessions_use_read_access_and_selected_database",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    },
+    {
+      "details": "",
+      "duration_s": 0.001697,
+      "errors": 0,
+      "failures": 0,
+      "name": "test_pipeline_integration.PipelineIntegrationTests.test_truncated_generation_is_rejected",
+      "skipped": 0,
+      "status": "passed",
+      "tests": 1
+    }
+  ]
+}

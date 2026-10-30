@@ -1,7 +1,7 @@
 # Domain knowledge for LLM context
 
-Status: domain notes for human refinement; combined retrieval integrated,
-2026-10-21.
+Status: domain notes for human refinement; live and saved-context generation
+entry points available, 2026-10-28. Initial note extraction was 2026-10-21.
 
 These notes extract implementation knowledge from the simulations explicitly
 labeled `ground_truth` in this project. Their purpose is to help an LLM find the
@@ -21,6 +21,13 @@ read-only experiment, its eight retrieval outcomes, isolated existing-script
 reruns, final validation, graph snapshots, and detailed report/audit tables.
 They distinguish retrieval success from fresh-generation performance.
 
+The [October 28 fresh-generation results](FRESH_GENERATION_RESULTS.md) report
+eight new scripts from the validated saved contexts, execution/numerical
+outcomes, paired comparisons, provider usage, and detailed audit tables. They
+keep the older retrieval snapshot distinct from current graph availability.
+The later live check retrieved all eight arms successfully and verified that
+their inputs matched those used for generation, without additional LLM calls.
+
 From the research directory, compare code-only and combined retrieval using
 cached search plans and no LLM calls:
 
@@ -37,6 +44,18 @@ python .\knowledge_context\run_combined_experiment.py --also-rerun-existing --ex
 Historical reruns are labeled separately from retrieval variants. They do not
 measure fresh context-conditioned generation. Every invocation creates a new
 `integration_runs/` directory with manifest and Markdown/JSON/CSV reports.
+
+For fresh generation using the validated October 21 retrieval snapshot, without
+Neo4j connections, new planning, or new retrieval, use the separate entry point:
+
+```powershell
+python .\knowledge_context\run_saved_context_experiment.py --context-manifest .\integration_runs\20261022T020018_419755Z\manifest.json --execute
+```
+
+It validates all eight saved arms and current task hashes before provider access,
+then generates one new script per arm in isolated directories. Contexts keep
+their original source date; the run makes no claim about current graph state.
+See [saved-context controls and provenance](COMBINED_PIPELINE.md#fresh-generation-from-a-frozen-retrieval-snapshot).
 
 To save per-test evidence and attach it to a later report, run
 `python .\knowledge_context\run_offline_tests.py --output-dir .\integration_runs\validation_new`,
@@ -55,7 +74,8 @@ provenance rules, tests, and extension workflow. The editable structured input i
 The domain constructor's credentials come only from `knowledge_context/.env`, or the one file
 explicitly selected with `--env-file`. Root `.env` and inherited `NEO4J_*`
 variables are ignored. Use `--check-config` to verify the selected target without
-connecting. See [.env.example](.env.example) for the required keys.
+connecting. See the [configuration reference](COMBINED_PIPELINE.md#which-files-configure-which-service)
+for the required keys.
 
 The combined pipeline explicitly selects root `.env` for the code graph and
 `knowledge_context/.env` for the domain graph. Each is independently parsed

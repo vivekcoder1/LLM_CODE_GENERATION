@@ -1,0 +1,9 @@
+run_id,variant,domain,code_nodes,domain_nodes,resolved_api_links,unresolved_api_links,context_chars,retrieval_status,domain_status,plan_source,reason,filtered_relations,raw_relations,seed_count
+burgers2d_code_only_0,code_only,burgers2d,12,0,0,0,15496,restored_not_requeried,disabled,saved_retrieval_snapshot,,205,3459,92
+burgers2d_combined_0,combined,burgers2d,12,23,5,0,23033,restored_not_requeried,available,saved_retrieval_snapshot,,91,3555,97
+heat_flow_code_only_0,code_only,heat_flow,12,0,0,0,9688,restored_not_requeried,disabled,saved_retrieval_snapshot,,158,3579,89
+heat_flow_combined_0,combined,heat_flow,12,25,4,0,22432,restored_not_requeried,available,saved_retrieval_snapshot,,91,3784,98
+julia_set_code_only_0,code_only,julia_set,12,0,0,0,12196,restored_not_requeried,disabled,saved_retrieval_snapshot,,128,3564,104
+julia_set_combined_0,combined,julia_set,12,27,2,0,21347,restored_not_requeried,available,saved_retrieval_snapshot,,82,3886,126
+reaction_diffusion_code_only_0,code_only,reaction_diffusion,12,0,0,0,16155,restored_not_requeried,disabled,saved_retrieval_snapshot,,176,3241,82
+reaction_diffusion_combined_0,combined,reaction_diffusion,12,40,2,1,25198,restored_not_requeried,available,saved_retrieval_snapshot,,81,3226,78

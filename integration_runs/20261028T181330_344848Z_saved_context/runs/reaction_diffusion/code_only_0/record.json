@@ -1,0 +1,163 @@
+{
+  "alignment": {
+    "generated_time_axis": 0,
+    "reference_time_axis": 0
+  },
+  "api_resolution": [],
+  "artifact_provenance": "fresh",
+  "artifacts": {
+    "u": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\code_only_0\\reaction_diffusion_u_trj.npy",
+    "v": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\code_only_0\\reaction_diffusion_v_trj.npy"
+  },
+  "config_id": "1ad8c65e9940",
+  "context": {
+    "code_nodes": 12,
+    "context_chars": 16155,
+    "domain_nodes": 0,
+    "filtered_relations": 176,
+    "raw_relations": 3241,
+    "resolved_api_links": 0,
+    "seed_count": 82,
+    "unresolved_api_links": 0
+  },
+  "context_origin": "saved_retrieval_snapshot",
+  "domain": "reaction_diffusion",
+  "domain_status": "disabled",
+  "execution": {
+    "duration_s": 3.30246,
+    "error": "",
+    "execution_guard": "AST screen and restricted environment; not an OS sandbox",
+    "execution_ok": true,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  "full_context_integrity": "Current file hash recorded; original snapshot recorded its character count, not a full-context hash.",
+  "generation": {
+    "input_tokens": 5380,
+    "max_tokens": 20000,
+    "model": "claude-sonnet-4-6",
+    "output_tokens": 752,
+    "status": "generated",
+    "stop_reason": "end_turn",
+    "temperature": 0
+  },
+  "generation_source": "fresh_llm",
+  "metadata": {
+    "api_resolution_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "code_context_hash": "e62b88aa2ff4749316e4c5fb28e799d1713fc5ac83be1913b2fbc609edf1bc67",
+    "domain_context_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "max_tokens": 20000,
+    "model": "claude-sonnet-4-6",
+    "seed": null,
+    "task_hash": "2aa75359e6b042a44fced58904c7957af95db4663795a95a8ff97f3e6c5073f5",
+    "temperature": 0
+  },
+  "observed_artifacts": [
+    {
+      "bytes": 4040128,
+      "filename": "reaction_diffusion_u_trj.npy",
+      "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\code_only_0\\reaction_diffusion_u_trj.npy",
+      "sha256": "f53d7880c21f01875ef1eb605b034c87aeb8cfa95335072b2fb645efe50cc049"
+    },
+    {
+      "bytes": 4040128,
+      "filename": "reaction_diffusion_v_trj.npy",
+      "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\code_only_0\\reaction_diffusion_v_trj.npy",
+      "sha256": "624dcaf7dcc428d4a1ecfa425f4f2c0225acce0d5a30d3c9aef286f09d72b712"
+    }
+  ],
+  "plan": {
+    "base_sha256": "3c6542109282f4878d4237d8c47e3ce97df9b885c7c6be1b109e018fac96ed68",
+    "plan_source": "saved_retrieval_snapshot"
+  },
+  "replicate": 0,
+  "retrieval_status": "restored_not_requeried",
+  "run_dir": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\code_only_0",
+  "run_id": "reaction_diffusion_code_only_0",
+  "script_path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\reaction_diffusion\\code_only_0\\generated_reaction_diffusion_simulation.py",
+  "script_sha256": "98579d606a69f65c1121955a48ce565724201b9eb5b87cc85994f24d0eb4d1b3",
+  "source_directory": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\reaction_diffusion\\code_only_0",
+  "source_file_hashes": {
+    "blueprint.json": "3bc3d380d2f4a813807afe58cf89ebbeacf5a7b63583281e1d48492d9ebef2cc",
+    "code_context.md": "d12260591c74d2ecf6b853b928f3f0f76b104af1dee5f9b88dc069abb4043f03",
+    "context.md": "9e62b16e29ef860efa788c0dfe78fd66ed5c41839c4db64430b0863ad3fe0b99",
+    "domain_context.md": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "task.md": "6f2c8a5ed6b8dcf33844889f60b97fc55a66eb5f955965577fa618d610a05cbe"
+  },
+  "source_record": {
+    "alignment": {
+      "generated_time_axis": 0,
+      "reference_time_axis": 0
+    },
+    "api_resolution": [],
+    "artifact_provenance": "not_generated",
+    "artifacts": {},
+    "config_id": "1ad8c65e9940",
+    "context": {
+      "code_nodes": 12,
+      "context_chars": 16155,
+      "domain_nodes": 0,
+      "filtered_relations": 176,
+      "raw_relations": 3241,
+      "resolved_api_links": 0,
+      "seed_count": 82,
+      "unresolved_api_links": 0
+    },
+    "domain": "reaction_diffusion",
+    "domain_status": "disabled",
+    "execution": {
+      "status": "not_run"
+    },
+    "generation": {
+      "reason": "Retrieval-only mode; no LLM call.",
+      "status": "not_requested"
+    },
+    "metadata": {
+      "code_context_hash": "e62b88aa2ff4749316e4c5fb28e799d1713fc5ac83be1913b2fbc609edf1bc67",
+      "domain_context_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "max_tokens": null,
+      "model": null,
+      "seed": null,
+      "task_hash": "2aa75359e6b042a44fced58904c7957af95db4663795a95a8ff97f3e6c5073f5",
+      "temperature": 0
+    },
+    "plan": {
+      "effective_sha256": "3c6542109282f4878d4237d8c47e3ce97df9b885c7c6be1b109e018fac96ed68",
+      "path": "D:\\Vivek\\research\\optimization_runs\\cache\\reaction_diffusion_7a58144cea66_blueprint.json",
+      "plan_source": "cached",
+      "sha256": "d7865ec3ee2db1048fe343fcb96f9d5cf31952654cb87fd2e7dddbe1c213ed89",
+      "task_sha1": "7a58144cea66d4ccdf2bfcc8f49e18cdbd6ab98e"
+    },
+    "replicate": 0,
+    "retrieval_status": "passed",
+    "run_dir": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\reaction_diffusion\\code_only_0",
+    "run_id": "reaction_diffusion_code_only_0",
+    "task_source": "D:\\Vivek\\research\\test\\reaction_diffusion.md",
+    "variant": "code_only"
+  },
+  "source_record_hash": "6d901e753711d86f9ae867e5eab4c440c0bd541f76f49e398192c9adbcb38855",
+  "source_snapshot": {
+    "config_id": "1ad8c65e9940",
+    "manifest_path": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\manifest.json",
+    "manifest_sha256": "f29e6cdfebdae1f218392201c2bbddc6eace2fd5a2dabf63258c1503e792809f",
+    "settings": {
+      "class_limit": 6,
+      "description_limit": 8,
+      "fulltext_limit": 5,
+      "function_limit": 6,
+      "max_methods_per_class": 5,
+      "max_nodes": 12,
+      "max_semantic_queries": 12,
+      "max_target_classes": 24,
+      "max_target_functions": 32,
+      "method_min_score": 0.3,
+      "min_score": 0.2,
+      "private_penalty": 0.15,
+      "public_boost": 0.2,
+      "top_k": 32
+    },
+    "source_completed_utc": "2026-10-22T02:04:31.638761+00:00",
+    "source_created_utc": "2026-10-22T02:00:18.421755+00:00"
+  },
+  "variant": "code_only"
+}

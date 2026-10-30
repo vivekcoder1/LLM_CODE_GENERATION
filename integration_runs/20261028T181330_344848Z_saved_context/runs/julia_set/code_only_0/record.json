@@ -1,0 +1,156 @@
+{
+  "alignment": {
+    "generated_time_axis": 0,
+    "reference_time_axis": 0
+  },
+  "api_resolution": [],
+  "artifact_provenance": "fresh",
+  "artifacts": {
+    "main": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\julia_set\\code_only_0\\julia_set_domain_trj.npy"
+  },
+  "config_id": "1ad8c65e9940",
+  "context": {
+    "code_nodes": 12,
+    "context_chars": 12196,
+    "domain_nodes": 0,
+    "filtered_relations": 128,
+    "raw_relations": 3564,
+    "resolved_api_links": 0,
+    "seed_count": 104,
+    "unresolved_api_links": 0
+  },
+  "context_origin": "saved_retrieval_snapshot",
+  "domain": "julia_set",
+  "domain_status": "disabled",
+  "execution": {
+    "duration_s": 9.631615,
+    "error": "",
+    "execution_guard": "AST screen and restricted environment; not an OS sandbox",
+    "execution_ok": true,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  "full_context_integrity": "Current file hash recorded; original snapshot recorded its character count, not a full-context hash.",
+  "generation": {
+    "input_tokens": 4181,
+    "max_tokens": 20000,
+    "model": "claude-sonnet-4-6",
+    "output_tokens": 268,
+    "status": "generated",
+    "stop_reason": "end_turn",
+    "temperature": 0
+  },
+  "generation_source": "fresh_llm",
+  "metadata": {
+    "api_resolution_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "code_context_hash": "22712a6bf04f16c9c5365b9cae981cd59c8f9bf1fb597abac732673fd0195285",
+    "domain_context_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "max_tokens": 20000,
+    "model": "claude-sonnet-4-6",
+    "seed": null,
+    "task_hash": "10e0a7d9a3905b8241ffa222ab3fadcf9a580d047b1611e78bdabe187830201c",
+    "temperature": 0
+  },
+  "observed_artifacts": [
+    {
+      "bytes": 52428928,
+      "filename": "julia_set_domain_trj.npy",
+      "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\julia_set\\code_only_0\\julia_set_domain_trj.npy",
+      "sha256": "c883269d1348ebcf99a98716174a639b7d83a64104cb7c240e6e05467bc78e48"
+    }
+  ],
+  "plan": {
+    "base_sha256": "38d90ebf4cdbe115d0fce4939f5ac522cb7630488b74c65acddd12fe18859755",
+    "plan_source": "saved_retrieval_snapshot"
+  },
+  "replicate": 0,
+  "retrieval_status": "restored_not_requeried",
+  "run_dir": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\julia_set\\code_only_0",
+  "run_id": "julia_set_code_only_0",
+  "script_path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\julia_set\\code_only_0\\generated_julia_set_simulation.py",
+  "script_sha256": "348bb49dd568a128af529d552499b8180741594e0a4b1b20d511dca09d06a003",
+  "source_directory": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\julia_set\\code_only_0",
+  "source_file_hashes": {
+    "blueprint.json": "96c5a21798db62bf7b5570a1165aacf0e4e9947e0be23e396fcf81a5051a1176",
+    "code_context.md": "4e7c84b460b31d9ff62e31bc2e06dd8d30600bb42e37bbf4692220cb5bc2097b",
+    "context.md": "2051039390d07fb2a38cb564ee3417af5c59ba93b200237b211a8d3e0af1d307",
+    "domain_context.md": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "task.md": "1993baef7695ea7a9ab0374ae2a59244c1bbee346248e12c0c43a336af2f6a05"
+  },
+  "source_record": {
+    "alignment": {
+      "generated_time_axis": 0,
+      "reference_time_axis": 0
+    },
+    "api_resolution": [],
+    "artifact_provenance": "not_generated",
+    "artifacts": {},
+    "config_id": "1ad8c65e9940",
+    "context": {
+      "code_nodes": 12,
+      "context_chars": 12196,
+      "domain_nodes": 0,
+      "filtered_relations": 128,
+      "raw_relations": 3564,
+      "resolved_api_links": 0,
+      "seed_count": 104,
+      "unresolved_api_links": 0
+    },
+    "domain": "julia_set",
+    "domain_status": "disabled",
+    "execution": {
+      "status": "not_run"
+    },
+    "generation": {
+      "reason": "Retrieval-only mode; no LLM call.",
+      "status": "not_requested"
+    },
+    "metadata": {
+      "code_context_hash": "22712a6bf04f16c9c5365b9cae981cd59c8f9bf1fb597abac732673fd0195285",
+      "domain_context_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "max_tokens": null,
+      "model": null,
+      "seed": null,
+      "task_hash": "10e0a7d9a3905b8241ffa222ab3fadcf9a580d047b1611e78bdabe187830201c",
+      "temperature": 0
+    },
+    "plan": {
+      "effective_sha256": "38d90ebf4cdbe115d0fce4939f5ac522cb7630488b74c65acddd12fe18859755",
+      "path": "D:\\Vivek\\research\\optimization_runs\\cache\\julia_set_b3c1ba4436b6_blueprint.json",
+      "plan_source": "cached",
+      "sha256": "7103ba9f251f18ba388eb2cdec8d32ee1b50bbf92ff9524f746d3ca3ebbd0f98",
+      "task_sha1": "b3c1ba4436b6a38492ff80fe166bc9966fdcf936"
+    },
+    "replicate": 0,
+    "retrieval_status": "passed",
+    "run_dir": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\julia_set\\code_only_0",
+    "run_id": "julia_set_code_only_0",
+    "task_source": "D:\\Vivek\\research\\test\\julia_set.md",
+    "variant": "code_only"
+  },
+  "source_record_hash": "4c4cd96e9ffbd89660d69bad171bd9f5f8d657be3e99d292937bbf0bd7c05c76",
+  "source_snapshot": {
+    "config_id": "1ad8c65e9940",
+    "manifest_path": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\manifest.json",
+    "manifest_sha256": "f29e6cdfebdae1f218392201c2bbddc6eace2fd5a2dabf63258c1503e792809f",
+    "settings": {
+      "class_limit": 6,
+      "description_limit": 8,
+      "fulltext_limit": 5,
+      "function_limit": 6,
+      "max_methods_per_class": 5,
+      "max_nodes": 12,
+      "max_semantic_queries": 12,
+      "max_target_classes": 24,
+      "max_target_functions": 32,
+      "method_min_score": 0.3,
+      "min_score": 0.2,
+      "private_penalty": 0.15,
+      "public_boost": 0.2,
+      "top_k": 32
+    },
+    "source_completed_utc": "2026-10-22T02:04:31.638761+00:00",
+    "source_created_utc": "2026-10-22T02:00:18.421755+00:00"
+  },
+  "variant": "code_only"
+}

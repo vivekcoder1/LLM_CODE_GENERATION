@@ -86,6 +86,18 @@ class CombinedEvaluationTests(unittest.TestCase):
         self.assertEqual(result["status"], "comparison_error")
         self.assertIn("allow_pickle=False", result["error"])
 
+    def test_empty_npy_files_return_comparison_error_instead_of_aborting_report(self):
+        for empty_side in ("generated", "reference"):
+            with self.subTest(empty_side=empty_side):
+                np.save(self.generated, np.ones((2, 2)))
+                np.save(self.reference, np.ones((2, 2)))
+                (self.generated if empty_side == "generated" else self.reference).write_bytes(b"")
+                result = compare_trajectories(self.generated, self.reference)
+                self.assertEqual(result["status"], "comparison_error")
+                self.assertIsNone(result["rmse"])
+                self.assertIsNone(result["relative_rmse"])
+                self.assertIn("No data left in file", result["error"])
+
     def test_empty_scalar_and_nonnumeric_arrays_are_rejected(self):
         for array in (np.array([]), np.array(2), np.array([["a"]])):
             with self.subTest(shape=array.shape):

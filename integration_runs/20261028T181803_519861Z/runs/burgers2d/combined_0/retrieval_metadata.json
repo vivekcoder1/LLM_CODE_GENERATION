@@ -1,0 +1,156 @@
+{
+  "api_resolution": [
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "component_type": "Function",
+          "defining_files": [
+            "_grid.py"
+          ],
+          "id": "_grid.py:CenteredGrid",
+          "import_path": "phi.flow.CenteredGrid",
+          "name": "CenteredGrid"
+        }
+      ],
+      "code_id": "_grid.py:CenteredGrid",
+      "code_import_path": "phi.flow.CenteredGrid",
+      "code_name": "CenteredGrid",
+      "configured_aliases": [
+        "phi.field.CenteredGrid",
+        "phi.flow.CenteredGrid"
+      ],
+      "definition_path": "phi/field/_grid.py",
+      "domain_api_id": "dkg:ground_truth_domains:code:phi.field._grid.CenteredGrid",
+      "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+      "observed_call": "CenteredGrid",
+      "qualified_name": "phi.field._grid.CenteredGrid",
+      "quality": "exact_alias",
+      "status": "resolved"
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "component_type": "Class",
+          "defining_files": [
+            "_noise.py"
+          ],
+          "id": "_noise.py:Noise",
+          "import_path": "phi.flow.Noise",
+          "name": "Noise"
+        }
+      ],
+      "code_id": "_noise.py:Noise",
+      "code_import_path": "phi.flow.Noise",
+      "code_name": "Noise",
+      "configured_aliases": [
+        "phi.field.Noise",
+        "phi.flow.Noise"
+      ],
+      "definition_path": "phi/field/_noise.py",
+      "domain_api_id": "dkg:ground_truth_domains:code:phi.field._noise.Noise",
+      "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+      "observed_call": "Noise",
+      "qualified_name": "phi.field._noise.Noise",
+      "quality": "exact_alias",
+      "status": "resolved"
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "component_type": "Class",
+          "defining_files": [
+            "_box.py"
+          ],
+          "id": "_box.py:Box",
+          "import_path": "phi.flow.Box",
+          "name": "Box"
+        }
+      ],
+      "code_id": "_box.py:Box",
+      "code_import_path": "phi.flow.Box",
+      "code_name": "Box",
+      "configured_aliases": [
+        "phi.flow.Box",
+        "phi.geom.Box"
+      ],
+      "definition_path": "phi/geom/_box.py",
+      "domain_api_id": "dkg:ground_truth_domains:code:phi.geom._box.Box",
+      "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+      "observed_call": "Box",
+      "qualified_name": "phi.geom._box.Box",
+      "quality": "exact_alias",
+      "status": "resolved"
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "component_type": "Function",
+          "defining_files": [
+            "advect.py"
+          ],
+          "id": "advect.py:semi_lagrangian",
+          "import_path": "phi.flow.advect.semi_lagrangian",
+          "name": "semi_lagrangian"
+        }
+      ],
+      "code_id": "advect.py:semi_lagrangian",
+      "code_import_path": "phi.flow.advect.semi_lagrangian",
+      "code_name": "semi_lagrangian",
+      "configured_aliases": [
+        "phi.flow.advect.semi_lagrangian",
+        "phi.physics.advect.semi_lagrangian"
+      ],
+      "definition_path": "phi/physics/advect.py",
+      "domain_api_id": "dkg:ground_truth_domains:code:phi.physics.advect.semi_lagrangian",
+      "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+      "observed_call": "advect.semi_lagrangian",
+      "qualified_name": "phi.physics.advect.semi_lagrangian",
+      "quality": "exact_alias",
+      "status": "resolved"
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "component_type": "Function",
+          "defining_files": [
+            "diffuse.py"
+          ],
+          "id": "diffuse.py:implicit",
+          "import_path": "phi.flow.diffuse.implicit",
+          "name": "implicit"
+        }
+      ],
+      "code_id": "diffuse.py:implicit",
+      "code_import_path": "phi.flow.diffuse.implicit",
+      "code_name": "implicit",
+      "configured_aliases": [
+        "phi.flow.diffuse.implicit",
+        "phi.physics.diffuse.implicit"
+      ],
+      "definition_path": "phi/physics/diffuse.py",
+      "domain_api_id": "dkg:ground_truth_domains:code:phi.physics.diffuse.implicit",
+      "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+      "observed_call": "diffuse.implicit",
+      "qualified_name": "phi.physics.diffuse.implicit",
+      "quality": "exact_alias",
+      "status": "resolved"
+    }
+  ],
+  "domain_status": "available",
+  "provenance": {},
+  "statistics": {
+    "code_nodes": 12,
+    "context_chars": 23033,
+    "domain_nodes": 23,
+    "filtered_relations": 91,
+    "raw_relations": 3555,
+    "resolved_api_links": 5,
+    "seed_count": 97,
+    "unresolved_api_links": 0
+  }
+}

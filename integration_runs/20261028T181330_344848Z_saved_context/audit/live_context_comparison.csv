@@ -1,0 +1,9 @@
+domain,variant,used_run_id,live_run_id,used_context_origin,live_retrieval_status,task_hash_equal,code_context_hash_equal,domain_context_hash_equal,api_resolution_hash_equal,used_files_verified,live_files_verified,generation_input_contexts_equal,base_blueprint_equal,effective_blueprint_equal,full_context_text_equal,core_statistics_equal,used_context_chars,live_context_chars,changed_statistics
+burgers2d,code_only,burgers2d_code_only_0,burgers2d_code_only_0,saved_retrieval_snapshot,passed,True,True,True,True,True,True,True,True,True,True,True,15496,15496,{}
+burgers2d,combined,burgers2d_combined_0,burgers2d_combined_0,saved_retrieval_snapshot,passed,True,True,True,True,True,True,True,True,True,True,True,23033,23033,{}
+heat_flow,code_only,heat_flow_code_only_0,heat_flow_code_only_0,saved_retrieval_snapshot,passed,True,True,True,True,True,True,True,True,True,True,True,9688,9688,{}
+heat_flow,combined,heat_flow_combined_0,heat_flow_combined_0,saved_retrieval_snapshot,passed,True,True,True,True,True,True,True,True,True,True,True,22432,22432,{}
+julia_set,code_only,julia_set_code_only_0,julia_set_code_only_0,saved_retrieval_snapshot,passed,True,True,True,True,True,True,True,True,True,True,True,12196,12196,{}
+julia_set,combined,julia_set_combined_0,julia_set_combined_0,saved_retrieval_snapshot,passed,True,True,True,True,True,True,True,True,True,True,True,21347,21347,{}
+reaction_diffusion,code_only,reaction_diffusion_code_only_0,reaction_diffusion_code_only_0,saved_retrieval_snapshot,passed,True,True,True,True,True,True,True,True,True,True,True,16155,16155,{}
+reaction_diffusion,combined,reaction_diffusion_combined_0,reaction_diffusion_combined_0,saved_retrieval_snapshot,passed,True,True,True,True,True,True,True,True,True,True,True,25198,25198,{}

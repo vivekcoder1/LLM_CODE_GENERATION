@@ -1,0 +1,9 @@
+run_id,variant,domain,code_nodes,domain_nodes,resolved_api_links,unresolved_api_links,context_chars,retrieval_status,domain_status,plan_source,reason,seed_count,raw_relations,filtered_relations
+burgers2d_code_only_0,code_only,burgers2d,12,0,0,0,15496,passed,disabled,cached,,92,3459,205
+burgers2d_combined_0,combined,burgers2d,12,23,5,0,23033,passed,available,cached,,97,3555,91
+heat_flow_code_only_0,code_only,heat_flow,12,0,0,0,9688,passed,disabled,cached,,89,3579,158
+heat_flow_combined_0,combined,heat_flow,12,25,4,0,22432,passed,available,cached,,98,3784,91
+julia_set_code_only_0,code_only,julia_set,12,0,0,0,12196,passed,disabled,cached,,104,3564,128
+julia_set_combined_0,combined,julia_set,12,27,2,0,21347,passed,available,cached,,126,3886,82
+reaction_diffusion_code_only_0,code_only,reaction_diffusion,12,0,0,0,16155,passed,disabled,cached,,82,3241,176
+reaction_diffusion_combined_0,combined,reaction_diffusion,12,40,2,1,25198,passed,available,cached,,78,3226,81

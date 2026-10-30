@@ -1,0 +1,382 @@
+{
+  "alignment": {
+    "generated_time_axis": 0,
+    "reference_time_axis": 0
+  },
+  "api_resolution": [
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "component_type": "Function",
+          "defining_files": [
+            "_grid.py"
+          ],
+          "id": "_grid.py:CenteredGrid",
+          "import_path": "phi.flow.CenteredGrid",
+          "name": "CenteredGrid"
+        }
+      ],
+      "code_id": "_grid.py:CenteredGrid",
+      "code_import_path": "phi.flow.CenteredGrid",
+      "code_name": "CenteredGrid",
+      "configured_aliases": [
+        "phi.field.CenteredGrid",
+        "phi.flow.CenteredGrid"
+      ],
+      "definition_path": "phi/field/_grid.py",
+      "domain_api_id": "dkg:ground_truth_domains:code:phi.field._grid.CenteredGrid",
+      "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+      "observed_call": "CenteredGrid",
+      "qualified_name": "phi.field._grid.CenteredGrid",
+      "quality": "exact_alias",
+      "status": "resolved"
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "component_type": "Class",
+          "defining_files": [
+            "_box.py"
+          ],
+          "id": "_box.py:Box",
+          "import_path": "phi.flow.Box",
+          "name": "Box"
+        }
+      ],
+      "code_id": "_box.py:Box",
+      "code_import_path": "phi.flow.Box",
+      "code_name": "Box",
+      "configured_aliases": [
+        "phi.flow.Box",
+        "phi.geom.Box"
+      ],
+      "definition_path": "phi/geom/_box.py",
+      "domain_api_id": "dkg:ground_truth_domains:code:phi.geom._box.Box",
+      "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+      "observed_call": "Box",
+      "qualified_name": "phi.geom._box.Box",
+      "quality": "exact_alias",
+      "status": "resolved"
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "component_type": "Function",
+          "defining_files": [
+            "_geom_ops.py"
+          ],
+          "id": "_geom_ops.py:union",
+          "import_path": "phi.flow.union",
+          "name": "union"
+        }
+      ],
+      "code_id": "_geom_ops.py:union",
+      "code_import_path": "phi.flow.union",
+      "code_name": "union",
+      "configured_aliases": [
+        "phi.flow.union",
+        "phi.geom.union"
+      ],
+      "definition_path": "phi/geom/_geom_ops.py",
+      "domain_api_id": "dkg:ground_truth_domains:code:phi.geom._geom_ops.union",
+      "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+      "observed_call": "union",
+      "qualified_name": "phi.geom._geom_ops.union",
+      "quality": "exact_alias",
+      "status": "resolved"
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "component_type": "Function",
+          "defining_files": [
+            "diffuse.py"
+          ],
+          "id": "diffuse.py:implicit",
+          "import_path": "phi.flow.diffuse.implicit",
+          "name": "implicit"
+        }
+      ],
+      "code_id": "diffuse.py:implicit",
+      "code_import_path": "phi.flow.diffuse.implicit",
+      "code_name": "implicit",
+      "configured_aliases": [
+        "phi.flow.diffuse.implicit",
+        "phi.physics.diffuse.implicit"
+      ],
+      "definition_path": "phi/physics/diffuse.py",
+      "domain_api_id": "dkg:ground_truth_domains:code:phi.physics.diffuse.implicit",
+      "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+      "observed_call": "diffuse.implicit",
+      "qualified_name": "phi.physics.diffuse.implicit",
+      "quality": "exact_alias",
+      "status": "resolved"
+    }
+  ],
+  "artifact_provenance": "fresh",
+  "artifacts": {
+    "main": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\heat_flow\\combined_0\\heat_flow_temperature_trj.npy"
+  },
+  "config_id": "1ad8c65e9940",
+  "context": {
+    "code_nodes": 12,
+    "context_chars": 22432,
+    "domain_nodes": 25,
+    "filtered_relations": 91,
+    "raw_relations": 3784,
+    "resolved_api_links": 4,
+    "seed_count": 98,
+    "unresolved_api_links": 0
+  },
+  "context_origin": "saved_retrieval_snapshot",
+  "domain": "heat_flow",
+  "domain_status": "available",
+  "execution": {
+    "duration_s": 36.898029,
+    "error": "",
+    "execution_guard": "AST screen and restricted environment; not an OS sandbox",
+    "execution_ok": true,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  "full_context_integrity": "Current file hash recorded; original snapshot recorded its character count, not a full-context hash.",
+  "generation": {
+    "input_tokens": 7407,
+    "max_tokens": 20000,
+    "model": "claude-sonnet-4-6",
+    "output_tokens": 244,
+    "status": "generated",
+    "stop_reason": "end_turn",
+    "temperature": 0
+  },
+  "generation_source": "fresh_llm",
+  "metadata": {
+    "api_resolution_hash": "d9ac2b8b54e1e738788e0ac6054b28f1bebf5533d1f7b927be4907528007b2ab",
+    "code_context_hash": "f938eb4ff0cce9bd8fe13fd573361e14bc54fd705570feb7fda50e4b2197e6fd",
+    "domain_context_hash": "557f3526b70513a4da594ecffd955d831a03e9eaa2023a670e70112a605f7f78",
+    "max_tokens": 20000,
+    "model": "claude-sonnet-4-6",
+    "seed": null,
+    "task_hash": "4894e50322d00c78ab2005d7e2df51383939bb87f0bb3a6c7019d53f1ad3d4f2",
+    "temperature": 0
+  },
+  "observed_artifacts": [
+    {
+      "bytes": 2020128,
+      "filename": "heat_flow_temperature_trj.npy",
+      "path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\heat_flow\\combined_0\\heat_flow_temperature_trj.npy",
+      "sha256": "dfea1bcee2952381b5917a254c767f04f634be9c8cdc421fa047b3aad3c5633c"
+    }
+  ],
+  "plan": {
+    "base_sha256": "94648976c2dbe09c28faf32e5640c2b1d4caa0f2115f1a43e79e5d296945f26e",
+    "plan_source": "saved_retrieval_snapshot"
+  },
+  "replicate": 0,
+  "retrieval_status": "restored_not_requeried",
+  "run_dir": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\heat_flow\\combined_0",
+  "run_id": "heat_flow_combined_0",
+  "script_path": "D:\\Vivek\\research\\integration_runs\\20261028T181330_344848Z_saved_context\\runs\\heat_flow\\combined_0\\generated_heat_flow_simulation.py",
+  "script_sha256": "34f698770368793d5b154b8333fcd9a9ce97680cbcbf8101eca787868c2ef984",
+  "source_directory": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\heat_flow\\combined_0",
+  "source_file_hashes": {
+    "blueprint.json": "ff8f752c6713dde076060fecba1e6ca5d1b77a9d925107ad0862d7f33d1dbbc3",
+    "code_context.md": "071aeddadefdf47d06bd8e1157cdda6602e6d290715356e96c3e581190015dd6",
+    "context.md": "a07e8280d5341f1a5195d4aee117871e2a5228ed39fc2e2d3439adcb30ce722f",
+    "domain_context.md": "d471269f85aac9746ca2b5f0f796b5bfe217ac2c15ce7cfa529d47aadd30ef1e",
+    "task.md": "57022ce429a5bb1cded5249b20861ddaa9dc8a52c807a0688ca231924be679e0"
+  },
+  "source_record": {
+    "alignment": {
+      "generated_time_axis": 0,
+      "reference_time_axis": 0
+    },
+    "api_resolution": [
+      {
+        "candidate_count": 1,
+        "candidates": [
+          {
+            "component_type": "Function",
+            "defining_files": [
+              "_grid.py"
+            ],
+            "id": "_grid.py:CenteredGrid",
+            "import_path": "phi.flow.CenteredGrid",
+            "name": "CenteredGrid"
+          }
+        ],
+        "code_id": "_grid.py:CenteredGrid",
+        "code_import_path": "phi.flow.CenteredGrid",
+        "code_name": "CenteredGrid",
+        "configured_aliases": [
+          "phi.field.CenteredGrid",
+          "phi.flow.CenteredGrid"
+        ],
+        "definition_path": "phi/field/_grid.py",
+        "domain_api_id": "dkg:ground_truth_domains:code:phi.field._grid.CenteredGrid",
+        "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+        "observed_call": "CenteredGrid",
+        "qualified_name": "phi.field._grid.CenteredGrid",
+        "quality": "exact_alias",
+        "status": "resolved"
+      },
+      {
+        "candidate_count": 1,
+        "candidates": [
+          {
+            "component_type": "Class",
+            "defining_files": [
+              "_box.py"
+            ],
+            "id": "_box.py:Box",
+            "import_path": "phi.flow.Box",
+            "name": "Box"
+          }
+        ],
+        "code_id": "_box.py:Box",
+        "code_import_path": "phi.flow.Box",
+        "code_name": "Box",
+        "configured_aliases": [
+          "phi.flow.Box",
+          "phi.geom.Box"
+        ],
+        "definition_path": "phi/geom/_box.py",
+        "domain_api_id": "dkg:ground_truth_domains:code:phi.geom._box.Box",
+        "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+        "observed_call": "Box",
+        "qualified_name": "phi.geom._box.Box",
+        "quality": "exact_alias",
+        "status": "resolved"
+      },
+      {
+        "candidate_count": 1,
+        "candidates": [
+          {
+            "component_type": "Function",
+            "defining_files": [
+              "_geom_ops.py"
+            ],
+            "id": "_geom_ops.py:union",
+            "import_path": "phi.flow.union",
+            "name": "union"
+          }
+        ],
+        "code_id": "_geom_ops.py:union",
+        "code_import_path": "phi.flow.union",
+        "code_name": "union",
+        "configured_aliases": [
+          "phi.flow.union",
+          "phi.geom.union"
+        ],
+        "definition_path": "phi/geom/_geom_ops.py",
+        "domain_api_id": "dkg:ground_truth_domains:code:phi.geom._geom_ops.union",
+        "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+        "observed_call": "union",
+        "qualified_name": "phi.geom._geom_ops.union",
+        "quality": "exact_alias",
+        "status": "resolved"
+      },
+      {
+        "candidate_count": 1,
+        "candidates": [
+          {
+            "component_type": "Function",
+            "defining_files": [
+              "diffuse.py"
+            ],
+            "id": "diffuse.py:implicit",
+            "import_path": "phi.flow.diffuse.implicit",
+            "name": "implicit"
+          }
+        ],
+        "code_id": "diffuse.py:implicit",
+        "code_import_path": "phi.flow.diffuse.implicit",
+        "code_name": "implicit",
+        "configured_aliases": [
+          "phi.flow.diffuse.implicit",
+          "phi.physics.diffuse.implicit"
+        ],
+        "definition_path": "phi/physics/diffuse.py",
+        "domain_api_id": "dkg:ground_truth_domains:code:phi.physics.diffuse.implicit",
+        "namespace_caveat": "Code-graph public import paths are annotations, not runtime verification. A legacy file-basename match does not prove package or module identity.",
+        "observed_call": "diffuse.implicit",
+        "qualified_name": "phi.physics.diffuse.implicit",
+        "quality": "exact_alias",
+        "status": "resolved"
+      }
+    ],
+    "artifact_provenance": "not_generated",
+    "artifacts": {},
+    "config_id": "1ad8c65e9940",
+    "context": {
+      "code_nodes": 12,
+      "context_chars": 22432,
+      "domain_nodes": 25,
+      "filtered_relations": 91,
+      "raw_relations": 3784,
+      "resolved_api_links": 4,
+      "seed_count": 98,
+      "unresolved_api_links": 0
+    },
+    "domain": "heat_flow",
+    "domain_status": "available",
+    "execution": {
+      "status": "not_run"
+    },
+    "generation": {
+      "reason": "Retrieval-only mode; no LLM call.",
+      "status": "not_requested"
+    },
+    "metadata": {
+      "code_context_hash": "f938eb4ff0cce9bd8fe13fd573361e14bc54fd705570feb7fda50e4b2197e6fd",
+      "domain_context_hash": "557f3526b70513a4da594ecffd955d831a03e9eaa2023a670e70112a605f7f78",
+      "max_tokens": null,
+      "model": null,
+      "seed": null,
+      "task_hash": "4894e50322d00c78ab2005d7e2df51383939bb87f0bb3a6c7019d53f1ad3d4f2",
+      "temperature": 0
+    },
+    "plan": {
+      "effective_sha256": "d8fc8dfa3ccdb9e61eabb36156866b16a8f9b028febacb5f3943dcd67d6d498f",
+      "path": "D:\\Vivek\\research\\optimization_runs\\cache\\heat_flow_d18224a907cd_blueprint.json",
+      "plan_source": "cached",
+      "sha256": "46af60fef83f5e96e09913ac7398818ed24e2b5a233536913157758c5881db76",
+      "task_sha1": "d18224a907cd27372226d7a44067dabc04603ce7"
+    },
+    "replicate": 0,
+    "retrieval_status": "passed",
+    "run_dir": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\runs\\heat_flow\\combined_0",
+    "run_id": "heat_flow_combined_0",
+    "task_source": "D:\\Vivek\\research\\test\\heat_flow.md",
+    "variant": "combined"
+  },
+  "source_record_hash": "fe513167c4b906ed3ba665685954db6f1ab79dc9e443cacab9ef1c9b50cd176d",
+  "source_snapshot": {
+    "config_id": "1ad8c65e9940",
+    "manifest_path": "D:\\Vivek\\research\\integration_runs\\20261022T020018_419755Z\\manifest.json",
+    "manifest_sha256": "f29e6cdfebdae1f218392201c2bbddc6eace2fd5a2dabf63258c1503e792809f",
+    "settings": {
+      "class_limit": 6,
+      "description_limit": 8,
+      "fulltext_limit": 5,
+      "function_limit": 6,
+      "max_methods_per_class": 5,
+      "max_nodes": 12,
+      "max_semantic_queries": 12,
+      "max_target_classes": 24,
+      "max_target_functions": 32,
+      "method_min_score": 0.3,
+      "min_score": 0.2,
+      "private_penalty": 0.15,
+      "public_boost": 0.2,
+      "top_k": 32
+    },
+    "source_completed_utc": "2026-10-22T02:04:31.638761+00:00",
+    "source_created_utc": "2026-10-22T02:00:18.421755+00:00"
+  },
+  "variant": "combined"
+}

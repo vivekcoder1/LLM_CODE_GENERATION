@@ -1,0 +1,10 @@
+C:\Users\sreed\AppData\Local\Programs\Python\Python312\Lib\site-packages\phiml\backend\_backend.py:1716: RuntimeWarning: overflow encountered in multiply
+  return a * b
+C:\Users\sreed\AppData\Local\Programs\Python\Python312\Lib\site-packages\phiml\backend\_backend.py:1708: RuntimeWarning: invalid value encountered in add
+  return a + b
+C:\Users\sreed\AppData\Local\Programs\Python\Python312\Lib\site-packages\phiml\backend\_backend.py:1712: RuntimeWarning: invalid value encountered in subtract
+  return a - b
+C:\Users\sreed\AppData\Local\Programs\Python\Python312\Lib\site-packages\phiml\backend\_backend.py:1720: RuntimeWarning: overflow encountered in divide
+  return numerator / denominator
+C:\Users\sreed\AppData\Local\Programs\Python\Python312\Lib\site-packages\numpy\_core\fromnumeric.py:86: RuntimeWarning: invalid value encountered in reduce
+  return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
